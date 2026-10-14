@@ -2,6 +2,7 @@
 
 import json
 import os
+from typing import Optional
 
 import google.auth
 from google.auth.transport.requests import AuthorizedSession
@@ -14,10 +15,18 @@ REASONING_ENGINE_ID = os.getenv(
     "3463694723959488512",
 )
 
-STREAM_URL = (
+BASE_URL = (
     f"https://{LOCATION}-aiplatform.googleapis.com/v1/"
     f"projects/{PROJECT_ID}/locations/{LOCATION}/"
-    f"reasoningEngines/{REASONING_ENGINE_ID}:streamQuery?alt=sse"
+    f"reasoningEngines/{REASONING_ENGINE_ID}"
+)
+
+STREAM_URL = f"{BASE_URL}:streamQuery?alt=sse"
+
+SESSIONS_URL = (
+    f"https://{LOCATION}-aiplatform.googleapis.com/v1beta1/"
+    f"projects/{PROJECT_ID}/locations/{LOCATION}/"
+    f"reasoningEngines/{REASONING_ENGINE_ID}/sessions"
 )
 
 
@@ -37,7 +46,6 @@ def _extract_text_events(response_text: str) -> str:
         if not line:
             continue
 
-        # Support SSE responses that prefix JSON with "data:"
         if line.startswith("data:"):
             line = line[5:].strip()
 
@@ -54,26 +62,67 @@ def _extract_text_events(response_text: str) -> str:
 
         for part in parts:
             text = part.get("text")
+
             if isinstance(text, str) and text.strip():
                 text_parts.append(text.strip())
 
     return "\n".join(text_parts).strip()
 
 
-def answer(question: str) -> str | None:
+def create_session(user_id: str) -> str:
     session = _get_session()
 
-    payload = {
-        "class_method": "async_stream_query",
-        "input": {
-            "user_id": "local-dev-user",
-            "message": question,
+    response = session.post(
+        SESSIONS_URL,
+        json={
+            "userId": user_id,
         },
-    }
+        timeout=30,
+    )
+
+    response.raise_for_status()
+
+    payload = response.json()
+
+    session_resource = (
+        payload.get("response", {}).get("name")
+    )
+
+    if not session_resource:
+        raise RuntimeError(
+            "Agent runtime did not return a session resource."
+        )
+
+    session_id = session_resource.rsplit("/", 1)[-1]
+
+    if not session_id:
+        raise RuntimeError(
+            "Agent runtime did not return a valid session id."
+        )
+
+    return session_id
+
+
+def answer(
+    question: str,
+    user_id: str,
+    session_id: Optional[str] = None,
+) -> dict:
+    session = _get_session()
+
+    if not session_id:
+        session_id = create_session(user_id)
 
     response = session.post(
         STREAM_URL,
-        json=payload,
+        json={
+            "class_method": "async_stream_query",
+            "input": {
+                "user_id": user_id,
+                "session_id": session_id,
+                "message": question,
+            },
+        },
         timeout=120,
     )
 
@@ -81,4 +130,8 @@ def answer(question: str) -> str | None:
 
     reply = _extract_text_events(response.text)
 
-    return reply or None
+    return {
+        "reply": reply or None,
+        "session_id": session_id,
+        "user_id": user_id,
+    }
