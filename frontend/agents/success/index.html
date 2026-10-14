@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Student Success</title>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<style>
+body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:16px;background:#f6f7fb;color:#1b1f2a}
+h1{color:#002d72}#log{display:flex;flex-direction:column;gap:10px;margin:16px 0}
+.msg{padding:10px 14px;border-radius:12px;line-height:1.45}
+.msg p:first-child,.msg h3:first-child{margin-top:0}.msg :last-child{margin-bottom:0}
+.you{align-self:flex-end;background:#002d72;color:#fff;white-space:pre-wrap}.bot{background:#fff;border:1px solid #dde}
+.bot a{color:#002d72}
+form{display:flex;gap:8px}input{flex:1;padding:10px;border-radius:8px;border:1px solid #ccd;font-size:16px}
+button{padding:10px 16px;border:0;border-radius:8px;background:#f47937;color:#fff;font-weight:600}
+button:disabled{opacity:.6}
+</style></head><body>
+<h1>Student Success &amp; Support</h1>
+<p>Ask about campus resources, events, or finding your way around Morgan State.</p>
+<div id="log"></div>
+<form id="f"><input id="q" placeholder="Where can I get tutoring?" required><button id="b">Ask</button></form>
+<script>
+const log=document.getElementById('log'),q=document.getElementById('q'),b=document.getElementById('b');
+function add(cls){const d=document.createElement('div');d.className='msg '+cls;log.append(d);return d;}
+document.getElementById('f').onsubmit=async e=>{
+  e.preventDefault();const question=q.value.trim();if(!question)return;
+  add('you').textContent=question;q.value='';b.disabled=true;
+  const bot=add('bot');bot.textContent='Thinking… (this can take up to 30 seconds)';
+  try{
+    const r=await fetch('/api/success',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question})});
+    const data=await r.json();
+    bot.innerHTML=DOMPurify.sanitize(marked.parse(data.reply||data.error||'No answer.'));
+  }catch{bot.textContent='Could not reach the server. Try again.';}
+  b.disabled=false;q.focus();
+};
+</script></body></html>
