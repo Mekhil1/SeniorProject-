@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>CS Go AI | Morgan State Computer Science</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{--navy:#071d49;--blue:#123b7a;--orange:#f26a21;--ink:#172033;--muted:#6b7280;--line:#e7eaf0;--bg:#f6f8fb;--white:#fff;--green:#17855b;--purple:#7556d8;--cyan:#1688a6}*{box-sizing:border-box}body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--ink)}button,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:250px 1fr}.side{background:linear-gradient(180deg,#06183d,#0a2559);color:#fff;padding:26px 18px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}.brand{display:flex;gap:12px;align-items:center;padding:0 8px 28px}.mark{width:42px;height:42px;border-radius:13px;background:var(--orange);display:grid;place-items:center;font-weight:800}.brand b{font:800 18px Manrope}.brand small{display:block;color:#9fb1d0;margin-top:3px}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#b9c6dd;text-align:left;padding:12px 14px;border-radius:11px;font-weight:600}.nav button.active,.nav button:hover{background:#ffffff14;color:#fff}.side-note{margin-top:auto;background:#ffffff0e;border:1px solid #ffffff14;border-radius:14px;padding:14px}.side-note small{color:#aebdd6}.profile{display:flex;gap:10px;align-items:center;margin-top:18px;padding:12px 6px;border-top:1px solid #ffffff1a}.avatar{width:36px;height:36px;border-radius:50%;background:#dce5f4;color:var(--navy);display:grid;place-items:center;font-weight:800}.profile small{display:block;color:#aebdd6;margin-top:2px}.main{min-width:0}.top{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;position:sticky;top:0;z-index:5}.top h2{font:800 18px Manrope;margin:0}.status{font-size:12px;color:var(--green);font-weight:700;background:#eaf8f2;padding:8px 11px;border-radius:999px}.content{max-width:1180px;margin:auto;padding:38px 34px 60px}.hero{background:linear-gradient(120deg,#09265e,#124486);color:#fff;border-radius:24px;padding:34px 38px;display:flex;justify-content:space-between;gap:30px;overflow:hidden;position:relative}.hero:after{content:"";width:280px;height:280px;border-radius:50%;background:#ffffff0b;position:absolute;right:-60px;top:-120px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#a8c5f1}.hero h1{font:800 clamp(28px,4vw,43px) Manrope;margin:8px 0 10px;max-width:650px;line-height:1.08}.hero p{color:#d4def0;max-width:650px;line-height:1.6;margin:0}.hero button{margin-top:22px;border:0;border-radius:11px;padding:12px 16px;background:var(--orange);color:#fff;font-weight:800}.section-head{display:flex;align-items:end;justify-content:space-between;margin:34px 0 16px}.section-head h3{font:800 21px Manrope;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.agents{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.agent{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;min-height:218px;display:flex;flex-direction:column;transition:.2s}.agent:hover{transform:translateY(-3px);box-shadow:0 14px 30px #16244712}.icon{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;font-size:21px;background:#edf3ff}.agent:nth-child(2) .icon{background:#eef9f5}.agent:nth-child(3) .icon{background:#f3efff}.agent:nth-child(4) .icon{background:#fff2eb}.agent h4{font:800 16px Manrope;margin:16px 0 7px}.agent p{font-size:12.5px;color:var(--muted);line-height:1.55;margin:0}.agent button{margin-top:auto;border:0;background:none;text-align:left;padding:16px 0 0;color:var(--blue);font-weight:800}.lower{display:grid;grid-template-columns:1.35fr .85fr;gap:16px;margin-top:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px}.panel h3{font:800 17px Manrope;margin:0 0 18px}.progress-row{display:flex;justify-content:space-between;font-size:13px;font-weight:700}.bar{height:9px;background:#edf0f5;border-radius:10px;margin:11px 0 20px;overflow:hidden}.bar i{display:block;height:100%;width:68%;background:linear-gradient(90deg,var(--orange),#ff995f);border-radius:10px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:#f7f9fc;border-radius:12px;padding:14px}.stat b{font:800 18px Manrope;display:block}.stat small{color:var(--muted)}.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick button{border:1px solid var(--line);background:#fafbfc;border-radius:12px;padding:13px;text-align:left;font-weight:700;color:#374151}.quick button:hover{border-color:#b8c8e2;background:#f2f6fc}.chat-drawer{position:fixed;right:22px;bottom:22px;width:min(440px,calc(100vw - 44px));height:620px;max-height:calc(100vh - 44px);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 70px #071d4930;z-index:20;display:none;flex-direction:column;overflow:hidden}.chat-drawer.open{display:flex}.chat-head{padding:18px 20px;background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center}.chat-head b{font:800 15px Manrope}.chat-head button{background:none;border:0;color:#fff;font-size:22px}.messages{flex:1;overflow:auto;padding:18px;background:#f8fafc}.msg{max-width:86%;padding:11px 13px;border-radius:14px;margin-bottom:12px;font-size:13px;line-height:1.5;white-space:pre-wrap}.msg.bot{background:#fff;border:1px solid var(--line)}.msg.user{background:var(--blue);color:#fff;margin-left:auto}.composer{border-top:1px solid var(--line);padding:12px;display:flex;gap:8px}.composer textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:11px;padding:11px;outline:none}.composer button{border:0;background:var(--orange);color:#fff;border-radius:11px;padding:0 16px;font-weight:800}.mobile{display:none}@media(max-width:1000px){.agents{grid-template-columns:1fr 1fr}.lower{grid-template-columns:1fr}}@media(max-width:720px){.app{grid-template-columns:1fr}.side{display:none}.top{padding:0 18px}.content{padding:24px 18px}.agents{grid-template-columns:1fr}.hero{padding:26px}.mobile{display:block}.stats{grid-template-columns:1fr 1fr 1fr}}
+
+
+/* Updated Morgan service-directory cards */
+.agents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.service-card{--accent:#f26a21;background:#fff;border:1px solid #dfe5ed;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-height:290px;transition:transform .2s,box-shadow .2s}
+.service-card.learning{--accent:#123b7a}.service-card.career{--accent:#bb7235}.service-card.success{--accent:#287b61}
+.service-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px #071d4912}
+.service-card:before{content:"";height:6px;background:var(--accent)}
+.service-card-main{padding:24px 27px 28px;flex:1}
+.service-topline{display:flex;justify-content:space-between;align-items:start}
+.service-label{color:#687789;font-size:10px;font-weight:800;letter-spacing:.13em}
+.service-number{font:800 31px/1 Manrope,sans-serif;color:#e0e6ee}
+.service-kicker{font-size:12px;font-weight:700;color:var(--accent);margin:19px 0 7px}
+.service-card h4{font:800 clamp(20px,2vw,25px)/1.2 Manrope,sans-serif;letter-spacing:-.035em;margin:0 0 13px;color:#172033}
+.service-description{color:#566477;font-size:13px;line-height:1.75;max-width:46ch;margin:0}
+.service-action{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:17px 27px;background:#f8fafc;border:0;border-top:1px solid #e7eaf0;text-align:left;font-weight:800;color:#123b7a}
+.service-action:hover{background:#edf3fa}
+.service-action span:last-child{font-size:19px;color:var(--accent)}
+.lower{display:block;margin-top:22px}
+.lower .panel{border-radius:10px}
+@media(max-width:720px){.agents{grid-template-columns:1fr}.service-card{min-height:0}}
+
+</style>
+
+</head>
+
+<body><div class="app">
+
+<aside class="side"><div class="brand"><div class="mark">M</div><div><b>CS Go AI</b><small>Morgan State • Computer Science</small></div></div><nav class="nav"><button class="active">⌂ &nbsp; Dashboard</button><button onclick="window.location.href='/agents/academic'">✦ &nbsp; Student Services</button><button>◫ &nbsp; My Progress</button><button>◇ &nbsp; Resources</button><button>↻ &nbsp; Chat History</button></nav><div class="side-note"><b>Need human support?</b><small><br>AI guidance supports—not replaces—official university advising.</small></div><div class="profile"><div class="avatar">MS</div><div><b id="studentName">Morgan Student</b><small id="studentEmail">student@morgan.edu</small></div></div></aside>
+
+<main class="main"><header class="top"><div><h2>Computer Science Student Hub</h2></div><div class="status">● Student hub available</div></header><div class="content">
+
+<section class="hero"><div><div class="eyebrow">Morgan State University • Computer Science</div><h1>Your academic journey, all in one place.</h1><p>Plan courses, strengthen CS skills, prepare for your career, and find the campus resources that keep you moving forward.</p><button onclick="window.location.href='/agents/academic'">Open Academic Advising →</button></div></section>
+
+<div class="section-head"><div><h3>Student support services</h3><p>Explore dedicated services and resources for your Morgan experience.</p></div></div>
+
+<section class="agents">
+<article class="service-card advising">
+ <div class="service-card-main"><div class="service-topline"><span class="service-label">STUDENT SERVICE / 01</span><span class="service-number">01</span></div>
+ <p class="service-kicker">Plan your next steps</p><h4>Academic Advising</h4><p class="service-description">Course sequencing, prerequisites, registration guidance, academic policies, schedules and degree planning.</p></div>
+ <button class="service-action" onclick="window.location.href='/agents/academic'"><span>Open academic advisor</span><span aria-hidden="true">↗</span></button>
+ </article>
+<article class="service-card learning">
+ <div class="service-card-main"><div class="service-topline"><span class="service-label">STUDENT SERVICE / 02</span><span class="service-number">02</span></div>
+ <p class="service-kicker">Build your technical skills</p><h4>CS Learning & Tutoring</h4><p class="service-description">Understand difficult concepts through explanations, visual learning, practice problems and guided CS tutoring.</p></div>
+ <button class="service-action" onclick="window.location.href='/agents/tutoring'"><span>Explore learning support</span><span aria-hidden="true">↗</span></button>
+ </article>
+<article class="service-card career">
+ <div class="service-card-main"><div class="service-topline"><span class="service-label">STUDENT SERVICE / 03</span><span class="service-number">03</span></div>
+ <p class="service-kicker">Prepare for what’s next</p><h4>Career & Professional</h4><p class="service-description">Explore career pathways, internships, job preparation, resumes, portfolios, interviews and professional development.</p></div>
+ <button class="service-action" onclick="window.location.href='/agents/career'"><span>Explore career support</span><span aria-hidden="true">↗</span></button>
+ </article>
+<article class="service-card success">
+ <div class="service-card-main"><div class="service-topline"><span class="service-label">STUDENT SERVICE / 04</span><span class="service-number">04</span></div>
+ <p class="service-kicker">Make the most of Morgan</p><h4>Student Success</h4><p class="service-description">Find guidance for campus life, events, tutoring, housing, financial aid and student resources.</p></div>
+ <button class="service-action" onclick="window.location.href='/agents/success'"><span>Explore student resources</span><span aria-hidden="true">↗</span></button>
+ </article>
+</section>
+
+<section class="lower"><div class="panel"><h3>Degree progress <span style="float:right;color:#6b7280;font:600 12px Inter">Prototype data</span></h3><div class="progress-row"><span>Computer Science B.S.</span><span>68%</span></div><div class="bar"><i></i></div><div class="stats"><div class="stat"><b>82</b><small>Credits completed</small></div><div class="stat"><b>38</b><small>Credits remaining</small></div><div class="stat"><b>3.4</b><small>Sample GPA</small></div></div></div></section>
+
+</div></main></div>
+
+<div id="chat" class="chat-drawer"><div class="chat-head"><div><b id="agentTitle">Academic Advising</b><div style="font-size:11px;color:#b8c8e2;margin-top:2px">Student support assistant</div></div><button onclick="closeChat()">×</button></div><div id="messages" class="messages"></div><div class="composer"><textarea id="prompt" rows="2" placeholder="Ask a question..."></textarea><button onclick="sendMessage()">Send</button></div></div>
+
+<script>
+
+const API='/api/adviser';let activeAgent='Academic Advising';
+
+function user(){try{const email=localStorage.getItem('msu_current_user_email');return JSON.parse(localStorage.getItem('msu_user_'+email)||'null')}catch(e){return null}}
+
+const u=user();if(u){document.getElementById('studentName').textContent=u.name||'Morgan Student';document.getElementById('studentEmail').textContent=u.email||'student@morgan.edu'}
+
+function openAgent(name){activeAgent=name;document.getElementById('agentTitle').textContent=name;document.getElementById('chat').classList.add('open');const m=document.getElementById('messages');if(!m.dataset.started){addMsg('bot','Welcome to CS Go AI. Choose an agent or ask a question to get started.');m.dataset.started='1'}document.getElementById('prompt').focus()}
+
+function closeChat(){document.getElementById('chat').classList.remove('open')}
+
+function addMsg(type,text){const d=document.createElement('div');d.className='msg '+type;d.textContent=text;document.getElementById('messages').appendChild(d);d.scrollIntoView({behavior:'smooth'})}
+
+function ask(q){openAgent(q.includes('resume')?'Career & Professional':q.includes('campus')?'Student Success & Support':q.includes('CS topic')?'CS Learning & Tutoring':'Academic Advising');document.getElementById('prompt').value=q;sendMessage()}
+
+async function sendMessage(){const p=document.getElementById('prompt');const q=p.value.trim();if(!q)return;p.value='';addMsg('user',q);addMsg('bot','Thinking…');const msgs=document.getElementById('messages');const wait=msgs.lastElementChild;try{const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:`You are the ${activeAgent} agent. ${q}`})});const data=await r.json();wait.textContent=data.reply||'I could not generate a response.'}catch(e){wait.textContent='The backend is not responding. Make sure Flask is running, then try again.'}}
+
+document.getElementById('prompt').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMessage()}});
+
+</script></body></html>
