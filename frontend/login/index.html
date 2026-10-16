@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - MSU CS Scholar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-100 flex items-center justify-center">
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-[#00205B] mb-2">MSU CS Scholar</h1>
+    <p class="text-sm text-slate-500 mb-6">Sign in to continue</p>
+
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Email</label>
+        <input id="email" type="email" class="w-full border rounded-lg px-3 py-2" placeholder="student@morgan.edu" required />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Password</label>
+        <div class="flex gap-2">
+          <input id="password" type="password" class="w-full border rounded-lg px-3 py-2" placeholder="Password" required />
+          <button id="togglePasswordBtn" type="button" class="px-3 rounded-lg bg-slate-200">Show</button>
+        </div>
+      </div>
+
+      <button type="submit" class="w-full bg-[#00205B] text-white py-2 rounded-lg font-semibold">
+        Sign In
+      </button>
+    </form>
+
+    <p class="text-sm text-slate-500 mt-4 text-center">
+      Don’t have an account?
+      <a href="/signup" class="text-[#00205B] font-semibold">Sign up</a>
+    </p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const passwordInput = document.getElementById("password");
+    const emailInput = document.getElementById("email");
+    const togglePasswordBtn = document.getElementById("togglePasswordBtn");
+
+    togglePasswordBtn.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+      togglePasswordBtn.textContent = isPassword ? "Hide" : "Show";
+    });
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!email || !password) {
+        alert("Please enter your email and password.");
+        return;
+      }
+
+      if (!email.toLowerCase().endsWith("@morgan.edu")) {
+        alert("Please use your Morgan State email address.");
+        return;
+      }
+
+      const savedUser = localStorage.getItem(`msu_user_${email}`);
+
+      if (!savedUser) {
+      alert("No account found for this email. Please sign up first.");
+      return;
+      }
+
+      localStorage.setItem("msu_logged_in", "true");
+      localStorage.setItem("msu_current_user_email", email);
+
+      window.location.href = "/chat";
+    });
+  </script>
+</body>
+</html>
