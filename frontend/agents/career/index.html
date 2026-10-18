@@ -80,13 +80,47 @@ textarea{min-width:0;flex:1;padding:13px;border:1px solid #cbd5e1;border-radius:
 .thinking{color:var(--muted);animation:thinking-pulse 1.2s ease-in-out infinite}
 @keyframes thinking-pulse{50%{opacity:.55}}
 @media(prefers-reduced-motion:reduce){.thinking{animation:none}}
+
+/* Keep the composer and message controls usable on narrow screens. */
+.panel,.chat,.msg,.message-content{min-width:0}
+.msg{overflow-wrap:anywhere}
+.message-content{max-width:100%;overflow-x:auto}
+.msg pre{max-width:100%;overflow-x:auto;overflow-wrap:normal}
+.msg table{display:block;max-width:100%;overflow-x:auto}
+.chat-heading,.message-meta,.message-actions{flex-wrap:wrap}
+.chat-heading h2{margin-right:auto}
+#newChat{flex-shrink:0}
+.service-badge{display:inline-block;max-width:100%;background:#e7f1fb;color:var(--navy);font-size:12px;font-weight:700;border-radius:20px;padding:4px 10px;margin:4px 0 10px;overflow-wrap:anywhere}
+.start-state{font-size:13px;margin:0 0 12px}
+textarea{resize:none;max-height:240px;overflow-y:hidden}
+form{align-items:flex-end}
+#send{min-height:48px}
+.character-count{font-size:12px;color:var(--muted);text-align:right;margin-top:5px}
+.character-count.near-limit{color:var(--navy);font-weight:700}
+.scroll-controls{display:flex;justify-content:flex-end;min-height:36px;padding-top:5px}
+#scrollLatest{font-size:12px;padding:6px 10px;background:#e7f1fb;color:var(--navy)}
+#scrollLatest[hidden]{display:none}
+.message-meta time{flex-shrink:0}
+.suggestions button{max-width:100%;white-space:normal;text-align:left;overflow-wrap:anywhere}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+@media(max-width:480px){
+    main{margin:24px auto;padding:0 12px}
+    header{flex-wrap:wrap;gap:8px}
+    .panel{padding:16px}
+    .chat{padding:10px}
+    .msg{padding:10px}
+    .msg.me{margin-left:6%}
+    .message-actions button,.suggestions button,#scrollLatest{min-height:36px}
+    textarea{padding:10px;font-size:16px}
+    #send{padding:12px;flex-shrink:0}
+}
 </style></head><body><header><strong>Morgan State <span style="color:#ffa66e">/</span> Computer Science</strong><a href="/chat">← Student Hub</a></header><main>
 <div class="eyebrow">Student Services / CAREER</div><h1>Career & Professional</h1><p>Explore pathways, internships, resumes, portfolios, and interviews.</p>
 <div class="layout"><section class="panel">
-<div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+<div class="chat-heading" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
     <h2>Ask a question</h2>
     <button id="newChat" type="button">New chat</button>
-</div><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Explore career paths</button><button type="button">Prepare for an interview</button><button type="button">Review my skills</button><button type="button">Find certification options</button></div><form id="form"><textarea id="question" rows="2" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div class="note" id="notice">Career guidance is powered by the Career & Professional multi-agent system. University and employer-specific details should still be verified with official sources.
+</div><div class="service-badge">Career &amp; Professional</div><p id="startState" class="start-state">Explore career paths, prepare for jobs and internships, build professional skills, and plan your next steps.</p><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div class="scroll-controls"><button id="scrollLatest" type="button" aria-label="Scroll to latest message" aria-controls="messages" hidden>↓ Latest message</button></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Explore career paths</button><button type="button">Prepare for an interview</button><button type="button">Review my skills</button><button type="button">Find certification options</button></div><form id="form"><textarea id="question" rows="1" aria-describedby="characterCount" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div id="characterCount" class="character-count">0 / 8000</div><div class="note" id="notice">Career guidance is powered by the Career & Professional multi-agent system. University and employer-specific details should still be verified with official sources.
 </div></section><aside class="panel"><h2>Explore this service</h2><div class="topic">Career exploration</div><div class="topic">Internship preparation</div><div class="topic">Resume & portfolio</div><div class="topic">Interview preparation</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
@@ -131,8 +165,40 @@ function renderMarkdown(text) {
 let busy = false;
 const suggestions = document.getElementById('suggestions');
 
+const characterCount = document.getElementById('characterCount');
+const scrollLatest = document.getElementById('scrollLatest');
+const startState = document.getElementById('startState');
+
+function updateComposer() {
+    const count = question.value.length;
+    characterCount.textContent = `${count} / ${question.maxLength}`;
+    characterCount.classList.toggle('near-limit', count >= question.maxLength * 0.9);
+    question.style.height = 'auto';
+    const height = Math.min(question.scrollHeight + 2, 240);
+    question.style.height = `${height}px`;
+    question.style.overflowY = question.scrollHeight + 2 > 240 ? 'auto' : 'hidden';
+}
+
+function updateScrollControl() {
+    scrollLatest.hidden = messages.scrollHeight - messages.clientHeight - messages.scrollTop <= 40;
+}
+
+question.addEventListener('input', updateComposer);
+messages.addEventListener('scroll', updateScrollControl);
+scrollLatest.addEventListener('click', () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    messages.scrollTo({top: messages.scrollHeight, behavior: reducedMotion ? 'auto' : 'smooth'});
+});
+window.addEventListener('resize', () => {
+    updateComposer();
+    updateScrollControl();
+});
+updateComposer();
+updateScrollControl();
+
 function scrollMessages() {
     messages.scrollTop = messages.scrollHeight;
+    updateScrollControl();
 }
 
 function add(text, kind = '') {
@@ -244,6 +310,7 @@ async function requestAnswer(q, output = add('')) {
 suggestions.querySelectorAll('button').forEach(button => {
     button.addEventListener('click', () => {
         question.value = button.textContent;
+        updateComposer();
         question.focus();
     });
 });
@@ -260,6 +327,8 @@ form.addEventListener('submit', event => {
     const q = question.value.trim();
     if (!q || busy) return;
     question.value = '';
+    updateComposer();
+    startState.hidden = true;
     suggestions.hidden = true;
     stamp(add(q, 'me'));
     requestAnswer(q);
@@ -272,6 +341,10 @@ newChat.addEventListener('click', () => {
     messages.replaceChildren();
     add('New conversation started. What would you like help with today?');
     suggestions.hidden = false;
+    startState.hidden = false;
+    question.value = '';
+    updateComposer();
+    updateScrollControl();
     question.focus();
 });
 </script></body></html>
