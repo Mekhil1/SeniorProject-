@@ -69,13 +69,24 @@
     border-left: 4px solid var(--orange);
     color: var(--muted);
 }
+
+textarea{min-width:0;flex:1;padding:13px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;resize:vertical;min-height:50px}
+.suggestions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.suggestions[hidden]{display:none}
+.suggestions button,.message-actions button{background:#e7f1fb;color:var(--navy);padding:6px 10px;font-size:12px}
+.message-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;white-space:normal}
+.message-meta time{font-size:11px;color:var(--muted)}
+.message-actions{display:flex;gap:8px}
+.thinking{color:var(--muted);animation:thinking-pulse 1.2s ease-in-out infinite}
+@keyframes thinking-pulse{50%{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.thinking{animation:none}}
 </style></head><body><header><strong>Morgan State <span style="color:#ffa66e">/</span> Computer Science</strong><a href="/chat">← Student Hub</a></header><main>
 <div class="eyebrow">Student Services / CAREER</div><h1>Career & Professional</h1><p>Explore pathways, internships, resumes, portfolios, and interviews.</p>
 <div class="layout"><section class="panel">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
     <h2>Ask a question</h2>
     <button id="newChat" type="button">New chat</button>
-</div><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><form id="form"><input id="question" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required><button id="send">Send</button></form><div class="note" id="notice">Career guidance is powered by the Career & Professional multi-agent system. University and employer-specific details should still be verified with official sources.
+</div><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Explore career paths</button><button type="button">Prepare for an interview</button><button type="button">Review my skills</button><button type="button">Find certification options</button></div><form id="form"><textarea id="question" rows="2" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div class="note" id="notice">Career guidance is powered by the Career & Professional multi-agent system. University and employer-specific details should still be verified with official sources.
 </div></section><aside class="panel"><h2>Explore this service</h2><div class="topic">Career exploration</div><div class="topic">Internship preparation</div><div class="topic">Resume & portfolio</div><div class="topic">Interview preparation</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
@@ -117,102 +128,150 @@ function renderMarkdown(text) {
 }
 
 
+let busy = false;
+const suggestions = document.getElementById('suggestions');
+
+function scrollMessages() {
+    messages.scrollTop = messages.scrollHeight;
+}
+
 function add(text, kind = '') {
     const node = document.createElement('div');
-
     node.className = 'msg ' + kind;
-    node.textContent = text;
-
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    content.textContent = text;
+    node.appendChild(content);
     messages.appendChild(node);
-    messages.scrollTop = messages.scrollHeight;
-
+    scrollMessages();
     return node;
 }
 
+function stamp(node) {
+    const meta = document.createElement('div');
+    meta.className = 'message-meta';
+    const time = document.createElement('time');
+    const now = new Date();
+    time.dateTime = now.toISOString();
+    time.textContent = now.toLocaleTimeString([], {hour: 'numeric', minute: '2-digit'});
+    meta.appendChild(time);
+    node.appendChild(meta);
+    return meta;
+}
 
-form.addEventListener('submit', async event => {
-    event.preventDefault();
+function action(meta, label, handler) {
+    const actions = document.createElement('div');
+    actions.className = 'message-actions';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = label;
+    button.addEventListener('click', handler);
+    actions.appendChild(button);
+    meta.appendChild(actions);
+    return button;
+}
 
-    const q = question.value.trim();
+function setBusy(value) {
+    busy = value;
+    send.disabled = value;
+    newChat.disabled = value;
+    messages.querySelectorAll('.retry').forEach(button => { button.disabled = value; });
+}
 
-    if (!q) {
-        return;
-    }
-
-    question.value = '';
-    add(q, 'me');
-
-    send.disabled = true;
-
-    const output = add('Checking…');
-
+async function requestAnswer(q, output = add('')) {
+    if (busy) return;
+    setBusy(true);
+    output.replaceChildren();
+    output.className = 'msg';
+    output.setAttribute('aria-busy', 'true');
+    const content = document.createElement('div');
+    content.className = 'message-content thinking';
+    content.textContent = 'AI is thinking…';
+    output.appendChild(content);
+    scrollMessages();
+    let failed = false;
     try {
-        const payload = {
-            question: q,
-            user_id: userId
-        };
-
-        /*
-         * Only send session_id after the backend has created one.
-         */
-        if (sessionId) {
-            payload.session_id = sessionId;
-        }
-
+        const payload = {question: q, user_id: userId};
+        if (sessionId) payload.session_id = sessionId;
         const response = await fetch(API, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(payload)
         });
-
         const data = await response.json();
-
         if (data.session_id) {
             sessionId = data.session_id;
-            sessionStorage.setItem(
-                'career_session_id',
-                sessionId
-            );
+            sessionStorage.setItem('career_session_id', sessionId);
         }
-
-        if (data.reply) {
-            output.innerHTML = renderMarkdown(data.reply);
+        failed = !response.ok || Boolean(data.error) || !data.reply;
+        if (failed) {
+            content.textContent = data.error || data.reply || 'No response available.';
         } else {
-            output.textContent =
-                data.error ||
-                'No response available.';
+            content.innerHTML = renderMarkdown(data.reply);
         }
-
-        if (!response.ok) {
-            output.classList.add('error');
-        }
-
     } catch (err) {
-        output.textContent =
-            'Cannot reach the server. Check that Flask is running.';
-
-        output.classList.add('error');
-
+        failed = true;
+        content.textContent = 'Cannot reach the server. Check that Flask is running.';
     } finally {
-        send.disabled = false;
+        content.classList.remove('thinking');
+        output.removeAttribute('aria-busy');
+        output.classList.toggle('error', failed);
+        const meta = stamp(output);
+        if (failed) {
+            const retry = action(meta, 'Retry', () => {
+                if (!busy) requestAnswer(q, output);
+            });
+            retry.className = 'retry';
+        } else {
+            const copy = action(meta, 'Copy', async () => {
+                try {
+                    // Read only the response, excluding timestamps and controls.
+                    await navigator.clipboard.writeText(content.innerText || content.textContent);
+                    copy.textContent = 'Copied';
+                } catch (err) {
+                    copy.textContent = 'Copy unavailable';
+                }
+                setTimeout(() => { copy.textContent = 'Copy'; }, 1800);
+            });
+            copy.setAttribute('aria-live', 'polite');
+        }
+        setBusy(false);
+        scrollMessages();
         question.focus();
+    }
+}
+
+suggestions.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', () => {
+        question.value = button.textContent;
+        question.focus();
+    });
+});
+
+question.addEventListener('keydown', event => {
+    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+        event.preventDefault();
+        if (!busy && question.value.trim()) form.requestSubmit();
     }
 });
 
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    const q = question.value.trim();
+    if (!q || busy) return;
+    question.value = '';
+    suggestions.hidden = true;
+    stamp(add(q, 'me'));
+    requestAnswer(q);
+});
 
 newChat.addEventListener('click', () => {
+    if (busy) return;
     sessionId = null;
-
     sessionStorage.removeItem('career_session_id');
-
-    messages.innerHTML = '';
-
-    add(
-        'New conversation started. What would you like help with today?'
-    );
-
+    messages.replaceChildren();
+    add('New conversation started. What would you like help with today?');
+    suggestions.hidden = false;
     question.focus();
 });
 </script></body></html>
