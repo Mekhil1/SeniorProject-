@@ -114,11 +114,26 @@ button:focus-visible,textarea:focus-visible{outline:3px solid var(--navy);outlin
     textarea{padding:10px;font-size:16px}
     #send{padding:12px;flex-shrink:0}
 }
+
+/* Give long Career answers room to read without changing the composer. */
+.chat{height:clamp(360px,60vh,720px)}
+.message-content.markdown{white-space:normal}
+.message-content.markdown pre{white-space:pre}
+.layout.chat-expanded{grid-template-columns:minmax(0,1fr)}
+.layout.chat-expanded>aside{display:none}
+.layout.chat-expanded .chat{height:clamp(420px,75vh,1000px)}
+#expandChat{background:#e7f1fb;color:var(--navy);flex-shrink:0}
+@media(max-width:480px){
+    .chat{height:55vh;min-height:300px}
+    .layout.chat-expanded .chat{height:70vh;min-height:360px}
+    #expandChat,#newChat{padding:10px 12px}
+}
 </style></head><body><header><strong>Morgan State <span style="color:#ffa66e">/</span> Computer Science</strong><a href="/chat">← Student Hub</a></header><main>
 <div class="eyebrow">Student Services / CAREER</div><h1>Career & Professional</h1><p>Explore pathways, internships, resumes, portfolios, and interviews.</p>
 <div class="layout"><section class="panel">
 <div class="chat-heading" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
     <h2>Ask a question</h2>
+    <button id="expandChat" type="button" aria-expanded="false" aria-controls="messages">Expand chat</button>
     <button id="newChat" type="button">New chat</button>
 </div><div class="service-badge">Career &amp; Professional</div><p id="startState" class="start-state">Explore career paths, prepare for jobs and internships, build professional skills, and plan your next steps.</p><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div class="scroll-controls"><button id="scrollLatest" type="button" aria-label="Scroll to latest message" aria-controls="messages" hidden>↓ Latest message</button></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Explore career paths</button><button type="button">Prepare for an interview</button><button type="button">Review my skills</button><button type="button">Find certification options</button></div><form id="form"><textarea id="question" rows="1" aria-describedby="characterCount" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div id="characterCount" class="character-count">0 / 8000</div><div class="note" id="notice">Career guidance is powered by the Career & Professional multi-agent system. University and employer-specific details should still be verified with official sources.
 </div></section><aside class="panel"><h2>Explore this service</h2><div class="topic">Career exploration</div><div class="topic">Internship preparation</div><div class="topic">Resume & portfolio</div><div class="topic">Interview preparation</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
@@ -132,6 +147,15 @@ const question = document.getElementById('question');
 const messages = document.getElementById('messages');
 const send = document.getElementById('send');
 const newChat = document.getElementById('newChat');
+const expandChat = document.getElementById('expandChat');
+
+expandChat.addEventListener('click', () => {
+    const expanded = expandChat.getAttribute('aria-expanded') !== 'true';
+    document.querySelector('.layout').classList.toggle('chat-expanded', expanded);
+    expandChat.setAttribute('aria-expanded', String(expanded));
+    expandChat.textContent = expanded ? 'Collapse chat' : 'Expand chat';
+    updateScrollControl();
+});
 
 
 /*
@@ -140,10 +164,23 @@ const newChat = document.getElementById('newChat');
  * It persists across browser restarts so the backend can keep one
  * student's sessions separate from another student's sessions.
  */
+// randomUUID requires a secure context; HTTP network addresses still support
+// getRandomValues. This ID separates browser clients; it is not authentication.
+function createUserId() {
+    if (typeof crypto.randomUUID === 'function') {
+        return crypto.randomUUID();
+    }
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
 let userId = localStorage.getItem('career_user_id');
 
 if (!userId) {
-    userId = crypto.randomUUID();
+    userId = createUserId();
     localStorage.setItem('career_user_id', userId);
 }
 
@@ -196,8 +233,11 @@ window.addEventListener('resize', () => {
 updateComposer();
 updateScrollControl();
 
-function scrollMessages() {
-    messages.scrollTop = messages.scrollHeight;
+function scrollMessages(response) {
+    // Start at the beginning of a finished answer, rather than its last line.
+    messages.scrollTop = response
+        ? messages.scrollTop + response.getBoundingClientRect().top - messages.getBoundingClientRect().top - messages.clientTop
+        : messages.scrollHeight;
     updateScrollControl();
 }
 
@@ -273,6 +313,7 @@ async function requestAnswer(q, output = add('')) {
         if (failed) {
             content.textContent = data.error || data.reply || 'No response available.';
         } else {
+            content.classList.add('markdown');
             content.innerHTML = renderMarkdown(data.reply);
         }
     } catch (err) {
@@ -302,7 +343,7 @@ async function requestAnswer(q, output = add('')) {
             copy.setAttribute('aria-live', 'polite');
         }
         setBusy(false);
-        scrollMessages();
+        scrollMessages(output);
         question.focus();
     }
 }

@@ -61,9 +61,22 @@ const form=document.getElementById('form'),question=document.getElementById('que
 const newChat = document.getElementById('newChat');
 
 // Reuse an existing Career identity without changing Career's storage or sessions.
+// randomUUID requires a secure context; HTTP network addresses still support
+// getRandomValues. This ID separates browser clients; it is not authentication.
+function createUserId() {
+    if (typeof crypto.randomUUID === 'function') {
+        return crypto.randomUUID();
+    }
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
 let userId = localStorage.getItem('student_user_id');
 if (!userId) {
-    userId = localStorage.getItem('career_user_id') || crypto.randomUUID();
+    userId = localStorage.getItem('career_user_id') || createUserId();
     localStorage.setItem('student_user_id', userId);
 }
 
