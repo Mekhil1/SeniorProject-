@@ -21,8 +21,46 @@ def sha(raw):return hashlib.sha256(raw).hexdigest()
 
 
 def historical_bytes(path):
-    """Permit only the exact approved packaging append in historical tests."""
+    """Normalize only measured Career repairs and the reviewed main merge."""
     raw=(ROOT/path).read_bytes()
+    # Other exact changes imported by ce423785 from main (946a5a82).
+    merged_files={
+        'requirements.txt':(
+            'a1e7943d7a45518d09a7e4a9983503549d7e44bd7f2e5d2acbcbdac5d0a6d078',
+            '6b015a9924d2ec7b4e2f053f1bd796ec4ce4265b02c42939e4e2a71ef83e6ea4',
+            b'\r\ngoogle-cloud-aiplatform[agent_engines,adk]\r\n',b''),
+        'tests/test_agents.py':(
+            '1bf4ba91bc48e8a6558b78f7a630c09ae700d87f0635a4468f8eeb662a0e95c6',
+            '56e2a7fc905759b9566320f398694296ec79703438b4864b775b5a6b55e68a93',
+            b'@pytest.mark.parametrize("agent", ["tutoring"])',
+            b'@pytest.mark.parametrize("agent", ["tutoring", "career", "success"])'),
+    }
+    if str(path).replace('\\','/') in merged_files:
+        before,merged,added,previous=merged_files[str(path).replace('\\','/')]
+        digest=sha(raw)
+        assert digest in {before,merged},'Unmeasured change after main merge: '+str(path)
+        if digest==before:return raw
+        assert raw.count(added)==1
+        old=raw.replace(added,previous,1)
+        assert sha(old)==before
+        return old
+    if str(path).replace('\\','/')=='agents/success/service.py':
+        # Merge ce423785 imported this exact Success implementation from main
+        # (946a5a82). Preserve the historical Career baseline, not a runtime copy.
+        before='229b089a2a4b8e719772d7dbe8a870d4ea1356d47a0e617b4305664f699b7e71'
+        merged='ced2dcbfdace4b97b72934fcb0f3739af65f662855fcfe87085bfbfff522014b'
+        digest=sha(raw)
+        assert digest in {before,merged},'Unmeasured Success change after main merge'
+        if digest==before:return raw
+        # Exact pre-merge fixture from 0db2e06a, including historical CRLF bytes.
+        old=('"""Implement the success agent here.\n\n'
+             'Return a string once your agent is integrated. Never fabricate university data.\n'
+             '"""\n\n'
+             'def answer(question: str) -> str | None:\n'
+             '    # TODO: implement agent logic and trusted data integrations.\n'
+             '    return None\n').replace('\n','\r\n').encode('utf8')
+        assert sha(old)==before
+        return old
     if str(path).replace('\\','/')=='agents/career/workflow/shared_evidence.py':
         m=json.loads((BASE/'career_networking_delivery_parity.json').read_text(encoding='utf8'))
         assert sha(raw)==m['new_shared_sha256'],'Unmeasured Networking adjudication change'

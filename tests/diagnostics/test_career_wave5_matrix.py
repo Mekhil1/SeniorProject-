@@ -85,11 +85,11 @@ class MatrixTests(unittest.TestCase):
             else:self.assertIn('CURRENT STATUS UNVERIFIED',r['final_answer'])
 
 
-def test_for(domain,mode):
+def make_case_test(domain,mode):
     def test(self):self.check_path(domain,mode)
     return test
 
 for domain in DOMAINS:
-    for mode in ('stable','current'):setattr(MatrixTests,'test_'+domain+'_'+mode,test_for(domain,mode))
+    for mode in ('stable','current'):setattr(MatrixTests,'test_'+domain+'_'+mode,make_case_test(domain,mode))
 
 if __name__=='__main__':unittest.main()

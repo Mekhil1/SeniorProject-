@@ -54,6 +54,30 @@ def test_mechanics_models_helpers_career_trust_root_and_previous_artifacts_uncha
         if name not in REPLACEMENTS:assert row['old_sha256']==row['new_sha256']
 
 
+@pytest.mark.parametrize('path,digest',[
+    ('agents/success/service.py','229b089a2a4b8e719772d7dbe8a870d4ea1356d47a0e617b4305664f699b7e71'),
+    ('requirements.txt','a1e7943d7a45518d09a7e4a9983503549d7e44bd7f2e5d2acbcbdac5d0a6d078'),
+    ('tests/test_agents.py','1bf4ba91bc48e8a6558b78f7a630c09ae700d87f0635a4468f8eeb662a0e95c6'),
+])
+def test_main_merge_adapter_accepts_only_reviewed_bytes(path,digest,tmp_path,monkeypatch):
+    import career_wave7_resume as adapter
+    merged=(ROOT/path).read_bytes()
+    historical=adapter.historical_bytes(path)
+    assert adapter.sha(historical)==digest
+    monkeypatch.setattr(adapter,'ROOT',tmp_path)
+    target=tmp_path/path;target.parent.mkdir(parents=True,exist_ok=True)
+    for accepted in (historical,merged):
+        target.write_bytes(accepted)
+        assert adapter.historical_bytes(path)==historical
+    target.write_bytes(merged+b'\n# Unreviewed change\n')
+    with pytest.raises(AssertionError,match='Unmeasured .*main merge'):
+        adapter.historical_bytes(path)
+    # The main-merge exceptions must never normalize arbitrary Career source.
+    career=tmp_path/'agents/career/service.py';career.parent.mkdir(parents=True)
+    career.write_bytes(b'Unreviewed Career source')
+    assert adapter.historical_bytes('agents/career/service.py')==career.read_bytes()
+
+
 def test_date_and_evidence_scopes_not_removed():
     for token in ('CURRENT YEAR','RELEVANT CYCLE','SEARCH YEAR','Unless overridden below','historical request or label',
                   'current official posting/policy','current official organization/program','current authoritative secondary','historical official',
