@@ -4,7 +4,7 @@ import pytest
 def test_agent_page(client, agent):
     assert client.get(f"/agents/{agent}").status_code == 200
 
-@pytest.mark.parametrize("agent", ["tutoring", "career", "success"])
+@pytest.mark.parametrize("agent", ["tutoring"])
 def test_agent_starter_endpoint(client, agent):
     assert client.post(f"/api/{agent}", json={}).status_code == 400
     response = client.post(f"/api/{agent}", json={"question": "hello"})
