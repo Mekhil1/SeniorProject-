@@ -1,0 +1,1063 @@
+{
+  "engine_id": "932407850586603520",
+  "runs": [
+    {
+      "id": "diagnostic_career_session_envelope",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "stable",
+      "prompt": "I'm interested in cloud security and risk management. What career paths should I explore?",
+      "started_utc": "2026-10-23T20:03:52.676110+00:00",
+      "auth_init_seconds": 3.455,
+      "events": [
+        {
+          "t": 0.554,
+          "author": "",
+          "parts": []
+        }
+      ],
+      "errors": [
+        {
+          "stage": "runtime",
+          "t": 0.554
+        }
+      ],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": null,
+      "transfer": null,
+      "final_answer": "",
+      "status": "runtime_error",
+      "capacity_failure": false,
+      "session_create_seconds": 0.938,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 0.556,
+      "actual_specialist": null,
+      "route_match": false,
+      "total_seconds": 1.495,
+      "classification": "DIAGNOSTIC_PROTOCOL_ERROR",
+      "diagnosis": "Harness extracted the operation name instead of response.name session resource. Backend already parses response.name correctly. Harness corrected; no runtime source change.",
+      "review": "DIAGNOSTIC_PROTOCOL_ERROR; excluded from product verdict"
+    },
+    {
+      "id": "rc_career_stable",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "stable",
+      "prompt": "I'm interested in cloud security and risk management. What career paths should I explore?",
+      "started_utc": "2026-10-23T20:06:05.642755+00:00",
+      "auth_init_seconds": 3.376,
+      "events": [
+        {
+          "t": 4.907,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 4.993,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 5.084,
+          "author": "career_exploration_agent",
+          "parts": []
+        },
+        {
+          "t": 28.948,
+          "author": "career_exploration_agent",
+          "parts": [
+            {
+              "text": "Exploring cloud security and risk management is an excellent direction. As organizations continue to migrate their systems and data to cloud environments, securing these complex, distributed infrastructures has become a critical priority. \n\nThis field is diverse, ranging from highly technical, hands-on coding roles to governance-focused, strategic analytical positions. Depending on whether you prefer **building and automating technical guardrails** or **analyzing risks and designing security policies**, there are several distinct career paths you can explore.\n\n---\n\n### Plausible Career Paths to Explore\n\n#### 1. Cloud Security Engineering\n* **The Focus:** Designing, building, and automating security controls directly within cloud environments.\n* **Typical Problems:** How do we ensure that our infrastructure-as-code templates don't deploy misconfigured servers? How do we implement automated threat detection across thousands of virtual machines?\n* **Day-to-Day Responsibilities:** \n  * Configuring Identity and Access Management (IAM) architectures using the principle of least privilege.\n  * Securing cloud networks, virtual private clouds (VPCs), and API endpoints.\n  * Writing automation scripts and integrating security scanning tools directly into the software development deployment pipeline.\n* **Who it fits:** Students who love programming, systems networking, and building tools to solve security challenges.\n\n#### 2. Cloud Security Risk & Compliance Analyst (Governance, Risk, and Compliance - GRC)\n* **The Focus:** Ensuring that cloud systems align with business objectives, manage digital risks, and comply with legal or industry standards.\n* **Typical Problems:** If we move our customer payment database to a third-party cloud service, what risks do we introduce, and how do we mitigate them? How do we prove to external auditors that our cloud configuration is secure?\n* **Day-to-Day Responsibilities:**\n  * Performing comprehensive risk assessments on cloud architectures and vendor services.\n  * Drafting cloud security policies, standards, and incident response guidelines.\n  * Maintaining the organization's \"risk register\"—identifying, analyzing, and documenting technical vulnerabilities and their potential business impacts.\n* **Who it fits:** Students who enjoy analytical thinking, technical writing, translating abstract policies into concrete technical requirements, and balancing security with business needs.\n\n#### 3. Cloud Security Operations (SecOps) Analyst\n* **The Focus:** Monitoring, threat hunting, and responding to live security events in cloud environments.\n* **Typical Problems:** Why is there a sudden spike in API calls from an unfamiliar IP address? Did a developer leak their access keys, or is this a benign automated process?\n* **Day-to-Day Responsibilities:**\n  * Monitoring cloud audit logs and security information dashboards.\n  * Investigating security alerts and containing active incidents (e.g., isolating a compromised cloud server).\n  * Developing automated playbooks to respond to common attack patterns.\n* **Who it fits:** Students who enjoy fast-paced problem-solving, threat investigation, forensic analysis, and defensive operations.\n\n---\n\n### Key Tradeoffs to Consider\n\n* **Coding & Technical Depth:** *Cloud Security Engineering* demands strong scripting skills (e.g., Python, Bash) and deep systems knowledge. *Risk & Compliance* requires a solid conceptual understanding of cloud architectures but focuses much more on strategic analysis, policy writing, and business risk evaluation rather than writing production code.\n* **Ambiguity vs. Structure:** *Engineering* tends to involve concrete technical problems with definitive solutions (e.g., fixing a broken configuration). *Risk Management* operates in \"gray areas,\" where you must negotiate tradeoffs between ideal security, budget constraints, and business speed.\n* **Collaboration & Interaction:** *Risk & Compliance* is highly collaborative, requiring regular communication with software developers, legal teams, executive leadership, and auditors. *SecOps* and *Engineering* are often more team-focused, coordinating primarily with other technical IT and DevOps teams.\n\n---\n\n### Low-Risk Experiments to Test Your Fit\n\nBefore committing to a single path, you can try these local, low-risk exercises to see which work style feels more rewarding:\n\n* **To test Cloud Security Engineering:** \n  * Try a hands-on exercise on your computer using a local container environment (like Docker). Practice deploying a simple application and configuring strict user access roles. Write a small script that automatically scans your local configuration file to flag security flaws, such as a port left open or a password hardcoded in a configuration file.\n* **To test Cloud Security Risk & Compliance:** \n  * Create a hypothetical risk register for a university web application (such as a student grade portal) hosted on cloud servers. Identify 3–4 major risks (e.g., database misconfiguration, weak password policies, or cloud service outages). For each risk, assess its likelihood and potential impact (High, Medium, Low), and write a clear, one-paragraph technical policy explaining how the university’s developers must configure the cloud environment to prevent it.\n\n---\n\n### Continuing Your Exploration\n\nTo help tailor this guidance and identify specific areas you might want to investigate next, what is your current context?\n\n1. **Academic Year & Coursework:** What academic year are you in, and what computer science courses have you enjoyed the most so far (e.g., Networking, Operating Systems, Database Systems, Software Engineering)?\n2. **Work Style Preference:** Do you find yourself more excited by writing code, configuring systems, and automating tasks, or do you prefer analyzing systems, planning, and evaluating business tradeoffs?\n3. **Prior Exposure:** Have you had any prior exposure to cloud technologies, security principles, or project work?"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 28.948,
+      "transfer": {
+        "t": 4.907,
+        "target": "career_exploration_agent"
+      },
+      "final_answer": "Exploring cloud security and risk management is an excellent direction. As organizations continue to migrate their systems and data to cloud environments, securing these complex, distributed infrastructures has become a critical priority. \n\nThis field is diverse, ranging from highly technical, hands-on coding roles to governance-focused, strategic analytical positions. Depending on whether you prefer **building and automating technical guardrails** or **analyzing risks and designing security policies**, there are several distinct career paths you can explore.\n\n---\n\n### Plausible Career Paths to Explore\n\n#### 1. Cloud Security Engineering\n* **The Focus:** Designing, building, and automating security controls directly within cloud environments.\n* **Typical Problems:** How do we ensure that our infrastructure-as-code templates don't deploy misconfigured servers? How do we implement automated threat detection across thousands of virtual machines?\n* **Day-to-Day Responsibilities:** \n  * Configuring Identity and Access Management (IAM) architectures using the principle of least privilege.\n  * Securing cloud networks, virtual private clouds (VPCs), and API endpoints.\n  * Writing automation scripts and integrating security scanning tools directly into the software development deployment pipeline.\n* **Who it fits:** Students who love programming, systems networking, and building tools to solve security challenges.\n\n#### 2. Cloud Security Risk & Compliance Analyst (Governance, Risk, and Compliance - GRC)\n* **The Focus:** Ensuring that cloud systems align with business objectives, manage digital risks, and comply with legal or industry standards.\n* **Typical Problems:** If we move our customer payment database to a third-party cloud service, what risks do we introduce, and how do we mitigate them? How do we prove to external auditors that our cloud configuration is secure?\n* **Day-to-Day Responsibilities:**\n  * Performing comprehensive risk assessments on cloud architectures and vendor services.\n  * Drafting cloud security policies, standards, and incident response guidelines.\n  * Maintaining the organization's \"risk register\"—identifying, analyzing, and documenting technical vulnerabilities and their potential business impacts.\n* **Who it fits:** Students who enjoy analytical thinking, technical writing, translating abstract policies into concrete technical requirements, and balancing security with business needs.\n\n#### 3. Cloud Security Operations (SecOps) Analyst\n* **The Focus:** Monitoring, threat hunting, and responding to live security events in cloud environments.\n* **Typical Problems:** Why is there a sudden spike in API calls from an unfamiliar IP address? Did a developer leak their access keys, or is this a benign automated process?\n* **Day-to-Day Responsibilities:**\n  * Monitoring cloud audit logs and security information dashboards.\n  * Investigating security alerts and containing active incidents (e.g., isolating a compromised cloud server).\n  * Developing automated playbooks to respond to common attack patterns.\n* **Who it fits:** Students who enjoy fast-paced problem-solving, threat investigation, forensic analysis, and defensive operations.\n\n---\n\n### Key Tradeoffs to Consider\n\n* **Coding & Technical Depth:** *Cloud Security Engineering* demands strong scripting skills (e.g., Python, Bash) and deep systems knowledge. *Risk & Compliance* requires a solid conceptual understanding of cloud architectures but focuses much more on strategic analysis, policy writing, and business risk evaluation rather than writing production code.\n* **Ambiguity vs. Structure:** *Engineering* tends to involve concrete technical problems with definitive solutions (e.g., fixing a broken configuration). *Risk Management* operates in \"gray areas,\" where you must negotiate tradeoffs between ideal security, budget constraints, and business speed.\n* **Collaboration & Interaction:** *Risk & Compliance* is highly collaborative, requiring regular communication with software developers, legal teams, executive leadership, and auditors. *SecOps* and *Engineering* are often more team-focused, coordinating primarily with other technical IT and DevOps teams.\n\n---\n\n### Low-Risk Experiments to Test Your Fit\n\nBefore committing to a single path, you can try these local, low-risk exercises to see which work style feels more rewarding:\n\n* **To test Cloud Security Engineering:** \n  * Try a hands-on exercise on your computer using a local container environment (like Docker). Practice deploying a simple application and configuring strict user access roles. Write a small script that automatically scans your local configuration file to flag security flaws, such as a port left open or a password hardcoded in a configuration file.\n* **To test Cloud Security Risk & Compliance:** \n  * Create a hypothetical risk register for a university web application (such as a student grade portal) hosted on cloud servers. Identify 3–4 major risks (e.g., database misconfiguration, weak password policies, or cloud service outages). For each risk, assess its likelihood and potential impact (High, Medium, Low), and write a clear, one-paragraph technical policy explaining how the university’s developers must configure the cloud environment to prevent it.\n\n---\n\n### Continuing Your Exploration\n\nTo help tailor this guidance and identify specific areas you might want to investigate next, what is your current context?\n\n1. **Academic Year & Coursework:** What academic year are you in, and what computer science courses have you enjoyed the most so far (e.g., Networking, Operating Systems, Database Systems, Software Engineering)?\n2. **Work Style Preference:** Do you find yourself more excited by writing code, configuring systems, and automating tasks, or do you prefer analyzing systems, planning, and evaluating business tradeoffs?\n3. **Prior Exposure:** Have you had any prior exposure to cloud technologies, security principles, or project work?",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.035,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 28.951,
+      "actual_specialist": "career_exploration_agent",
+      "route_match": true,
+      "total_seconds": 29.987,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_internship_stable",
+      "domain": "internship",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?",
+      "started_utc": "2026-10-23T20:07:02.363888+00:00",
+      "auth_init_seconds": 3.522,
+      "events": [
+        {
+          "t": 5.08,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 5.278,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 23.561,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for cybersecurity internships as a Computer Science senior requires a highly focused strategy. Because you are in your senior year, employers will expect a stronger grasp of foundational computer science concepts, practical systems knowledge, and a clear understanding of where you want to focus within the security domain. \n\nHere is a prioritized guide on how to approach your preparation, structure your strategy, and evaluate your options.\n\n---\n\n### 1. Address Your Graduation Timeline and Target Roles\nAs a senior, your graduation date heavily influences your application strategy. \n* **The \"Returning Student\" Rule:** Many formal internship programs require applicants to be enrolled in an academic program the semester *following* the internship (e.g., returning for a final semester or transitioning into a graduate program). \n* **Your Options:** \n  * If you graduate in **Fall/December**, you are often eligible for internships during the preceding summer.\n  * If you graduate in **Spring/May**, you may want to split your efforts: apply to post-graduation internships, but focus heavily on **entry-level full-time roles** (such as Junior Security Analyst, Associate Security Engineer, or SOC Analyst Tier 1). Many employers recruit seniors directly into these full-time roles.\n\n---\n\n### 2. Prioritize Technical Preparation\nEmployers expect CS seniors to transition quickly from theory to practice. Focus your preparation on these three foundational pillars:\n\n#### A. Hands-On Projects (Local Security Labs)\nThe most effective way to prove your readiness is through self-directed lab work. Instead of just reading, build things:\n* **Set Up a Home Lab:** Use a hypervisor (such as VirtualBox or VMware) to create a isolated network. Install a defensive operating system alongside a vulnerable machine to practice basic network monitoring and log analysis.\n* **Practice Scripting for Security:** Use Python or Bash to automate security tasks. Write scripts to parse log files, check for open ports, or automate simple file backups.\n* **Analyze Traffic:** Capture and inspect local network traffic using packet analysis tools to understand what standard protocols (such as HTTP, DNS, and DHCP) look like at the packet level.\n\n#### B. Core System and Network Administration\nSecurity sits on top of systems and networking. Make sure you are comfortable with:\n* **Command Line Proficiency:** Get comfortable navigating Linux and Windows environments using only the terminal (e.g., managing permissions, viewing active processes, searching system logs).\n* **Networking Fundamentals:** Understand IP routing, subnetting, firewalls, and the differences between TCP and UDP. \n\n#### C. Conceptual Frameworks\n* Understand standard vulnerability types, such as the **OWASP Top 10** for web applications.\n* Know the basics of security principles like Least Privilege, Defense in Depth, and Multi-Factor Authentication.\n\n---\n\n### 3. Organize Your Application Strategy\n* **Create an Application Tracker:** Use a spreadsheet to monitor roles, company names, application dates, required skills, and status.\n* **Target Diverse Industries:** Do not restrict yourself only to dedicated cybersecurity firms. Healthcare, finance, retail, local government, and defense contractors all hire robust security teams.\n* **Prepare to Explain Your CS Value:** As a CS major, you have a strong programming and algorithms background. Emphasize how your software development skills can help a security team automate defenses or analyze malicious code (Application Security/DevSecOps).\n\n---\n\n### Next Steps to Tailor Your Prep\nTo help personalize this guidance, could you share a bit more context?\n1. **What is your target graduation month and year?** (This will help define whether we should focus on summer internships, co-ops, or direct entry-level roles).\n2. **What specific areas of cybersecurity interest you most?** (e.g., Incident Response/SOC, Penetration Testing, Application Security, or Policy/Compliance?)\n3. **What cybersecurity coursework, projects, or self-study have you completed so far?**\n\n---\n\n### Specialist Handoffs\nDepending on what you need next, we can pull in a specialized agent to assist you:\n* **To design a specific, long-term learning plan or address skill gaps:** Let me know, and I will transfer you to the **Skill Gap & Career Roadmap Agent**.\n* **To evaluate cybersecurity certifications (like Security+, Network+, or others) to see if they fit your goals:** I can transfer you to the **Certification & Technical Development Agent**.\n* **To format your home labs and CS projects onto your resume:** I can transfer you to the **Resume & Portfolio Agent**."
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 23.561,
+      "transfer": {
+        "t": 5.08,
+        "target": "internship__job_preparation_agent"
+      },
+      "final_answer": "Preparing for cybersecurity internships as a Computer Science senior requires a highly focused strategy. Because you are in your senior year, employers will expect a stronger grasp of foundational computer science concepts, practical systems knowledge, and a clear understanding of where you want to focus within the security domain. \n\nHere is a prioritized guide on how to approach your preparation, structure your strategy, and evaluate your options.\n\n---\n\n### 1. Address Your Graduation Timeline and Target Roles\nAs a senior, your graduation date heavily influences your application strategy. \n* **The \"Returning Student\" Rule:** Many formal internship programs require applicants to be enrolled in an academic program the semester *following* the internship (e.g., returning for a final semester or transitioning into a graduate program). \n* **Your Options:** \n  * If you graduate in **Fall/December**, you are often eligible for internships during the preceding summer.\n  * If you graduate in **Spring/May**, you may want to split your efforts: apply to post-graduation internships, but focus heavily on **entry-level full-time roles** (such as Junior Security Analyst, Associate Security Engineer, or SOC Analyst Tier 1). Many employers recruit seniors directly into these full-time roles.\n\n---\n\n### 2. Prioritize Technical Preparation\nEmployers expect CS seniors to transition quickly from theory to practice. Focus your preparation on these three foundational pillars:\n\n#### A. Hands-On Projects (Local Security Labs)\nThe most effective way to prove your readiness is through self-directed lab work. Instead of just reading, build things:\n* **Set Up a Home Lab:** Use a hypervisor (such as VirtualBox or VMware) to create a isolated network. Install a defensive operating system alongside a vulnerable machine to practice basic network monitoring and log analysis.\n* **Practice Scripting for Security:** Use Python or Bash to automate security tasks. Write scripts to parse log files, check for open ports, or automate simple file backups.\n* **Analyze Traffic:** Capture and inspect local network traffic using packet analysis tools to understand what standard protocols (such as HTTP, DNS, and DHCP) look like at the packet level.\n\n#### B. Core System and Network Administration\nSecurity sits on top of systems and networking. Make sure you are comfortable with:\n* **Command Line Proficiency:** Get comfortable navigating Linux and Windows environments using only the terminal (e.g., managing permissions, viewing active processes, searching system logs).\n* **Networking Fundamentals:** Understand IP routing, subnetting, firewalls, and the differences between TCP and UDP. \n\n#### C. Conceptual Frameworks\n* Understand standard vulnerability types, such as the **OWASP Top 10** for web applications.\n* Know the basics of security principles like Least Privilege, Defense in Depth, and Multi-Factor Authentication.\n\n---\n\n### 3. Organize Your Application Strategy\n* **Create an Application Tracker:** Use a spreadsheet to monitor roles, company names, application dates, required skills, and status.\n* **Target Diverse Industries:** Do not restrict yourself only to dedicated cybersecurity firms. Healthcare, finance, retail, local government, and defense contractors all hire robust security teams.\n* **Prepare to Explain Your CS Value:** As a CS major, you have a strong programming and algorithms background. Emphasize how your software development skills can help a security team automate defenses or analyze malicious code (Application Security/DevSecOps).\n\n---\n\n### Next Steps to Tailor Your Prep\nTo help personalize this guidance, could you share a bit more context?\n1. **What is your target graduation month and year?** (This will help define whether we should focus on summer internships, co-ops, or direct entry-level roles).\n2. **What specific areas of cybersecurity interest you most?** (e.g., Incident Response/SOC, Penetration Testing, Application Security, or Policy/Compliance?)\n3. **What cybersecurity coursework, projects, or self-study have you completed so far?**\n\n---\n\n### Specialist Handoffs\nDepending on what you need next, we can pull in a specialized agent to assist you:\n* **To design a specific, long-term learning plan or address skill gaps:** Let me know, and I will transfer you to the **Skill Gap & Career Roadmap Agent**.\n* **To evaluate cybersecurity certifications (like Security+, Network+, or others) to see if they fit your goals:** I can transfer you to the **Certification & Technical Development Agent**.\n* **To format your home labs and CS projects onto your resume:** I can transfer you to the **Resume & Portfolio Agent**.",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 0.944,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 23.621,
+      "actual_specialist": "internship__job_preparation_agent",
+      "route_match": true,
+      "total_seconds": 24.567,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_resume_stable",
+      "domain": "resume",
+      "expected": "resume__portfolio_agent",
+      "mode": "stable",
+      "prompt": "What should I emphasize on my resume for an entry-level cloud security role?",
+      "started_utc": "2026-10-23T20:07:35.235008+00:00",
+      "auth_init_seconds": 3.276,
+      "events": [
+        {
+          "t": 3.862,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.957,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 22.753,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "text": "To stand out for an entry-level cloud security role, your resume needs to demonstrate a solid grasp of **cloud architecture**, **foundational systems/networking**, and **security principles (like identity management and securing infrastructure)**. Recruiters in this space look for hands-on exposure to cloud environments and an understanding of how security is integrated into modern development pipelines (DevSecOps).\n\nBelow is a structured guide to auditing your current resume. Once you review these guidelines, you can share your draft or details about your projects, and we can co-create or refine your specific bullet points.\n\n---\n\n### 1. Resume Audit Framework\n\n#### 🟢 KEEP & HIGHLIGHT (The Essentials)\n*   **Cloud Platform Exposure:** Any hands-on work with AWS, Azure, or GCP. Specify the exact services you used (e.g., AWS IAM, VPC, S3, KMS, CloudTrail; or Azure Active Directory, NSGs, Key Vault).\n*   **Systems & Networking Foundations:** Cloud security is built on top of traditional systems. Highlight your understanding of TCP/IP, DNS, subnets, firewalls, and Linux/Unix command-line navigation.\n*   **Scripting & Automation:** Security teams rely heavily on automation. Emphasize scripting languages like **Python** or **Bash** that you have used for automation, API integration, or log analysis.\n*   **Infrastructure as Code (IaC):** If you have used tools like **Terraform**, **Ansible**, or **CloudFormation**, list them prominently. Securing infrastructure *before* it is deployed (static analysis of IaC) is a highly sought-after skill.\n\n#### 🟡 IMPROVE (Reframing Generic Experience)\n*   **Class & Personal Projects:** Standard computer science projects can often be reframed to highlight cloud or security aspects. \n    *   *Instead of:* \"Hosted a web app on AWS.\"\n    *   *Aim for:* \"Deployed a secure three-tier web application on AWS, configuring a Virtual Private Cloud (VPC) with public and private subnets, Security Groups, and an Application Load Balancer to restrict unauthorized traffic.\"\n*   **Coursework:** Don't just list \"Information Security\" or \"Computer Networks.\" If you completed a significant lab or hands-on assignment in those classes (e.g., configuring firewalls, setting up VPNs, analyzing packet captures in Wireshark), describe it as a mini-project.\n\n#### 🔴 REMOVE OR VERIFY (Avoid Common Pitfalls)\n*   **Keyword Stuffing:** Do not list cloud security tools (e.g., Splunk, Wireshark, AWS GuardDuty, Kubernetes) unless you have actually used them in a project, lab, or internship. If asked in an interview, you must be able to explain *how* and *why* you used them.\n*   **Overly Broad Objectives:** Avoid generic resume objective statements like *\"Seeking a challenging software engineering role.\"* Instead, use a concise professional summary targeting cloud security, cloud engineering, or security operations.\n\n---\n\n### 2. How to Construct Strong Cloud Security Bullets\n\nWhen describing your projects or past experience, use this formula to ensure technical depth and clarity:\n\n$$\\text{Action Verb} + \\text{Technical Tool/Method} + \\text{Context/Responsibility} + \\text{Purpose or Outcome}$$\n\n#### Before vs. After Examples\n\n*   **Example 1: AWS Deployment**\n    *   *Weak (Generic):* \"Uploaded project files to an AWS S3 bucket and ran a database.\"\n    *   *Stronger (Security-focused):* \"Configured an AWS S3 bucket using the principle of least privilege, implementing bucket policies and AWS KMS encryption at rest to prevent unauthorized public access.\"\n\n*   **Example 2: Scripting/Automation**\n    *   *Weak (Generic):* \"Wrote a Python script to check for errors.\"\n    *   *Stronger (Security-focused):* \"Developed a Python script utilizing the Boto3 SDK to automatically scan AWS accounts for unencrypted EBS volumes, outputting compliance alerts to a system log.\"\n\n---\n\n### 3. Missing Evidence: Common Gaps to Address\nIf you find that your current resume lacks direct cloud security experience, you can bridge the gap by adding self-directed labs or projects. Some high-value, low-cost projects include:\n*   **IAM Policies Lab:** Build a project where you define fine-grained Identity and Access Management (IAM) policies, demonstrating an understanding of role-based access control (RBAC).\n*   **Static IaC Scanning:** Write a basic Terraform template to deploy cloud resources, and run a static security analysis tool (like Checkov or Tfsec) against it to identify and remediate security misconfigurations.\n*   **Cloud Log Analysis:** Set up a cloud logging service (like AWS CloudTrail or Azure Activity Log), trigger a simulated event (like a failed login or policy change), and use Python to parse the logs for suspicious behavior.\n\n---\n\n### Next Steps: Let's Build Your Resume\nTo help you tailor your resume specifically for entry-level cloud security roles, could you share a bit more context?\n1.  **Do you have an existing resume draft or a list of projects you would like to rewrite?** (Feel free to paste bullet points or project descriptions here).\n2.  **Which cloud platform(s) or security tools have you had exposure to**—either in class, through personal labs, or during internships?\n3.  **Are there specific job postings or target companies** you are looking at? *(If you have a specific posting, we can align your real experiences with their listed requirements).*"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 22.753,
+      "transfer": {
+        "t": 3.862,
+        "target": "resume__portfolio_agent"
+      },
+      "final_answer": "To stand out for an entry-level cloud security role, your resume needs to demonstrate a solid grasp of **cloud architecture**, **foundational systems/networking**, and **security principles (like identity management and securing infrastructure)**. Recruiters in this space look for hands-on exposure to cloud environments and an understanding of how security is integrated into modern development pipelines (DevSecOps).\n\nBelow is a structured guide to auditing your current resume. Once you review these guidelines, you can share your draft or details about your projects, and we can co-create or refine your specific bullet points.\n\n---\n\n### 1. Resume Audit Framework\n\n#### 🟢 KEEP & HIGHLIGHT (The Essentials)\n*   **Cloud Platform Exposure:** Any hands-on work with AWS, Azure, or GCP. Specify the exact services you used (e.g., AWS IAM, VPC, S3, KMS, CloudTrail; or Azure Active Directory, NSGs, Key Vault).\n*   **Systems & Networking Foundations:** Cloud security is built on top of traditional systems. Highlight your understanding of TCP/IP, DNS, subnets, firewalls, and Linux/Unix command-line navigation.\n*   **Scripting & Automation:** Security teams rely heavily on automation. Emphasize scripting languages like **Python** or **Bash** that you have used for automation, API integration, or log analysis.\n*   **Infrastructure as Code (IaC):** If you have used tools like **Terraform**, **Ansible**, or **CloudFormation**, list them prominently. Securing infrastructure *before* it is deployed (static analysis of IaC) is a highly sought-after skill.\n\n#### 🟡 IMPROVE (Reframing Generic Experience)\n*   **Class & Personal Projects:** Standard computer science projects can often be reframed to highlight cloud or security aspects. \n    *   *Instead of:* \"Hosted a web app on AWS.\"\n    *   *Aim for:* \"Deployed a secure three-tier web application on AWS, configuring a Virtual Private Cloud (VPC) with public and private subnets, Security Groups, and an Application Load Balancer to restrict unauthorized traffic.\"\n*   **Coursework:** Don't just list \"Information Security\" or \"Computer Networks.\" If you completed a significant lab or hands-on assignment in those classes (e.g., configuring firewalls, setting up VPNs, analyzing packet captures in Wireshark), describe it as a mini-project.\n\n#### 🔴 REMOVE OR VERIFY (Avoid Common Pitfalls)\n*   **Keyword Stuffing:** Do not list cloud security tools (e.g., Splunk, Wireshark, AWS GuardDuty, Kubernetes) unless you have actually used them in a project, lab, or internship. If asked in an interview, you must be able to explain *how* and *why* you used them.\n*   **Overly Broad Objectives:** Avoid generic resume objective statements like *\"Seeking a challenging software engineering role.\"* Instead, use a concise professional summary targeting cloud security, cloud engineering, or security operations.\n\n---\n\n### 2. How to Construct Strong Cloud Security Bullets\n\nWhen describing your projects or past experience, use this formula to ensure technical depth and clarity:\n\n$$\\text{Action Verb} + \\text{Technical Tool/Method} + \\text{Context/Responsibility} + \\text{Purpose or Outcome}$$\n\n#### Before vs. After Examples\n\n*   **Example 1: AWS Deployment**\n    *   *Weak (Generic):* \"Uploaded project files to an AWS S3 bucket and ran a database.\"\n    *   *Stronger (Security-focused):* \"Configured an AWS S3 bucket using the principle of least privilege, implementing bucket policies and AWS KMS encryption at rest to prevent unauthorized public access.\"\n\n*   **Example 2: Scripting/Automation**\n    *   *Weak (Generic):* \"Wrote a Python script to check for errors.\"\n    *   *Stronger (Security-focused):* \"Developed a Python script utilizing the Boto3 SDK to automatically scan AWS accounts for unencrypted EBS volumes, outputting compliance alerts to a system log.\"\n\n---\n\n### 3. Missing Evidence: Common Gaps to Address\nIf you find that your current resume lacks direct cloud security experience, you can bridge the gap by adding self-directed labs or projects. Some high-value, low-cost projects include:\n*   **IAM Policies Lab:** Build a project where you define fine-grained Identity and Access Management (IAM) policies, demonstrating an understanding of role-based access control (RBAC).\n*   **Static IaC Scanning:** Write a basic Terraform template to deploy cloud resources, and run a static security analysis tool (like Checkov or Tfsec) against it to identify and remediate security misconfigurations.\n*   **Cloud Log Analysis:** Set up a cloud logging service (like AWS CloudTrail or Azure Activity Log), trigger a simulated event (like a failed login or policy change), and use Python to parse the logs for suspicious behavior.\n\n---\n\n### Next Steps: Let's Build Your Resume\nTo help you tailor your resume specifically for entry-level cloud security roles, could you share a bit more context?\n1.  **Do you have an existing resume draft or a list of projects you would like to rewrite?** (Feel free to paste bullet points or project descriptions here).\n2.  **Which cloud platform(s) or security tools have you had exposure to**—either in class, through personal labs, or during internships?\n3.  **Are there specific job postings or target companies** you are looking at? *(If you have a specific posting, we can align your real experiences with their listed requirements).*",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 0.831,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 24.594,
+      "actual_specialist": "resume__portfolio_agent",
+      "route_match": true,
+      "total_seconds": 25.427,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_interview_stable",
+      "domain": "interview",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role.",
+      "started_utc": "2026-10-23T20:08:09.008121+00:00",
+      "auth_init_seconds": 3.305,
+      "events": [
+        {
+          "t": 3.787,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.88,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 3.967,
+          "author": "interview_preparation_agent",
+          "parts": []
+        },
+        {
+          "t": 21.361,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for an entry-level cybersecurity technical interview requires a shift from memorizing terms to explaining **concepts, attack vectors, and incident-handling logic**. Interviewers want to see how you think, how you troubleshoot, and how you approach security trade-offs.\n\nBecause cybersecurity spans many domains, here is a highly effective, industry-standard preparation strategy tailored to entry-level roles (such as SOC Analyst, Associate Security Engineer, or Junior Cybersecurity Consultant).\n\n---\n\n### 1. Master the Core Technical Pillars (General Patterns)\nEntry-level interviews typically assess your foundation. Focus your preparation on these four core areas:\n\n*   **Networking Fundamentals (The bedrock of security):**\n    *   **The OSI and TCP/IP Models:** Do not just list the layers; be able to explain how data flows through them (encapsulation) and where specific security devices (like firewalls or WAFs) operate.\n    *   **Common Ports and Protocols:** Know what runs on ports like 22 (SSH), 53 (DNS), 80 (HTTP), 443 (HTTPS), 3389 (RDP), etc., and whether they are secure or insecure.\n    *   **TCP Three-Way Handshake:** Explain the SYN, SYN-ACK, ACK process and how a TCP connection is established (and how attackers might abuse it, e.g., SYN flood DDoS).\n*   **Common Vulnerabilities & Attacks:**\n    *   **OWASP Top 10:** Understand web vulnerabilities like SQL Injection (SQLi) and Cross-Site Scripting (XSS). Be ready to explain the difference between them and basic remediation (like input validation or parameterized queries).\n    *   **Malware & Social Engineering:** Understand how phishing, ransomware, Trojans, and man-in-the-middle (MitM) attacks occur technically.\n*   **Security Concepts & Frameworks:**\n    *   **The CIA Triad:** Confidentiality, Integrity, and Availability. Be prepared to map everyday security controls (like encryption, hashing, and backups) to these three concepts.\n    *   **Cryptography:** Explain the difference between symmetric and asymmetric encryption, and understand the difference between encryption (for confidentiality) and hashing (for integrity).\n*   **Operating Systems & Command Line:**\n    *   Be comfortable explaining basic Linux or Windows commands for checking network connections (e.g., `netstat`, `ping`, `nslookup`, `ipconfig`/`ifconfig`) and viewing system logs.\n\n---\n\n### 2. Practice Scenario-Based Reasoning\nTechnical interviews often use \"What if?\" scenarios to evaluate your analytical process. They do not expect you to know everything, but they want to see a structured approach.\n\n*   **The \"Alert\" Scenario:** *“You receive an alert that a host on the internal network is communicating with a known malicious external IP. What do you do?”*\n    *   **Preparation Tip:** Use a structured incident response mindset (like PICERL: Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned). \n    *   **Your Strategy:** Explain how you would verify the alert (Identification), isolate the machine from the network (Containment), identify the malware or cause (Eradication), restore from clean backups (Recovery), and document the event.\n*   **The \"Trade-off\" Scenario:** *“A senior manager wants to bypass a security control to get their work done faster. How do you handle this?”*\n    *   **Preparation Tip:** Emphasize that security must support the business while managing risk. Focus on communication, proposing secure alternatives, or escalation processes rather than simply saying \"no.\"\n\n---\n\n### 3. Prepare to Discuss Your Lab and Tool Experience\nSince you are targeting an entry-level role, interviewers will look closely at hands-on projects, virtual labs, or home lab environments.\n*   **Tools:** Be ready to talk about how you’ve used tools like **Wireshark** (packet analysis), **Nmap** (network scanning), **Splunk** or **ELK** (SIEM/log analysis), or **Metasploit** (penetration testing) in a lab environment.\n*   **Projects:** When describing a project or lab, focus on:\n    *   **What** you built or analyzed (e.g., \"I set up a pfSense firewall in a virtual environment\").\n    *   **Why** you did it (e.g., \"To segment a vulnerable Windows VM from my host network\").\n    *   **What you learned** or discovered during the process.\n\n---\n\n### Next Steps: Let's Personalize Your Strategy\n\nTo tailor this preparation to your upcoming interview, could you tell me a little more about your target role and timeline?\n\n1.  **Do you have a specific role in mind** (e.g., SOC Analyst, Security Analyst, Junior Penetration Tester, or Cloud Security)?\n2.  **When is your interview scheduled**, or are you proactively preparing?\n3.  **Which areas do you feel most confident in**, and which ones do you feel are your biggest gaps (e.g., networking, coding/scripting, scenario questions, or tool familiarity)?\n\n**Would you like to start with a practice technical question or run a short, scenario-based mock interview?**"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 21.361,
+      "transfer": {
+        "t": 3.787,
+        "target": "interview_preparation_agent"
+      },
+      "final_answer": "Preparing for an entry-level cybersecurity technical interview requires a shift from memorizing terms to explaining **concepts, attack vectors, and incident-handling logic**. Interviewers want to see how you think, how you troubleshoot, and how you approach security trade-offs.\n\nBecause cybersecurity spans many domains, here is a highly effective, industry-standard preparation strategy tailored to entry-level roles (such as SOC Analyst, Associate Security Engineer, or Junior Cybersecurity Consultant).\n\n---\n\n### 1. Master the Core Technical Pillars (General Patterns)\nEntry-level interviews typically assess your foundation. Focus your preparation on these four core areas:\n\n*   **Networking Fundamentals (The bedrock of security):**\n    *   **The OSI and TCP/IP Models:** Do not just list the layers; be able to explain how data flows through them (encapsulation) and where specific security devices (like firewalls or WAFs) operate.\n    *   **Common Ports and Protocols:** Know what runs on ports like 22 (SSH), 53 (DNS), 80 (HTTP), 443 (HTTPS), 3389 (RDP), etc., and whether they are secure or insecure.\n    *   **TCP Three-Way Handshake:** Explain the SYN, SYN-ACK, ACK process and how a TCP connection is established (and how attackers might abuse it, e.g., SYN flood DDoS).\n*   **Common Vulnerabilities & Attacks:**\n    *   **OWASP Top 10:** Understand web vulnerabilities like SQL Injection (SQLi) and Cross-Site Scripting (XSS). Be ready to explain the difference between them and basic remediation (like input validation or parameterized queries).\n    *   **Malware & Social Engineering:** Understand how phishing, ransomware, Trojans, and man-in-the-middle (MitM) attacks occur technically.\n*   **Security Concepts & Frameworks:**\n    *   **The CIA Triad:** Confidentiality, Integrity, and Availability. Be prepared to map everyday security controls (like encryption, hashing, and backups) to these three concepts.\n    *   **Cryptography:** Explain the difference between symmetric and asymmetric encryption, and understand the difference between encryption (for confidentiality) and hashing (for integrity).\n*   **Operating Systems & Command Line:**\n    *   Be comfortable explaining basic Linux or Windows commands for checking network connections (e.g., `netstat`, `ping`, `nslookup`, `ipconfig`/`ifconfig`) and viewing system logs.\n\n---\n\n### 2. Practice Scenario-Based Reasoning\nTechnical interviews often use \"What if?\" scenarios to evaluate your analytical process. They do not expect you to know everything, but they want to see a structured approach.\n\n*   **The \"Alert\" Scenario:** *“You receive an alert that a host on the internal network is communicating with a known malicious external IP. What do you do?”*\n    *   **Preparation Tip:** Use a structured incident response mindset (like PICERL: Preparation, Identification, Containment, Eradication, Recovery, Lessons Learned). \n    *   **Your Strategy:** Explain how you would verify the alert (Identification), isolate the machine from the network (Containment), identify the malware or cause (Eradication), restore from clean backups (Recovery), and document the event.\n*   **The \"Trade-off\" Scenario:** *“A senior manager wants to bypass a security control to get their work done faster. How do you handle this?”*\n    *   **Preparation Tip:** Emphasize that security must support the business while managing risk. Focus on communication, proposing secure alternatives, or escalation processes rather than simply saying \"no.\"\n\n---\n\n### 3. Prepare to Discuss Your Lab and Tool Experience\nSince you are targeting an entry-level role, interviewers will look closely at hands-on projects, virtual labs, or home lab environments.\n*   **Tools:** Be ready to talk about how you’ve used tools like **Wireshark** (packet analysis), **Nmap** (network scanning), **Splunk** or **ELK** (SIEM/log analysis), or **Metasploit** (penetration testing) in a lab environment.\n*   **Projects:** When describing a project or lab, focus on:\n    *   **What** you built or analyzed (e.g., \"I set up a pfSense firewall in a virtual environment\").\n    *   **Why** you did it (e.g., \"To segment a vulnerable Windows VM from my host network\").\n    *   **What you learned** or discovered during the process.\n\n---\n\n### Next Steps: Let's Personalize Your Strategy\n\nTo tailor this preparation to your upcoming interview, could you tell me a little more about your target role and timeline?\n\n1.  **Do you have a specific role in mind** (e.g., SOC Analyst, Security Analyst, Junior Penetration Tester, or Cloud Security)?\n2.  **When is your interview scheduled**, or are you proactively preparing?\n3.  **Which areas do you feel most confident in**, and which ones do you feel are your biggest gaps (e.g., networking, coding/scripting, scenario questions, or tool familiarity)?\n\n**Would you like to start with a practice technical question or run a short, scenario-based mock interview?**",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.979,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 21.484,
+      "actual_specialist": "interview_preparation_agent",
+      "route_match": true,
+      "total_seconds": 23.464,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_networking_stable",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "started_utc": "2026-10-23T20:08:40.787654+00:00",
+      "auth_init_seconds": 3.286,
+      "events": [
+        {
+          "t": 3.547,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.699,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 3.774,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 13.648,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "Introducing yourself to a cybersecurity recruiter is all about showing your specific technical interest, establishing your context as a Computer Science student at Morgan State University, and making a clear, low-pressure request. \n\nHow you introduce yourself depends on whether you are speaking to them in person (like at a career fair) or sending a written message (like on LinkedIn or via email). \n\nHere is a breakdown of how to structure your introduction, followed by a few natural examples.\n\n---\n\n### The Core Structure of a Strong Introduction\nA great introduction is concise and typically includes four key elements:\n1. **Who you are:** Your name, major (Computer Science at Morgan State), and year.\n2. **Your focus:** Your specific interest within cybersecurity (e.g., security analysis, network security, penetration testing, or governance/risk/compliance).\n3. **Your proof point:** A brief mention of a hands-on project, relevant class, lab environment, or certification you are working on. *Keep this factual and brief.*\n4. **Your goal (Call to Action):** What you want from the interaction (e.g., learning about their internship program, asking a specific question, or starting a professional connection).\n\n---\n\n### Example 1: Verbal Introduction (Elevator Pitch for Career Fairs or Networking Events)\n*This is conversational and takes about 30 to 45 seconds to say naturally.*\n\n> \"Hi, I’m [Name]. I’m a [Junior/Senior] Computer Science major at Morgan State University, and I’m focusing my studies on cybersecurity. \n> \n> Recently, I’ve been working on [mention a specific class project, home lab, or competition, e.g., configuring firewalls in a virtual lab environment / participating in a capture-the-flag event]. I’m really interested in security analyst roles, and I saw that your team has an upcoming summer internship. Could you tell me a bit about what your team looks for in a successful cybersecurity intern?\"\n\n---\n\n### Example 2: Written Message (For LinkedIn or a Short Email)\n*This is brief, direct, and avoids overly formal corporate jargon.*\n\n> **Subject:** Morgan State CS Student – Cybersecurity Inquiry *(for email)*\n> \n> \"Hi [Recruiter Name],\n> \n> I hope you're having a great week. My name is [Name], and I’m a Computer Science [Junior/Senior] at Morgan State University focusing on cybersecurity. \n> \n> I've been following [Company Name]'s work in [mention a specific area if you know it, e.g., cloud security / threat intelligence], and I wanted to connect. I'm preparing to apply for cybersecurity roles for this coming [Summer/Fall] and would love to keep in touch as opportunities open up. \n> \n> If you have a few moments, I'd appreciate any quick advice you have for a student looking to stand out in the application process. \n> \n> Best regards,\n> [Your Name]\"\n\n---\n\n### Let's Tailor This For You\nTo help you draft a highly personalized introduction that sounds authentic to your voice, tell me a little more about your situation:\n\n1. **Where will you be using this introduction?** (e.g., LinkedIn message, email, an upcoming career fair, or a virtual networking event)\n2. **What is your academic year?** (Sophomore, Junior, Senior, etc.)\n3. **What is one cybersecurity project, class, lab, or concept you've worked on that you actually enjoyed?** (This gives the recruiter something specific to remember you by.)\n4. **Is there a specific company or role you are targeting right now?**"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 13.648,
+      "transfer": {
+        "t": 3.547,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "Introducing yourself to a cybersecurity recruiter is all about showing your specific technical interest, establishing your context as a Computer Science student at Morgan State University, and making a clear, low-pressure request. \n\nHow you introduce yourself depends on whether you are speaking to them in person (like at a career fair) or sending a written message (like on LinkedIn or via email). \n\nHere is a breakdown of how to structure your introduction, followed by a few natural examples.\n\n---\n\n### The Core Structure of a Strong Introduction\nA great introduction is concise and typically includes four key elements:\n1. **Who you are:** Your name, major (Computer Science at Morgan State), and year.\n2. **Your focus:** Your specific interest within cybersecurity (e.g., security analysis, network security, penetration testing, or governance/risk/compliance).\n3. **Your proof point:** A brief mention of a hands-on project, relevant class, lab environment, or certification you are working on. *Keep this factual and brief.*\n4. **Your goal (Call to Action):** What you want from the interaction (e.g., learning about their internship program, asking a specific question, or starting a professional connection).\n\n---\n\n### Example 1: Verbal Introduction (Elevator Pitch for Career Fairs or Networking Events)\n*This is conversational and takes about 30 to 45 seconds to say naturally.*\n\n> \"Hi, I’m [Name]. I’m a [Junior/Senior] Computer Science major at Morgan State University, and I’m focusing my studies on cybersecurity. \n> \n> Recently, I’ve been working on [mention a specific class project, home lab, or competition, e.g., configuring firewalls in a virtual lab environment / participating in a capture-the-flag event]. I’m really interested in security analyst roles, and I saw that your team has an upcoming summer internship. Could you tell me a bit about what your team looks for in a successful cybersecurity intern?\"\n\n---\n\n### Example 2: Written Message (For LinkedIn or a Short Email)\n*This is brief, direct, and avoids overly formal corporate jargon.*\n\n> **Subject:** Morgan State CS Student – Cybersecurity Inquiry *(for email)*\n> \n> \"Hi [Recruiter Name],\n> \n> I hope you're having a great week. My name is [Name], and I’m a Computer Science [Junior/Senior] at Morgan State University focusing on cybersecurity. \n> \n> I've been following [Company Name]'s work in [mention a specific area if you know it, e.g., cloud security / threat intelligence], and I wanted to connect. I'm preparing to apply for cybersecurity roles for this coming [Summer/Fall] and would love to keep in touch as opportunities open up. \n> \n> If you have a few moments, I'd appreciate any quick advice you have for a student looking to stand out in the application process. \n> \n> Best regards,\n> [Your Name]\"\n\n---\n\n### Let's Tailor This For You\nTo help you draft a highly personalized introduction that sounds authentic to your voice, tell me a little more about your situation:\n\n1. **Where will you be using this introduction?** (e.g., LinkedIn message, email, an upcoming career fair, or a virtual networking event)\n2. **What is your academic year?** (Sophomore, Junior, Senior, etc.)\n3. **What is one cybersecurity project, class, lab, or concept you've worked on that you actually enjoyed?** (This gives the recruiter something specific to remember you by.)\n4. **Is there a specific company or role you are targeting right now?**",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 0.85,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 13.813,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 14.664,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_roadmap_stable",
+      "domain": "roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "stable",
+      "prompt": "I want to become a cloud security engineer. What skills should I build over the next year?",
+      "started_utc": "2026-10-23T20:09:03.858339+00:00",
+      "auth_init_seconds": 3.379,
+      "events": [
+        {
+          "t": 3.915,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 4.007,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 27.554,
+          "author": "skill_gap__career_roadmap_agent",
+          "parts": [
+            {
+              "text": "To build a successful path toward becoming a **Cloud Security Engineer** over the next year, it is highly effective to focus on building sequential, demonstrable capabilities rather than just collecting a list of technologies or tools. \n\nBecause cloud security relies heavily on a strong understanding of underlying systems, a typical development roadmap progresses from core networking and systems up to cloud architecture and automated security.\n\nTo help me tailor this roadmap specifically to you, **what is your current background?** (e.g., your current academic year, what coursework you have completed, any programming languages or tools you already know, and how many hours per week you can dedicate to this). \n\nOnce you share those details, we can map out your specific **Current Strengths**, **Meaningful Gaps**, and **Next Actions**. In the meantime, here is a foundational roadmap structure commonly recommended in the industry for preparing for cloud security roles.\n\n---\n\n### Conceptual Cloud Security Roadmap (1-Year Horizon)\n\n#### **Phase 1: Networking, Systems, & Identity Foundations (Months 1–3)**\nBefore securing the cloud, you must understand how data moves and how systems are partitioned.\n*   **What to learn:**\n    *   **TCP/IP Networking:** Subnetting, CIDR blocks, DNS, HTTP/S, and routing.\n    *   **Linux Systems Administration:** Command-line navigation, file permissions, shell scripting (Bash), and process management.\n    *   **Identity & Access Management (IAM) Concepts:** Authentication (AuthN) vs. Authorization (AuthZ), Least Privilege principle, and Single Sign-On (SSO).\n*   **Why it matters:** Cloud environments are software-defined data centers. Misconfigured networks and overly permissive access policies are among the most common causes of cloud data breaches.\n*   **What to practice:** \n    *   Configure a local virtual machine (using toolsets like VirtualBox) running a Linux distribution. Practice restricting file permissions and writing basic shell scripts to parse system log files.\n*   **Evidence of progress:** A documented guide or local lab setup showing you can restrict network access and manage users/groups programmatically on a system.\n\n#### **Phase 2: Cloud Core & Infrastructure-as-Code (Months 4–6)**\nAt this stage, you transition from local systems to managing resources in a cloud environment (e.g., AWS, Microsoft Azure, or Google Cloud Platform).\n*   **What to learn:**\n    *   **Core Cloud Services:** Compute instances, object storage, virtual private clouds (VPCs), and managed databases.\n    *   **Infrastructure-as-Code (IaC):** Tools like Terraform or cloud-native templates (AWS CloudFormation, Azure ARM) to define infrastructure as text files.\n*   **Why it matters:** Modern cloud security engineers do not click buttons in a web console to deploy resources; they write and audit code that defines the infrastructure.\n*   **What to practice:**\n    *   Write a Terraform configuration script to deploy a basic network (VPC/VNet) containing a secure, private virtual machine that can only be accessed via a secure bastion host or VPN gateway.\n*   **Evidence of progress:** A GitHub repository hosting your IaC configuration files, with a README explaining the architecture and security design choices.\n\n#### **Phase 3: Cloud Security & Policy-as-Code (Months 7–9)**\nWith the cloud infrastructure in place, you learn to enforce security guardrails automatically.\n*   **What to learn:**\n    *   **Cloud IAM Policy Design:** Writing precise JSON or XML policies that grant minimal access.\n    *   **Data Protection:** Encryption-at-rest, encryption-in-transit, key management services (KMS), and SSL/TLS certificates.\n    *   **Policy-as-Code/Compliance:** Auditing infrastructure configurations using static analysis tools (e.g., Checkov, Tfsec, or native cloud configuration rules).\n*   **Why it matters:** Security engineers must scale their expertise by writing automated rules that prevent developers from deploying insecure architecture.\n*   **What to practice:**\n    *   Run a static analysis tool against your Phase 2 Terraform code. Identify security flaws (like open ports or unencrypted storage buckets), fix the code, and document how the tool prevented those misconfigurations.\n*   **Evidence of progress:** A technical write-up or repository showing the \"before and after\" of your security audit, detailing how you remediated the vulnerabilities.\n\n#### **Phase 4: DevSecOps & Monitoring (Months 10–12)**\nIn the final phase, you integrate security checks into the software deployment pipeline and learn to detect active threats.\n*   **What to learn:**\n    *   **CI/CD Pipelines:** Building deployment workflows (using platforms like GitHub Actions or GitLab CI).\n    *   **Logging & Monitoring:** Setting up centralized logging, metric collection, and alerting configurations.\n    *   **Container Security:** Basic Docker containerization and securing container images.\n*   **Why it matters:** Security must move at the speed of software development. Automated security checks in the deployment pipeline ensure vulnerabilities are caught before they reach production.\n*   **What to practice:**\n    *   Create a simple GitHub Actions workflow that automatically triggers a security scan every time you push code to your repository, blocking the deployment if a critical vulnerability is found.\n*   **Evidence of progress:** A fully automated pipeline demonstrating continuous integration and continuous deployment (CI/CD) with security gates.\n\n---\n\n### Trade-offs to Consider\n*   **Breadth vs. Depth:** Trying to learn multiple cloud providers (AWS, Azure, *and* GCP) at the same time can be overwhelming. It is generally recommended to build deep capability in **one** provider first. The security concepts (IAM, encryption, network isolation) transfer easily to other platforms later.\n*   **Paid vs. Free Tiers:** When practicing in cloud environments, monitor your usage carefully to avoid unexpected charges. Emphasize local simulation tools (like LocalStack for AWS) or use budgets/billing alerts early in your learning process.\n\n---\n\n### Next Steps & How We Can Customize This\n\nTo customize this roadmap into an actionable, personalized plan for your next year, **please share a bit about your current background**:\n1. What computer science coursework (e.g., networks, operating systems, database systems) have you completed or are currently taking?\n2. Do you have any experience with programming languages (like Python, Go, or Java) or scripting?\n3. Approximately how many hours per week do you have available to dedicate to self-study and hands-on projects outside of your regular coursework?\n\n*(Note: If you want to evaluate specific certifications to support this roadmap, we can transfer your request to our **Certification & Technical Development Agent**. If you are looking to start searching for active internships or job listings, we can transfer you to our **Internship & Job Preparation Agent**.)*"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 27.554,
+      "transfer": {
+        "t": 3.915,
+        "target": "skill_gap__career_roadmap_agent"
+      },
+      "final_answer": "To build a successful path toward becoming a **Cloud Security Engineer** over the next year, it is highly effective to focus on building sequential, demonstrable capabilities rather than just collecting a list of technologies or tools. \n\nBecause cloud security relies heavily on a strong understanding of underlying systems, a typical development roadmap progresses from core networking and systems up to cloud architecture and automated security.\n\nTo help me tailor this roadmap specifically to you, **what is your current background?** (e.g., your current academic year, what coursework you have completed, any programming languages or tools you already know, and how many hours per week you can dedicate to this). \n\nOnce you share those details, we can map out your specific **Current Strengths**, **Meaningful Gaps**, and **Next Actions**. In the meantime, here is a foundational roadmap structure commonly recommended in the industry for preparing for cloud security roles.\n\n---\n\n### Conceptual Cloud Security Roadmap (1-Year Horizon)\n\n#### **Phase 1: Networking, Systems, & Identity Foundations (Months 1–3)**\nBefore securing the cloud, you must understand how data moves and how systems are partitioned.\n*   **What to learn:**\n    *   **TCP/IP Networking:** Subnetting, CIDR blocks, DNS, HTTP/S, and routing.\n    *   **Linux Systems Administration:** Command-line navigation, file permissions, shell scripting (Bash), and process management.\n    *   **Identity & Access Management (IAM) Concepts:** Authentication (AuthN) vs. Authorization (AuthZ), Least Privilege principle, and Single Sign-On (SSO).\n*   **Why it matters:** Cloud environments are software-defined data centers. Misconfigured networks and overly permissive access policies are among the most common causes of cloud data breaches.\n*   **What to practice:** \n    *   Configure a local virtual machine (using toolsets like VirtualBox) running a Linux distribution. Practice restricting file permissions and writing basic shell scripts to parse system log files.\n*   **Evidence of progress:** A documented guide or local lab setup showing you can restrict network access and manage users/groups programmatically on a system.\n\n#### **Phase 2: Cloud Core & Infrastructure-as-Code (Months 4–6)**\nAt this stage, you transition from local systems to managing resources in a cloud environment (e.g., AWS, Microsoft Azure, or Google Cloud Platform).\n*   **What to learn:**\n    *   **Core Cloud Services:** Compute instances, object storage, virtual private clouds (VPCs), and managed databases.\n    *   **Infrastructure-as-Code (IaC):** Tools like Terraform or cloud-native templates (AWS CloudFormation, Azure ARM) to define infrastructure as text files.\n*   **Why it matters:** Modern cloud security engineers do not click buttons in a web console to deploy resources; they write and audit code that defines the infrastructure.\n*   **What to practice:**\n    *   Write a Terraform configuration script to deploy a basic network (VPC/VNet) containing a secure, private virtual machine that can only be accessed via a secure bastion host or VPN gateway.\n*   **Evidence of progress:** A GitHub repository hosting your IaC configuration files, with a README explaining the architecture and security design choices.\n\n#### **Phase 3: Cloud Security & Policy-as-Code (Months 7–9)**\nWith the cloud infrastructure in place, you learn to enforce security guardrails automatically.\n*   **What to learn:**\n    *   **Cloud IAM Policy Design:** Writing precise JSON or XML policies that grant minimal access.\n    *   **Data Protection:** Encryption-at-rest, encryption-in-transit, key management services (KMS), and SSL/TLS certificates.\n    *   **Policy-as-Code/Compliance:** Auditing infrastructure configurations using static analysis tools (e.g., Checkov, Tfsec, or native cloud configuration rules).\n*   **Why it matters:** Security engineers must scale their expertise by writing automated rules that prevent developers from deploying insecure architecture.\n*   **What to practice:**\n    *   Run a static analysis tool against your Phase 2 Terraform code. Identify security flaws (like open ports or unencrypted storage buckets), fix the code, and document how the tool prevented those misconfigurations.\n*   **Evidence of progress:** A technical write-up or repository showing the \"before and after\" of your security audit, detailing how you remediated the vulnerabilities.\n\n#### **Phase 4: DevSecOps & Monitoring (Months 10–12)**\nIn the final phase, you integrate security checks into the software deployment pipeline and learn to detect active threats.\n*   **What to learn:**\n    *   **CI/CD Pipelines:** Building deployment workflows (using platforms like GitHub Actions or GitLab CI).\n    *   **Logging & Monitoring:** Setting up centralized logging, metric collection, and alerting configurations.\n    *   **Container Security:** Basic Docker containerization and securing container images.\n*   **Why it matters:** Security must move at the speed of software development. Automated security checks in the deployment pipeline ensure vulnerabilities are caught before they reach production.\n*   **What to practice:**\n    *   Create a simple GitHub Actions workflow that automatically triggers a security scan every time you push code to your repository, blocking the deployment if a critical vulnerability is found.\n*   **Evidence of progress:** A fully automated pipeline demonstrating continuous integration and continuous deployment (CI/CD) with security gates.\n\n---\n\n### Trade-offs to Consider\n*   **Breadth vs. Depth:** Trying to learn multiple cloud providers (AWS, Azure, *and* GCP) at the same time can be overwhelming. It is generally recommended to build deep capability in **one** provider first. The security concepts (IAM, encryption, network isolation) transfer easily to other platforms later.\n*   **Paid vs. Free Tiers:** When practicing in cloud environments, monitor your usage carefully to avoid unexpected charges. Emphasize local simulation tools (like LocalStack for AWS) or use budgets/billing alerts early in your learning process.\n\n---\n\n### Next Steps & How We Can Customize This\n\nTo customize this roadmap into an actionable, personalized plan for your next year, **please share a bit about your current background**:\n1. What computer science coursework (e.g., networks, operating systems, database systems) have you completed or are currently taking?\n2. Do you have any experience with programming languages (like Python, Go, or Java) or scripting?\n3. Approximately how many hours per week do you have available to dedicate to self-study and hands-on projects outside of your regular coursework?\n\n*(Note: If you want to evaluate specific certifications to support this roadmap, we can transfer your request to our **Certification & Technical Development Agent**. If you are looking to start searching for active internships or job listings, we can transfer you to our **Internship & Job Preparation Agent**.)*",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.199,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 27.558,
+      "actual_specialist": "skill_gap__career_roadmap_agent",
+      "route_match": true,
+      "total_seconds": 28.758,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_research_stable",
+      "domain": "research",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "stable",
+      "prompt": "How should I decide between graduate school and going directly into cybersecurity industry work?",
+      "started_utc": "2026-10-23T20:09:41.025617+00:00",
+      "auth_init_seconds": 3.379,
+      "events": [
+        {
+          "t": 7.728,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 7.766,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 7.96,
+          "author": "research__graduate_pathways_agent",
+          "parts": []
+        },
+        {
+          "t": 20.63,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "text": "Deciding whether to enter the cybersecurity industry directly after your undergraduate degree or to pursue graduate school (such as a Master's or a PhD) is a major milestone. Both pathways offer excellent, though very different, trajectories. \n\nTo help you weigh these options, we can look at the typical trade-offs across several key dimensions: **career goals, day-to-day focus, financial considerations, and learning style.**\n\n---\n\n### 1. Career Goals & Typical Roles\n*   **Going Directly into Industry:** The cybersecurity industry highly values hands-on, applied skills. Entering the workforce with a Bachelor’s degree typically leads to roles such as Security Analyst, Penetration Tester, Incident Responder, or Security Engineer. Progression in these roles is often driven by technical experience, proven problem-solving on the job, and industry certifications.\n*   **Pursuing a Master’s Degree (MS):** A Master's program can be highly beneficial if you want to specialize deeply in a complex sub-field (such as cryptography, security architecture, or machine learning for security) or if you want to transition into security management/leadership. Some students also use a Master's to pivot into CS/cybersecurity from a different undergraduate background.\n*   **Pursuing a Doctorate (PhD):** A PhD is fundamentally a research degree. If your dream is to invent new security technologies, design novel cryptographic protocols, work as a Research Scientist in industrial labs (like Intel, Microsoft, or federal labs), or teach as a university professor, a PhD is often the standard path. It is less about learning how to use existing security tools and more about creating the tools and methodologies of the future.\n\n### 2. Nature of the Work & Learning Style\n*   **Industry Work:** Often fast-paced, operational, and focused on immediate defense, compliance, or risk mitigation. You will be working with real-world, real-time systems, resolving active threats, and collaborating with business stakeholders. \n*   **Graduate Research:** Highly conceptual, self-directed, and focused on deep, unsolved questions. You will spend significant time reading academic papers, writing, designing experiments, and dealing with the ambiguity of problems that do not have existing solutions.\n\n### 3. Financial Impact & Opportunity Cost\n*   **Immediate Industry:** You begin earning a professional salary immediately, gaining years of industry experience, and potentially receiving employer-sponsored benefits (including, in many cases, tuition assistance if you decide to go to school part-time later).\n*   **Graduate School Funding:** \n    *   *Master’s Programs:* These are frequently self-funded or funded through loans, though some students secure Teaching Assistantships (TAs), Research Assistantships (RAs), or employer sponsorships.\n    *   *PhD Programs:* Many doctoral programs offer funding packages (tuition waivers plus a stipend) through fellowships, RAs, or TAs, though this is highly program-specific and never guaranteed. The primary cost here is the \"opportunity cost\" of delayed full-time industry earnings for 4 to 6 years.\n\n---\n\n### Low-Risk Ways to Test Both Paths\n\nIf you are on the fence, you do not have to make a blind choice. You can test your affinity for both environments:\n1.  **Try a Research Project:** Work with a faculty member at Morgan State on a cybersecurity research project for a semester, or apply for a summer Research Experience for Undergraduates (REU). This will give you a taste of what graduate-level research actually feels like.\n2.  **Read Academic Papers:** Look up recent papers from top security conferences (like IEEE S&P, USENIX Security, ACM CCS, or NDSS). If you find the academic approach to security problems fascinating, graduate school might be a great fit.\n3.  **The \"Middle Ground\" (Industry First + Part-Time MS):** Many cybersecurity professionals start working immediately and have their employers pay for a part-time Master’s degree. This allows you to gain industry experience, earn a salary, and obtain an advanced degree simultaneously.\n\n---\n\n### Helping Us Personalize Your Path\n\nTo help tailor this advice, where are you currently in your academic journey? Sharing your **academic year**, **specific security interests** (e.g., network defense, malware analysis, cryptography, policy), and **any prior internship or research experience** would help us map out some concrete options!"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 20.63,
+      "transfer": {
+        "t": 7.728,
+        "target": "research__graduate_pathways_agent"
+      },
+      "final_answer": "Deciding whether to enter the cybersecurity industry directly after your undergraduate degree or to pursue graduate school (such as a Master's or a PhD) is a major milestone. Both pathways offer excellent, though very different, trajectories. \n\nTo help you weigh these options, we can look at the typical trade-offs across several key dimensions: **career goals, day-to-day focus, financial considerations, and learning style.**\n\n---\n\n### 1. Career Goals & Typical Roles\n*   **Going Directly into Industry:** The cybersecurity industry highly values hands-on, applied skills. Entering the workforce with a Bachelor’s degree typically leads to roles such as Security Analyst, Penetration Tester, Incident Responder, or Security Engineer. Progression in these roles is often driven by technical experience, proven problem-solving on the job, and industry certifications.\n*   **Pursuing a Master’s Degree (MS):** A Master's program can be highly beneficial if you want to specialize deeply in a complex sub-field (such as cryptography, security architecture, or machine learning for security) or if you want to transition into security management/leadership. Some students also use a Master's to pivot into CS/cybersecurity from a different undergraduate background.\n*   **Pursuing a Doctorate (PhD):** A PhD is fundamentally a research degree. If your dream is to invent new security technologies, design novel cryptographic protocols, work as a Research Scientist in industrial labs (like Intel, Microsoft, or federal labs), or teach as a university professor, a PhD is often the standard path. It is less about learning how to use existing security tools and more about creating the tools and methodologies of the future.\n\n### 2. Nature of the Work & Learning Style\n*   **Industry Work:** Often fast-paced, operational, and focused on immediate defense, compliance, or risk mitigation. You will be working with real-world, real-time systems, resolving active threats, and collaborating with business stakeholders. \n*   **Graduate Research:** Highly conceptual, self-directed, and focused on deep, unsolved questions. You will spend significant time reading academic papers, writing, designing experiments, and dealing with the ambiguity of problems that do not have existing solutions.\n\n### 3. Financial Impact & Opportunity Cost\n*   **Immediate Industry:** You begin earning a professional salary immediately, gaining years of industry experience, and potentially receiving employer-sponsored benefits (including, in many cases, tuition assistance if you decide to go to school part-time later).\n*   **Graduate School Funding:** \n    *   *Master’s Programs:* These are frequently self-funded or funded through loans, though some students secure Teaching Assistantships (TAs), Research Assistantships (RAs), or employer sponsorships.\n    *   *PhD Programs:* Many doctoral programs offer funding packages (tuition waivers plus a stipend) through fellowships, RAs, or TAs, though this is highly program-specific and never guaranteed. The primary cost here is the \"opportunity cost\" of delayed full-time industry earnings for 4 to 6 years.\n\n---\n\n### Low-Risk Ways to Test Both Paths\n\nIf you are on the fence, you do not have to make a blind choice. You can test your affinity for both environments:\n1.  **Try a Research Project:** Work with a faculty member at Morgan State on a cybersecurity research project for a semester, or apply for a summer Research Experience for Undergraduates (REU). This will give you a taste of what graduate-level research actually feels like.\n2.  **Read Academic Papers:** Look up recent papers from top security conferences (like IEEE S&P, USENIX Security, ACM CCS, or NDSS). If you find the academic approach to security problems fascinating, graduate school might be a great fit.\n3.  **The \"Middle Ground\" (Industry First + Part-Time MS):** Many cybersecurity professionals start working immediately and have their employers pay for a part-time Master’s degree. This allows you to gain industry experience, earn a salary, and obtain an advanced degree simultaneously.\n\n---\n\n### Helping Us Personalize Your Path\n\nTo help tailor this advice, where are you currently in your academic journey? Sharing your **academic year**, **specific security interests** (e.g., network defense, malware analysis, cryptography, policy), and **any prior internship or research experience** would help us map out some concrete options!",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 0.817,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 20.723,
+      "actual_specialist": "research__graduate_pathways_agent",
+      "route_match": true,
+      "total_seconds": 21.541,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_certification_stable",
+      "domain": "certification",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "started_utc": "2026-10-23T20:10:11.018260+00:00",
+      "auth_init_seconds": 3.423,
+      "events": [
+        {
+          "t": 5.042,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 5.111,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 5.178,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 25.468,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 25.628,
+          "author": "",
+          "parts": []
+        }
+      ],
+      "errors": [
+        {
+          "stage": "runtime",
+          "t": 25.468
+        },
+        {
+          "stage": "runtime",
+          "t": 25.628
+        }
+      ],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": null,
+      "transfer": {
+        "t": 5.042,
+        "target": "certification__technical_development_agent"
+      },
+      "final_answer": "",
+      "status": "runtime_error",
+      "capacity_failure": true,
+      "session_create_seconds": 0.959,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 25.701,
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "total_seconds": 26.661,
+      "failure_class": "SPECIALIST_CAPACITY",
+      "review": "PROVIDER_CAPACITY; no reliability verdict"
+    },
+    {
+      "id": "rc_health_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "batch": "current",
+      "started_utc": "2026-10-23T20:12:53.422390+00:00",
+      "auth_init_seconds": 3.24,
+      "events": [
+        {
+          "t": 3.37,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.45,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 3.543,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 11.032,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "Introducing yourself to a cybersecurity recruiter depends heavily on **where** you are connecting—whether it’s a quick message on LinkedIn, an email follow-up, or an in-person conversation at a career fair. \n\nTo give you the most accurate and personalized draft, could you share a bit more context?\n1. **What is the setting?** (e.g., a LinkedIn connection request, a cold email, or an in-person event/career fair?)\n2. **What is your academic standing at Morgan State?** (e.g., sophomore, junior, senior, or graduate student?)\n3. **Do you have a specific cybersecurity interest or project?** (e.g., security operations, penetration testing, network security, or a recent class project/CTF competition?)\n4. **Is there a specific job/internship opening you are targeting, or are you looking to connect more generally?**\n\n---\n\nIn the meantime, here are two simple, natural frameworks you can adapt depending on the channel:\n\n### Option A: The LinkedIn Connection Request (Keep it very brief)\n> *“Hi [Recruiter Name], I hope you’re having a great week. I’m a Computer Science [student/junior/senior] at Morgan State University focusing on cybersecurity. I saw your work recruiting for [Company Name] and wanted to connect to learn more about future opportunities on your team. Thanks!”*\n\n### Option B: The In-Person / Career Fair Introduction (The \"Elevator Pitch\")\n> *“Hi, my name is [Your Name], and I’m a Computer Science student at Morgan State University. I’m really interested in cybersecurity, particularly in [area, e.g., cloud security or threat analysis], and I’ve been building my skills through [mention one thing: a class project, a club, or a lab]. I saw that your team has roles open for [mention specific internship or role, if known], and I wanted to introduce myself and learn what qualities you look for in successful candidates.”*\n\n**Why these work:**\n* **Direct:** They immediately establish who you are and why you are reaching out.\n* **Respectful of time:** Recruiters read hundreds of messages; keeping yours under 3-4 sentences makes it easy to read and respond to.\n* **Authentic:** They focus on your genuine stage of learning and interest without using over-the-top corporate jargon.\n\nTell me a bit more about your specific situation, and we can draft a message tailored exactly to your goals!"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 11.032,
+      "transfer": {
+        "t": 3.37,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "Introducing yourself to a cybersecurity recruiter depends heavily on **where** you are connecting—whether it’s a quick message on LinkedIn, an email follow-up, or an in-person conversation at a career fair. \n\nTo give you the most accurate and personalized draft, could you share a bit more context?\n1. **What is the setting?** (e.g., a LinkedIn connection request, a cold email, or an in-person event/career fair?)\n2. **What is your academic standing at Morgan State?** (e.g., sophomore, junior, senior, or graduate student?)\n3. **Do you have a specific cybersecurity interest or project?** (e.g., security operations, penetration testing, network security, or a recent class project/CTF competition?)\n4. **Is there a specific job/internship opening you are targeting, or are you looking to connect more generally?**\n\n---\n\nIn the meantime, here are two simple, natural frameworks you can adapt depending on the channel:\n\n### Option A: The LinkedIn Connection Request (Keep it very brief)\n> *“Hi [Recruiter Name], I hope you’re having a great week. I’m a Computer Science [student/junior/senior] at Morgan State University focusing on cybersecurity. I saw your work recruiting for [Company Name] and wanted to connect to learn more about future opportunities on your team. Thanks!”*\n\n### Option B: The In-Person / Career Fair Introduction (The \"Elevator Pitch\")\n> *“Hi, my name is [Your Name], and I’m a Computer Science student at Morgan State University. I’m really interested in cybersecurity, particularly in [area, e.g., cloud security or threat analysis], and I’ve been building my skills through [mention one thing: a class project, a club, or a lab]. I saw that your team has roles open for [mention specific internship or role, if known], and I wanted to introduce myself and learn what qualities you look for in successful candidates.”*\n\n**Why these work:**\n* **Direct:** They immediately establish who you are and why you are reaching out.\n* **Respectful of time:** Recruiters read hundreds of messages; keeping yours under 3-4 sentences makes it easy to read and respond to.\n* **Authentic:** They focus on your genuine stage of learning and interest without using over-the-top corporate jargon.\n\nTell me a bit more about your specific situation, and we can draft a message tailored exactly to your goals!",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.587,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 11.151,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 12.739,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_trust_stable",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "human",
+      "prompt": "I need a human to review this because the available evidence is contradictory.",
+      "batch": "current",
+      "started_utc": "2026-10-23T20:13:43.838423+00:00",
+      "auth_init_seconds": 3.278,
+      "events": [
+        {
+          "t": 2.636,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 2.698,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 2.765,
+          "author": "trust__human_escalation_agent",
+          "parts": []
+        },
+        {
+          "t": 2.857,
+          "author": "trust__human_escalation_agent",
+          "parts": [
+            {
+              "text": "### DISPUTED CLAIM\n\nI need a human to review this because the available evidence is contradictory.\n\n### SOURCE A\n\nNot supplied or verified.\n\n### SOURCE B\n\nNot supplied or verified.\n\n### CONFLICT\n\nExact disagreement cannot be established without both source statements.; Conflict type: unresolved statement disagreement or insufficient source metadata\n\n### ASSESSMENT\n\nUNRESOLVED\n\n### WHY\n\nThe exact sources, disputed wording and matching date/population/scope have not established a responsible resolution.\n\n### NEXT STEP\n\nHuman review is appropriate. Share the exact disputed wording and source links with the relevant official university/program authority. I have not contacted anyone or created a referral."
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 2.857,
+      "transfer": {
+        "t": 2.636,
+        "target": "trust__human_escalation_agent"
+      },
+      "final_answer": "### DISPUTED CLAIM\n\nI need a human to review this because the available evidence is contradictory.\n\n### SOURCE A\n\nNot supplied or verified.\n\n### SOURCE B\n\nNot supplied or verified.\n\n### CONFLICT\n\nExact disagreement cannot be established without both source statements.; Conflict type: unresolved statement disagreement or insufficient source metadata\n\n### ASSESSMENT\n\nUNRESOLVED\n\n### WHY\n\nThe exact sources, disputed wording and matching date/population/scope have not established a responsible resolution.\n\n### NEXT STEP\n\nHuman review is appropriate. Share the exact disputed wording and source links with the relevant official university/program authority. I have not contacted anyone or created a referral.",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.047,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 2.985,
+      "actual_specialist": "trust__human_escalation_agent",
+      "route_match": true,
+      "total_seconds": 4.034,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_career_current",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity career resources are available to Morgan State Computer Science students?",
+      "batch": "current",
+      "started_utc": "2026-10-23T20:13:56.128645+00:00",
+      "auth_init_seconds": 3.227,
+      "events": [
+        {
+          "t": 1.306,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 1.349,
+          "author": "",
+          "parts": []
+        }
+      ],
+      "errors": [
+        {
+          "stage": "runtime",
+          "t": 1.306
+        },
+        {
+          "stage": "runtime",
+          "t": 1.349
+        }
+      ],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": null,
+      "transfer": null,
+      "final_answer": "",
+      "status": "runtime_error",
+      "capacity_failure": true,
+      "session_create_seconds": 0.806,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 1.391,
+      "actual_specialist": null,
+      "route_match": false,
+      "total_seconds": 2.199,
+      "failure_class": "ROOT_CAPACITY",
+      "review": "PROVIDER_CAPACITY; no reliability verdict"
+    },
+    {
+      "id": "rc_health_evidence2",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "batch": "evidence2",
+      "started_utc": "2026-10-23T20:20:28.801765+00:00",
+      "auth_init_seconds": 3.5,
+      "events": [
+        {
+          "t": 5.036,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 5.102,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 5.176,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 15.993,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "Introducing yourself to a cybersecurity recruiter is all about being concise, clear about your technical interests, and professional. Because recruiters review many outreach messages, a natural and direct approach works best. \n\nTo help you draft the perfect introduction, it helps to look at **where** you are introducing yourself (e.g., LinkedIn, email, or in-person at a career fair) and **what** specific interests you have.\n\nHere is a quick guide on how to structure your introduction, along with a few flexible templates you can adapt.\n\n---\n\n### The Anatomy of a Strong Introduction\n\nA strong, natural introduction generally includes:\n1. **Who you are:** Your name, major (Computer Science), and university (Morgan State University).\n2. **Your focus area:** Cybersecurity is broad. Mentioning a specific area of interest (e.g., security operations, penetration testing, GRC, or cloud security) shows you’ve done your research.\n3. **A highlight (optional but helpful):** A brief mention of a hands-on project, CTF (Capture the Flag) competition, security lab, or coursework you've completed.\n4. **A low-pressure next step:** A clear reason for reaching out, such as asking about their upcoming internship cycle or requesting a brief conversation.\n\n---\n\n### Draft Templates to Get You Started\n\n#### Option A: Brief LinkedIn Connection Request\nKeep this very short and respectful. \n> *\"Hi [Recruiter's Name], I’m a Computer Science student at Morgan State University focusing on cybersecurity. I saw that you recruit for [Company Name]'s security teams and wanted to connect. I’m currently building my skills in [specific area, e.g., network security/threat analysis] and would love to keep an eye on future opportunities with your team. Thanks!\"*\n\n#### Option B: In-Person / Career Fair Elevator Pitch\nThis is meant to be spoken naturally, opening the floor for a conversation.\n> *\"Hi, my name is [Your Name], and I’m a [Junior/Senior] Computer Science major at Morgan State. I’m really interested in cybersecurity, specifically [focus area, e.g., application security or SOC operations]. Recently, I’ve been working on [briefly mention a class project, lab, or personal project, e.g., setting up a home lab to analyze network traffic]. I noticed your team has openings for [Role/Internship], and I wanted to introduce myself and learn more about what you look for in candidates.\"*\n\n#### Option C: Cold Email Outreach (If you found their professional email)\nUse this if you are reaching out about a specific open position.\n> **Subject:** Morgan State Computer Science Student – Cybersecurity Internship Inquiry\n>\n> *\"Dear [Recruiter's Name],*\n>\n> *My name is [Your Name], and I am a Computer Science student at Morgan State University. I am writing to express my interest in the [Specific Job/Internship Title] position at [Company Name].*\n>\n> *I have a strong interest in cybersecurity, particularly in [specific area]. Through my coursework and projects—such as [briefly name one relevant project or lab]—I have gained hands-on experience with [mention 1-2 tools or concepts, e.g., Wireshark, Linux, or basic scripting].*\n>\n> *I have applied online, but I wanted to reach out directly to introduce myself and ask if you have a few minutes for a brief conversation about the role and what qualities make a candidate successful on your team.*\n>\n> *Thank you for your time and consideration.*\n>\n> *Sincerely,*\n> *[Your Name]* \n> *[Your Contact Information / LinkedIn Link]\"*\n\n---\n\n### To Help Customize This For You:\nTo make this draft as strong and accurate as possible, could you share a bit more context?\n1. **Where will you be reaching out?** (e.g., LinkedIn, email, or an upcoming event?)\n2. **What is your current academic year at Morgan State?**\n3. **Do you have a specific focus within cybersecurity, or any specific project/lab experience you'd like to highlight?** \n\nOnce you share those details, we can write a personalized, ready-to-send draft for you to review!"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 15.993,
+      "transfer": {
+        "t": 5.036,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "Introducing yourself to a cybersecurity recruiter is all about being concise, clear about your technical interests, and professional. Because recruiters review many outreach messages, a natural and direct approach works best. \n\nTo help you draft the perfect introduction, it helps to look at **where** you are introducing yourself (e.g., LinkedIn, email, or in-person at a career fair) and **what** specific interests you have.\n\nHere is a quick guide on how to structure your introduction, along with a few flexible templates you can adapt.\n\n---\n\n### The Anatomy of a Strong Introduction\n\nA strong, natural introduction generally includes:\n1. **Who you are:** Your name, major (Computer Science), and university (Morgan State University).\n2. **Your focus area:** Cybersecurity is broad. Mentioning a specific area of interest (e.g., security operations, penetration testing, GRC, or cloud security) shows you’ve done your research.\n3. **A highlight (optional but helpful):** A brief mention of a hands-on project, CTF (Capture the Flag) competition, security lab, or coursework you've completed.\n4. **A low-pressure next step:** A clear reason for reaching out, such as asking about their upcoming internship cycle or requesting a brief conversation.\n\n---\n\n### Draft Templates to Get You Started\n\n#### Option A: Brief LinkedIn Connection Request\nKeep this very short and respectful. \n> *\"Hi [Recruiter's Name], I’m a Computer Science student at Morgan State University focusing on cybersecurity. I saw that you recruit for [Company Name]'s security teams and wanted to connect. I’m currently building my skills in [specific area, e.g., network security/threat analysis] and would love to keep an eye on future opportunities with your team. Thanks!\"*\n\n#### Option B: In-Person / Career Fair Elevator Pitch\nThis is meant to be spoken naturally, opening the floor for a conversation.\n> *\"Hi, my name is [Your Name], and I’m a [Junior/Senior] Computer Science major at Morgan State. I’m really interested in cybersecurity, specifically [focus area, e.g., application security or SOC operations]. Recently, I’ve been working on [briefly mention a class project, lab, or personal project, e.g., setting up a home lab to analyze network traffic]. I noticed your team has openings for [Role/Internship], and I wanted to introduce myself and learn more about what you look for in candidates.\"*\n\n#### Option C: Cold Email Outreach (If you found their professional email)\nUse this if you are reaching out about a specific open position.\n> **Subject:** Morgan State Computer Science Student – Cybersecurity Internship Inquiry\n>\n> *\"Dear [Recruiter's Name],*\n>\n> *My name is [Your Name], and I am a Computer Science student at Morgan State University. I am writing to express my interest in the [Specific Job/Internship Title] position at [Company Name].*\n>\n> *I have a strong interest in cybersecurity, particularly in [specific area]. Through my coursework and projects—such as [briefly name one relevant project or lab]—I have gained hands-on experience with [mention 1-2 tools or concepts, e.g., Wireshark, Linux, or basic scripting].*\n>\n> *I have applied online, but I wanted to reach out directly to introduce myself and ask if you have a few minutes for a brief conversation about the role and what qualities make a candidate successful on your team.*\n>\n> *Thank you for your time and consideration.*\n>\n> *Sincerely,*\n> *[Your Name]* \n> *[Your Contact Information / LinkedIn Link]\"*\n\n---\n\n### To Help Customize This For You:\nTo make this draft as strong and accurate as possible, could you share a bit more context?\n1. **Where will you be reaching out?** (e.g., LinkedIn, email, or an upcoming event?)\n2. **What is your current academic year at Morgan State?**\n3. **Do you have a specific focus within cybersecurity, or any specific project/lab experience you'd like to highlight?** \n\nOnce you share those details, we can write a personalized, ready-to-send draft for you to review!",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.032,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 16.128,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 17.161,
+      "review": "PASS observed route/stable scope; generic templates require factual personalization"
+    },
+    {
+      "id": "rc_trust_current",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "current",
+      "prompt": "I found conflicting information about whether a Morgan cybersecurity program is still active. Which source should I trust?",
+      "batch": "evidence2",
+      "started_utc": "2026-10-23T20:20:54.270832+00:00",
+      "auth_init_seconds": 3.276,
+      "events": [
+        {
+          "t": 3.852,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.914,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 3.968,
+          "author": "trust__human_escalation_agent",
+          "parts": []
+        },
+        {
+          "t": 4.024,
+          "author": "trust__human_escalation_agent",
+          "parts": [
+            {
+              "tool": "Trust___Human_Escalation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 71.1,
+          "author": "trust__human_escalation_agent",
+          "parts": []
+        },
+        {
+          "t": 71.202,
+          "author": "trust__human_escalation_agent",
+          "parts": [
+            {
+              "text": "### DISPUTED CLAIM\n\nI found conflicting information about whether a Morgan cybersecurity program is still active. Which source should I trust?\n\n### SOURCE A\n\nNot supplied or verified.\n\n### SOURCE B\n\nNot supplied or verified.\n\n### CONFLICT\n\nExact disagreement cannot be established without both source statements.; Conflict type: unresolved statement disagreement or insufficient source metadata\n\n### ASSESSMENT\n\nUNRESOLVED\n\n### WHY\n\nThe exact sources, disputed wording and matching date/population/scope have not established a responsible resolution.\n\n### NEXT STEP\n\nPlease supply the program/opportunity name, exact disputed claim, and both source links or quoted statements. For consequential eligibility/funding decisions, obtain confirmation from the responsible official before acting."
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 1,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 71.202,
+      "transfer": {
+        "t": 3.852,
+        "target": "trust__human_escalation_agent"
+      },
+      "final_answer": "### DISPUTED CLAIM\n\nI found conflicting information about whether a Morgan cybersecurity program is still active. Which source should I trust?\n\n### SOURCE A\n\nNot supplied or verified.\n\n### SOURCE B\n\nNot supplied or verified.\n\n### CONFLICT\n\nExact disagreement cannot be established without both source statements.; Conflict type: unresolved statement disagreement or insufficient source metadata\n\n### ASSESSMENT\n\nUNRESOLVED\n\n### WHY\n\nThe exact sources, disputed wording and matching date/population/scope have not established a responsible resolution.\n\n### NEXT STEP\n\nPlease supply the program/opportunity name, exact disputed claim, and both source links or quoted statements. For consequential eligibility/funding decisions, obtain confirmation from the responsible official before acting.",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.255,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 71.325,
+      "actual_specialist": "trust__human_escalation_agent",
+      "route_match": true,
+      "total_seconds": 72.581,
+      "review": "Bounded clarification; UNRESOLVED retained. One Search call despite missing source pair; no broad loop or invented resolution."
+    },
+    {
+      "id": "rc_networking_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?",
+      "batch": "evidence2",
+      "started_utc": "2026-10-23T20:22:15.152827+00:00",
+      "auth_init_seconds": 3.27,
+      "events": [
+        {
+          "t": 3.412,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.475,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 3.563,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 5.947,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "Networking___Professional_Communication_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 37.937,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 40.161,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 55.613,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 56.813,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 74.696,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 74.788,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "### Networking: evidence and status\n\n**C1 — VERIFIED CURRENT**\n\nProposed claim (not an assertion): Morgan State Computer Science students can join SACS (Society for the Advancement of Computer Science), which provides mentoring from peers and industry professionals, technical workshops, and networking opportunities.\n\nSupported scope: The claim is fully supported. SACS is the student computer science club at Morgan State University and aims to provide networking opportunities, technical workshops, and mentoring from peers, alumni, and industry professionals.\n\nEvidence limits: \n\nAssessment: The official Morgan State University webpage explicitly outlines that SACS is the computer science student organization at the university and that its goals and activities include offering technical workshops, providing mentoring from peers and industry professionals, and creating networking and career opportunities.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp2FtDDpNHD8DrJqhwiFVOU3hSR3A6Ypp4rEYnoVxTnt_j9wcZm6ipeeWHxC7iSFI1MOiBmd5GcNcbACvMJS9-S35Fl_0YHwIWY-H6Iu-5JIB_usk8V9b611iv18JqvKlF4KH4FOvI3BqS28m2G4euRFELG-3FY-g=>)\n\n**C2 — UNSUPPORTED**\n\nProposed claim (not an assertion): Morgan State students can use the Handshake job platform provided by the Center for Career Development to connect and network with regional and national employers for jobs and internships.\n\nEvidence limits: The specific claim that Handshake is used to connect with 'regional and national employers' is not established by the text of this page.\n\nAssessment: The provided source page only refers to connecting with 'area employers' and 'college recruiting employers' and does not mention 'regional and national employers'.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHy1tAyP_wsou3ROTZYIQk37YHnOoi0ktB226NJsW2tOYP3gPt8KTynleCpQwcfVyb2BEUr7QdomM7nRW4Q3Fm5S-g-wZIF_Chstrf8ocia68CY70SHO5RrcPhPOnSui-uhpHAB6GnWR47HaNN_Ux4VYzmu9JsDZcH81iw2S8wzO_ylc_ZWP3dGvB_EGyAT9RHldHt>)\n\nConfirm unresolved current details with the official owner before relying on them."
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 1,
+      "url_helpers": 0,
+      "verifications": 2,
+      "grounding_query_count": 0,
+      "first_text": 74.788,
+      "transfer": {
+        "t": 3.412,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "### Networking: evidence and status\n\n**C1 — VERIFIED CURRENT**\n\nProposed claim (not an assertion): Morgan State Computer Science students can join SACS (Society for the Advancement of Computer Science), which provides mentoring from peers and industry professionals, technical workshops, and networking opportunities.\n\nSupported scope: The claim is fully supported. SACS is the student computer science club at Morgan State University and aims to provide networking opportunities, technical workshops, and mentoring from peers, alumni, and industry professionals.\n\nEvidence limits: \n\nAssessment: The official Morgan State University webpage explicitly outlines that SACS is the computer science student organization at the university and that its goals and activities include offering technical workshops, providing mentoring from peers and industry professionals, and creating networking and career opportunities.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHp2FtDDpNHD8DrJqhwiFVOU3hSR3A6Ypp4rEYnoVxTnt_j9wcZm6ipeeWHxC7iSFI1MOiBmd5GcNcbACvMJS9-S35Fl_0YHwIWY-H6Iu-5JIB_usk8V9b611iv18JqvKlF4KH4FOvI3BqS28m2G4euRFELG-3FY-g=>)\n\n**C2 — UNSUPPORTED**\n\nProposed claim (not an assertion): Morgan State students can use the Handshake job platform provided by the Center for Career Development to connect and network with regional and national employers for jobs and internships.\n\nEvidence limits: The specific claim that Handshake is used to connect with 'regional and national employers' is not established by the text of this page.\n\nAssessment: The provided source page only refers to connecting with 'area employers' and 'college recruiting employers' and does not mention 'regional and national employers'.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHy1tAyP_wsou3ROTZYIQk37YHnOoi0ktB226NJsW2tOYP3gPt8KTynleCpQwcfVyb2BEUr7QdomM7nRW4Q3Fm5S-g-wZIF_Chstrf8ocia68CY70SHO5RrcPhPOnSui-uhpHAB6GnWR47HaNN_Ux4VYzmu9JsDZcH81iw2S8wzO_ylc_ZWP3dGvB_EGyAT9RHldHt>)\n\nConfirm unresolved current details with the official owner before relying on them.",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.02,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 74.977,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 75.999,
+      "review": "RELIABILITY_FAILURE: goals/vision treated as verified current benefits"
+    }
+  ],
+  "plan": [
+    {
+      "id": "rc_career_stable",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "stable",
+      "prompt": "I'm interested in cloud security and risk management. What career paths should I explore?"
+    },
+    {
+      "id": "rc_internship_stable",
+      "domain": "internship",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?"
+    },
+    {
+      "id": "rc_resume_stable",
+      "domain": "resume",
+      "expected": "resume__portfolio_agent",
+      "mode": "stable",
+      "prompt": "What should I emphasize on my resume for an entry-level cloud security role?"
+    },
+    {
+      "id": "rc_interview_stable",
+      "domain": "interview",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role."
+    },
+    {
+      "id": "rc_networking_stable",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?"
+    },
+    {
+      "id": "rc_roadmap_stable",
+      "domain": "roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "stable",
+      "prompt": "I want to become a cloud security engineer. What skills should I build over the next year?"
+    },
+    {
+      "id": "rc_research_stable",
+      "domain": "research",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "stable",
+      "prompt": "How should I decide between graduate school and going directly into cybersecurity industry work?"
+    },
+    {
+      "id": "rc_certification_stable",
+      "domain": "certification",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?"
+    },
+    {
+      "id": "rc_trust_stable",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "human",
+      "prompt": "I need a human to review this because the available evidence is contradictory."
+    },
+    {
+      "id": "rc_career_current",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity career resources are available to Morgan State Computer Science students?"
+    },
+    {
+      "id": "rc_networking_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?"
+    },
+    {
+      "id": "rc_certification_current",
+      "domain": "certification",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?"
+    },
+    {
+      "id": "rc_interview_current",
+      "domain": "interview",
+      "expected": "interview_preparation_agent",
+      "mode": "current",
+      "prompt": "What is the current interview process for an entry-level cybersecurity role at Microsoft?"
+    },
+    {
+      "id": "rc_trust_current",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "current",
+      "prompt": "I found conflicting information about whether a Morgan cybersecurity program is still active. Which source should I trust?"
+    },
+    {
+      "id": "rc_research_current",
+      "domain": "research",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity research opportunities are available at Morgan State?"
+    },
+    {
+      "id": "rc_networking_platform_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What is LinkedIn's current connection-request note character limit?"
+    }
+  ],
+  "count_scope": "Observed outer SSE calls only; nested provider work may not be exposed."
+}

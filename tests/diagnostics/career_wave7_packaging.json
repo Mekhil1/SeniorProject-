@@ -1,0 +1,34 @@
+{
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "actual_sdk_packaging": true,
+  "network_upload": false,
+  "extra_packages": [
+    "agents/__init__.py",
+    "agents/career/__init__.py",
+    "agents/career/workflow/__init__.py",
+    "agents/career/workflow/agent.py",
+    "agents/career/workflow/evidence.py",
+    "agents/career/workflow/main.py"
+  ],
+  "archive_members": [
+    "agents/__init__.py",
+    "agents/career/__init__.py",
+    "agents/career/workflow/__init__.py",
+    "agents/career/workflow/agent.py",
+    "agents/career/workflow/evidence.py",
+    "agents/career/workflow/main.py"
+  ],
+  "missing_required_file": "agents/career/workflow/shared_evidence.py",
+  "isolated_archive_import": {
+    "loaded": false,
+    "exception_type": "ModuleNotFoundError",
+    "missing_module": "agents.career.workflow.shared_evidence"
+  },
+  "deployment_attempted": false,
+  "engine_created": false,
+  "source_modified": false,
+  "minimal_repair": "Add agents/career/workflow/shared_evidence.py to deploy_dev.py config.extra_packages; preserve create-only behavior and all runtime source. Re-run archive/import parity before deployment."
+}

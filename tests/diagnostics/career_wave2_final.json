@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "57e2699f18c6628a6a94919bc2bebf39aaab6c60e8b65b4425e27c23ab77ccc7",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "wave2_interview_stable",
+      "domain": "interview",
+      "label": "Interview Preparation",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role.",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:58:35.521558+00:00",
+      "orchestrator_request_start": 1.054,
+      "total_seconds": 27.751,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 7.165,
+        "target": "interview_preparation_agent"
+      },
+      "actual_specialist": "interview_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 7.174,
+      "first_specialist_event": 27.748,
+      "handoff_seconds": 20.583,
+      "first_helper": null,
+      "first_text": 27.749,
+      "final_answer": "Developing a technical interview preparation strategy for an entry-level cybersecurity role requires balancing core technical knowledge with structured problem-solving. In cybersecurity, interviewers want to see **how you think** under pressure and how you approach analyzing risk, rather than just checking if you have memorized terms.\n\nTo help you prepare effectively, this guide is divided into **General Industry Patterns** (what companies typically look for) and **Interactive Practice Content** (how you and I can start practicing right now).\n\n---\n\n### Part 1: Core Domains Evaluated (General Industry Patterns)\n\nMost entry-level cybersecurity technical interviews (for roles like SOC Analyst, Security Associate, or Junior Cybersecurity Engineer) evaluate four main areas:\n\n#### 1. Networking & Protocols (The Foundation)\nSecurity cannot exist without networking. You should be prepared to explain how data moves across a network and how protocols work.\n*   **Key Concepts:** The OSI Model (specifically Layers 3, 4, and 7), TCP vs. UDP, DNS resolution, DHCP, ARP, and common secure/unsecure ports (e.g., HTTP 80 vs. HTTPS 443, SSH 22 vs. Telnet 23, DNS 53, RDP 3389).\n*   **Common Industry Pattern:** You may be asked to walk through a basic network flow, such as: *\"Explain what happens step-by-step when a user types `google.com` into their browser and hits Enter.\"*\n\n#### 2. Security Fundamentals & Cryptography\nYou must show a solid grasp of core security principles and how they protect assets.\n*   **Key Concepts:** The CIA Triad (Confidentiality, Integrity, Availability), Symmetric vs. Asymmetric encryption, Hashing vs. Encryption, Multi-Factor Authentication (MFA), and common web vulnerabilities (like SQL Injection or Cross-Site Scripting).\n*   **Common Industry Pattern:** Defining terms is rarely enough; you will likely be asked to provide real-world examples or trade-offs (e.g., *\"Why would you use symmetric encryption over asymmetric encryption if symmetric is less secure in key exchange?\"*).\n\n#### 3. Operating Systems & Command Line\nSecurity analysts spend a lot of time in the command line analyzing logs or managing systems.\n*   **Key Concepts:** Basic Linux navigation and file permissions (`chmod`, `chown`), Windows Event Logs, Active Directory basics, and command-line tools for network troubleshooting (`ping`, `traceroute`, `nslookup`, `netstat`, `nmap`).\n*   **Common Industry Pattern:** You might be asked how to locate a suspicious process or check active network connections on an endpoint.\n\n#### 4. Incident Scenarios & Threat Reasoning\nThis is often the most critical part of the interview. Interviewers will present a hypothetical security incident to see how you investigate, contain, and resolve a threat.\n*   **Key Concepts:** Phishing triage, malware infection, unauthorized network traffic, or an alert from a SIEM (Security Information and Event Management) tool.\n*   **Common Industry Pattern:** You will be given a scenario with limited information and asked, *\"What do you do first?\"* They are looking for a logical, step-by-step investigation process.\n\n---\n\n### Part 2: Step-by-Step Preparation Strategy\n\nTo structure your preparation over the coming days or weeks, use this three-phase approach:\n\n*   **Phase 1: Build Explanatory Depth (The \"Why\")**\n    *   Don't just memorize definitions. Practice explaining *how* a protocol is secured or *why* a particular security control is used. Speak your thoughts out loud.\n*   **Phase 2: Master an Incident Response Mindset**\n    *   When faced with a scenario, structure your answer logically. A strong approach is to follow the standard stages of incident handling:\n        1.  **Identification/Scope:** What happened? What systems, data, or users are affected?\n        2.  **Containment:** How do we stop the threat from spreading immediately (e.g., isolating a workstation from the network)?\n        3.  **Eradication/Analysis:** How do we remove the root cause (e.g., deleting malware, changing compromised credentials)?\n        4.  **Recovery:** How do we safely bring systems back to normal operations?\n        5.  **Lessons Learned:** What controls can we implement to prevent this from happening again?\n*   **Phase 3: Active Mock Practice**\n    *   Passive reading won't prepare you for the pressure of explaining complex technical topics on the spot. Practicing interactively with mock questions is the best way to identify gaps in your knowledge.\n\n---\n\n### Part 3: Practice Content (Let's Start Preparing)\n\nTo test your current readiness, here are two representative practice questions. We can work through them together.\n\n*   **Practice Question 1 (Core Concepts):** \n    *\"Can you explain the difference between hashing and encryption? What is a primary real-world use case for each in security?\"*\n*   **Practice Question 2 (Scenario-Based):** \n    *\"An employee alerts you that they clicked a link in an email that looked like it was from IT, entered their domain credentials, and then nothing happened. What are the immediate steps you would take to handle this incident?\"*\n\n---\n\n### How We Can Customize This For You\n\nTo make our preparation as valuable as possible, tell me a bit more about your situation:\n1.  **Do you have an upcoming technical interview?** If so, what is the timeline and the specific job title (e.g., Security Analyst, Security Engineer, GRC Analyst, or Security Co-op)?\n2.  **What are your strongest and weakest technical areas?** (For example: *\"I feel great about networking, but I struggle with Linux and incident response scenarios.\"*)\n3.  **How would you like to proceed?** We can start a mock interview right now using one of the practice questions above, or we can dive deeper into a specific technical topic.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 20.569,
+      "orchestrator_model_seconds": 6.109,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.166,
+          "fingerprint": "b2b2470a1f10ed405f93fc57548b668bcd8a5dd8c2751d502405205c64ddbb46",
+          "args": {
+            "agent_name": "interview_preparation_agent"
+          },
+          "end": 7.169,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.054,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.163,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.163,
+          "duration": 6.109
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 7.177,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 27.746,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 27.746,
+          "duration": 20.569
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.165,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "interview_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.173,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 27.748,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "text": "Developing a technical interview preparation strategy for an entry-level cybersecurity role requires balancing core technical knowledge with structured problem-solving. In cybersecurity, interviewers want to see **how you think** under pressure and how you approach analyzing risk, rather than just checking if you have memorized terms.\n\nTo help you prepare effectively, this guide is divided into **General Industry Patterns** (what companies typically look for) and **Interactive Practice Content** (how you and I can start practicing right now).\n\n---\n\n### Part 1: Core Domains Evaluated (General Industry Patterns)\n\nMost entry-level cybersecurity technical interviews (for roles like SOC Analyst, Security Associate, or Junior Cybersecurity Engineer) evaluate four main areas:\n\n#### 1. Networking & Protocols (The Foundation)\nSecurity cannot exist without networking. You should be prepared to explain how data moves across a network and how protocols work.\n*   **Key Concepts:** The OSI Model (specifically Layers 3, 4, and 7), TCP vs. UDP, DNS resolution, DHCP, ARP, and common secure/unsecure ports (e.g., HTTP 80 vs. HTTPS 443, SSH 22 vs. Telnet 23, DNS 53, RDP 3389).\n*   **Common Industry Pattern:** You may be asked to walk through a basic network flow, such as: *\"Explain what happens step-by-step when a user types `google.com` into their browser and hits Enter.\"*\n\n#### 2. Security Fundamentals & Cryptography\nYou must show a solid grasp of core security principles and how they protect assets.\n*   **Key Concepts:** The CIA Triad (Confidentiality, Integrity, Availability), Symmetric vs. Asymmetric encryption, Hashing vs. Encryption, Multi-Factor Authentication (MFA), and common web vulnerabilities (like SQL Injection or Cross-Site Scripting).\n*   **Common Industry Pattern:** Defining terms is rarely enough; you will likely be asked to provide real-world examples or trade-offs (e.g., *\"Why would you use symmetric encryption over asymmetric encryption if symmetric is less secure in key exchange?\"*).\n\n#### 3. Operating Systems & Command Line\nSecurity analysts spend a lot of time in the command line analyzing logs or managing systems.\n*   **Key Concepts:** Basic Linux navigation and file permissions (`chmod`, `chown`), Windows Event Logs, Active Directory basics, and command-line tools for network troubleshooting (`ping`, `traceroute`, `nslookup`, `netstat`, `nmap`).\n*   **Common Industry Pattern:** You might be asked how to locate a suspicious process or check active network connections on an endpoint.\n\n#### 4. Incident Scenarios & Threat Reasoning\nThis is often the most critical part of the interview. Interviewers will present a hypothetical security incident to see how you investigate, contain, and resolve a threat.\n*   **Key Concepts:** Phishing triage, malware infection, unauthorized network traffic, or an alert from a SIEM (Security Information and Event Management) tool.\n*   **Common Industry Pattern:** You will be given a scenario with limited information and asked, *\"What do you do first?\"* They are looking for a logical, step-by-step investigation process.\n\n---\n\n### Part 2: Step-by-Step Preparation Strategy\n\nTo structure your preparation over the coming days or weeks, use this three-phase approach:\n\n*   **Phase 1: Build Explanatory Depth (The \"Why\")**\n    *   Don't just memorize definitions. Practice explaining *how* a protocol is secured or *why* a particular security control is used. Speak your thoughts out loud.\n*   **Phase 2: Master an Incident Response Mindset**\n    *   When faced with a scenario, structure your answer logically. A strong approach is to follow the standard stages of incident handling:\n        1.  **Identification/Scope:** What happened? What systems, data, or users are affected?\n        2.  **Containment:** How do we stop the threat from spreading immediately (e.g., isolating a workstation from the network)?\n        3.  **Eradication/Analysis:** How do we remove the root cause (e.g., deleting malware, changing compromised credentials)?\n        4.  **Recovery:** How do we safely bring systems back to normal operations?\n        5.  **Lessons Learned:** What controls can we implement to prevent this from happening again?\n*   **Phase 3: Active Mock Practice**\n    *   Passive reading won't prepare you for the pressure of explaining complex technical topics on the spot. Practicing interactively with mock questions is the best way to identify gaps in your knowledge.\n\n---\n\n### Part 3: Practice Content (Let's Start Preparing)\n\nTo test your current readiness, here are two representative practice questions. We can work through them together.\n\n*   **Practice Question 1 (Core Concepts):** \n    *\"Can you explain the difference between hashing and encryption? What is a primary real-world use case for each in security?\"*\n*   **Practice Question 2 (Scenario-Based):** \n    *\"An employee alerts you that they clicked a link in an email that looked like it was from IT, entered their domain credentials, and then nothing happened. What are the immediate steps you would take to handle this incident?\"*\n\n---\n\n### How We Can Customize This For You\n\nTo make our preparation as valuable as possible, tell me a bit more about your situation:\n1.  **Do you have an upcoming technical interview?** If so, what is the timeline and the specific job title (e.g., Security Analyst, Security Engineer, GRC Analyst, or Security Co-op)?\n2.  **What are your strongest and weakest technical areas?** (For example: *\"I feel great about networking, but I struggle with Linux and incident response scenarios.\"*)\n3.  **How would you like to proceed?** We can start a mock interview right now using one of the practice questions above, or we can dive deeper into a specific technical topic."
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "ZERO-TOOL PASS / REGRESSION CORRECTED",
+        "notes": "Corrected Interview stable sample completed a useful general technical strategy, exercises and role/timeline follow-up with Search=URL=0; total 27.751 s versus the failed Wave 2 stable sample 115.051 s with one unnecessary helper, and original baseline 18.47-23.88 s. Advice is framed as general patterns, not a verified current employer process. This one completed sample restores the observed zero-tool behavior; it is not a latency-distribution guarantee."
+      }
+    }
+  ],
+  "planned_case_ids": [
+    "wave2_interview_stable"
+  ],
+  "remaining": []
+}

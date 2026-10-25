@@ -1,0 +1,167 @@
+{
+  "decision": "RELEASE CANDIDATE — NO-GO",
+  "stage": "PREDEPLOYMENT_PACKAGING",
+  "engine_id": null,
+  "resource_name": null,
+  "display_name": null,
+  "creation_timestamp": null,
+  "runtime_metadata": null,
+  "desired_display_name": "Career & Professional Orchestration Agent - Final Dev RC",
+  "project": "cosc-490",
+  "region": "us-west1",
+  "staging_bucket": "gs://cosc-490-agent-staging-20261021-a41c7e9b",
+  "staging_prefix": null,
+  "staging_uploads": 0,
+  "engine_created": false,
+  "dependencies": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "staged_source_parity": "NOT APPLICABLE: no staged source; offline actual SDK archive fails import.",
+  "packaging": {
+    "versions": {
+      "google-cloud-aiplatform": "1.165.1",
+      "google-adk": "2.12.0"
+    },
+    "actual_sdk_packaging": true,
+    "network_upload": false,
+    "extra_packages": [
+      "agents/__init__.py",
+      "agents/career/__init__.py",
+      "agents/career/workflow/__init__.py",
+      "agents/career/workflow/agent.py",
+      "agents/career/workflow/evidence.py",
+      "agents/career/workflow/main.py"
+    ],
+    "archive_members": [
+      "agents/__init__.py",
+      "agents/career/__init__.py",
+      "agents/career/workflow/__init__.py",
+      "agents/career/workflow/agent.py",
+      "agents/career/workflow/evidence.py",
+      "agents/career/workflow/main.py"
+    ],
+    "missing_required_file": "agents/career/workflow/shared_evidence.py",
+    "isolated_archive_import": {
+      "loaded": false,
+      "exception_type": "ModuleNotFoundError",
+      "missing_module": "agents.career.workflow.shared_evidence"
+    },
+    "deployment_attempted": false,
+    "engine_created": false,
+    "source_modified": false,
+    "minimal_repair": "Add agents/career/workflow/shared_evidence.py to deploy_dev.py config.extra_packages; preserve create-only behavior and all runtime source. Re-run archive/import parity before deployment."
+  },
+  "source_validation": {
+    "local_runtime_import_passed": true,
+    "app_class": "AdkApp",
+    "loaded_instruction_hashes_passed": 30,
+    "root_specialists": 9,
+    "syntax_files": 36,
+    "source_hashes": {
+      "agents/career/workflow/agent.py": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+      "agents/career/workflow/shared_evidence.py": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123",
+      "agents/career/workflow/evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+      "agents/career/workflow/main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+      "agents/career/workflow/requirements.txt": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720"
+    },
+    "all_protected_source_unchanged": true,
+    "packaged_import_passed": false,
+    "model_tools_relationships_callbacks_unchanged": true,
+    "offline_import_setup": "Explicit Vertex project/region and AnonymousCredentials; no cloud request. Initial auth-blocked import without project configuration was a diagnostic environment issue, then configured import passed."
+  },
+  "remote_smoke": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+  "routing_matrix": {
+    "Career Exploration": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Internship": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Resume": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Interview": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Networking": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Skill Roadmap": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Research": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Certification": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Trust": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created."
+  },
+  "current_spot_checks": {
+    "Career": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Networking": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Certification": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Interview": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Trust": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Research": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "LinkedIn exact limit": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created."
+  },
+  "flask_tests": {
+    "fresh_session": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "same_session_continuity": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "different_user_isolation": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "malformed_request_release_check": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "natural_upstream_failure": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created."
+  },
+  "browser_tests": {
+    "initial_message": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "input_thinking": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Markdown_DOMPurify": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "timestamps_copy": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "retry_visibility": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "Enter_ShiftEnter": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "textarea_autogrow_scroll_counter": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "refresh_session_persistence": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "user_persistence": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created.",
+    "New_Chat_fresh_backend_session": "NOT RUN: deployment package omits shared_evidence.py and fails isolated import; no engine created."
+  },
+  "networking_regression": "Wave 6.5 blocker remains cleared offline; no remote Wave 7 validation.",
+  "evidence_integrity": "Offline contracts pass; no deployed response to assess.",
+  "latency": {
+    "remote": null,
+    "flask": null,
+    "classification": "WORKFLOW DEFECT: packaging, not provider capacity"
+  },
+  "provider_capacity_incidents": 0,
+  "live_inference_attempts": 0,
+  "predeploy_offline": {
+    "passed": 142,
+    "known_stale_failed": 1,
+    "pytest_passed": 74,
+    "adk_unittest_passed": 68
+  },
+  "stale_test": "tests/test_agents.py::test_agent_starter_endpoint[career]: obsolete HTTP 501 expectation; integrated service returns 503 under offline auth block. Not a deployment blocker.",
+  "exact_defect": "deploy_dev.py config.extra_packages omits agents/career/workflow/shared_evidence.py, imported by agent.py. Actual SDK archive has only six listed files; clean import raises ModuleNotFoundError: agents.career.workflow.shared_evidence.",
+  "minimal_required_repair": "Add agents/career/workflow/shared_evidence.py to deploy_dev.py config.extra_packages; preserve create-only behavior and all runtime source. Re-run archive/import parity before deployment.",
+  "repair_applied": false,
+  "awaiting_separate_repair_authorization": true,
+  "product_files_modified": [],
+  "production_engine": "3463694723959488512",
+  "production_untouched": true,
+  "production_fallback_unchanged": true,
+  "old_dev_engines_untouched": true,
+  "nothing_staged_committed_pushed": true,
+  "final_validation": {
+    "source_hashes_unchanged": true,
+    "prior_artifacts_report_preserved": true,
+    "privacy_passed": true,
+    "syntax_files": 37,
+    "git_diff_check_passed": true,
+    "untracked_whitespace_passed": true,
+    "index_empty": true,
+    "head_unchanged": true
+  },
+  "final_offline": {
+    "passed": 142,
+    "known_stale_failed": 1,
+    "pytest_passed": 74,
+    "adk_unittest_passed": 68
+  },
+  "created_artifacts": [
+    "tests/diagnostics/career_wave7_final.json",
+    "tests/diagnostics/career_wave7_final_adk.json",
+    "tests/diagnostics/career_wave7_final_pytest.json",
+    "tests/diagnostics/career_wave7_freeze.json",
+    "tests/diagnostics/career_wave7_packaging.json",
+    "tests/diagnostics/career_wave7_predeploy_adk.json",
+    "tests/diagnostics/career_wave7_predeploy_pytest.json",
+    "tests/diagnostics/career_wave7_preflight.py",
+    "tests/diagnostics/career_wave7_report.py",
+    "tests/diagnostics/career_wave7_validation.json"
+  ]
+}

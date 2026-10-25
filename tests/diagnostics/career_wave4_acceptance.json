@@ -1,0 +1,1473 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "d444defabb96b290c8b0741057d6aa5c134f73f8f2eca4dc41c9c05d3a7fd0d9",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+    "agents\\career\\workflow\\shared_evidence.py": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "acceptance_health_probe",
+      "domain": "networking",
+      "label": "Provider health probe",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T10:05:42.477289+00:00",
+      "orchestrator_request_start": 1.029,
+      "total_seconds": 25.48,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 10.723,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 10.73,
+      "first_specialist_event": 10.73,
+      "handoff_seconds": 0.007,
+      "first_helper": null,
+      "first_text": 25.479,
+      "final_answer": "An introducing yourself to a cybersecurity recruiter is most effective when it is **concise, professional, and clear about your interests**. Recruiter outreach typically works best when you keep things brief and make it easy for them to see how you fit their team's focus.\n\nTo help me draft a personalized introduction for you, could you share a bit more context? \n\n1. **Where will you be introducing yourself?** (e.g., a LinkedIn message, an email, or in-person at a career fair?)\n2. **What is your academic year or background?** (e.g., a junior at Morgan State University, a recent graduate?)\n3. **What specific areas of cybersecurity interest you?** (e.g., security operations (SOC), penetration testing, cloud security, GRC/compliance, or general internships?)\n4. **Is there a specific job opening you are targeting, or is this general outreach?**\n\n---\n\n### General Frameworks for Introductions\n\nWhile you gather those details, here are two common ways to structure your introduction depending on the platform:\n\n#### Option 1: For a LinkedIn Connection Request (Under 300 characters)\n*Keep it extremely brief and focused on a single, clear reason to connect.*\n\n> \"Hi [Recruiter's Name], I’m a Computer Science student at Morgan State University focused on cybersecurity. I saw you recruit for security roles at [Company] and wanted to connect to keep up with future opportunities on your team. Thanks!\"\n\n#### Option 2: For a Professional Email or Direct Message (Longer format)\n*Use this when you have room to expand slightly on your background and want to ask a specific question.*\n\n> **Subject:** Computer Science Student interested in Cybersecurity at [Company Name]\n> \n> \"Hi [Recruiter's Name],\n> \n> I hope you're having a good week. \n> \n> My name is [Your Name], and I am a [Academic Year, e.g., Junior] Computer Science student at Morgan State University. I’ve been focusing my studies and personal projects on [mention 1-2 areas, e.g., network security / threat analysis], and I’m very interested in the cybersecurity opportunities at [Company Name].\n> \n> I wanted to ask if your team is currently recruiting for [e.g., Summer 2025 Cybersecurity Internships], or if you have any advice for students looking to apply to these roles.\n> \n> I’ve attached my resume for your reference. I would love to connect and learn more if you have a moment.\n> \n> Thank you for your time,\n> \n> [Your Name]  \n> [Your Email]  \n> [Your Phone Number]  \n> [Your LinkedIn Link]\"\n\n### What makes these work:\n* **No fluff:** They get straight to the point without using overly corporate jargon.\n* **Honest and direct:** They don't pretend you have a prior relationship if you don't.\n* **Low pressure:** They ask a simple, direct question rather than demanding an interview.\n\n**Let me know your details, and we can draft a custom message that fits your exact situation!**",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 14.744,
+      "orchestrator_model_seconds": 9.692,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.029,
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 10.732,
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 10.723,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 10.726,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.029,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 10.721,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 10.721,
+          "duration": 9.692
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 10.733,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 25.477,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 25.477,
+          "duration": 14.744
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 10.723,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 10.728,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 10.73,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 25.478,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "An introducing yourself to a cybersecurity recruiter is most effective when it is **concise, professional, and clear about your interests**. Recruiter outreach typically works best when you keep things brief and make it easy for them to see how you fit their team's focus.\n\nTo help me draft a personalized introduction for you, could you share a bit more context? \n\n1. **Where will you be introducing yourself?** (e.g., a LinkedIn message, an email, or in-person at a career fair?)\n2. **What is your academic year or background?** (e.g., a junior at Morgan State University, a recent graduate?)\n3. **What specific areas of cybersecurity interest you?** (e.g., security operations (SOC), penetration testing, cloud security, GRC/compliance, or general internships?)\n4. **Is there a specific job opening you are targeting, or is this general outreach?**\n\n---\n\n### General Frameworks for Introductions\n\nWhile you gather those details, here are two common ways to structure your introduction depending on the platform:\n\n#### Option 1: For a LinkedIn Connection Request (Under 300 characters)\n*Keep it extremely brief and focused on a single, clear reason to connect.*\n\n> \"Hi [Recruiter's Name], I’m a Computer Science student at Morgan State University focused on cybersecurity. I saw you recruit for security roles at [Company] and wanted to connect to keep up with future opportunities on your team. Thanks!\"\n\n#### Option 2: For a Professional Email or Direct Message (Longer format)\n*Use this when you have room to expand slightly on your background and want to ask a specific question.*\n\n> **Subject:** Computer Science Student interested in Cybersecurity at [Company Name]\n> \n> \"Hi [Recruiter's Name],\n> \n> I hope you're having a good week. \n> \n> My name is [Your Name], and I am a [Academic Year, e.g., Junior] Computer Science student at Morgan State University. I’ve been focusing my studies and personal projects on [mention 1-2 areas, e.g., network security / threat analysis], and I’m very interested in the cybersecurity opportunities at [Company Name].\n> \n> I wanted to ask if your team is currently recruiting for [e.g., Summer 2025 Cybersecurity Internships], or if you have any advice for students looking to apply to these roles.\n> \n> I’ve attached my resume for your reference. I would love to connect and learn more if you have a moment.\n> \n> Thank you for your time,\n> \n> [Your Name]  \n> [Your Email]  \n> [Your Phone Number]  \n> [Your LinkedIn Link]\"\n\n### What makes these work:\n* **No fluff:** They get straight to the point without using overly corporate jargon.\n* **Honest and direct:** They don't pretend you have a prior relationship if you don't.\n* **Low pressure:** They ask a simple, direct question rather than demanding an interview.\n\n**Let me know your details, and we can draft a custom message that fits your exact situation!**"
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 9.692,
+          "SPECIALIST_PRE_TOOL_WAIT": 14.744,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 1.043
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 10.723,
+          "transfer_to_agent": {
+            "t": 10.723,
+            "target": "networking__professional_communication_agent"
+          },
+          "first_specialist_event": 10.73,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 25.479,
+          "stream_completion": 25.48
+        },
+        "failure": null
+      },
+      "health_gate_passed": true,
+      "acceptance_phases": {
+        "ROOT_WAIT": 9.692,
+        "SPECIALIST_PRE_TOOL_WAIT": 14.744,
+        "UNOBSERVED_RUNTIME_WAIT": 1.043,
+        "FINALIZATION": 0.001
+      },
+      "primary_failure_category": null,
+      "manual_acceptance": {
+        "verdict": "PASS",
+        "reliability_violation_observed": false,
+        "notes": "Normal completion, correct Networking route, no retrieval."
+      },
+      "registered_candidate_count": 0,
+      "verification_attempts": 0,
+      "verification_completions": 0,
+      "inspected_authority_hosts": []
+    },
+    {
+      "id": "acceptance_certification_stable_1",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T10:06:41.472687+00:00",
+      "orchestrator_request_start": 0.944,
+      "total_seconds": 23.828,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.533,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 8.541,
+      "first_specialist_event": 8.541,
+      "handoff_seconds": 0.008,
+      "first_helper": null,
+      "first_text": 23.827,
+      "final_answer": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 15.281,
+      "orchestrator_model_seconds": 7.587,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.943,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 8.544,
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.533,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 8.536,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.944,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 8.531,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.531,
+          "duration": 7.587
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 8.545,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28593,
+          "tool_description_count": 3,
+          "response_received": 23.826,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 23.826,
+          "duration": 15.281
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.533,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.539,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 8.541,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 23.827,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 7.587,
+          "SPECIALIST_PRE_TOOL_WAIT": 15.281,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 0.959
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 8.533,
+          "transfer_to_agent": {
+            "t": 8.533,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 8.541,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 23.827,
+          "stream_completion": 23.828
+        },
+        "failure": null
+      },
+      "acceptance_phases": {
+        "ROOT_WAIT": 7.587,
+        "SPECIALIST_PRE_TOOL_WAIT": 15.281,
+        "UNOBSERVED_RUNTIME_WAIT": 0.959,
+        "FINALIZATION": 0.001
+      },
+      "primary_failure_category": null,
+      "manual_acceptance": {
+        "verdict": "PASS",
+        "reliability_violation_observed": false,
+        "notes": "Useful generic framework; no unsupported discount/price/eligibility/vendor-benefit claims."
+      },
+      "registered_candidate_count": 0,
+      "verification_attempts": 0,
+      "verification_completions": 0,
+      "inspected_authority_hosts": []
+    },
+    {
+      "id": "acceptance_certification_stable_2",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T10:07:13.823344+00:00",
+      "orchestrator_request_start": 0.015,
+      "total_seconds": 12.202,
+      "band": "GREEN",
+      "first_transfer": {
+        "t": 3.571,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 3.574,
+      "first_specialist_event": 3.574,
+      "handoff_seconds": 0.003,
+      "first_helper": null,
+      "first_text": 12.201,
+      "final_answer": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 8.624,
+      "orchestrator_model_seconds": 3.555,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.015,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 3.576,
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 3.572,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 3.572,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.015,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 3.57,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 3.57,
+          "duration": 3.555
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 3.576,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28593,
+          "tool_description_count": 3,
+          "response_received": 12.2,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 12.2,
+          "duration": 8.624
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 3.571,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 3.572,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.574,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 12.201,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 3.555,
+          "SPECIALIST_PRE_TOOL_WAIT": 8.624,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 0.022
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 3.571,
+          "transfer_to_agent": {
+            "t": 3.571,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 3.574,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 12.201,
+          "stream_completion": 12.202
+        },
+        "failure": null
+      },
+      "acceptance_phases": {
+        "ROOT_WAIT": 3.555,
+        "SPECIALIST_PRE_TOOL_WAIT": 8.624,
+        "UNOBSERVED_RUNTIME_WAIT": 0.022,
+        "FINALIZATION": 0.001
+      },
+      "primary_failure_category": null,
+      "manual_acceptance": {
+        "verdict": "PASS",
+        "reliability_violation_observed": false,
+        "notes": "Second fresh stable sample; same safe generic framework, zero retrieval."
+      },
+      "registered_candidate_count": 0,
+      "verification_attempts": 0,
+      "verification_completions": 0,
+      "inspected_authority_hosts": []
+    },
+    {
+      "id": "acceptance_interview_stable",
+      "domain": "interview",
+      "label": "Interview Preparation",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role.",
+      "status": "completed",
+      "completed_utc": "2026-10-23T10:07:55.322584+00:00",
+      "orchestrator_request_start": 0.014,
+      "total_seconds": 21.35,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 3.386,
+        "target": "interview_preparation_agent"
+      },
+      "actual_specialist": "interview_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 3.389,
+      "first_specialist_event": 3.389,
+      "handoff_seconds": 0.003,
+      "first_helper": null,
+      "first_text": 21.349,
+      "final_answer": "Preparing for an entry-level cybersecurity technical interview requires a balance of solid foundational knowledge, hands-on familiarity with common tools, and the ability to communicate your troubleshooting mindset clearly. \n\nBecause cybersecurity is a broad field, entry-level roles (such as SOC Analyst, Junior Security Engineer, or Associate Consultant) typically focus on how well you understand core networking, operating systems, and basic security principles, rather than expecting you to be an expert in every domain.\n\nHere is a comprehensive, industry-representative strategy to structure your preparation.\n\n---\n\n### Phase 1: Master the Core Technical Pillars\n\nTechnical interviews for cybersecurity usually test your knowledge across these four primary areas:\n\n#### 1. Networking Fundamentals (The absolute most critical area)\nIn cybersecurity, you cannot protect what you do not understand. You should be able to explain:\n*   **The OSI and TCP/IP Models:** Understand each layer, its purpose, and what protocols or devices live there (e.g., routers at Layer 3/Network, switches at Layer 2/Data Link).\n*   **Common Protocols & Ports:** Know their default ports and security implications:\n    *   HTTP (80) vs. HTTPS (443)\n    *   SSH (22) vs. Telnet (23)\n    *   DNS (53), DHCP (67/68), FTP (20/21), RDP (3389), SMB (445).\n*   **The TCP Three-Way Handshake:** Be able to detail the SYN $\\rightarrow$ SYN-ACK $\\rightarrow$ ACK process and how connection teardown works (FIN/RST).\n*   **Core Concepts:** IP addressing, subnetting, NAT, private vs. public IP ranges, and how a packet travels from a local machine to a remote server.\n\n#### 2. Operating Systems & Command Line\nYou will often be asked how to navigate and secure systems via the command line:\n*   **Linux/Unix:** Know basic commands for searching logs, managing processes, and viewing files (`grep`, `find`, `chmod`, `chown`, `ps`, `ls`, `cat`). Understand Linux file permissions (e.g., what `chmod 755` means).\n*   **Windows:** Understand Event Viewer logs (Application, Security, System), basic Active Directory concepts (domain controllers, GPOs, users/groups), and Command Prompt/PowerShell equivalents of basic commands.\n\n#### 3. Core Security & Cryptography Concepts\nBe prepared to explain fundamental security mechanisms clearly:\n*   **The CIA Triad:** Confidentiality, Integrity, and Availability. Give real-world examples of how to defend each.\n*   **Hashing vs. Encryption vs. Encoding:** \n    *   *Hashing* (one-way, integrity checking, e.g., SHA-256).\n    *   *Encryption* (reversible with a key, confidentiality, e.g., AES, RSA). Know the difference between symmetric (fast, single key) and asymmetric (public/private key pair) encryption.\n    *   *Encoding* (data transformation for compatibility, not security, e.g., Base64).\n*   **Authentication & Authorization:** The differences between them, and MFA (Multi-Factor Authentication) mechanisms.\n\n#### 4. Common Threats and Vulnerabilities\n*   **OWASP Top 10:** Have a strong conceptual grasp of top web vulnerabilities, especially SQL Injection (SQLi) and Cross-Site Scripting (XSS). Know how they occur and how to prevent them (e.g., input sanitization, parameterized queries).\n*   **Malware Types:** Ransomware, trojans, worms, spyware, and rootkits.\n*   **Phishing and Social Engineering:** Common indicators and mitigation strategies.\n\n---\n\n### Phase 2: Prepare for Classic \"Scenario\" Questions\n\nInterviewers want to see how you think under pressure. Instead of just asking for definitions, they will often give you hypothetical scenarios.\n\n*   **The \"What happens when...\" Question:** *“What happens when you type `google.com` into a web browser and hit Enter?”* \n    *   *Tip:* Break this down step-by-step: DNS lookup (browser cache $\\rightarrow$ OS cache $\\rightarrow$ router $\\rightarrow$ ISP $\\rightarrow$ authoritative servers), TCP connection (handshake), TLS/SSL handshake, HTTP GET request, server response, and rendering.\n*   **The Incident Response Scenario:** *“You receive an alert that a host is communicating with a known malicious IP address. What do you do?”*\n    *   *Tip:* Walk through a logical containment and analysis process. Prioritize isolating the host from the network first to prevent lateral movement, then analyze logs, check running processes, and determine the scope of the impact.\n\n---\n\n### Phase 3: Define Your Hands-On Experience\n\nEven if you haven't held a professional cybersecurity role yet, you can stand out by talking about your practical projects, labs, or coursework:\n*   **Tooling:** Mention tools you have used in labs or personal projects, such as Wireshark (packet analysis), Nmap (network scanning), Snort (IDS), or Splunk/Elasticsearch (SIEM/log analysis). Be ready to explain *why* and *how* you used them.\n*   **Home Labs / CTFs (Capture the Flag):** If you practice on platforms like TryHackMe, Hack The Box, or participate in collegiate defense competitions, explain the specific methodologies you used to solve challenges or defend systems.\n\n---\n\n### Phase 4: How We Can Practice Together\n\nTo make your preparation highly effective, we can run interactive practice sessions tailored to your needs. Here are a few ways we can proceed:\n\n1.  **Technical Mock Interview:** I can act as an interviewer and ask you a series of core networking, OS, and security questions, providing constructive feedback on your accuracy and communication style at the end.\n2.  **Scenario Walkthrough:** We can practice solving complex, open-ended scenarios (like responding to a malware alert or diagnosing a network connection issue) step-by-step.\n3.  **Specific Topic Deep-Dive:** If you feel weak in a particular area (e.g., asymmetric cryptography, SQL injection, or the TCP handshake), we can break it down conceptually and practice questions specifically on that topic.\n\n**To tailor our next steps, tell me a little more about your situation:**\n*   What is the specific title of the entry-level cybersecurity role you are targeting (e.g., SOC Analyst, Security Consultant, etc.)?\n*   Do you have an interview coming up soon, or are you preparing in advance?\n*   Which of the areas above do you feel most confident in, and which ones would you like to start practicing first?",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 17.955,
+      "orchestrator_model_seconds": 3.371,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.014,
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "t": 3.391,
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 33024,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 3.387,
+          "fingerprint": "b2b2470a1f10ed405f93fc57548b668bcd8a5dd8c2751d502405205c64ddbb46",
+          "args": {
+            "agent_name": "interview_preparation_agent"
+          },
+          "end": 3.387,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.014,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 3.385,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 3.385,
+          "duration": 3.371
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 3.391,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 33024,
+          "tool_description_count": 3,
+          "response_received": 21.346,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 21.346,
+          "duration": 17.955
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 3.386,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "interview_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 3.387,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.389,
+          "author": "interview_preparation_agent",
+          "parts": []
+        },
+        {
+          "t": 21.348,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for an entry-level cybersecurity technical interview requires a balance of solid foundational knowledge, hands-on familiarity with common tools, and the ability to communicate your troubleshooting mindset clearly. \n\nBecause cybersecurity is a broad field, entry-level roles (such as SOC Analyst, Junior Security Engineer, or Associate Consultant) typically focus on how well you understand core networking, operating systems, and basic security principles, rather than expecting you to be an expert in every domain.\n\nHere is a comprehensive, industry-representative strategy to structure your preparation.\n\n---\n\n### Phase 1: Master the Core Technical Pillars\n\nTechnical interviews for cybersecurity usually test your knowledge across these four primary areas:\n\n#### 1. Networking Fundamentals (The absolute most critical area)\nIn cybersecurity, you cannot protect what you do not understand. You should be able to explain:\n*   **The OSI and TCP/IP Models:** Understand each layer, its purpose, and what protocols or devices live there (e.g., routers at Layer 3/Network, switches at Layer 2/Data Link).\n*   **Common Protocols & Ports:** Know their default ports and security implications:\n    *   HTTP (80) vs. HTTPS (443)\n    *   SSH (22) vs. Telnet (23)\n    *   DNS (53), DHCP (67/68), FTP (20/21), RDP (3389), SMB (445).\n*   **The TCP Three-Way Handshake:** Be able to detail the SYN $\\rightarrow$ SYN-ACK $\\rightarrow$ ACK process and how connection teardown works (FIN/RST).\n*   **Core Concepts:** IP addressing, subnetting, NAT, private vs. public IP ranges, and how a packet travels from a local machine to a remote server.\n\n#### 2. Operating Systems & Command Line\nYou will often be asked how to navigate and secure systems via the command line:\n*   **Linux/Unix:** Know basic commands for searching logs, managing processes, and viewing files (`grep`, `find`, `chmod`, `chown`, `ps`, `ls`, `cat`). Understand Linux file permissions (e.g., what `chmod 755` means).\n*   **Windows:** Understand Event Viewer logs (Application, Security, System), basic Active Directory concepts (domain controllers, GPOs, users/groups), and Command Prompt/PowerShell equivalents of basic commands.\n\n#### 3. Core Security & Cryptography Concepts\nBe prepared to explain fundamental security mechanisms clearly:\n*   **The CIA Triad:** Confidentiality, Integrity, and Availability. Give real-world examples of how to defend each.\n*   **Hashing vs. Encryption vs. Encoding:** \n    *   *Hashing* (one-way, integrity checking, e.g., SHA-256).\n    *   *Encryption* (reversible with a key, confidentiality, e.g., AES, RSA). Know the difference between symmetric (fast, single key) and asymmetric (public/private key pair) encryption.\n    *   *Encoding* (data transformation for compatibility, not security, e.g., Base64).\n*   **Authentication & Authorization:** The differences between them, and MFA (Multi-Factor Authentication) mechanisms.\n\n#### 4. Common Threats and Vulnerabilities\n*   **OWASP Top 10:** Have a strong conceptual grasp of top web vulnerabilities, especially SQL Injection (SQLi) and Cross-Site Scripting (XSS). Know how they occur and how to prevent them (e.g., input sanitization, parameterized queries).\n*   **Malware Types:** Ransomware, trojans, worms, spyware, and rootkits.\n*   **Phishing and Social Engineering:** Common indicators and mitigation strategies.\n\n---\n\n### Phase 2: Prepare for Classic \"Scenario\" Questions\n\nInterviewers want to see how you think under pressure. Instead of just asking for definitions, they will often give you hypothetical scenarios.\n\n*   **The \"What happens when...\" Question:** *“What happens when you type `google.com` into a web browser and hit Enter?”* \n    *   *Tip:* Break this down step-by-step: DNS lookup (browser cache $\\rightarrow$ OS cache $\\rightarrow$ router $\\rightarrow$ ISP $\\rightarrow$ authoritative servers), TCP connection (handshake), TLS/SSL handshake, HTTP GET request, server response, and rendering.\n*   **The Incident Response Scenario:** *“You receive an alert that a host is communicating with a known malicious IP address. What do you do?”*\n    *   *Tip:* Walk through a logical containment and analysis process. Prioritize isolating the host from the network first to prevent lateral movement, then analyze logs, check running processes, and determine the scope of the impact.\n\n---\n\n### Phase 3: Define Your Hands-On Experience\n\nEven if you haven't held a professional cybersecurity role yet, you can stand out by talking about your practical projects, labs, or coursework:\n*   **Tooling:** Mention tools you have used in labs or personal projects, such as Wireshark (packet analysis), Nmap (network scanning), Snort (IDS), or Splunk/Elasticsearch (SIEM/log analysis). Be ready to explain *why* and *how* you used them.\n*   **Home Labs / CTFs (Capture the Flag):** If you practice on platforms like TryHackMe, Hack The Box, or participate in collegiate defense competitions, explain the specific methodologies you used to solve challenges or defend systems.\n\n---\n\n### Phase 4: How We Can Practice Together\n\nTo make your preparation highly effective, we can run interactive practice sessions tailored to your needs. Here are a few ways we can proceed:\n\n1.  **Technical Mock Interview:** I can act as an interviewer and ask you a series of core networking, OS, and security questions, providing constructive feedback on your accuracy and communication style at the end.\n2.  **Scenario Walkthrough:** We can practice solving complex, open-ended scenarios (like responding to a malware alert or diagnosing a network connection issue) step-by-step.\n3.  **Specific Topic Deep-Dive:** If you feel weak in a particular area (e.g., asymmetric cryptography, SQL injection, or the TCP handshake), we can break it down conceptually and practice questions specifically on that topic.\n\n**To tailor our next steps, tell me a little more about your situation:**\n*   What is the specific title of the entry-level cybersecurity role you are targeting (e.g., SOC Analyst, Security Consultant, etc.)?\n*   Do you have an interview coming up soon, or are you preparing in advance?\n*   Which of the areas above do you feel most confident in, and which ones would you like to start practicing first?"
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 3.371,
+          "SPECIALIST_PRE_TOOL_WAIT": 17.955,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 0.023
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 3.386,
+          "transfer_to_agent": {
+            "t": 3.386,
+            "target": "interview_preparation_agent"
+          },
+          "first_specialist_event": 3.389,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 21.349,
+          "stream_completion": 21.35
+        },
+        "failure": null
+      },
+      "acceptance_phases": {
+        "ROOT_WAIT": 3.371,
+        "SPECIALIST_PRE_TOOL_WAIT": 17.955,
+        "UNOBSERVED_RUNTIME_WAIT": 0.023,
+        "FINALIZATION": 0.001
+      },
+      "primary_failure_category": null,
+      "manual_acceptance": {
+        "verdict": "PASS",
+        "reliability_violation_observed": false,
+        "notes": "Useful general preparation strategy; no current employer-specific process assertions."
+      },
+      "registered_candidate_count": 0,
+      "verification_attempts": 0,
+      "verification_completions": 0,
+      "inspected_authority_hosts": []
+    },
+    {
+      "id": "acceptance_trust_c",
+      "domain": "trust",
+      "label": "Trust escalation",
+      "expected": "trust__human_escalation_agent",
+      "mode": "human",
+      "prompt": "I need a human to review this because the available evidence is contradictory.",
+      "status": "completed",
+      "completed_utc": "2026-10-23T10:08:17.536035+00:00",
+      "orchestrator_request_start": 0.018,
+      "total_seconds": 2.06,
+      "band": "GREEN",
+      "first_transfer": {
+        "t": 2.049,
+        "target": "trust__human_escalation_agent"
+      },
+      "actual_specialist": "trust__human_escalation_agent",
+      "route_match": true,
+      "first_specialist_start": 2.053,
+      "first_specialist_event": 2.054,
+      "handoff_seconds": 0.005,
+      "first_helper": null,
+      "first_text": 2.058,
+      "final_answer": "### DISPUTED CLAIM\n\nI need a human to review this because the available evidence is contradictory.\n\n### SOURCE A\n\nNot supplied or verified.\n\n### SOURCE B\n\nNot supplied or verified.\n\n### CONFLICT\n\nExact disagreement cannot be established without both source statements.; Conflict type: unresolved statement disagreement or insufficient source metadata\n\n### ASSESSMENT\n\nUNRESOLVED\n\n### WHY\n\nThe exact sources, disputed wording and matching date/population/scope have not established a responsible resolution.\n\n### NEXT STEP\n\nHuman review is appropriate. Share the exact disputed wording and source links with the relevant official university/program authority. I have not contacted anyone or created a referral.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 0,
+      "orchestrator_model_seconds": 2.03,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.017,
+          "history_messages": 1,
+          "visible_history_characters": 78,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "trust__human_escalation_agent",
+          "t": 2.057,
+          "history_messages": 3,
+          "visible_history_characters": 1266,
+          "instruction_characters": 26118,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 2.05,
+          "fingerprint": "6535fde878a24695f3239fbf13c4a4a5259a9177ae0c5da3d1cfa8f5214a64bc",
+          "args": {
+            "agent_name": "trust__human_escalation_agent"
+          },
+          "end": 2.051,
+          "duration": 0.001,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.018,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 78,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 2.048,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 2.048,
+          "duration": 2.03
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 2.049,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "trust__human_escalation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 2.051,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 2.054,
+          "author": "trust__human_escalation_agent",
+          "parts": []
+        },
+        {
+          "t": 2.058,
+          "author": "trust__human_escalation_agent",
+          "parts": [
+            {
+              "text": "### DISPUTED CLAIM\n\nI need a human to review this because the available evidence is contradictory.\n\n### SOURCE A\n\nNot supplied or verified.\n\n### SOURCE B\n\nNot supplied or verified.\n\n### CONFLICT\n\nExact disagreement cannot be established without both source statements.; Conflict type: unresolved statement disagreement or insufficient source metadata\n\n### ASSESSMENT\n\nUNRESOLVED\n\n### WHY\n\nThe exact sources, disputed wording and matching date/population/scope have not established a responsible resolution.\n\n### NEXT STEP\n\nHuman review is appropriate. Share the exact disputed wording and source links with the relevant official university/program authority. I have not contacted anyone or created a referral."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 2.03,
+          "STREAM_FINALIZATION": 0.002,
+          "UNOBSERVED_RUNTIME_WAIT": 0.028
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 2.049,
+          "transfer_to_agent": {
+            "t": 2.049,
+            "target": "trust__human_escalation_agent"
+          },
+          "first_specialist_event": 2.054,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 2.058,
+          "stream_completion": 2.06
+        },
+        "failure": null
+      },
+      "acceptance_phases": {
+        "ROOT_WAIT": 2.03,
+        "UNOBSERVED_RUNTIME_WAIT": 0.028,
+        "FINALIZATION": 0.002
+      },
+      "primary_failure_category": null,
+      "manual_acceptance": {
+        "verdict": "PASS",
+        "reliability_violation_observed": false,
+        "notes": "Immediate human-review guidance; no research, no claim that a referral was created."
+      },
+      "registered_candidate_count": 0,
+      "verification_attempts": 0,
+      "verification_completions": 0,
+      "inspected_authority_hosts": []
+    },
+    {
+      "id": "acceptance_networking_current",
+      "domain": "networking",
+      "label": "Networking & Professional Communication",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?",
+      "status": "failed",
+      "completed_utc": "2026-10-23T10:11:04.450774+00:00",
+      "orchestrator_request_start": 1.211,
+      "total_seconds": 118.15,
+      "band": "RED",
+      "first_transfer": {
+        "t": 7.726,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 7.735,
+      "first_specialist_event": 7.736,
+      "handoff_seconds": 0.01,
+      "first_helper": 34.838,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 7,
+      "url_context_invocations": 2,
+      "total_retrieval_seconds": 71.122,
+      "specialist_model_seconds": 39.224,
+      "orchestrator_model_seconds": 6.512,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.21,
+          "history_messages": 1,
+          "visible_history_characters": 81,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 7.739,
+          "history_messages": 3,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "t": 34.841,
+          "history_messages": 1,
+          "visible_history_characters": 847,
+          "instruction_characters": 993,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 66.282,
+          "history_messages": 5,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "t": 76.596,
+          "history_messages": 1,
+          "visible_history_characters": 457,
+          "instruction_characters": 1540,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 90.027,
+          "history_messages": 7,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "t": 91.892,
+          "history_messages": 1,
+          "visible_history_characters": 411,
+          "instruction_characters": 1540,
+          "tool_description_count": 0
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.727,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 7.73,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 34.822,
+          "fingerprint": "b550f42d4e55b67e41ca2caa88b2e7fd9e95260f1ee95dae563dede37c6c9074",
+          "args": {
+            "request": "Morgan State University Computer Science student organizations networking"
+          },
+          "end": 66.277,
+          "duration": 31.455,
+          "quality_output": "{\"candidates\": [{\"candidate_id\": \"C1\", \"claim\": \"Morgan State University Computer Science students can utilize SACS (Society for the Advancement of Computer Science) to access professional networking, peer mentoring, and career development opportunities.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C2\", \"claim\": \"Morgan State University Computer Science students can use the CS Navigator platform for 24/7 advising and academic support.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C3\", \"claim\": \"Morgan State Computer Science students can engage with the Cybersecurity Assurance & Policy (CAP) Center to gain access to resources and a network of cyber command and industry professionals.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}], \"next_action\": \"Verify candidate IDs only.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "verify_networking_candidate",
+          "kind": "verification",
+          "start": 76.582,
+          "fingerprint": "98842cb0b05ed285bf91a066c514bb8ef6cff17467d4a05de8ea527dbfecb17f",
+          "args": {
+            "candidate_id": "C1"
+          },
+          "end": 90.023,
+          "duration": 13.441,
+          "quality_output": "{\"candidate_id\": \"C1\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 4,
+          "name": "verify_networking_candidate",
+          "kind": "verification",
+          "start": 91.878,
+          "fingerprint": "15d6f0b585ab1363aa39e59b0aff91eff8213bade5206224847bb98483c9db05",
+          "args": {
+            "candidate_id": "C3"
+          },
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null,
+          "end": 118.15,
+          "duration": 26.272,
+          "censored": true
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 34.838,
+          "index": 1,
+          "end": 66.274,
+          "duration": 31.436
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "kind": "url",
+          "start": 76.594,
+          "index": 1,
+          "end": 90.021,
+          "duration": 13.427
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "kind": "url",
+          "start": 91.891,
+          "index": 2,
+          "end": 118.15,
+          "duration": 26.259,
+          "censored": true
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.211,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 81,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 7.723,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.723,
+          "duration": 6.512
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 7.742,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 34.82,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 34.82,
+          "duration": 27.078
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "start": 34.841,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Morgan State Computer Science student resources",
+            "Morgan State Computer Science student organizations",
+            "Morgan State University Computer Science networking resources",
+            "\"Society for the Advancement of Computer Science\" \"Morgan State\"",
+            "\"CS Navigator\" \"Morgan State\"",
+            "\"CAP Center\" \"Morgan State\"",
+            "\"Academic Engagement Network\" \"Morgan State\""
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkrwgbCoI5Cpz4RLx32AY16g17crGYAmgsXBO7UmFNHYhl1RMqQqTVXbq02ucz4oI46Xxrx4exTxiscFcRkGOKmpK9StUpvwaPiJZNfkIthCBrTzQVMB9CvlMsqxrlq0IsBAvQU0FR1Do6hVrPieMMcVnpufGCIw==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfA1tlcg1eFHvieI-f9vXBMv58pGuMS8lNSMOmmnky_ewbrzBmx2m4PxAzNvZGq4oU9kJdEa2uivdqyoPqfXpBJ_2ur9IHVgHvP_ZczFriS03vvOvB2wP6lC7-2EfnLYwpXmbHAYlhjx3c7FjNkx7ZYLE=",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtuxmv1QKMtcM-sa20Hl4TfDbJeus3Ots74ocPILsImAOV8KOZRRoKHrfVSPBCM3BuvHAx0_4gcC7SPiqTvrDyOURFj0wHPm2xN4SisNFRBHb8EN71kw1Oxh0VegE2qVWH",
+              "title": "morgan.edu"
+            }
+          ],
+          "history_messages": 1,
+          "visible_history_characters": 847,
+          "instruction_characters": 993,
+          "tool_description_count": 0,
+          "response_received": 66.271,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 66.271,
+          "duration": 31.43
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 66.282,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 5,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 76.58,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 76.58,
+          "duration": 10.298
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "start": 76.597,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 457,
+          "instruction_characters": 1540,
+          "tool_description_count": 0,
+          "response_received": 90.019,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 90.019,
+          "duration": 13.422
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 90.028,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 7,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 91.876,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 91.876,
+          "duration": 1.848
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "start": 91.893,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 411,
+          "instruction_characters": 1540,
+          "tool_description_count": 0,
+          "end": 118.144,
+          "duration": 26.251,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 118.144
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 118.144
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 118.145
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 118.149
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 118.15
+        }
+      ],
+      "events": [
+        {
+          "t": 7.726,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.733,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 7.736,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 34.821,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "Networking___Professional_Communication_Agent_google_search_agent",
+              "args": {
+                "request": "Morgan State University Computer Science student organizations networking"
+              }
+            }
+          ]
+        },
+        {
+          "t": 66.273,
+          "author": "Networking___Professional_Communication_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "EVIDENCE CANDIDATE 1\nCLAIM: Morgan State University Computer Science students can utilize SACS (Society for the Advancement of Computer Science) to access professional networking, peer mentoring, and career development opportunities.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFkrwgbCoI5Cpz4RLx32AY16g17crGYAmgsXBO7UmFNHYhl1RMqQqTVXbq02ucz4oI46Xxrx4exTxiscFcRkGOKmpK9StUpvwaPiJZNfkIthCBrTzQVMB9CvlMsqxrlq0IsBAvQU0FR1Do6hVrPieMMcVnpufGCIw==\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: SACS (Society for the Advancement of Computer Science) is an ACM student affiliate at Morgan State University that provides career opportunities, mentoring from peers, alumni, and industry professionals, and technical workshops.\nDISCOVERY LIMITS: The exact requirements, fees, or membership application process for SACS are not described.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 2\nCLAIM: Morgan State University Computer Science students can use the CS Navigator platform for 24/7 advising and academic support.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfA1tlcg1eFHvieI-f9vXBMv58pGuMS8lNSMOmmnky_ewbrzBmx2m4PxAzNvZGq4oU9kJdEa2uivdqyoPqfXpBJ_2ur9IHVgHvP_ZczFriS03vvOvB2wP6lC7-2EfnLYwpXmbHAYlhjx3c7FjNkx7ZYLE=\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: 2026\nDISCOVERY SUPPORT: The Morgan State University Department of Computer Science offers a 24/7 cutting-edge advising and support platform called CS Navigator (cs.inavigator.ai) for course registration, overrides, and substitutions.\nDISCOVERY LIMITS: The exact technical implementation details and any limitations of the AI advisor are not specified.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 3\nCLAIM: Morgan State Computer Science students can engage with the Cybersecurity Assurance & Policy (CAP) Center to gain access to resources and a network of cyber command and industry professionals.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGmz4Ev_pefoszptqdDgZZ7vsNjnaGwQAiA7V1cLsioheBFW7vkWlzv35Jtmjm6H3Zr-xykRU2w0aiAzrFOsDy_ehuMnOUYXdIWUavjo5AhJwGErYH94UV2KVaeOVpMc9xm\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: The CAP Center at Morgan State is a member of the USCYBERCOM Academic Engagement Network, providing students with access to applied cyber research and cyber command professionals.\nDISCOVERY LIMITS: The specific qualification criteria for undergraduate students to join the CAP Center's research projects are not fully specified.\nDISCOVERY STATUS: CANDIDATE CURRENT"
+            }
+          ]
+        },
+        {
+          "t": 66.278,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "Networking___Professional_Communication_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 76.581,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate",
+              "args": {
+                "candidate_id": "C1"
+              }
+            }
+          ]
+        },
+        {
+          "t": 90.021,
+          "author": "Networking___Professional_Communication_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"VERIFIED CURRENT\",\n  \"source_title\": \"The Society for the Advancement of Computer Science\",\n  \"source_date_or_cycle\": \"UNKNOWN\",\n  \"page_evidence\": \"The official webpage of the Department of Computer Science at Morgan State University states that SACS (Society for the Advancement of Computer Science) exists to 'Create network and job opportunities', 'Engender mentorship opportunities', and 'Sharpen the technical and professional skills of members'. Its goals include 'Enabling mentoring from peers, alumni, and industry professionals' and partnering with organizations to provide students with 'access to opportunities for growth, development, and career advancement.'\",\n  \"supported_scope\": \"The claim is fully supported as the page explicitly details that Morgan State University Computer Science students can join SACS to access professional networking, mentoring (from peers, alumni, and professionals), and career development opportunities.\",\n  \"not_established\": \"\",\n  \"why\": \"The official Morgan State University department website confirms that the Society for the Advancement of Computer Science (SACS) actively provides professional networking, peer/alumni/industry mentoring, and career development opportunities for its students.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": true,\n  \"authority_host\": \"morgan.edu\",\n  \"facts\": {}\n}"
+            }
+          ]
+        },
+        {
+          "t": 90.023,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 91.878,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate",
+              "args": {
+                "candidate_id": "C3"
+              }
+            }
+          ]
+        },
+        {
+          "t": 118.145,
+          "author": "Networking___Professional_Communication_Agent_url_context_agent",
+          "parts": []
+        },
+        {
+          "t": 118.149,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 6.512,
+          "SPECIALIST_POST_TOOL_WAIT": 12.146,
+          "SPECIALIST_PRE_TOOL_WAIT": 27.078,
+          "TOOL_WAIT": 71.122,
+          "UNOBSERVED_RUNTIME_WAIT": 1.292
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 7.726,
+          "transfer_to_agent": {
+            "t": 7.726,
+            "target": "networking__professional_communication_agent"
+          },
+          "first_specialist_event": 7.736,
+          "first_helper_request": 34.822,
+          "helper_completions": [
+            66.274,
+            90.021,
+            118.15
+          ],
+          "specialist_resumes": [
+            66.282,
+            90.027
+          ],
+          "first_public_text": null,
+          "stream_completion": 118.15
+        },
+        "failure": {
+          "cause": "PROVIDER_CAPACITY",
+          "stage": "TOOL_CAPACITY"
+        }
+      },
+      "acceptance_phases": {
+        "ROOT_WAIT": 6.512,
+        "SPECIALIST_POST_TOOL_WAIT": 12.146,
+        "SPECIALIST_PRE_TOOL_WAIT": 27.078,
+        "TOOL_WAIT": 71.122,
+        "UNOBSERVED_RUNTIME_WAIT": 1.292
+      },
+      "primary_failure_category": "TOOL_CAPACITY",
+      "manual_acceptance": {
+        "verdict": "INCOMPLETE DUE TO PROVIDER CAPACITY",
+        "reliability_violation_observed": false,
+        "notes": "429 in second URL Context inspection after first completed. No final answer; current regression acceptance unassessed."
+      },
+      "registered_candidate_count": 3,
+      "verification_attempts": 2,
+      "verification_completions": 2,
+      "inspected_authority_hosts": [
+        "morgan.edu"
+      ]
+    }
+  ],
+  "planned_case_ids": [
+    "acceptance_health_probe",
+    "acceptance_certification_stable_1",
+    "acceptance_certification_stable_2",
+    "acceptance_interview_stable",
+    "acceptance_trust_c",
+    "acceptance_networking_current",
+    "acceptance_research_current",
+    "acceptance_career_current",
+    "acceptance_certification_current",
+    "acceptance_interview_current",
+    "acceptance_trust_a",
+    "acceptance_trust_b"
+  ],
+  "remaining": [
+    "acceptance_research_current",
+    "acceptance_career_current",
+    "acceptance_certification_current",
+    "acceptance_interview_current",
+    "acceptance_trust_a",
+    "acceptance_trust_b"
+  ],
+  "acceptance_policy": "New user-authorized acceptance session; one health probe, then ordered cases; no retries and stop on unhealthy runtime. Source frozen.",
+  "deferred_cases": [
+    {
+      "id": "acceptance_research_current",
+      "reason": "Stopped all live calls after Networking second verification returned 429; not assessed in this acceptance session."
+    },
+    {
+      "id": "acceptance_career_current",
+      "reason": "Stopped all live calls after Networking second verification returned 429; not assessed in this acceptance session."
+    },
+    {
+      "id": "acceptance_certification_current",
+      "reason": "Stopped all live calls after Networking second verification returned 429; not assessed in this acceptance session."
+    },
+    {
+      "id": "acceptance_interview_current",
+      "reason": "Stopped all live calls after Networking second verification returned 429; not assessed in this acceptance session."
+    },
+    {
+      "id": "acceptance_trust_a",
+      "reason": "Stopped all live calls after Networking second verification returned 429; not assessed in this acceptance session."
+    },
+    {
+      "id": "acceptance_trust_b",
+      "reason": "Stopped all live calls after Networking second verification returned 429; not assessed in this acceptance session."
+    }
+  ],
+  "acceptance_status": "INCOMPLETE DUE TO PROVIDER CAPACITY",
+  "summary": {
+    "attempted_including_probe": 6,
+    "completed_including_probe": 5,
+    "suite_attempted": 5,
+    "suite_completed": 4,
+    "capacity_failed_attempts": 1,
+    "deferred_suite_cases": 6,
+    "healthy_completed_product_defects": 0,
+    "source_changes": false,
+    "certification_stable_latency_assessment": "Normal variance in two healthy samples; no repeatable stall observed. Not a long-tail latency guarantee."
+  }
+}

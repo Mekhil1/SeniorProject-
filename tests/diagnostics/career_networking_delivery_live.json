@@ -1,0 +1,593 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "03a90dc226efb741f687b70b290519e0400d3365167c62dced77202ef3537326",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+    "agents\\career\\workflow\\shared_evidence.py": "d38f5604d2717ffc6d0a68d20bc0b428554759e5a38e77b5103796b323cc5b03"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "networking_repaired_stable",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T20:52:58.123526+00:00",
+      "orchestrator_request_start": 1.037,
+      "total_seconds": 19.47,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 6.994,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 7.001,
+      "first_specialist_event": 7.001,
+      "handoff_seconds": 0.007,
+      "first_helper": null,
+      "first_text": 19.469,
+      "final_answer": "To give you the most tailored advice or draft a specific message, it helps to look at **where** and **how** you plan to connect. A LinkedIn message looks very different from an email or an in-person conversation at a career fair.\n\nTo help me draft the perfect introduction for you, could you share a bit more context?\n1. **Where are you reaching out?** (e.g., a LinkedIn connection request, an email, or in-person at a career fair?)\n2. **Do you have a specific role or company in mind?** (e.g., a security analyst internship, or is this a general inquiry to build your network?)\n3. **What is your main \"cybersecurity hook\"?** (e.g., are you working on a specific home lab, participating in Capture the Flag (CTF) competitions, taking a great cryptography class at Morgan State, or preparing for a certification?)\n\n---\n\nWhile you think about those details, here are two common ways to structure a natural, professional introduction depending on the channel:\n\n### Option A: The LinkedIn Connection Request (Brief & Direct)\nWhen reaching out on LinkedIn, keep the message concise, polite, and focused on a professional commonality. \n\n> *“Hi [Recruiter's Name],*\n> \n> *I’m a Computer Science student at Morgan State University focusing on cybersecurity. I saw that you recruit for security roles at [Company Name] and wanted to connect. I’ve been following [Company Name]’s work in [mention a high-level area, like cloud security or threat intelligence], and I’d love to keep your team's opportunities on my radar as I head toward graduation.*\n> \n> *Best,*\n> *[Your Name]”*\n\n### Option B: The In-Person Elevator Pitch (Conversational & Natural)\nIf you are speaking to a recruiter at a career fair or networking event, you want to introduce yourself, highlight your hands-on interest, and ask an engaging question.\n\n> *“Hi, my name is [Your Name], and I’m a Computer Science student at Morgan State. I’m really passionate about cybersecurity—specifically [mention an area, like network security or penetration testing].* \n> \n> *Lately, I’ve been building my skills by [mention a quick project, e.g., setting up a home lab / participating in CTFs / working on a security project in class]. I know [Company Name] does incredible work in [mention company focus, if known], and I wanted to ask what specific technical skills or hands-on experiences your team values most when looking for security interns?”*\n\n**How would you like to customize this?** Let me know your specific situation, and we can write a draft tailored exactly to your voice and experience.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 12.463,
+      "orchestrator_model_seconds": 5.955,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.036,
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 7.003,
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28461,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 6.994,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 6.997,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.037,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 6.992,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 6.992,
+          "duration": 5.955
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 7.004,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28461,
+          "tool_description_count": 3,
+          "response_received": 19.467,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 19.467,
+          "duration": 12.463
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 6.994,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 6.999,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 7.001,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 19.468,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "To give you the most tailored advice or draft a specific message, it helps to look at **where** and **how** you plan to connect. A LinkedIn message looks very different from an email or an in-person conversation at a career fair.\n\nTo help me draft the perfect introduction for you, could you share a bit more context?\n1. **Where are you reaching out?** (e.g., a LinkedIn connection request, an email, or in-person at a career fair?)\n2. **Do you have a specific role or company in mind?** (e.g., a security analyst internship, or is this a general inquiry to build your network?)\n3. **What is your main \"cybersecurity hook\"?** (e.g., are you working on a specific home lab, participating in Capture the Flag (CTF) competitions, taking a great cryptography class at Morgan State, or preparing for a certification?)\n\n---\n\nWhile you think about those details, here are two common ways to structure a natural, professional introduction depending on the channel:\n\n### Option A: The LinkedIn Connection Request (Brief & Direct)\nWhen reaching out on LinkedIn, keep the message concise, polite, and focused on a professional commonality. \n\n> *“Hi [Recruiter's Name],*\n> \n> *I’m a Computer Science student at Morgan State University focusing on cybersecurity. I saw that you recruit for security roles at [Company Name] and wanted to connect. I’ve been following [Company Name]’s work in [mention a high-level area, like cloud security or threat intelligence], and I’d love to keep your team's opportunities on my radar as I head toward graduation.*\n> \n> *Best,*\n> *[Your Name]”*\n\n### Option B: The In-Person Elevator Pitch (Conversational & Natural)\nIf you are speaking to a recruiter at a career fair or networking event, you want to introduce yourself, highlight your hands-on interest, and ask an engaging question.\n\n> *“Hi, my name is [Your Name], and I’m a Computer Science student at Morgan State. I’m really passionate about cybersecurity—specifically [mention an area, like network security or penetration testing].* \n> \n> *Lately, I’ve been building my skills by [mention a quick project, e.g., setting up a home lab / participating in CTFs / working on a security project in class]. I know [Company Name] does incredible work in [mention company focus, if known], and I wanted to ask what specific technical skills or hands-on experiences your team values most when looking for security interns?”*\n\n**How would you like to customize this?** Let me know your specific situation, and we can write a draft tailored exactly to your voice and experience."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "networking_repaired_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T20:54:01.182324+00:00",
+      "orchestrator_request_start": 0.013,
+      "total_seconds": 63.051,
+      "band": "RED",
+      "first_transfer": {
+        "t": 2.421,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 2.424,
+      "first_specialist_event": 2.424,
+      "handoff_seconds": 0.003,
+      "first_helper": 4.825,
+      "first_text": 63.051,
+      "final_answer": "### Networking: evidence and status\n\n**C1 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Computer Science students at Morgan State University can use the Society for the Advancement of Computer Science (SACS) to network with industry professionals, find job and internship opportunities, and access mentoring and technical workshops.\n\nEvidence limits: The source does not explicitly indicate an active date or current academic cycle (such as Fall 2026) for these club activities within the page text.\n\nAssessment: The claim matches the official goals and descriptions of SACS on the Morgan State University website. However, because there is no explicit date or academic cycle in the text (and copyright dates are not considered currentness evidence), the current status remains unverified.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-01W4zOusUa341EmyDPNvOR91F793SDO_vm0v3K8-cmqwDh66u4P4I79O0gFmC6CfZKVbmmL0myMLVbcznMH5J_KpIDqBaKK8inEw2Btip2ziyNkhemmlPXX1QkKkvJQ_2jJm0LYK3jnhJkXoqXMeBFViswpkMqE=>)\n\n**C2 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University students can utilize the Association of Information Technology Professionals (AITP) student chapter to build professional contacts in the information systems and technology fields.\n\nEvidence limits: \n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqWlURsrGXcHyXpG2xXpewWVVHtqbyFyeam-p67cfvKv_CxujBORJCfNUE20aFDurupoZ4bzFL5xrlL6E3UgneaQBEzB53Wl3Ne6uefbNOhVLPQFrvusKJ5XMEAgBw_H1_7eGkKoojrgq603jYLeGN0OQrboIHcF1i3r3Doj5z-gVtCKvr-T315XF003EHNeqlSvZt9x0=>)\n\nConfirm unresolved current details with the official owner before relying on them.",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 2,
+      "url_context_invocations": 2,
+      "total_retrieval_seconds": 54.834,
+      "specialist_model_seconds": 5.737,
+      "orchestrator_model_seconds": 2.407,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.012,
+          "history_messages": 1,
+          "visible_history_characters": 81,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 2.427,
+          "history_messages": 3,
+          "visible_history_characters": 1284,
+          "instruction_characters": 28461,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "t": 4.828,
+          "history_messages": 1,
+          "visible_history_characters": 847,
+          "instruction_characters": 993,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 26.975,
+          "history_messages": 5,
+          "visible_history_characters": 1284,
+          "instruction_characters": 28461,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "t": 29.028,
+          "history_messages": 1,
+          "visible_history_characters": 496,
+          "instruction_characters": 1540,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 47.703,
+          "history_messages": 7,
+          "visible_history_characters": 1284,
+          "instruction_characters": 28461,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "t": 49.028,
+          "history_messages": 1,
+          "visible_history_characters": 496,
+          "instruction_characters": 1540,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 63.049,
+          "history_messages": 9,
+          "visible_history_characters": 1284,
+          "instruction_characters": 28461,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 2.422,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 2.422,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 4.815,
+          "fingerprint": "3401a864cfb2828e942f87c81e7fff870354bcc32e67336448f25101332fb652",
+          "args": {
+            "request": "\"Morgan State University\" \"computer science\" student organizations OR career networking"
+          },
+          "end": 26.972,
+          "duration": 22.157,
+          "quality_output": "{\"candidates\": [{\"candidate_id\": \"C1\", \"claim\": \"Computer Science students at Morgan State University can use the Society for the Advancement of Computer Science (SACS) to network with industry professionals, find job and internship opportunities, and access mentoring and technical workshops.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C2\", \"claim\": \"Morgan State University students can utilize the Association of Information Technology Professionals (AITP) student chapter to build professional contacts in the information systems and technology fields.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C3\", \"claim\": \"Morgan State University's \\\"The Bears Den\\\" is an online hub where students can find, join, and manage professional and student organizations like SACS and AITP.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}], \"next_action\": \"Verify candidate IDs only.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "verify_networking_candidate",
+          "kind": "verification",
+          "start": 29.017,
+          "fingerprint": "98842cb0b05ed285bf91a066c514bb8ef6cff17467d4a05de8ea527dbfecb17f",
+          "args": {
+            "candidate_id": "C1"
+          },
+          "end": 47.7,
+          "duration": 18.683,
+          "quality_output": "{\"candidate_id\": \"C1\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 4,
+          "name": "verify_networking_candidate",
+          "kind": "verification",
+          "start": 49.018,
+          "fingerprint": "05b2c8532887a411e45f1f651de8f29bf675a0ed5d1de063a35d6e3f25e7d85a",
+          "args": {
+            "candidate_id": "C2"
+          },
+          "end": 63.046,
+          "duration": 14.028,
+          "quality_output": "{\"candidate_id\": \"C2\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 4.825,
+          "index": 1,
+          "end": 26.971,
+          "duration": 22.146
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "kind": "url",
+          "start": 29.027,
+          "index": 1,
+          "end": 47.7,
+          "duration": 18.673
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "kind": "url",
+          "start": 49.027,
+          "index": 2,
+          "end": 63.042,
+          "duration": 14.015
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.013,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 81,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 2.42,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 2.42,
+          "duration": 2.407
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 2.429,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1284,
+          "instruction_characters": 28461,
+          "tool_description_count": 3,
+          "response_received": 4.814,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 4.814,
+          "duration": 2.385
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "start": 4.828,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Morgan State University Computer Science student organizations networking",
+            "Morgan State University Computer Science professional resources networking"
+          ],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 847,
+          "instruction_characters": 993,
+          "tool_description_count": 0,
+          "response_received": 26.969,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 26.969,
+          "duration": 22.141
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 26.976,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 5,
+          "visible_history_characters": 1284,
+          "instruction_characters": 28461,
+          "tool_description_count": 3,
+          "response_received": 29.016,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 29.016,
+          "duration": 2.04
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "start": 29.029,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 496,
+          "instruction_characters": 1540,
+          "tool_description_count": 0,
+          "response_received": 47.698,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 47.698,
+          "duration": 18.669
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 47.704,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 7,
+          "visible_history_characters": 1284,
+          "instruction_characters": 28461,
+          "tool_description_count": 3,
+          "response_received": 49.016,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 49.016,
+          "duration": 1.312
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "start": 49.028,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 496,
+          "instruction_characters": 1540,
+          "tool_description_count": 0,
+          "response_received": 63.041,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 63.041,
+          "duration": 14.013
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 2.421,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 2.423,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 2.424,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 4.815,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "Networking___Professional_Communication_Agent_google_search_agent",
+              "args": {
+                "request": "\"Morgan State University\" \"computer science\" student organizations OR career networking"
+              }
+            }
+          ]
+        },
+        {
+          "t": 26.97,
+          "author": "Networking___Professional_Communication_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "EVIDENCE CANDIDATE 1\nCLAIM: Computer Science students at Morgan State University can use the Society for the Advancement of Computer Science (SACS) to network with industry professionals, find job and internship opportunities, and access mentoring and technical workshops.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-01W4zOusUa341EmyDPNvOR91F793SDO_vm0v3K8-cmqwDh66u4P4I79O0gFmC6CfZKVbmmL0myMLVbcznMH5J_KpIDqBaKK8inEw2Btip2ziyNkhemmlPXX1QkKkvJQ_2jJm0LYK3jnhJkXoqXMeBFViswpkMqE=\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: The SACS page on morgan.edu details that the organization is the student affiliate of the Association for Computing Machinery and exists to create networking, mentoring, and job opportunities, host workshops, and help members secure internships and full-time positions.\nDISCOVERY LIMITS: The exact dates and industry partners for current workshops or networking mixers are not specified in the source.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 2\nCLAIM: Morgan State University students can utilize the Association of Information Technology Professionals (AITP) student chapter to build professional contacts in the information systems and technology fields.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqWlURsrGXcHyXpG2xXpewWVVHtqbyFyeam-p67cfvKv_CxujBORJCfNUE20aFDurupoZ4bzFL5xrlL6E3UgneaQBEzB53Wl3Ne6uefbNOhVLPQFrvusKJ5XMEAgBw_H1_7eGkKoojrgq603jYLeGN0OQrboIHcF1i3r3Doj5z-gVtCKvr-T315XF003EHNeqlSvZt9x0=\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: The webpage states that Morgan State's student chapter of AITP aims to help career-minded students make contacts with other members in the IS field and gain access to technical workshops.\nDISCOVERY LIMITS: The specific dates of current chapter meetings and current list of active officers are not detailed in this text.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 3\nCLAIM: Morgan State University's \"The Bears Den\" is an online hub where students can find, join, and manage professional and student organizations like SACS and AITP.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEXV7UIeHV5oHyzIB1pHCBy_Ef2te0A-hB9WehSYSmlj79o-0JsEkVV42Sf_2CZ5NS3A3u9NUJ2Px7SJQUWJiTiGecSr9Dpic7L5kdolbP1Rk7HNHZEyjwbl3nPHuBFTx-_6A==\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: The source describes \"The Bears Den\" as an online platform where the Morgan State University community can navigate student organizations, manage rosters, post events, and track involvement.\nDISCOVERY LIMITS: The exact live directory list of all active computer science student groups on the portal is not displayed in the source.\nDISCOVERY STATUS: CANDIDATE CURRENT"
+            }
+          ]
+        },
+        {
+          "t": 26.973,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "Networking___Professional_Communication_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 29.017,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate",
+              "args": {
+                "candidate_id": "C1"
+              }
+            }
+          ]
+        },
+        {
+          "t": 47.699,
+          "author": "Networking___Professional_Communication_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"CURRENT STATUS UNVERIFIED\",\n  \"source_title\": \"The Society for the Advancement of Computer Science - Morgan State University\",\n  \"source_date_or_cycle\": \"UNKNOWN\",\n  \"page_evidence\": \"According to the page, the Society for the Advancement of Computer Science (SACS) exists to 'Create network and job opportunities', 'Engender mentorship opportunities', and 'Sharpen the technical and professional skills of members'. Its specific goals include 'Hosting technical workshops each semester', 'Helping members secure meaningful internships and full time roles', and 'Enabling mentoring from peers, alumni, and industry professionals'.\",\n  \"supported_scope\": \"The source fully supports that Morgan State University Computer Science students can use SACS to network with industry professionals, find job and internship opportunities, and access mentoring and technical workshops.\",\n  \"not_established\": \"The source does not explicitly indicate an active date or current academic cycle (such as Fall 2026) for these club activities within the page text.\",\n  \"why\": \"The claim matches the official goals and descriptions of SACS on the Morgan State University website. However, because there is no explicit date or academic cycle in the text (and copyright dates are not considered currentness evidence), the current status remains unverified.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": false,\n  \"authority_host\": \"morgan.edu\",\n  \"facts\": {}\n}"
+            }
+          ]
+        },
+        {
+          "t": 47.701,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 49.017,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate",
+              "args": {
+                "candidate_id": "C2"
+              }
+            }
+          ]
+        },
+        {
+          "t": 63.042,
+          "author": "Networking___Professional_Communication_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"VERIFIED CURRENT\",\n  \"source_title\": \"Information Systems Students and Alumni - Morgan State University\",\n  \"source_date_or_cycle\": \"UNKNOWN\",\n  \"page_evidence\": \"The student chapter of AITP was chartered in 1984 as the \\\"IT Club\\\" for Information Systems majors at Morgan State University. ... AITP Club welcomes new members from all majors! To join or for more information please contact: AITP Faculty Advisor, Dr. Dessa David (dessa.david@morgan.edu). ... AITP is the professional association comprised of career minded individuals who seek to expand their potential -- employers, employees, managers, programmers, and many others. The organization seeks to provide avenues for all their members to be teachers as well as students and to make contacts with other members in the IS.field, all in an effort to become more marketable in rapidly changing, technological careers.\",\n  \"supported_scope\": \"Morgan State University students from all majors can utilize the student chapter of the Association of Information Technology Professionals (AITP) to network and build professional contacts with other members in the information systems field.\",\n  \"not_established\": \"\",\n  \"why\": \"The official Morgan State University website confirms that the AITP student chapter welcomes members from all majors and provides them with avenues to make contacts with other members in the information systems field.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": true,\n  \"authority_host\": \"morgan.edu\",\n  \"facts\": {}\n}"
+            }
+          ]
+        },
+        {
+          "t": 63.047,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 63.05,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "### Networking: evidence and status\n\n**C1 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Computer Science students at Morgan State University can use the Society for the Advancement of Computer Science (SACS) to network with industry professionals, find job and internship opportunities, and access mentoring and technical workshops.\n\nEvidence limits: The source does not explicitly indicate an active date or current academic cycle (such as Fall 2026) for these club activities within the page text.\n\nAssessment: The claim matches the official goals and descriptions of SACS on the Morgan State University website. However, because there is no explicit date or academic cycle in the text (and copyright dates are not considered currentness evidence), the current status remains unverified.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH-01W4zOusUa341EmyDPNvOR91F793SDO_vm0v3K8-cmqwDh66u4P4I79O0gFmC6CfZKVbmmL0myMLVbcznMH5J_KpIDqBaKK8inEw2Btip2ziyNkhemmlPXX1QkKkvJQ_2jJm0LYK3jnhJkXoqXMeBFViswpkMqE=>)\n\n**C2 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University students can utilize the Association of Information Technology Professionals (AITP) student chapter to build professional contacts in the information systems and technology fields.\n\nEvidence limits: \n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqWlURsrGXcHyXpG2xXpewWVVHtqbyFyeam-p67cfvKv_CxujBORJCfNUE20aFDurupoZ4bzFL5xrlL6E3UgneaQBEzB53Wl3Ne6uefbNOhVLPQFrvusKJ5XMEAgBw_H1_7eGkKoojrgq603jYLeGN0OQrboIHcF1i3r3Doj5z-gVtCKvr-T315XF003EHNeqlSvZt9x0=>)\n\nConfirm unresolved current details with the official owner before relying on them."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "planned_case_ids": [
+    "networking_repaired_stable",
+    "networking_repaired_current"
+  ],
+  "remaining": []
+}

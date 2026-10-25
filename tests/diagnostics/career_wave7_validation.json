@@ -1,0 +1,18 @@
+{
+  "local_runtime_import_passed": true,
+  "app_class": "AdkApp",
+  "loaded_instruction_hashes_passed": 30,
+  "root_specialists": 9,
+  "syntax_files": 36,
+  "source_hashes": {
+    "agents/career/workflow/agent.py": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+    "agents/career/workflow/shared_evidence.py": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123",
+    "agents/career/workflow/evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+    "agents/career/workflow/main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents/career/workflow/requirements.txt": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720"
+  },
+  "all_protected_source_unchanged": true,
+  "packaged_import_passed": false,
+  "model_tools_relationships_callbacks_unchanged": true,
+  "offline_import_setup": "Explicit Vertex project/region and AnonymousCredentials; no cloud request. Initial auth-blocked import without project configuration was a diagnostic environment issue, then configured import passed."
+}

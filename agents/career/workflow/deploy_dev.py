@@ -72,6 +72,7 @@ def main():
                 "agents/career/workflow/__init__.py",
                 "agents/career/workflow/agent.py",
                 "agents/career/workflow/evidence.py",
+                "agents/career/workflow/shared_evidence.py",
                 "agents/career/workflow/main.py",
             ],
         },
