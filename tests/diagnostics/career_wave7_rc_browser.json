@@ -1,0 +1,45 @@
+{
+  "port": 5002,
+  "initial_message": true,
+  "input_works": true,
+  "shift_enter_newline_without_send": true,
+  "character_counter_observed": [
+    "22 / 8000",
+    "406 / 8000",
+    "0 / 8000"
+  ],
+  "autogrow": {
+    "before_height": 76,
+    "after_height": 240,
+    "after_scroll_height": 458,
+    "overflow": "auto"
+  },
+  "new_chat_clears_draft": true,
+  "new_chat_reset_message": true,
+  "inference_checks": "PASS",
+  "enter_sends": true,
+  "thinking_visible": true,
+  "busy_controls_disabled": true,
+  "markdown": {
+    "table_count": 1,
+    "heading_count": 2,
+    "strong_count": 14,
+    "dompurify_path": "Unchanged renderMarkdown uses DOMPurify.sanitize(marked.parse(text)); successful browser rendering, both CDN scripts present and no console errors. No malicious payload injected."
+  },
+  "timestamps_visible": true,
+  "copy_feedback": "Copied",
+  "scroll_latest": {
+    "bottom_distance": 5,
+    "hidden_at_bottom": true
+  },
+  "refresh_visual_history": "Resets to welcome; managed-session continuity tested separately",
+  "browser_fresh_http_200": true,
+  "refresh_session_retained": true,
+  "persistent_user_same": true,
+  "refresh_context_continuity": "Remembered IT risk management and the two paths without restatement.",
+  "new_chat_fresh_backend_session": true,
+  "new_chat_old_context_absent": true,
+  "new_chat_backend_audit": "Same user ordinal 3; fresh session requested; returned session differs from prior; reply says no experience shared.",
+  "retry_visibility": "No natural browser failure occurred. Existing Retry/error textContent branch inspected unchanged; not fault-injected.",
+  "browser_console_errors": []
+}

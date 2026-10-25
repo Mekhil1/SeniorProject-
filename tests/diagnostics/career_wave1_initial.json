@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "9efa1446a71a17dbf9abe56ae4d2ac4c646b6a5723e1a11951bb62f5eb31c304",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "internship_stable_1",
+      "domain": "internship",
+      "label": "Internship & Job Preparation",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:02:41.350867+00:00",
+      "orchestrator_request_start": 0.978,
+      "total_seconds": 28.648,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.61,
+        "target": "internship__job_preparation_agent"
+      },
+      "actual_specialist": "internship__job_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 8.617,
+      "first_specialist_event": 28.646,
+      "handoff_seconds": 20.036,
+      "first_helper": null,
+      "first_text": 28.647,
+      "final_answer": "Preparing for cybersecurity roles as a Computer Science senior requires a unique strategy. Because you are approaching graduation, your timeline, preparation, and targeting will differ slightly from underclassmen. \n\nHere is a practical, prioritized guide to preparing for cybersecurity internships and entry-level roles during your senior year.\n\n---\n\n### 1. Clarify Your Strategy: The \"Senior Pivot\"\nMost traditional summer internships are designed for students returning to school the following fall (e.g., rising juniors or rising seniors). As a graduating senior, you need to adjust your application strategy:\n*   **Target Entry-Level Roles Alongside Internships:** Do not limit yourself only to \"internships.\" Actively apply to entry-level positions such as **Junior Security Analyst**, **Associate Security Engineer**, or **Junior DevSecOps Engineer**.\n*   **Look for Post-Graduation Internships:** Some larger companies, defense contractors, and government agencies offer internships specifically for recent graduates. \n*   **Consider Co-ops or Off-Season Internships:** If you are graduating in December (Winter), look for Spring internships or immediate full-time placements.\n\n### 2. Leverage Your Computer Science Strengths\nMany cybersecurity applicants come from IT or non-technical backgrounds. As a CS major, you have a major advantage: **you know how software and systems are built.** Recruiters highly value this. Target security niches where programming is a core requirement:\n*   **Application Security (AppSec):** Focuses on secure coding, vulnerability patching, and code reviews. Brush up on the **OWASP Top 10** vulnerabilities.\n*   **DevSecOps / Security Engineering:** Focuses on automating security checks in the software development lifecycle (CI/CD pipelines) and securing cloud infrastructure (AWS/Azure/GCP).\n*   **Security Tooling:** Creating custom scripts (often in Python, Bash, or Go) to automate security monitoring or incident response.\n\n### 3. Build Practical, Hands-on Evidence\nCoursework alone rarely secures a technical cybersecurity role. Recruiters want to see that you can apply security concepts practically.\n*   **Set Up a Home Lab:** Download VirtualBox or VMware. Set up an active environment (e.g., a vulnerable virtual machine like Metasploitable or an Active Directory lab), configure a free SIEM (like Splunk or Elastic), and practice monitoring and defending the network.\n*   **Leverage Hands-On Platforms:** Spend time on platforms like **TryHackMe**, **HackTheBox**, or **PortSwigger Web Security Academy**. Completing these tracks is highly respected and can be listed under the \"Projects\" or \"Professional Development\" section of your resume.\n*   **Participate in CTFs:** Join collegiate Capture The Flag (CTF) competitions. Even if you don't win, documenting your write-ups on GitHub shows initiative and problem-solving skills.\n\n---\n\n### Recommended Next Actions\n\nTo tailor this advice to your specific situation, what are your answers to these quick questions?\n1. **What is your target graduation date?** (e.g., December or May?)\n2. **What sub-field of cybersecurity interests you most?** (e.g., defense/incident response, offensive security/penetration testing, secure software development, or cloud security?)\n3. **What relevant security coursework, projects, or self-study have you completed so far?**\n\n---\n\n### Transitioning to a Specialist\nDepending on what you need to work on next, we can hand your request off to a specialized agent:\n*   **To tailor your resume, GitHub, or LinkedIn for security recruiters:** Ask to be transferred to the **Resume & Portfolio Agent**.\n*   **To plan a structured study timeline to learn specific security tools or concepts:** Ask to be transferred to the **Skill Gap & Career Roadmap Agent**.\n*   **To evaluate whether you should pursue professional certifications (like CompTIA Security+ or EJPT):** Ask to be transferred to the **Certification & Technical Development Agent**.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 20.025,
+      "orchestrator_model_seconds": 7.63,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.61,
+          "fingerprint": "613eee80c2c5cba13f2b3e0a4d3919b9c08ecb8dc8d3a740c3b844d7fbfe276f",
+          "args": {
+            "agent_name": "internship__job_preparation_agent"
+          },
+          "end": 8.613,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.978,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 8.608,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.608,
+          "duration": 7.63
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 8.62,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 28.645,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 28.645,
+          "duration": 20.025
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.61,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "internship__job_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.616,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 28.646,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for cybersecurity roles as a Computer Science senior requires a unique strategy. Because you are approaching graduation, your timeline, preparation, and targeting will differ slightly from underclassmen. \n\nHere is a practical, prioritized guide to preparing for cybersecurity internships and entry-level roles during your senior year.\n\n---\n\n### 1. Clarify Your Strategy: The \"Senior Pivot\"\nMost traditional summer internships are designed for students returning to school the following fall (e.g., rising juniors or rising seniors). As a graduating senior, you need to adjust your application strategy:\n*   **Target Entry-Level Roles Alongside Internships:** Do not limit yourself only to \"internships.\" Actively apply to entry-level positions such as **Junior Security Analyst**, **Associate Security Engineer**, or **Junior DevSecOps Engineer**.\n*   **Look for Post-Graduation Internships:** Some larger companies, defense contractors, and government agencies offer internships specifically for recent graduates. \n*   **Consider Co-ops or Off-Season Internships:** If you are graduating in December (Winter), look for Spring internships or immediate full-time placements.\n\n### 2. Leverage Your Computer Science Strengths\nMany cybersecurity applicants come from IT or non-technical backgrounds. As a CS major, you have a major advantage: **you know how software and systems are built.** Recruiters highly value this. Target security niches where programming is a core requirement:\n*   **Application Security (AppSec):** Focuses on secure coding, vulnerability patching, and code reviews. Brush up on the **OWASP Top 10** vulnerabilities.\n*   **DevSecOps / Security Engineering:** Focuses on automating security checks in the software development lifecycle (CI/CD pipelines) and securing cloud infrastructure (AWS/Azure/GCP).\n*   **Security Tooling:** Creating custom scripts (often in Python, Bash, or Go) to automate security monitoring or incident response.\n\n### 3. Build Practical, Hands-on Evidence\nCoursework alone rarely secures a technical cybersecurity role. Recruiters want to see that you can apply security concepts practically.\n*   **Set Up a Home Lab:** Download VirtualBox or VMware. Set up an active environment (e.g., a vulnerable virtual machine like Metasploitable or an Active Directory lab), configure a free SIEM (like Splunk or Elastic), and practice monitoring and defending the network.\n*   **Leverage Hands-On Platforms:** Spend time on platforms like **TryHackMe**, **HackTheBox**, or **PortSwigger Web Security Academy**. Completing these tracks is highly respected and can be listed under the \"Projects\" or \"Professional Development\" section of your resume.\n*   **Participate in CTFs:** Join collegiate Capture The Flag (CTF) competitions. Even if you don't win, documenting your write-ups on GitHub shows initiative and problem-solving skills.\n\n---\n\n### Recommended Next Actions\n\nTo tailor this advice to your specific situation, what are your answers to these quick questions?\n1. **What is your target graduation date?** (e.g., December or May?)\n2. **What sub-field of cybersecurity interests you most?** (e.g., defense/incident response, offensive security/penetration testing, secure software development, or cloud security?)\n3. **What relevant security coursework, projects, or self-study have you completed so far?**\n\n---\n\n### Transitioning to a Specialist\nDepending on what you need to work on next, we can hand your request off to a specialized agent:\n*   **To tailor your resume, GitHub, or LinkedIn for security recruiters:** Ask to be transferred to the **Resume & Portfolio Agent**.\n*   **To plan a structured study timeline to learn specific security tools or concepts:** Ask to be transferred to the **Skill Gap & Career Roadmap Agent**.\n*   **To evaluate whether you should pursue professional certifications (like CompTIA Security+ or EJPT):** Ask to be transferred to the **Certification & Technical Development Agent**."
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "FAIL (superseded)",
+        "notes": "Named free-SIEM claim without retrieval; prompted explicit stable access/resource guard. Not an acceptance sample.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "resume_stable_1",
+      "domain": "resume",
+      "label": "Resume & Portfolio",
+      "expected": "resume__portfolio_agent",
+      "mode": "stable",
+      "prompt": "What should I emphasize on my resume for an entry-level cloud security role?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:03:22.920333+00:00",
+      "orchestrator_request_start": 0.013,
+      "total_seconds": 21.548,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 2.381,
+        "target": "resume__portfolio_agent"
+      },
+      "actual_specialist": "resume__portfolio_agent",
+      "route_match": true,
+      "first_specialist_start": 2.384,
+      "first_specialist_event": 21.546,
+      "handoff_seconds": 19.165,
+      "first_helper": null,
+      "first_text": 21.547,
+      "final_answer": "To stand out for an entry-level cloud security role, your resume needs to demonstrate a strong understanding of both foundational cloud architecture and security principles. Recruiters are looking for hands-on, verifiable evidence that you know how cloud environments operate and—more importantly—how to secure, monitor, and configure them safely.\n\nHere is a guide on what to emphasize, followed by how we can work together to build or refine your resume.\n\n---\n\n### 1. Key Areas of Emphasis for Cloud Security\n\n*   **Identity & Access Management (IAM):** This is the foundation of cloud security. Highlight any experience configuring users, groups, roles, policy documents, Multi-Factor Authentication (MFA), and implementing the **principle of least privilege**.\n*   **Infrastructure as Code (IaC) Security:** Modern cloud environments are deployed via code. If you have used tools like Terraform, AWS CloudFormation, or Ansible, emphasize how you wrote secure templates or used static analysis tools (like Checkov, Tfsec, or KICS) to scan for misconfigurations.\n*   **Network & Resource Isolation:** Emphasize your understanding of Virtual Private Clouds (VPCs), subnets (public vs. private), security groups, Network Access Control Lists (NACLs), firewalls, and secure ingress/egress.\n*   **Logging, Monitoring, & Detection:** Show that you know how to audit a cloud environment. Highlight experience with logging services (e.g., AWS CloudTrail, Amazon CloudWatch, Azure Monitor) or security information and event management (SIEM) concepts.\n*   **Application Security in the Cloud:** If you built web applications deployed to the cloud, detail how you secured the API endpoints, managed secrets securely (using AWS Secrets Manager or HashiCorp Vault instead of hardcoding credentials), and protected against common vulnerabilities (e.g., OWASP Top 10).\n\n---\n\n### 2. How to Structure Your Bullets\n\nWhen writing bullet points for your projects, coursework, or internships, avoid generic descriptions like *\"Helped set up AWS.\"* Instead, use a structured approach: **Action + Context + Technical Evidence + Security Purpose**.\n\n*   *Instead of:* \"Hosted a web app on AWS.\"\n*   *Write:* \"Deployed a multi-tier web application on AWS using **Terraform**, isolating the database within a **private subnet** and utilizing **Security Groups** to restrict traffic to port 443.\"\n*   *Instead of:* \"Handled user permissions.\"\n*   *Write:* \"Designed and implemented **AWS IAM policies** using the **principle of least privilege**, restricting access keys and programmatic permissions to only the resources required by active services.\"\n\n> **A Note on Metrics:** Never fabricate quantitative metrics (e.g., do not write *\"improved security latency by 30%\"* unless you have a real, verified measurement from a benchmarking tool). A strong, qualitative description of the security mechanisms you implemented is highly valuable on its own.\n\n---\n\n### 3. Let's Build Your Resume Together\n\nTo tailor your actual experience, paste your draft resume, a list of your projects, or your relevant coursework below. As your **Resume & Portfolio Agent**, I will analyze your background and organize my feedback into these clear categories:\n\n*   **KEEP:** High-impact technical or security-focused bullets that are already strong.\n*   **IMPROVE:** Vague points that we can rewrite to emphasize security tools, architecture choices, or methodologies.\n*   **REMOVE OR VERIFY:** Exaggerated claims, placeholder metrics, or irrelevant details that might distract recruiters.\n*   **MISSING EVIDENCE:** Gaps where your experience suggests you know a tool, but your resume doesn't show it (e.g., mentioning AWS in your skills but never describing an AWS configuration in your projects).\n\n### To get started, please share:\n1.  **Your current draft resume or a list of technical projects you've worked on.**\n2.  **Which cloud platforms (AWS, Azure, Google Cloud) and security tools/protocols you have actual, hands-on experience with.**\n3.  **Any certifications you have earned or are currently preparing for (e.g., CompTIA Security+, AWS Certified Cloud Practitioner, AWS Certified SysOps Administrator).**",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 19.159,
+      "orchestrator_model_seconds": 2.368,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 2.382,
+          "fingerprint": "bedc744db947ff1e5eb9884ad9ff04257e7def1decb8b06df0c2413012fa0580",
+          "args": {
+            "agent_name": "resume__portfolio_agent"
+          },
+          "end": 2.382,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.013,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 2.381,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 2.381,
+          "duration": 2.368
+        },
+        {
+          "agent": "resume__portfolio_agent",
+          "start": 2.386,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 21.545,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 21.545,
+          "duration": 19.159
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 2.381,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "resume__portfolio_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 2.382,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 21.546,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "text": "To stand out for an entry-level cloud security role, your resume needs to demonstrate a strong understanding of both foundational cloud architecture and security principles. Recruiters are looking for hands-on, verifiable evidence that you know how cloud environments operate and—more importantly—how to secure, monitor, and configure them safely.\n\nHere is a guide on what to emphasize, followed by how we can work together to build or refine your resume.\n\n---\n\n### 1. Key Areas of Emphasis for Cloud Security\n\n*   **Identity & Access Management (IAM):** This is the foundation of cloud security. Highlight any experience configuring users, groups, roles, policy documents, Multi-Factor Authentication (MFA), and implementing the **principle of least privilege**.\n*   **Infrastructure as Code (IaC) Security:** Modern cloud environments are deployed via code. If you have used tools like Terraform, AWS CloudFormation, or Ansible, emphasize how you wrote secure templates or used static analysis tools (like Checkov, Tfsec, or KICS) to scan for misconfigurations.\n*   **Network & Resource Isolation:** Emphasize your understanding of Virtual Private Clouds (VPCs), subnets (public vs. private), security groups, Network Access Control Lists (NACLs), firewalls, and secure ingress/egress.\n*   **Logging, Monitoring, & Detection:** Show that you know how to audit a cloud environment. Highlight experience with logging services (e.g., AWS CloudTrail, Amazon CloudWatch, Azure Monitor) or security information and event management (SIEM) concepts.\n*   **Application Security in the Cloud:** If you built web applications deployed to the cloud, detail how you secured the API endpoints, managed secrets securely (using AWS Secrets Manager or HashiCorp Vault instead of hardcoding credentials), and protected against common vulnerabilities (e.g., OWASP Top 10).\n\n---\n\n### 2. How to Structure Your Bullets\n\nWhen writing bullet points for your projects, coursework, or internships, avoid generic descriptions like *\"Helped set up AWS.\"* Instead, use a structured approach: **Action + Context + Technical Evidence + Security Purpose**.\n\n*   *Instead of:* \"Hosted a web app on AWS.\"\n*   *Write:* \"Deployed a multi-tier web application on AWS using **Terraform**, isolating the database within a **private subnet** and utilizing **Security Groups** to restrict traffic to port 443.\"\n*   *Instead of:* \"Handled user permissions.\"\n*   *Write:* \"Designed and implemented **AWS IAM policies** using the **principle of least privilege**, restricting access keys and programmatic permissions to only the resources required by active services.\"\n\n> **A Note on Metrics:** Never fabricate quantitative metrics (e.g., do not write *\"improved security latency by 30%\"* unless you have a real, verified measurement from a benchmarking tool). A strong, qualitative description of the security mechanisms you implemented is highly valuable on its own.\n\n---\n\n### 3. Let's Build Your Resume Together\n\nTo tailor your actual experience, paste your draft resume, a list of your projects, or your relevant coursework below. As your **Resume & Portfolio Agent**, I will analyze your background and organize my feedback into these clear categories:\n\n*   **KEEP:** High-impact technical or security-focused bullets that are already strong.\n*   **IMPROVE:** Vague points that we can rewrite to emphasize security tools, architecture choices, or methodologies.\n*   **REMOVE OR VERIFY:** Exaggerated claims, placeholder metrics, or irrelevant details that might distract recruiters.\n*   **MISSING EVIDENCE:** Gaps where your experience suggests you know a tool, but your resume doesn't show it (e.g., mentioning AWS in your skills but never describing an AWS configuration in your projects).\n\n### To get started, please share:\n1.  **Your current draft resume or a list of technical projects you've worked on.**\n2.  **Which cloud platforms (AWS, Azure, Google Cloud) and security tools/protocols you have actual, hands-on experience with.**\n3.  **Any certifications you have earned or are currently preparing for (e.g., CompTIA Security+, AWS Certified Cloud Practitioner, AWS Certified SysOps Administrator).**"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "PASS (superseded)",
+        "notes": "Useful skill presentation, truthful bullet/project examples and follow-up intake. Named tools illustrate experience, not current access/pricing or verified employer rules.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    }
+  ],
+  "planned_case_ids": [
+    "internship_stable_1",
+    "internship_stable_2",
+    "resume_stable_1",
+    "resume_stable_2",
+    "roadmap_stable_1",
+    "roadmap_stable_2",
+    "research_stable_1",
+    "research_stable_2"
+  ],
+  "remaining": [
+    "internship_stable_2",
+    "resume_stable_2",
+    "roadmap_stable_1",
+    "roadmap_stable_2",
+    "research_stable_1",
+    "research_stable_2"
+  ],
+  "review_status": "Preliminary gate: Internship failed no-current-availability quality check by recommending a free named SIEM. Preserved; superseded by revised-gate validation, not a final pass.",
+  "interrupted_case": {
+    "id": "roadmap_stable_1",
+    "status": "manually_interrupted",
+    "reason": "Stop batch for observed Internship quality leak before changing source. No saved final response or latency verdict."
+  },
+  "review_method": "Stable fast-path usefulness and unsupported current-specific claim review; superseded failures retained. Current checks establish activation only."
+}

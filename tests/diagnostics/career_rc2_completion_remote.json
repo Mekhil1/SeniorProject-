@@ -1,0 +1,334 @@
+{
+  "engine_id": "6244403611070103552",
+  "runs": [
+    {
+      "id": "rc2_completion_health",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "batch": "completion",
+      "started_utc": "2026-10-24T01:57:11.520333+00:00",
+      "auth_init_seconds": 7.131,
+      "events": [
+        {
+          "t": 23.322,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 23.399,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 23.479,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 28.788,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "A great introduction to a cybersecurity recruiter—whether on LinkedIn, over email, or in person—should be concise, purposeful, and authentic. The goal is to establish who you are, highlight your specific interest in cybersecurity, and suggest a clear next step without overwhelming them.\n\nTo help you put this together, a strong introduction typically includes:\n1. **Who you are:** Your name, major (Computer Science), and university (Morgan State University).\n2. **Your focus area:** Your specific interest within cybersecurity (e.g., security operations, penetration testing, cryptography, or identity and access management).\n3. **The connection/purpose:** Why you are reaching out to *them* or *their company* specifically.\n4. **The call to action:** A brief, polite request (e.g., asking about open roles, or requesting a brief conversation).\n\n---\n\n### To help us write a tailored message that sounds natural to you, could you share a few details?\n\n1. **Where are you reaching out?** (e.g., LinkedIn connection request, a direct email, or preparing for an in-person event like a career fair?)\n2. **What is your academic year?** (e.g., Sophomore, Junior, Senior, Graduate student?)\n3. **Do you have a specific area of cybersecurity you enjoy most?** (e.g., hands-on labs, a specific course project, a certification you are studying for, or a particular sub-field?)\n4. **Is there a specific job/internship opening you are eyeing, or are you reaching out to build a connection?**\n5. **Have you met or spoken with this recruiter before?** \n\nOnce you share those details, we can draft a direct, professional introduction that fits your exact situation!"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 28.788,
+      "transfer": {
+        "t": 23.322,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "A great introduction to a cybersecurity recruiter—whether on LinkedIn, over email, or in person—should be concise, purposeful, and authentic. The goal is to establish who you are, highlight your specific interest in cybersecurity, and suggest a clear next step without overwhelming them.\n\nTo help you put this together, a strong introduction typically includes:\n1. **Who you are:** Your name, major (Computer Science), and university (Morgan State University).\n2. **Your focus area:** Your specific interest within cybersecurity (e.g., security operations, penetration testing, cryptography, or identity and access management).\n3. **The connection/purpose:** Why you are reaching out to *them* or *their company* specifically.\n4. **The call to action:** A brief, polite request (e.g., asking about open roles, or requesting a brief conversation).\n\n---\n\n### To help us write a tailored message that sounds natural to you, could you share a few details?\n\n1. **Where are you reaching out?** (e.g., LinkedIn connection request, a direct email, or preparing for an in-person event like a career fair?)\n2. **What is your academic year?** (e.g., Sophomore, Junior, Senior, Graduate student?)\n3. **Do you have a specific area of cybersecurity you enjoy most?** (e.g., hands-on labs, a specific course project, a certification you are studying for, or a particular sub-field?)\n4. **Is there a specific job/internship opening you are eyeing, or are you reaching out to build a connection?**\n5. **Have you met or spoken with this recruiter before?** \n\nOnce you share those details, we can draft a direct, professional introduction that fits your exact situation!",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.164,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 28.932,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 30.099
+    },
+    {
+      "id": "rc2_completion_networking",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?",
+      "batch": "completion",
+      "started_utc": "2026-10-24T01:57:57.637847+00:00",
+      "auth_init_seconds": 3.303,
+      "events": [
+        {
+          "t": 3.585,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 3.661,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 3.75,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 7.651,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "Networking___Professional_Communication_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 46.648,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 49.945,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 59.964,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 61.668,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 81.275,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 81.376,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "### Networking: evidence and status\n\n**C1 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University Computer Science students can join the Society for the Advancement of Computer Science (SACS) to network with peers and industry professionals.\n\nSupported narrower source scope (not verification of the whole claim): Students are invited to join SACS through our communication channels\n\nEvidence limits: \n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLssCtW1vX_rHF-l5sfR1LLJB1eiMimH8n8_2goJoVIQKP6QvfYGqnTEnHbHF3soDRHaoI-DIAZSA8JvEt1vBZkTwFjMh2Ol-MhzWwFY0zv2JTAtDHCDHtM8DnF0-mv-rzSE22XBinjCoK0giqPqv9FlYdrH4-wQ==>)\n\n**C2 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University Computer Science students can use the Center for Career Development and its Handshake platform to build professional networks and find internships.\n\nEvidence limits: The source does not explicitly mention 'Computer Science students' by name, referencing students and alumni generally.\n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLf9_ZOb7s0DpR8jDe9YSZh4ENiTRZxt6l29YQ1MWYZ6zi6huAfZ85hdqmyoOcKGu6XfXbI8SrXcIL2g1tIrDUpSOdNVlPXFso293a2lNNGz_zfbO5GAYstCbDLh3B9bj2vYM=>)\n\nConfirm unresolved current details with the official owner before relying on them."
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 1,
+      "url_helpers": 0,
+      "verifications": 2,
+      "grounding_query_count": 0,
+      "first_text": 81.376,
+      "transfer": {
+        "t": 3.585,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "### Networking: evidence and status\n\n**C1 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University Computer Science students can join the Society for the Advancement of Computer Science (SACS) to network with peers and industry professionals.\n\nSupported narrower source scope (not verification of the whole claim): Students are invited to join SACS through our communication channels\n\nEvidence limits: \n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLssCtW1vX_rHF-l5sfR1LLJB1eiMimH8n8_2goJoVIQKP6QvfYGqnTEnHbHF3soDRHaoI-DIAZSA8JvEt1vBZkTwFjMh2Ol-MhzWwFY0zv2JTAtDHCDHtM8DnF0-mv-rzSE22XBinjCoK0giqPqv9FlYdrH4-wQ==>)\n\n**C2 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University Computer Science students can use the Center for Career Development and its Handshake platform to build professional networks and find internships.\n\nEvidence limits: The source does not explicitly mention 'Computer Science students' by name, referencing students and alumni generally.\n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLf9_ZOb7s0DpR8jDe9YSZh4ENiTRZxt6l29YQ1MWYZ6zi6huAfZ85hdqmyoOcKGu6XfXbI8SrXcIL2g1tIrDUpSOdNVlPXFso293a2lNNGz_zfbO5GAYstCbDLh3B9bj2vYM=>)\n\nConfirm unresolved current details with the official owner before relying on them.",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 0.941,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 81.57,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 82.514
+    },
+    {
+      "id": "rc2_completion_career",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity career resources are available to Morgan State Computer Science students?",
+      "batch": "completion",
+      "started_utc": "2026-10-24T01:59:54.243918+00:00",
+      "auth_init_seconds": 3.303,
+      "events": [
+        {
+          "t": 1.395,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 1.534,
+          "author": "",
+          "parts": []
+        }
+      ],
+      "errors": [
+        {
+          "stage": "runtime",
+          "t": 1.395
+        },
+        {
+          "stage": "runtime",
+          "t": 1.534
+        }
+      ],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": null,
+      "transfer": null,
+      "final_answer": "",
+      "status": "runtime_error",
+      "capacity_failure": true,
+      "session_create_seconds": 0.96,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 1.603,
+      "actual_specialist": null,
+      "route_match": false,
+      "total_seconds": 2.565,
+      "failure_class": "ROOT_CAPACITY"
+    }
+  ],
+  "plan": [
+    {
+      "id": "rc_career_stable",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "stable",
+      "prompt": "I'm interested in cloud security and risk management. What career paths should I explore?"
+    },
+    {
+      "id": "rc_internship_stable",
+      "domain": "internship",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?"
+    },
+    {
+      "id": "rc_resume_stable",
+      "domain": "resume",
+      "expected": "resume__portfolio_agent",
+      "mode": "stable",
+      "prompt": "What should I emphasize on my resume for an entry-level cloud security role?"
+    },
+    {
+      "id": "rc_interview_stable",
+      "domain": "interview",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role."
+    },
+    {
+      "id": "rc_networking_stable",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?"
+    },
+    {
+      "id": "rc_roadmap_stable",
+      "domain": "roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "stable",
+      "prompt": "I want to become a cloud security engineer. What skills should I build over the next year?"
+    },
+    {
+      "id": "rc_research_stable",
+      "domain": "research",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "stable",
+      "prompt": "How should I decide between graduate school and going directly into cybersecurity industry work?"
+    },
+    {
+      "id": "rc_certification_stable",
+      "domain": "certification",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?"
+    },
+    {
+      "id": "rc_trust_stable",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "human",
+      "prompt": "I need a human to review this because the available evidence is contradictory."
+    },
+    {
+      "id": "rc_career_current",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity career resources are available to Morgan State Computer Science students?"
+    },
+    {
+      "id": "rc_networking_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?"
+    },
+    {
+      "id": "rc_certification_current",
+      "domain": "certification",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?"
+    },
+    {
+      "id": "rc_interview_current",
+      "domain": "interview",
+      "expected": "interview_preparation_agent",
+      "mode": "current",
+      "prompt": "What is the current interview process for an entry-level cybersecurity role at Microsoft?"
+    },
+    {
+      "id": "rc_trust_current",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "current",
+      "prompt": "I found conflicting information about whether a Morgan cybersecurity program is still active. Which source should I trust?"
+    },
+    {
+      "id": "rc_research_current",
+      "domain": "research",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity research opportunities are available at Morgan State?"
+    },
+    {
+      "id": "rc_networking_platform_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What is LinkedIn's current connection-request note character limit?"
+    }
+  ],
+  "count_scope": "Observed outer SSE calls only; nested provider work may not be exposed."
+}

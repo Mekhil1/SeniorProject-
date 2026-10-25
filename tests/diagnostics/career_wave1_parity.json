@@ -1,0 +1,162 @@
+{
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "hash_algorithm": "SHA-256 of UTF-8 instruction string",
+  "components": {
+    "career_exploration_agent_google_search_agent": {
+      "old_sha256": "2306d4d6b89f24a4159915867093dce559936f0a2a80426956c5b93b86928ddd",
+      "new_sha256": "2306d4d6b89f24a4159915867093dce559936f0a2a80426956c5b93b86928ddd",
+      "changed": false
+    },
+    "career_exploration_agent_url_context_agent": {
+      "old_sha256": "af565228481fb2379757d680d324bfa00896fa689bf9cd11a9843cb08b4f888a",
+      "new_sha256": "af565228481fb2379757d680d324bfa00896fa689bf9cd11a9843cb08b4f888a",
+      "changed": false
+    },
+    "career_exploration_agent": {
+      "old_sha256": "8053b3cc0b7f018a260bf78345c635a787b08f99f079920c6aee6e677744df34",
+      "new_sha256": "8053b3cc0b7f018a260bf78345c635a787b08f99f079920c6aee6e677744df34",
+      "changed": false
+    },
+    "internship___job_preparation_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "internship___job_preparation_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "internship__job_preparation_agent": {
+      "old_sha256": "3d19d074be49aab3ded43e6784b1ad63a976f5c91fee381bb939f4b011d168a8",
+      "new_sha256": "cd4014bbaae6fec25e81b3846a955c07e2e27f430581f218271e54783f7233bb",
+      "changed": true
+    },
+    "resume___portfolio_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "resume___portfolio_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "resume__portfolio_agent": {
+      "old_sha256": "0281946a50ac51e8145645eeec20361806a19a8179f43ed0272a492a7b4a7667",
+      "new_sha256": "c536bc979c045b9ee218431a0be5e6f6bc4ab57ff71b36860b49dee66ce637c2",
+      "changed": true
+    },
+    "interview_preparation_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "interview_preparation_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "interview_preparation_agent": {
+      "old_sha256": "a052c0fda4911f7e0b582211f39ac9d68d425d2e673b2879fa60ed6814bfb23d",
+      "new_sha256": "a052c0fda4911f7e0b582211f39ac9d68d425d2e673b2879fa60ed6814bfb23d",
+      "changed": false
+    },
+    "networking___professional_communication_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "networking___professional_communication_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "networking__professional_communication_agent": {
+      "old_sha256": "48549344e1447a191c4d307b75b2a7fa31411fb524797fa2ee761f4b5fe74f4d",
+      "new_sha256": "48549344e1447a191c4d307b75b2a7fa31411fb524797fa2ee761f4b5fe74f4d",
+      "changed": false
+    },
+    "skill_gap___career_roadmap_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "skill_gap___career_roadmap_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "skill_gap__career_roadmap_agent": {
+      "old_sha256": "1b652dcac199b687d79d7a5f61e698b7545fe9372ceb6767c1f949089aee5df8",
+      "new_sha256": "0f5a5146b54c7db4d32a23ef2b44b40121481d9fbd8122cac96d88cc4e0aeee7",
+      "changed": true
+    },
+    "research___graduate_pathways_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "research___graduate_pathways_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "research__graduate_pathways_agent": {
+      "old_sha256": "25693f3ee7cfbecd3c27a624bfb4616468e99b2300acb56f3bda1934437b44b6",
+      "new_sha256": "886466acad54d0cf724d13977794e0d4768dabc375931e0da332fbf42cb63972",
+      "changed": true
+    },
+    "certification___technical_development_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "certification___technical_development_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "certification__technical_development_agent": {
+      "old_sha256": "20cda283612c674bf750a0ee887b6ecf0b0ccebdc6628aebaa6c8a0c0312086d",
+      "new_sha256": "20cda283612c674bf750a0ee887b6ecf0b0ccebdc6628aebaa6c8a0c0312086d",
+      "changed": false
+    },
+    "trust___human_escalation_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "trust___human_escalation_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "trust__human_escalation_agent": {
+      "old_sha256": "4088123dd1ce62bcf2f541fcdee93fcb0460deb1b8e8bfb24c8836706fc595c6",
+      "new_sha256": "4088123dd1ce62bcf2f541fcdee93fcb0460deb1b8e8bfb24c8836706fc595c6",
+      "changed": false
+    },
+    "career___professional_orchestration_agent_google_search_agent": {
+      "old_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "new_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false
+    },
+    "career___professional_orchestration_agent_url_context_agent": {
+      "old_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "new_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false
+    },
+    "root_agent": {
+      "old_sha256": "d36880c4374ba6d52a2807d81d95b28a98e805f6d8f7c6a4300a6a19b00b917d",
+      "new_sha256": "d36880c4374ba6d52a2807d81d95b28a98e805f6d8f7c6a4300a6a19b00b917d",
+      "changed": false
+    }
+  },
+  "validation": "AST identical after removing four appended instruction literals; models, names, tools, relationships, helpers and all other configuration unchanged.",
+  "baseline_artifact_hashes": {
+    "tests\\diagnostics\\career_baseline.json": "3317d0a1eeb4a613eed4d18526d0ba7c3965b80104ac23169277d65dd6952e7f",
+    "tests\\diagnostics\\career_baseline_followup.json": "44fdcf6f62d95e5a77cc0003ac2ca4eb0416dc21b9f8699e2ad158c0703eaafe"
+  },
+  "baseline_report_prefix_sha256": "8a8fc33d873057ac227b4622609a68912b2fa757a5f100c99a75ca05305c8703"
+}

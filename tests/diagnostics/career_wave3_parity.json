@@ -1,0 +1,331 @@
+{
+  "entry_instructions": {
+    "career_exploration_agent_google_search_agent": "2306d4d6b89f24a4159915867093dce559936f0a2a80426956c5b93b86928ddd",
+    "career_exploration_agent_url_context_agent": "af565228481fb2379757d680d324bfa00896fa689bf9cd11a9843cb08b4f888a",
+    "career_exploration_agent": "8053b3cc0b7f018a260bf78345c635a787b08f99f079920c6aee6e677744df34",
+    "internship___job_preparation_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "internship___job_preparation_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "internship__job_preparation_agent": "cd4014bbaae6fec25e81b3846a955c07e2e27f430581f218271e54783f7233bb",
+    "resume___portfolio_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "resume___portfolio_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "resume__portfolio_agent": "c536bc979c045b9ee218431a0be5e6f6bc4ab57ff71b36860b49dee66ce637c2",
+    "interview_preparation_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "interview_preparation_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "interview_preparation_agent": "91cf20eb8e454ccdedb2ec31431bc57917b524ccbeef5ffa3cc5ab368198097d",
+    "networking___professional_communication_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "networking___professional_communication_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "networking__professional_communication_agent": "435792397364594f2e6266061e7a1dbfac28dd330d331241824f4762bb1d8df0",
+    "skill_gap___career_roadmap_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "skill_gap___career_roadmap_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "skill_gap__career_roadmap_agent": "0f5a5146b54c7db4d32a23ef2b44b40121481d9fbd8122cac96d88cc4e0aeee7",
+    "research___graduate_pathways_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "research___graduate_pathways_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "research__graduate_pathways_agent": "12586cf414dd589ebb49aea819ba01528dcb69f8d7e4174ef6be6dd120f4caf5",
+    "certification___technical_development_agent_google_search_agent": "8d503a751c45be82843d8c9124fd8127a9280c577e274474c5efc1841e6a0865",
+    "certification___technical_development_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "certification__technical_development_agent": "8338507c63a19415c66ee4ecb34c8759b2d09e4638a68aff912b6e59558bc1b2",
+    "trust___human_escalation_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "trust___human_escalation_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "trust__human_escalation_agent": "4088123dd1ce62bcf2f541fcdee93fcb0460deb1b8e8bfb24c8836706fc595c6",
+    "career___professional_orchestration_agent_google_search_agent": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+    "career___professional_orchestration_agent_url_context_agent": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+    "root_agent": "d36880c4374ba6d52a2807d81d95b28a98e805f6d8f7c6a4300a6a19b00b917d"
+  },
+  "protected_files": {
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c"
+  },
+  "previous_artifacts": {
+    "tests\\diagnostics\\career_baseline.json": "3317d0a1eeb4a613eed4d18526d0ba7c3965b80104ac23169277d65dd6952e7f",
+    "tests\\diagnostics\\career_baseline_followup.json": "44fdcf6f62d95e5a77cc0003ac2ca4eb0416dc21b9f8699e2ad158c0703eaafe",
+    "tests\\diagnostics\\career_wave1_parity.json": "81a8e5759726cb4100185c3e8db6b81668e06ac3bd10b838bf0beebecf7a92c5",
+    "tests\\diagnostics\\career_wave1_initial.json": "5c339341c74b465a808364475a6f3757b7c0aed2f82a7969ddaf94fab213ca4e",
+    "tests\\diagnostics\\career_wave1.json": "5cd4114a57a3122bd710f48e1fd4f116c1f2541765d15082fc59297bd19540a7",
+    "tests\\diagnostics\\career_wave1_followup.json": "8f7301b6ab2dfb541db6f1c15090efea119b1a565f27fd5fc3c24e8ded1ce9e0",
+    "tests\\diagnostics\\career_wave2_parity.json": "694e18bafdd8b383fff50302962d5daa5a900784d82d5d6728586ab5839dd6e7",
+    "tests\\diagnostics\\career_wave2.json": "03c2b0744d4e39f0bf19566d9b611d0fda45bf9fb70a00ba04f357e271471b6c",
+    "tests\\diagnostics\\career_wave2_followup.json": "c93ea0ef81049f4b5c6f3b215acc417956c81dc837ab700c3e1186ff3b56508c",
+    "tests\\diagnostics\\career_wave2_guarded.json": "8d1524864a7900f10fef071bc22743b8731fdb7e5791872f8efa432a15269825",
+    "tests\\diagnostics\\career_wave2_final.json": "75825596ccb6284045de3c54cf7ac3ebb685aa792ca72ed5d154100f4243e92c"
+  },
+  "report_prefix_sha256": "61804afd2f2bb010370127a5fc045b195132de37f697a58e2e57973bb572fbc8",
+  "wave3_files": {
+    "agents/career/workflow/agent.py": "b7b0b32b85e2bd2ca8890aff2cde4dd1a07c18b4aee89be19d23b6700c8fd080",
+    "agents/career/workflow/shared_evidence.py": "216ac87d2c63b01bf21bbe1e8a5372d99fdf480ff5107930aaa06e8aca97b94b"
+  },
+  "scope": "Three specialist tool wrappers/callbacks and append-only specialist/helper protocols; names/models/sub-agent graph unchanged.",
+  "components": {
+    "career_exploration_agent_google_search_agent": {
+      "entry_sha256": "2306d4d6b89f24a4159915867093dce559936f0a2a80426956c5b93b86928ddd",
+      "wave3_sha256": "2306d4d6b89f24a4159915867093dce559936f0a2a80426956c5b93b86928ddd",
+      "changed": false,
+      "name": "Career_Exploration_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "career_exploration_agent_url_context_agent": {
+      "entry_sha256": "af565228481fb2379757d680d324bfa00896fa689bf9cd11a9843cb08b4f888a",
+      "wave3_sha256": "af565228481fb2379757d680d324bfa00896fa689bf9cd11a9843cb08b4f888a",
+      "changed": false,
+      "name": "Career_Exploration_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "career_exploration_agent": {
+      "entry_sha256": "8053b3cc0b7f018a260bf78345c635a787b08f99f079920c6aee6e677744df34",
+      "wave3_sha256": "8053b3cc0b7f018a260bf78345c635a787b08f99f079920c6aee6e677744df34",
+      "changed": false,
+      "name": "career_exploration_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "Call(func=Name(id='evidence_tools', ctx=Load()), args=[Name(id='career_exploration_agent_google_search_agent', ctx=Load()), Name(id='career_exploration_agent_url_context_agent', ctx=Load())])",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "internship___job_preparation_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false,
+      "name": "Internship___Job_Preparation_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "internship___job_preparation_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false,
+      "name": "Internship___Job_Preparation_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "internship__job_preparation_agent": {
+      "entry_sha256": "cd4014bbaae6fec25e81b3846a955c07e2e27f430581f218271e54783f7233bb",
+      "wave3_sha256": "cd4014bbaae6fec25e81b3846a955c07e2e27f430581f218271e54783f7233bb",
+      "changed": false,
+      "name": "internship__job_preparation_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='internship___job_preparation_agent_google_search_agent', ctx=Load()))]), Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='internship___job_preparation_agent_url_context_agent', ctx=Load()))])], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "resume___portfolio_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false,
+      "name": "Resume___Portfolio_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "resume___portfolio_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false,
+      "name": "Resume___Portfolio_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "resume__portfolio_agent": {
+      "entry_sha256": "c536bc979c045b9ee218431a0be5e6f6bc4ab57ff71b36860b49dee66ce637c2",
+      "wave3_sha256": "c536bc979c045b9ee218431a0be5e6f6bc4ab57ff71b36860b49dee66ce637c2",
+      "changed": false,
+      "name": "resume__portfolio_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='resume___portfolio_agent_google_search_agent', ctx=Load()))]), Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='resume___portfolio_agent_url_context_agent', ctx=Load()))])], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "interview_preparation_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false,
+      "name": "Interview_Preparation_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "interview_preparation_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false,
+      "name": "Interview_Preparation_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "interview_preparation_agent": {
+      "entry_sha256": "91cf20eb8e454ccdedb2ec31431bc57917b524ccbeef5ffa3cc5ab368198097d",
+      "wave3_sha256": "91cf20eb8e454ccdedb2ec31431bc57917b524ccbeef5ffa3cc5ab368198097d",
+      "changed": false,
+      "name": "interview_preparation_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='interview_preparation_agent_google_search_agent', ctx=Load()))]), Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='interview_preparation_agent_url_context_agent', ctx=Load()))])], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "networking___professional_communication_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "55dedf16b49f827c009d7d28df31ca7181d19a5b4bb107d333a7d31135a13d1b",
+      "changed": true,
+      "name": "Networking___Professional_Communication_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "networking___professional_communication_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "5084669825532cbdf8fc40346df251331217af89637cc5a066f9b232f04e2f64",
+      "changed": true,
+      "name": "Networking___Professional_Communication_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "networking__professional_communication_agent": {
+      "entry_sha256": "435792397364594f2e6266061e7a1dbfac28dd330d331241824f4762bb1d8df0",
+      "wave3_sha256": "64a6f3d7ef0f138bda79fe6bc632e3f64a4a5b49430ca4451d1ededeb12aff18",
+      "changed": true,
+      "name": "networking__professional_communication_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "Call(func=Attribute(value=Name(id='networking_evidence', ctx=Load()), attr='tools', ctx=Load()), args=[Name(id='networking___professional_communication_agent_google_search_agent', ctx=Load()), Name(id='networking___professional_communication_agent_url_context_agent', ctx=Load())])",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "skill_gap___career_roadmap_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false,
+      "name": "Skill_Gap___Career_Roadmap_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "skill_gap___career_roadmap_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false,
+      "name": "Skill_Gap___Career_Roadmap_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "skill_gap__career_roadmap_agent": {
+      "entry_sha256": "0f5a5146b54c7db4d32a23ef2b44b40121481d9fbd8122cac96d88cc4e0aeee7",
+      "wave3_sha256": "0f5a5146b54c7db4d32a23ef2b44b40121481d9fbd8122cac96d88cc4e0aeee7",
+      "changed": false,
+      "name": "skill_gap__career_roadmap_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='skill_gap___career_roadmap_agent_google_search_agent', ctx=Load()))]), Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='skill_gap___career_roadmap_agent_url_context_agent', ctx=Load()))])], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "research___graduate_pathways_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "55dedf16b49f827c009d7d28df31ca7181d19a5b4bb107d333a7d31135a13d1b",
+      "changed": true,
+      "name": "Research___Graduate_Pathways_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "research___graduate_pathways_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "5084669825532cbdf8fc40346df251331217af89637cc5a066f9b232f04e2f64",
+      "changed": true,
+      "name": "Research___Graduate_Pathways_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "research__graduate_pathways_agent": {
+      "entry_sha256": "12586cf414dd589ebb49aea819ba01528dcb69f8d7e4174ef6be6dd120f4caf5",
+      "wave3_sha256": "d00a56c4c1780b8d87bb67f07bf4d165bdd92b4f6ba564deb090a0ba2d9d143d",
+      "changed": true,
+      "name": "research__graduate_pathways_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "Call(func=Attribute(value=Name(id='research_evidence', ctx=Load()), attr='tools', ctx=Load()), args=[Name(id='research___graduate_pathways_agent_google_search_agent', ctx=Load()), Name(id='research___graduate_pathways_agent_url_context_agent', ctx=Load())])",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "certification___technical_development_agent_google_search_agent": {
+      "entry_sha256": "8d503a751c45be82843d8c9124fd8127a9280c577e274474c5efc1841e6a0865",
+      "wave3_sha256": "cf8401ea149e020784415f2aba0ad871d9a940fa3fce6bf295287f0c65ff5fa9",
+      "changed": true,
+      "name": "Certification___Technical_Development_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "certification___technical_development_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "5084669825532cbdf8fc40346df251331217af89637cc5a066f9b232f04e2f64",
+      "changed": true,
+      "name": "Certification___Technical_Development_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "certification__technical_development_agent": {
+      "entry_sha256": "8338507c63a19415c66ee4ecb34c8759b2d09e4638a68aff912b6e59558bc1b2",
+      "wave3_sha256": "1ce56d9e5a4ef9d7f31c2c7eb11c00eb4fb72abe9d4c03402f303461c506ba83",
+      "changed": true,
+      "name": "certification__technical_development_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "Call(func=Attribute(value=Name(id='certification_evidence', ctx=Load()), attr='tools', ctx=Load()), args=[Name(id='certification___technical_development_agent_google_search_agent', ctx=Load()), Name(id='certification___technical_development_agent_url_context_agent', ctx=Load())])",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "trust___human_escalation_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false,
+      "name": "Trust___Human_Escalation_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "trust___human_escalation_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false,
+      "name": "Trust___Human_Escalation_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "trust__human_escalation_agent": {
+      "entry_sha256": "4088123dd1ce62bcf2f541fcdee93fcb0460deb1b8e8bfb24c8836706fc595c6",
+      "wave3_sha256": "4088123dd1ce62bcf2f541fcdee93fcb0460deb1b8e8bfb24c8836706fc595c6",
+      "changed": false,
+      "name": "trust__human_escalation_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='trust___human_escalation_agent_google_search_agent', ctx=Load()))]), Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='trust___human_escalation_agent_url_context_agent', ctx=Load()))])], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "career___professional_orchestration_agent_google_search_agent": {
+      "entry_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "wave3_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "changed": false,
+      "name": "Career___Professional_Orchestration_Agent_google_search_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Name(id='GoogleSearchTool', ctx=Load()))], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "career___professional_orchestration_agent_url_context_agent": {
+      "entry_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "wave3_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "changed": false,
+      "name": "Career___Professional_Orchestration_Agent_url_context_agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Name(id='url_context', ctx=Load())], ctx=Load())",
+      "sub_agents_ast": "List(ctx=Load())"
+    },
+    "root_agent": {
+      "entry_sha256": "d36880c4374ba6d52a2807d81d95b28a98e805f6d8f7c6a4300a6a19b00b917d",
+      "wave3_sha256": "d36880c4374ba6d52a2807d81d95b28a98e805f6d8f7c6a4300a6a19b00b917d",
+      "changed": false,
+      "name": "Career___Professional_Orchestration_Agent",
+      "model_ast": "Call(func=Name(id='GlobalGemini', ctx=Load()), keywords=[keyword(arg='model', value=Constant(value='gemini-3.5-flash'))])",
+      "tools_ast": "List(elts=[Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='career___professional_orchestration_agent_google_search_agent', ctx=Load()))]), Call(func=Attribute(value=Name(id='agent_tool', ctx=Load()), attr='AgentTool', ctx=Load()), keywords=[keyword(arg='agent', value=Name(id='career___professional_orchestration_agent_url_context_agent', ctx=Load()))])], ctx=Load())",
+      "sub_agents_ast": "List(elts=[Name(id='career_exploration_agent', ctx=Load()), Name(id='internship__job_preparation_agent', ctx=Load()), Name(id='resume__portfolio_agent', ctx=Load()), Name(id='interview_preparation_agent', ctx=Load()), Name(id='networking__professional_communication_agent', ctx=Load()), Name(id='skill_gap__career_roadmap_agent', ctx=Load()), Name(id='research__graduate_pathways_agent', ctx=Load()), Name(id='certification__technical_development_agent', ctx=Load()), Name(id='trust__human_escalation_agent', ctx=Load())], ctx=Load())"
+    }
+  }
+}

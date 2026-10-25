@@ -1,0 +1,1469 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "4031b3a6d7e688be4fabee40606df2bf08beb3a876d7c9bfdee3692153667e37",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "internship_stable_1",
+      "domain": "internship",
+      "label": "Internship & Job Preparation",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:11:14.040645+00:00",
+      "orchestrator_request_start": 0.968,
+      "total_seconds": 28.224,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.727,
+        "target": "internship__job_preparation_agent"
+      },
+      "actual_specialist": "internship__job_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 8.734,
+      "first_specialist_event": 28.222,
+      "handoff_seconds": 19.495,
+      "first_helper": null,
+      "first_text": 28.223,
+      "final_answer": "Preparing for cybersecurity internships as a Computer Science senior is an exciting and focused endeavor. Because you are in your senior year, your preparation strategy will look slightly different than that of a sophomore or junior, particularly regarding how you position your academic experience and target your search. \n\nHere is a prioritized, practical preparation strategy tailored for your senior year:\n\n### 1. Clarify Your Timeline and Role Targeting\nAs a senior, your eligibility for internships can vary significantly depending on employers' specific criteria and your post-graduation plans:\n* **Internships vs. Full-Time Roles:** Many traditional summer internship programs require students to return to school for at least one semester following the internship. If you are graduating in the spring, some employers may direct you toward entry-level full-time roles instead, while others offer \"post-grad internships\" or co-ops. \n* **Action:** Build a dual-track strategy. Apply to both cybersecurity internships (especially those open to graduating seniors or those continuing to graduate school) and entry-level cybersecurity positions (such as Junior Security Analyst, Associate Security Engineer, or SOC Analyst).\n\n### 2. Practice with Local Hands-On Exercises\nEmployers hiring cybersecurity interns want to see that you can apply theoretical computer science concepts to practical security scenarios. You can build these skills locally:\n* **Set Up a Local Sandbox:** Configure a local virtualized environment using a hypervisor on your personal computer. Practice setting up isolated virtual machines (such as a Linux distribution and a Windows client).\n* **Network Traffic Analysis:** Generate and capture local network traffic, then use analysis tools to inspect packet headers, identify protocols, and spot anomalies or unencrypted data.\n* **Scripting for Automation:** Write scripts (such as Python, Bash, or PowerShell) to automate basic administrative tasks, parse mock log files for specific patterns, or audit local system configurations.\n\n### 3. Translate Coursework into Tangible Projects\nAs a senior, you likely have completed advanced coursework in operating systems, computer networks, database systems, or software engineering. Translate this academic foundation into secure development or analysis projects:\n* **Secure Software Development:** Refactor an existing academic project to address common vulnerabilities (such as input validation issues, SQL injection risks, or broken authentication) and document your secure coding practices.\n* **System Hardening:** Document the step-by-step process of securing a local operating system configuration, explaining the trade-offs of disabling specific services, managing user permissions, and configuring local firewalls.\n\n### 4. Organize a Structured Application Strategy\nThe job search itself requires disciplined organization to manage effectively alongside your senior coursework:\n* **Track Your Progress:** Create a dedicated spreadsheet to track the roles you apply to, including the employer, job title, application date, status, required skills listed in the posting, and follow-up timeline.\n* **Identify Transferable Skills:** Ensure your applications highlight core computer science competencies—such as troubleshooting, system architecture, programming, and database design—as these are highly valuable in technical security roles.\n\n---\n\n### To Help Tailor This Guidance\nTo help me provide more specific recommendations, could you share a bit more context?\n1. **What is your expected graduation timeline** (e.g., Fall/December or Spring/May), and do you plan to pursue graduate studies immediately after?\n2. **Are there specific sub-fields of cybersecurity** you are most interested in (e.g., Security Operations/SOC, Penetration Testing, Application Security, or Cloud Security)?\n3. **What relevant security coursework, personal projects, or prior technical experience** do you already have under your belt?",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 19.485,
+      "orchestrator_model_seconds": 7.758,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.728,
+          "fingerprint": "613eee80c2c5cba13f2b3e0a4d3919b9c08ecb8dc8d3a740c3b844d7fbfe276f",
+          "args": {
+            "agent_name": "internship__job_preparation_agent"
+          },
+          "end": 8.73,
+          "duration": 0.002,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.968,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 8.726,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.726,
+          "duration": 7.758
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 8.736,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 28.221,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 28.221,
+          "duration": 19.485
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.727,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "internship__job_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.732,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 28.222,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for cybersecurity internships as a Computer Science senior is an exciting and focused endeavor. Because you are in your senior year, your preparation strategy will look slightly different than that of a sophomore or junior, particularly regarding how you position your academic experience and target your search. \n\nHere is a prioritized, practical preparation strategy tailored for your senior year:\n\n### 1. Clarify Your Timeline and Role Targeting\nAs a senior, your eligibility for internships can vary significantly depending on employers' specific criteria and your post-graduation plans:\n* **Internships vs. Full-Time Roles:** Many traditional summer internship programs require students to return to school for at least one semester following the internship. If you are graduating in the spring, some employers may direct you toward entry-level full-time roles instead, while others offer \"post-grad internships\" or co-ops. \n* **Action:** Build a dual-track strategy. Apply to both cybersecurity internships (especially those open to graduating seniors or those continuing to graduate school) and entry-level cybersecurity positions (such as Junior Security Analyst, Associate Security Engineer, or SOC Analyst).\n\n### 2. Practice with Local Hands-On Exercises\nEmployers hiring cybersecurity interns want to see that you can apply theoretical computer science concepts to practical security scenarios. You can build these skills locally:\n* **Set Up a Local Sandbox:** Configure a local virtualized environment using a hypervisor on your personal computer. Practice setting up isolated virtual machines (such as a Linux distribution and a Windows client).\n* **Network Traffic Analysis:** Generate and capture local network traffic, then use analysis tools to inspect packet headers, identify protocols, and spot anomalies or unencrypted data.\n* **Scripting for Automation:** Write scripts (such as Python, Bash, or PowerShell) to automate basic administrative tasks, parse mock log files for specific patterns, or audit local system configurations.\n\n### 3. Translate Coursework into Tangible Projects\nAs a senior, you likely have completed advanced coursework in operating systems, computer networks, database systems, or software engineering. Translate this academic foundation into secure development or analysis projects:\n* **Secure Software Development:** Refactor an existing academic project to address common vulnerabilities (such as input validation issues, SQL injection risks, or broken authentication) and document your secure coding practices.\n* **System Hardening:** Document the step-by-step process of securing a local operating system configuration, explaining the trade-offs of disabling specific services, managing user permissions, and configuring local firewalls.\n\n### 4. Organize a Structured Application Strategy\nThe job search itself requires disciplined organization to manage effectively alongside your senior coursework:\n* **Track Your Progress:** Create a dedicated spreadsheet to track the roles you apply to, including the employer, job title, application date, status, required skills listed in the posting, and follow-up timeline.\n* **Identify Transferable Skills:** Ensure your applications highlight core computer science competencies—such as troubleshooting, system architecture, programming, and database design—as these are highly valuable in technical security roles.\n\n---\n\n### To Help Tailor This Guidance\nTo help me provide more specific recommendations, could you share a bit more context?\n1. **What is your expected graduation timeline** (e.g., Fall/December or Spring/May), and do you plan to pursue graduate studies immediately after?\n2. **Are there specific sub-fields of cybersecurity** you are most interested in (e.g., Security Operations/SOC, Penetration Testing, Application Security, or Cloud Security)?\n3. **What relevant security coursework, personal projects, or prior technical experience** do you already have under your belt?"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "PASS",
+        "notes": "Useful local exercises, application organization and follow-up context; no named open role, cycle, deadline or free/access claim.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "roadmap_stable_1",
+      "domain": "roadmap",
+      "label": "Skill Gap & Career Roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "stable",
+      "prompt": "I want to become a cloud security engineer. What skills should I build over the next year?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:11:57.980973+00:00",
+      "orchestrator_request_start": 0.013,
+      "total_seconds": 23.928,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 3.22,
+        "target": "skill_gap__career_roadmap_agent"
+      },
+      "actual_specialist": "skill_gap__career_roadmap_agent",
+      "route_match": true,
+      "first_specialist_start": 3.223,
+      "first_specialist_event": 23.926,
+      "handoff_seconds": 20.706,
+      "first_helper": null,
+      "first_text": 23.926,
+      "final_answer": "To build a strong foundation for a **Cloud Security Engineer** role over the next year, it helps to understand what capabilities are highly valued in the industry and map out a structured sequence to develop them. \n\nBecause cloud security sits at the intersection of software engineering, systems networking, and security operations, trying to learn everything at once can be overwhelming. A strong, stable path focusing on capabilities—rather than just collecting tools—is recommended.\n\nBelow is a conceptual breakdown of a typical target capability profile for an entry-level cloud security role, followed by a few questions to help customize a realistic 1-year roadmap specifically for you.\n\n---\n\n### Target Capability Profile: Cloud Security\n\n#### 1. Foundation: Systems & Networking\n*   **Why it matters:** Cloud environments are virtualized data centers. If you don't understand how systems communicate or how operating systems work, securing them is incredibly difficult.\n*   **Recommended Focus:** \n    *   **Linux Administration:** Comfort with the command line, user permissions, SSH, and basic bash scripting.\n    *   **Networking Fundamentals:** Understanding DNS, the TCP/IP stack, routing, subnets, and HTTP/HTTPS/TLS.\n*   **Evidence of Progress:** Setting up a local virtual machine (VM) host, configuring a basic firewall, and troubleshooting network connectivity via the command line.\n\n#### 2. Cloud Architecture & Identity (IAM)\n*   **Why it matters:** In traditional security, the perimeter is a physical firewall. In the cloud, **Identity and Access Management (IAM)** is the primary security boundary. \n*   **Recommended Focus:**\n    *   **Core Services:** Virtual networks (VPCs/VNets), virtual machines (compute), and cloud storage.\n    *   **IAM Policies:** Understanding how to write and audit policies using the principle of least privilege (ensuring users/services only have the exact permissions they need).\n*   **Evidence of Progress:** Building a multi-tier cloud network where a private database can only communicate with a specific web server, with all public internet traffic blocked.\n\n#### 3. Infrastructure as Code (IaC) & Automation\n*   **Why it matters:** Modern cloud security is automated. Security engineers rarely click around a console; they write code to provision secure infrastructure and scan for misconfigurations.\n*   **Recommended Focus:**\n    *   **IaC Tools:** Learning a tool like **Terraform** to define infrastructure.\n    *   **Scripting:** Using **Python** to interact with cloud APIs (e.g., using the `boto3` library in AWS) to audit environments or automate security tasks.\n*   **Evidence of Progress:** Writing a script that automatically scans a cloud environment, detects any publicly accessible storage buckets, and remediates them (makes them private) or sends an alert.\n\n#### 4. Security Monitoring & Logging\n*   **Why it matters:** You cannot secure what you cannot see. Knowing how to collect, centralize, and analyze logs is critical for detecting incidents.\n*   **Recommended Focus:**\n    *   **Log Management:** Understanding how API logs (like AWS CloudTrail) and network flow logs (VPC Flow Logs) work.\n    *   **Basic SIEM Concepts:** Learning how to ingest logs into a central dashboard to query for suspicious activity.\n*   **Evidence of Progress:** Setting up a monitoring system that triggers an alert (e.g., an email or notification) whenever an administrative login occurs from an unusual location or an unauthorized change is attempted.\n\n---\n\n### Customizing Your 1-Year Roadmap\n\nTo narrow this down into a highly realistic, prioritized month-by-month plan that fits your schedule and doesn't conflict with your coursework, I need to understand your starting point. \n\n**Could you share a bit more context?**\n\n1.  **Your Current Academic Background:** What academic year are you in at Morgan State? What relevant Computer Science courses (such as Operating Systems, Networks, Software Engineering, or Cybersecurity) have you completed or are currently taking?\n2.  **Your Technical Experience:** Do you have any hands-on experience with programming (e.g., Python, C++, Java), version control (Git/GitHub), Linux, or any cloud providers (AWS, Azure, GCP)?\n3.  **Your Time Commitment:** How many hours per week can you realistically dedicate to self-study, labs, and building projects outside of your regular classes?\n4.  **Your Immediate Goal:** Are you preparing to apply for summer internships, gearing up for a post-graduation job search, or simply looking to build up your personal technical portfolio?\n\n*(Note: If you are looking to choose or prepare for specific industry certifications to bolster your resume, we can transfer your request to our **Certification Agent**. If you need help finding active internships or updating your resume format, we have specialized **Internship** and **Resume Agents** ready to assist once your roadmap is set!)*",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 20.699,
+      "orchestrator_model_seconds": 3.206,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 3.221,
+          "fingerprint": "a1badb4e54885a3922ee2236ff1d6944c59915c05b198d9d10052445e8a6af09",
+          "args": {
+            "agent_name": "skill_gap__career_roadmap_agent"
+          },
+          "end": 3.221,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.013,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 3.219,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 3.219,
+          "duration": 3.206
+        },
+        {
+          "agent": "skill_gap__career_roadmap_agent",
+          "start": 3.225,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 23.924,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 23.924,
+          "duration": 20.699
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 3.22,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "skill_gap__career_roadmap_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 3.221,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 23.926,
+          "author": "skill_gap__career_roadmap_agent",
+          "parts": [
+            {
+              "text": "To build a strong foundation for a **Cloud Security Engineer** role over the next year, it helps to understand what capabilities are highly valued in the industry and map out a structured sequence to develop them. \n\nBecause cloud security sits at the intersection of software engineering, systems networking, and security operations, trying to learn everything at once can be overwhelming. A strong, stable path focusing on capabilities—rather than just collecting tools—is recommended.\n\nBelow is a conceptual breakdown of a typical target capability profile for an entry-level cloud security role, followed by a few questions to help customize a realistic 1-year roadmap specifically for you.\n\n---\n\n### Target Capability Profile: Cloud Security\n\n#### 1. Foundation: Systems & Networking\n*   **Why it matters:** Cloud environments are virtualized data centers. If you don't understand how systems communicate or how operating systems work, securing them is incredibly difficult.\n*   **Recommended Focus:** \n    *   **Linux Administration:** Comfort with the command line, user permissions, SSH, and basic bash scripting.\n    *   **Networking Fundamentals:** Understanding DNS, the TCP/IP stack, routing, subnets, and HTTP/HTTPS/TLS.\n*   **Evidence of Progress:** Setting up a local virtual machine (VM) host, configuring a basic firewall, and troubleshooting network connectivity via the command line.\n\n#### 2. Cloud Architecture & Identity (IAM)\n*   **Why it matters:** In traditional security, the perimeter is a physical firewall. In the cloud, **Identity and Access Management (IAM)** is the primary security boundary. \n*   **Recommended Focus:**\n    *   **Core Services:** Virtual networks (VPCs/VNets), virtual machines (compute), and cloud storage.\n    *   **IAM Policies:** Understanding how to write and audit policies using the principle of least privilege (ensuring users/services only have the exact permissions they need).\n*   **Evidence of Progress:** Building a multi-tier cloud network where a private database can only communicate with a specific web server, with all public internet traffic blocked.\n\n#### 3. Infrastructure as Code (IaC) & Automation\n*   **Why it matters:** Modern cloud security is automated. Security engineers rarely click around a console; they write code to provision secure infrastructure and scan for misconfigurations.\n*   **Recommended Focus:**\n    *   **IaC Tools:** Learning a tool like **Terraform** to define infrastructure.\n    *   **Scripting:** Using **Python** to interact with cloud APIs (e.g., using the `boto3` library in AWS) to audit environments or automate security tasks.\n*   **Evidence of Progress:** Writing a script that automatically scans a cloud environment, detects any publicly accessible storage buckets, and remediates them (makes them private) or sends an alert.\n\n#### 4. Security Monitoring & Logging\n*   **Why it matters:** You cannot secure what you cannot see. Knowing how to collect, centralize, and analyze logs is critical for detecting incidents.\n*   **Recommended Focus:**\n    *   **Log Management:** Understanding how API logs (like AWS CloudTrail) and network flow logs (VPC Flow Logs) work.\n    *   **Basic SIEM Concepts:** Learning how to ingest logs into a central dashboard to query for suspicious activity.\n*   **Evidence of Progress:** Setting up a monitoring system that triggers an alert (e.g., an email or notification) whenever an administrative login occurs from an unusual location or an unauthorized change is attempted.\n\n---\n\n### Customizing Your 1-Year Roadmap\n\nTo narrow this down into a highly realistic, prioritized month-by-month plan that fits your schedule and doesn't conflict with your coursework, I need to understand your starting point. \n\n**Could you share a bit more context?**\n\n1.  **Your Current Academic Background:** What academic year are you in at Morgan State? What relevant Computer Science courses (such as Operating Systems, Networks, Software Engineering, or Cybersecurity) have you completed or are currently taking?\n2.  **Your Technical Experience:** Do you have any hands-on experience with programming (e.g., Python, C++, Java), version control (Git/GitHub), Linux, or any cloud providers (AWS, Azure, GCP)?\n3.  **Your Time Commitment:** How many hours per week can you realistically dedicate to self-study, labs, and building projects outside of your regular classes?\n4.  **Your Immediate Goal:** Are you preparing to apply for summer internships, gearing up for a post-graduation job search, or simply looking to build up your personal technical portfolio?\n\n*(Note: If you are looking to choose or prepare for specific industry certifications to bolster your resume, we can transfer your request to our **Certification Agent**. If you need help finding active internships or updating your resume format, we have specialized **Internship** and **Resume Agents** ready to assist once your roadmap is set!)*"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "PASS",
+        "notes": "Useful conceptual skill profile, staged plan/intake and practice suggestions; no free-tier offer, current posting-frequency claim, exact vendor version or access/availability guarantee. Residual generalization: engineers rarely using consoles is overstated general guidance, not verified current-market evidence.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "internship_stable_2",
+      "domain": "internship",
+      "label": "Internship & Job Preparation",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:12:35.726641+00:00",
+      "orchestrator_request_start": 0.016,
+      "total_seconds": 17.732,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 2.315,
+        "target": "internship__job_preparation_agent"
+      },
+      "actual_specialist": "internship__job_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 2.317,
+      "first_specialist_event": 17.73,
+      "handoff_seconds": 15.415,
+      "first_helper": null,
+      "first_text": 17.731,
+      "final_answer": "Preparing for cybersecurity internships as a Computer Science senior requires a highly targeted, strategic approach. Because you are in your final year, your preparation and application strategy will differ slightly from underclassmen. Many employers look for interns who have a strong foundation in CS fundamentals, but as a senior, you are also uniquely positioned to target entry-level full-time roles simultaneously.\n\nHere is a prioritized guide to preparing your strategy, tailored to your senior status:\n\n---\n\n### 1. Define Your Graduation Timeline and Target Roles\nAs a senior, your first step is to clarify your timeline, as this dictates what opportunities you should apply for:\n*   **If you have at least one term remaining after the internship:** You are highly competitive for traditional summer or co-op internship roles.\n*   **If you are graduating before the internship starts:** Some structured internship programs require applicants to be returning to school. However, many employers accept graduating seniors, or offer \"post-grad internships\" and direct **entry-level/New Grad** roles (such as Associate Security Analyst or Junior Security Engineer). \n*   **Action:** We highly recommend applying to *both* internships and entry-level positions to maximize your chances.\n\n### 2. Identify Your Cybersecurity Focus Area\nCybersecurity is incredibly broad, and employers appreciate candidates who know what domain they want to enter. Common entry-level paths include:\n*   **Security Operations Center (SOC) / Incident Response (Blue Teaming):** Monitoring network traffic, analyzing alerts, and defending systems.\n*   **Application Security (AppSec):** Reviewing source code, testing software for vulnerabilities, and ensuring secure software development lifecycles (SDLC).\n*   **Cloud/Infrastructure Security:** Securing cloud environments, managing identity and access (IAM), and configuring secure networks.\n*   **Governance, Risk, and Compliance (GRC):** Writing security policies, conducting audits, and ensuring regulatory compliance (ideal if you enjoy the intersection of technology, policy, and business).\n*   **Offensive Security / Penetration Testing (Red Teaming):** Identifying and exploiting vulnerabilities. *(Note: These roles are highly competitive and often require demonstrated hands-on experience or CTF participation).*\n\n### 3. Highlight Your Computer Science Core Strengths\nYour Computer Science degree is a major asset. Many employers prefer CS majors for security roles because you understand *how software and systems are built*, which is essential for securing them. \n*   **Leverage Coursework:** Highlight senior-level coursework in Operating Systems, Computer Networks, Databases, Cryptography, or Software Engineering.\n*   **Showcase Technical Projects:** If you have built projects in your classes (e.g., a multi-threaded web server, a custom network protocol, or a secure database application), make sure these are prominently featured on your resume.\n\n### 4. Build Cybersecurity-Specific Evidence\nIf your CS curriculum did not have a dedicated security track, you can bridge the gap with practical, independent activities:\n*   **Hands-on Labs:** Set up a home lab using virtualization software. Practice configuring firewalls, analyzing packet captures using tools like Wireshark, or setting up a Linux active directory environment.\n*   **Capture the Flag (CTF) Challenges:** Participate in local or online CTF events. Documenting your write-ups (explaining how you solved a security puzzle) on a personal blog or GitHub is a phenomenal way to prove your skills to recruiters.\n*   **Scripting:** Automate a simple security task. For example, write a Python script that scans open ports or parses system logs for suspicious activity.\n\n---\n\n### Recommended Next Steps\nTo make the most of your senior year, here are three immediate actions you can take:\n\n1.  **Map Out Your Application Tracker:** Build a simple spreadsheet to track the companies, roles, application deadlines, and status of every position you apply to. Aim for a mix of high-volume broad applications and highly tailored, targeted applications.\n2.  **Review Your Portfolio:** Ensure your GitHub or personal website contains clean, documented code and project readmes that explain the security considerations of your work.\n3.  **Refine Your Search:** Identify which of the cybersecurity focus areas (e.g., AppSec, SOC Analyst, Cloud Security) aligns closest with your current skills and interests.\n\n### How We Can Help You Next:\nDepending on what you need to focus on next, I can transfer you to a specialized agent:\n*   If you need help **tailoring your resume** or presenting your CS projects for cybersecurity roles, I can transfer you to the **Resume & Portfolio Agent**.\n*   If you want to study for security-specific **technical or behavioral interviews** (e.g., networking protocols, OWASP Top 10, or incident response scenarios), I can transfer you to the **Interview Preparation Agent**.\n*   If you want to evaluate whether you should pursue **security certifications** (like CompTIA Security+) during your senior year, I can transfer you to the **Certification & Technical Development Agent**.\n*   If you are unsure which security path matches your interests and want to **explore different subfields**, I can transfer you to the **Career Exploration Agent**. \n\nWhich area would you like to focus on first?",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 15.41,
+      "orchestrator_model_seconds": 2.298,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 2.315,
+          "fingerprint": "613eee80c2c5cba13f2b3e0a4d3919b9c08ecb8dc8d3a740c3b844d7fbfe276f",
+          "args": {
+            "agent_name": "internship__job_preparation_agent"
+          },
+          "end": 2.315,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.016,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 2.314,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 2.314,
+          "duration": 2.298
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 2.319,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 17.729,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 17.729,
+          "duration": 15.41
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 2.315,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "internship__job_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 2.316,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 17.73,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for cybersecurity internships as a Computer Science senior requires a highly targeted, strategic approach. Because you are in your final year, your preparation and application strategy will differ slightly from underclassmen. Many employers look for interns who have a strong foundation in CS fundamentals, but as a senior, you are also uniquely positioned to target entry-level full-time roles simultaneously.\n\nHere is a prioritized guide to preparing your strategy, tailored to your senior status:\n\n---\n\n### 1. Define Your Graduation Timeline and Target Roles\nAs a senior, your first step is to clarify your timeline, as this dictates what opportunities you should apply for:\n*   **If you have at least one term remaining after the internship:** You are highly competitive for traditional summer or co-op internship roles.\n*   **If you are graduating before the internship starts:** Some structured internship programs require applicants to be returning to school. However, many employers accept graduating seniors, or offer \"post-grad internships\" and direct **entry-level/New Grad** roles (such as Associate Security Analyst or Junior Security Engineer). \n*   **Action:** We highly recommend applying to *both* internships and entry-level positions to maximize your chances.\n\n### 2. Identify Your Cybersecurity Focus Area\nCybersecurity is incredibly broad, and employers appreciate candidates who know what domain they want to enter. Common entry-level paths include:\n*   **Security Operations Center (SOC) / Incident Response (Blue Teaming):** Monitoring network traffic, analyzing alerts, and defending systems.\n*   **Application Security (AppSec):** Reviewing source code, testing software for vulnerabilities, and ensuring secure software development lifecycles (SDLC).\n*   **Cloud/Infrastructure Security:** Securing cloud environments, managing identity and access (IAM), and configuring secure networks.\n*   **Governance, Risk, and Compliance (GRC):** Writing security policies, conducting audits, and ensuring regulatory compliance (ideal if you enjoy the intersection of technology, policy, and business).\n*   **Offensive Security / Penetration Testing (Red Teaming):** Identifying and exploiting vulnerabilities. *(Note: These roles are highly competitive and often require demonstrated hands-on experience or CTF participation).*\n\n### 3. Highlight Your Computer Science Core Strengths\nYour Computer Science degree is a major asset. Many employers prefer CS majors for security roles because you understand *how software and systems are built*, which is essential for securing them. \n*   **Leverage Coursework:** Highlight senior-level coursework in Operating Systems, Computer Networks, Databases, Cryptography, or Software Engineering.\n*   **Showcase Technical Projects:** If you have built projects in your classes (e.g., a multi-threaded web server, a custom network protocol, or a secure database application), make sure these are prominently featured on your resume.\n\n### 4. Build Cybersecurity-Specific Evidence\nIf your CS curriculum did not have a dedicated security track, you can bridge the gap with practical, independent activities:\n*   **Hands-on Labs:** Set up a home lab using virtualization software. Practice configuring firewalls, analyzing packet captures using tools like Wireshark, or setting up a Linux active directory environment.\n*   **Capture the Flag (CTF) Challenges:** Participate in local or online CTF events. Documenting your write-ups (explaining how you solved a security puzzle) on a personal blog or GitHub is a phenomenal way to prove your skills to recruiters.\n*   **Scripting:** Automate a simple security task. For example, write a Python script that scans open ports or parses system logs for suspicious activity.\n\n---\n\n### Recommended Next Steps\nTo make the most of your senior year, here are three immediate actions you can take:\n\n1.  **Map Out Your Application Tracker:** Build a simple spreadsheet to track the companies, roles, application deadlines, and status of every position you apply to. Aim for a mix of high-volume broad applications and highly tailored, targeted applications.\n2.  **Review Your Portfolio:** Ensure your GitHub or personal website contains clean, documented code and project readmes that explain the security considerations of your work.\n3.  **Refine Your Search:** Identify which of the cybersecurity focus areas (e.g., AppSec, SOC Analyst, Cloud Security) aligns closest with your current skills and interests.\n\n### How We Can Help You Next:\nDepending on what you need to focus on next, I can transfer you to a specialized agent:\n*   If you need help **tailoring your resume** or presenting your CS projects for cybersecurity roles, I can transfer you to the **Resume & Portfolio Agent**.\n*   If you want to study for security-specific **technical or behavioral interviews** (e.g., networking protocols, OWASP Top 10, or incident response scenarios), I can transfer you to the **Interview Preparation Agent**.\n*   If you want to evaluate whether you should pursue **security certifications** (like CompTIA Security+) during your senior year, I can transfer you to the **Certification & Technical Development Agent**.\n*   If you are unsure which security path matches your interests and want to **explore different subfields**, I can transfer you to the **Career Exploration Agent**. \n\nWhich area would you like to focus on first?"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "PASS",
+        "notes": "Useful local exercises, application organization and follow-up context; no named open role, cycle, deadline or free/access claim. Residual coaching-quality caveat: declares high competitiveness from remaining enrollment alone; this prediction is unsupported and not validated by the zero-retrieval result.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "roadmap_stable_2",
+      "domain": "roadmap",
+      "label": "Skill Gap & Career Roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "stable",
+      "prompt": "I want to become a cloud security engineer. What skills should I build over the next year?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:13:13.936792+00:00",
+      "orchestrator_request_start": 0.013,
+      "total_seconds": 18.196,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 2.609,
+        "target": "skill_gap__career_roadmap_agent"
+      },
+      "actual_specialist": "skill_gap__career_roadmap_agent",
+      "route_match": true,
+      "first_specialist_start": 2.611,
+      "first_specialist_event": 18.194,
+      "handoff_seconds": 15.585,
+      "first_helper": null,
+      "first_text": 18.195,
+      "final_answer": "To help you transition toward a **Cloud Security Engineer** role over the next year, we want to design a highly personalized development roadmap. \n\nIn the tech industry, cloud security engineering is a specialized discipline that sits at the intersection of **software engineering, systems administration, networking, and security operations**. Rather than just collecting tool names, successful engineers build core architectural capabilities.\n\nTo give you an idea of what a strong candidate profile looks like, here is a general breakdown of the domains commonly expected in this field, followed by a conceptual roadmap. \n\n---\n\n### **The Target Cloud Security Capability Profile**\n\nA well-rounded cloud security engineer typically demonstrates readiness across several key areas:\n1. **Cloud Architecture & IAM (Identity & Access Management):** Understanding how resources are partitioned, how authentication/authorization work, and how to enforce \"least privilege\" access.\n2. **Network Security:** Designing virtual private clouds (VPCs), configuring subnets, routing, firewalls (Security Groups/Network ACLs), and securing traffic in transit.\n3. **Infrastructure as Code (IaC) & Automation:** Defining cloud resources securely using code (such as Terraform or cloud-native templates) and scanning that code for security misconfigurations before deployment.\n4. **Monitoring, Logging, & Incident Response:** Setting up centralized log collection, detecting anomalies, and configuring alerts for suspicious behavior (e.g., unauthorized API calls).\n\n---\n\n### **Conceptual 1-Year Roadmap Structure**\n\nIf you are starting from a computer science student background, a standard one-year sequence often progresses like this:\n\n#### **Phase 1: Foundations & Core Services (Months 1–3)**\n*   **Focus:** Master the basic building blocks of one primary cloud provider (such as AWS, Azure, or GCP).\n*   **Key Concepts:** Compute (VMs, containers), storage buckets, basic database services, and basic networking (subnets, gateways).\n*   **Applied Practice:** Set up a simple multi-tier web application manually in your chosen cloud environment, ensuring you understand how traffic flows.\n\n#### **Phase 2: Identity & Network Hardening (Months 4–6)**\n*   **Focus:** Move away from manual configurations and \"all-access\" permissions.\n*   **Key Concepts:** IAM policies, roles, identity federation, VPC endpoints, and private networking (keeping databases and backend servers off the public internet).\n*   **Applied Practice:** Restrict your Phase 1 application so that components can only communicate with the specific services they need, and ensure administrative access is strictly controlled via IAM roles.\n\n#### **Phase 3: Security Automation & Infrastructure as Code (Months 7–9)**\n*   **Focus:** Learn to deploy cloud environments programmatically and securely.\n*   **Key Concepts:** Writing Infrastructure as Code (IaC), using static analysis tools to check IaC files for security flaws, and scripting (e.g., using Python or Bash to automate tasks).\n*   **Applied Practice:** Tear down your previous manual infrastructure and rebuild it entirely using an IaC tool, integrating an automated check to flag any unencrypted databases or open firewall ports.\n\n#### **Phase 4: Monitoring, Logging, & Auditing (Months 10–12)**\n*   **Focus:** Detect and respond to security events.\n*   **Key Concepts:** Cloud audit logs, centralized logging, setting up metric alarms, and simulating basic threat events.\n*   **Applied Practice:** Create a small lab where an alarm is triggered and an automated email/alert is sent whenever a highly sensitive API call (like deleting a database or modifying an IAM policy) is made.\n\n---\n\n### **Let's Personalize Your Roadmap**\n\nTo perform an accurate **readiness-gap analysis** and prioritize these phases to fit your exact needs, I need to know a little more about your current background. **Could you share some context on the following?**\n\n1. **Current Coursework & Background:** Have you taken courses in Networking, Operating Systems, or Cybersecurity Fundamentals yet?\n2. **Programming & Scripting Experience:** Which programming languages (e.g., Python, C++, Java) or scripting environments (Bash, PowerShell) are you most comfortable using?\n3. **Prior Cloud Exposure:** Have you ever created an account, deployed a virtual machine, or built a project in any cloud platform (AWS, Azure, Google Cloud)?\n4. **Available Time:** Realistically, how many hours per week can you dedicate to self-study, hands-on labs, and build-projects over the next year?\n5. **Timeline & Immediate Goals:** Are you hoping to secure a summer internship, prepare for graduation, or build a personal portfolio?\n\nOnce you share these details, we can narrow down your target profile, map out what to prioritize first, and design concrete, hands-on projects you can show to employers.\n\n***\n\n*Note on specialist support:*\n*   *If you want to evaluate which specific industry certifications (like AWS Security Specialty, CompTIA Security+, or CCSP) are right for you, what they cost, or how to study for them, we can transfer you to the **Certification & Technical Development Agent**.*\n*   *If you want to look for active internships, co-ops, or job opportunities in cloud security, we can transfer you to the **Internship & Job Preparation Agent**.*",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 15.579,
+      "orchestrator_model_seconds": 2.595,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 2.609,
+          "fingerprint": "a1badb4e54885a3922ee2236ff1d6944c59915c05b198d9d10052445e8a6af09",
+          "args": {
+            "agent_name": "skill_gap__career_roadmap_agent"
+          },
+          "end": 2.609,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.013,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 2.608,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 2.608,
+          "duration": 2.595
+        },
+        {
+          "agent": "skill_gap__career_roadmap_agent",
+          "start": 2.613,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 18.192,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 18.192,
+          "duration": 15.579
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 2.609,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "skill_gap__career_roadmap_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 2.609,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 18.194,
+          "author": "skill_gap__career_roadmap_agent",
+          "parts": [
+            {
+              "text": "To help you transition toward a **Cloud Security Engineer** role over the next year, we want to design a highly personalized development roadmap. \n\nIn the tech industry, cloud security engineering is a specialized discipline that sits at the intersection of **software engineering, systems administration, networking, and security operations**. Rather than just collecting tool names, successful engineers build core architectural capabilities.\n\nTo give you an idea of what a strong candidate profile looks like, here is a general breakdown of the domains commonly expected in this field, followed by a conceptual roadmap. \n\n---\n\n### **The Target Cloud Security Capability Profile**\n\nA well-rounded cloud security engineer typically demonstrates readiness across several key areas:\n1. **Cloud Architecture & IAM (Identity & Access Management):** Understanding how resources are partitioned, how authentication/authorization work, and how to enforce \"least privilege\" access.\n2. **Network Security:** Designing virtual private clouds (VPCs), configuring subnets, routing, firewalls (Security Groups/Network ACLs), and securing traffic in transit.\n3. **Infrastructure as Code (IaC) & Automation:** Defining cloud resources securely using code (such as Terraform or cloud-native templates) and scanning that code for security misconfigurations before deployment.\n4. **Monitoring, Logging, & Incident Response:** Setting up centralized log collection, detecting anomalies, and configuring alerts for suspicious behavior (e.g., unauthorized API calls).\n\n---\n\n### **Conceptual 1-Year Roadmap Structure**\n\nIf you are starting from a computer science student background, a standard one-year sequence often progresses like this:\n\n#### **Phase 1: Foundations & Core Services (Months 1–3)**\n*   **Focus:** Master the basic building blocks of one primary cloud provider (such as AWS, Azure, or GCP).\n*   **Key Concepts:** Compute (VMs, containers), storage buckets, basic database services, and basic networking (subnets, gateways).\n*   **Applied Practice:** Set up a simple multi-tier web application manually in your chosen cloud environment, ensuring you understand how traffic flows.\n\n#### **Phase 2: Identity & Network Hardening (Months 4–6)**\n*   **Focus:** Move away from manual configurations and \"all-access\" permissions.\n*   **Key Concepts:** IAM policies, roles, identity federation, VPC endpoints, and private networking (keeping databases and backend servers off the public internet).\n*   **Applied Practice:** Restrict your Phase 1 application so that components can only communicate with the specific services they need, and ensure administrative access is strictly controlled via IAM roles.\n\n#### **Phase 3: Security Automation & Infrastructure as Code (Months 7–9)**\n*   **Focus:** Learn to deploy cloud environments programmatically and securely.\n*   **Key Concepts:** Writing Infrastructure as Code (IaC), using static analysis tools to check IaC files for security flaws, and scripting (e.g., using Python or Bash to automate tasks).\n*   **Applied Practice:** Tear down your previous manual infrastructure and rebuild it entirely using an IaC tool, integrating an automated check to flag any unencrypted databases or open firewall ports.\n\n#### **Phase 4: Monitoring, Logging, & Auditing (Months 10–12)**\n*   **Focus:** Detect and respond to security events.\n*   **Key Concepts:** Cloud audit logs, centralized logging, setting up metric alarms, and simulating basic threat events.\n*   **Applied Practice:** Create a small lab where an alarm is triggered and an automated email/alert is sent whenever a highly sensitive API call (like deleting a database or modifying an IAM policy) is made.\n\n---\n\n### **Let's Personalize Your Roadmap**\n\nTo perform an accurate **readiness-gap analysis** and prioritize these phases to fit your exact needs, I need to know a little more about your current background. **Could you share some context on the following?**\n\n1. **Current Coursework & Background:** Have you taken courses in Networking, Operating Systems, or Cybersecurity Fundamentals yet?\n2. **Programming & Scripting Experience:** Which programming languages (e.g., Python, C++, Java) or scripting environments (Bash, PowerShell) are you most comfortable using?\n3. **Prior Cloud Exposure:** Have you ever created an account, deployed a virtual machine, or built a project in any cloud platform (AWS, Azure, Google Cloud)?\n4. **Available Time:** Realistically, how many hours per week can you dedicate to self-study, hands-on labs, and build-projects over the next year?\n5. **Timeline & Immediate Goals:** Are you hoping to secure a summer internship, prepare for graduation, or build a personal portfolio?\n\nOnce you share these details, we can narrow down your target profile, map out what to prioritize first, and design concrete, hands-on projects you can show to employers.\n\n***\n\n*Note on specialist support:*\n*   *If you want to evaluate which specific industry certifications (like AWS Security Specialty, CompTIA Security+, or CCSP) are right for you, what they cost, or how to study for them, we can transfer you to the **Certification & Technical Development Agent**.*\n*   *If you want to look for active internships, co-ops, or job opportunities in cloud security, we can transfer you to the **Internship & Job Preparation Agent**.*"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "PASS",
+        "notes": "Useful conceptual skill profile, staged plan/intake and practice suggestions; no free-tier offer, current posting-frequency claim, exact vendor version or access/availability guarantee.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "internship_current_1",
+      "domain": "internship",
+      "label": "Internship & Job Preparation",
+      "expected": "internship__job_preparation_agent",
+      "mode": "current",
+      "prompt": "What cybersecurity internships are currently open to students with my background?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:14:16.292262+00:00",
+      "orchestrator_request_start": 0.974,
+      "total_seconds": 26.601,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.207,
+        "target": "internship__job_preparation_agent"
+      },
+      "actual_specialist": "internship__job_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 8.214,
+      "first_specialist_event": 15.71,
+      "handoff_seconds": 7.503,
+      "first_helper": 15.722,
+      "first_text": 26.6,
+      "final_answer": "To find the cybersecurity internships that are currently open and would be the best fit for you, I need to know a bit more about your background. \n\nCould you please share a few details with me?\n1. **Academic Year & Graduation Timeline:** What year are you in at Morgan State (e.g., Sophomore, Junior, Senior), and when do you expect to graduate (e.g., May 2028)?\n2. **Technical Skills:** What programming languages (e.g., Python, C++), operating systems (e.g., Linux, Windows), or security tools/technologies do you have experience with?\n3. **Relevant Coursework:** Have you completed courses like Computer Networks, Operating Systems, Cryptography, or any specific security/information assurance classes?\n4. **Projects or Experience:** Have you participated in any hands-on labs, personal projects, capture-the-flag (CTF) competitions, or prior technical roles/internships?\n5. **Location Preference:** Are you looking for opportunities in a specific location (e.g., Maryland/DMV area), remote roles, or are you open to relocating?\n\nOnce you share these details, I can search for active Summer 2027 (and current cycle) cybersecurity internships that match your specific profile!",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 5.712,
+      "specialist_model_seconds": 12.654,
+      "orchestrator_model_seconds": 7.231,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.207,
+          "fingerprint": "613eee80c2c5cba13f2b3e0a4d3919b9c08ecb8dc8d3a740c3b844d7fbfe276f",
+          "args": {
+            "agent_name": "internship__job_preparation_agent"
+          },
+          "end": 8.21,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 15.71,
+          "fingerprint": "e0ad736cf6ff85db39692c202d310d48d39f34039d0f5213f6aecf8d0a96b5af",
+          "args": {
+            "request": "current date and year"
+          },
+          "end": 21.435,
+          "duration": 5.725,
+          "quality_output": "The current date is Thursday, October 22, 2026.",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 15.722,
+          "index": 1,
+          "end": 21.434,
+          "duration": 5.712
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.974,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 8.205,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.205,
+          "duration": 7.231
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 8.216,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 15.709,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 15.709,
+          "duration": 7.493
+        },
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "start": 15.725,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 21.433,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 21.433,
+          "duration": 5.708
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 21.438,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 26.599,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 26.599,
+          "duration": 5.161
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.207,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "internship__job_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.212,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 15.71,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool": "Internship___Job_Preparation_Agent_google_search_agent",
+              "args": {
+                "request": "current date and year"
+              }
+            }
+          ]
+        },
+        {
+          "t": 21.434,
+          "author": "Internship___Job_Preparation_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "The current date is Thursday, October 22, 2026."
+            }
+          ]
+        },
+        {
+          "t": 21.435,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool_result": "Internship___Job_Preparation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 26.6,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "text": "To find the cybersecurity internships that are currently open and would be the best fit for you, I need to know a bit more about your background. \n\nCould you please share a few details with me?\n1. **Academic Year & Graduation Timeline:** What year are you in at Morgan State (e.g., Sophomore, Junior, Senior), and when do you expect to graduate (e.g., May 2028)?\n2. **Technical Skills:** What programming languages (e.g., Python, C++), operating systems (e.g., Linux, Windows), or security tools/technologies do you have experience with?\n3. **Relevant Coursework:** Have you completed courses like Computer Networks, Operating Systems, Cryptography, or any specific security/information assurance classes?\n4. **Projects or Experience:** Have you participated in any hands-on labs, personal projects, capture-the-flag (CTF) competitions, or prior technical roles/internships?\n5. **Location Preference:** Are you looking for opportunities in a specific location (e.g., Maryland/DMV area), remote roles, or are you open to relocating?\n\nOnce you share these details, I can search for active Summer 2027 (and current cycle) cybersecurity internships that match your specific profile!"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "ACTIVATED",
+        "notes": "Current canary checks retrieval availability only; 75-second diagnostic ceiling. No current factual-quality pass or latency improvement is claimed. Observed calendar Search invocation only, with zero reported grounding queries; final asks for missing background. Opportunity-domain discovery and current openings are not verified by this sample.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "resume_current_1",
+      "domain": "resume",
+      "label": "Resume & Portfolio",
+      "expected": "resume__portfolio_agent",
+      "mode": "current",
+      "prompt": "What resume expectations are employers currently emphasizing for entry-level cloud security roles?",
+      "status": "timeout_censored",
+      "completed_utc": "2026-10-22T21:15:51.317149+00:00",
+      "orchestrator_request_start": 0.015,
+      "total_seconds": 75.014,
+      "band": "RED",
+      "first_transfer": {
+        "t": 3.435,
+        "target": "resume__portfolio_agent"
+      },
+      "actual_specialist": "resume__portfolio_agent",
+      "route_match": true,
+      "first_specialist_start": 3.438,
+      "first_specialist_event": 9.553,
+      "handoff_seconds": 6.118,
+      "first_helper": 9.563,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 3,
+      "search_enabled_model_requests": 3,
+      "search_grounded_requests": 3,
+      "search_queries_reported": 6,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 49.881,
+      "specialist_model_seconds": 21.644,
+      "orchestrator_model_seconds": 3.419,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 3.436,
+          "fingerprint": "bedc744db947ff1e5eb9884ad9ff04257e7def1decb8b06df0c2413012fa0580",
+          "args": {
+            "agent_name": "resume__portfolio_agent"
+          },
+          "end": 3.436,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Resume___Portfolio_Agent_google_search_agent",
+          "kind": "search",
+          "start": 9.553,
+          "fingerprint": "0106c2652d32148fc69a230ff5636ec680b1e83f9020460f1779049f1bb3597b",
+          "args": {
+            "request": "current calendar year date"
+          },
+          "end": 16.611,
+          "duration": 7.058,
+          "quality_output": "The current date is **Thursday, October 22, 2026**.",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "Resume___Portfolio_Agent_google_search_agent",
+          "kind": "search",
+          "start": 18.108,
+          "fingerprint": "159be9cab583bcf401db06b0993c7f2fdcfca08d43edc1afd960fc87ca27ea96",
+          "args": {
+            "request": "entry-level cloud security resume expectations requirements 2026"
+          },
+          "end": 43.684,
+          "duration": 25.576,
+          "quality_output": "In 2026, breaking into cloud security requires a strategic approach. Hiring managers and recruiter screening tools (ATS) have become highly sophisticated. Because cloud security is traditionally considered a \"mid-level\" specialization rather than a true entry-level job, **your resume cannot just list what you know; it must prove what you can do.**\n\nTo stand out for junior roles (such as *Junior Cloud Security Analyst*, *Associate Cloud Security Engineer*, or *Cloud DevSecOps Associate*), your resume must meet the following expectations, layout requirements, and technical standards.\n\n---\n\n### 1. The 2026 Resume Blueprint (Structure & Formatting)\nBecause you may have limited paid experience in cloud security, a **hybrid (combination) resume format** is highly recommended. It prioritizes your skills, certifications, and hands-on projects, followed by your professional history.\n\n*   **Page Limit:** Keep it strictly to **one page** (unless you have 5+ years of prior non-cloud IT experience).\n*   **Header:** Include your name, contact info, LinkedIn profile, and a link to your **GitHub** or **Portfolio Website**. A public code repository is the modern equivalent of a \"first interview.\"\n*   **Professional Summary:** Craft a 3-sentence \"elevator pitch\" highlighting your drive and credentials. \n    * *Example:* *\"CompTIA Security+ and AWS Security-Specialty certified professional with hands-on experience designing secure cloud architectures. Skilled in automating IAM compliance and integrating IaC security scanning into CI/CD pipelines. Looking to leverage practical lab experience to secure enterprise cloud environments.\"*\n*   **Section Order (Top to Bottom):** \n    1. Professional Summary\n    2. Core Technical Skills (categorized)\n    3. Hands-on Projects & Lab Portfolio (The most important section!)\n    4. Certifications\n    5. Professional Experience (highlighting transferable IT, Helpdesk, or software skills)\n    6. Education\n\n---\n\n### 2. Core Technical Skills to List (ATS Optimization)\nIn 2026, the expectation is that **cloud security engineers must know code and configuration, not just security theory.** Group your skills so recruiters can quickly verify your toolkit:\n\n*   **Cloud Platforms:** AWS, Microsoft Azure, or GCP (Master *one* deeply rather than trying to learn all three).\n*   **Identity & Access Management (IAM):** Role-Based Access Control (RBAC), Least Privilege design, Multi-Factor Authentication (MFA) enforcement, Single Sign-On (SSO).\n*   **Infrastructure as Code (IaC) & DevSecOps:** Terraform, GitHub Actions/GitLab CI, Checkov, tfsec, Trivy.\n*   **Network Security:** VPC segmentation, Security Groups, NACLs, Cloud Firewalls, VPNs, Zero-Trust Architecture.\n*   **Logging, Monitoring & SIEM:** AWS CloudTrail, GuardDuty, AWS Config (or Azure Sentinel/Defender), Splunk, Wireshark.\n*   **Container Security:** Docker, Kubernetes basic security, Container image scanning.\n*   **Scripting/Automation:** Python, Bash, or PowerShell.\n*   **Frameworks:** NIST CSF, ISO 27001, SOC 2, CIS Benchmarks.\n\n---\n\n### 3. The \"Golden Ticket\": Hands-On Cloud Projects\nIf your resume lacks corporate cloud security experience, your **Projects section** must do the heavy lifting. You need to show that you can build, break, and secure environments. Dedicate significant real estate to 2 or 3 of the following project types:\n\n#### Project Example A: The Secure Multi-Account Cloud Architecture\n*   **What you did:** Built a secure-by-default multi-account AWS (or Azure) environment using Terraform.\n*   **Resume Bullet Points:**\n    * \"Engineered a secure-by-default AWS landing zone using Terraform, establishing separate organizational units (OUs) for Dev, Prod, and Security.\"\n    * \"Implemented Service Control Policies (SCPs) to globally restrict risky API actions (e.g., preventing S3 buckets from being public, disabling CloudTrail logging).\"\n    * \"Configured centralized logging to forward VPC Flow Logs and CloudTrail events to a secured, read-only S3 bucket in a dedicated Security Account.\"\n\n#### Project Example B: DevSecOps \"Shift-Left\" CI/CD Pipeline\n*   **What you did:** Created a automated deployment pipeline that blocks insecure code from going live.\n*   **Resume Bullet Points:**\n    * \"Designed a CI/CD pipeline in GitHub Actions that automatically scans Terraform templates for misconfigurations using Checkov and tfsec.\"\n    * \"Integrated Trivy to scan Docker container images for vulnerabilities, successfully blocking deployments with CVSS scores higher than 7.0.\"\n    * \"Automated vulnerability alerting via Slack, reducing feedback loop to development teams for security fixes.\"\n\n#### Project Example C: SIEM Logging & Threat Detection Lab\n*   **What you did:** Ingested cloud logs into a SIEM and wrote custom alerts to spot attackers.\n*   **Resume Bullet Points:**\n    * \"Configured an Amazon GuardDuty and CloudTrail integration to forward high-severity alerts to a centralized Splunk/Microsoft Sentinel dashboard.\"\n    * \"Authored custom correlation rules to detect suspicious activities, including brute-force login attempts and IAM privilege escalation patterns.\"\n    * \"Built automated containment scripts (Python/Lambda) to automatically isolate compromised EC2 instances during simulated attacks.\"\n\n---\n\n### 4. Certifications to Target for 2026\nIn 2026, certifications are used to pass the initial automated resume screen, but they must be paired with your project portfolio. \n\n*   **The Baseline (Must-Have):** **CompTIA Security+** or **ISC2 Certified in Cybersecurity (CC)**. This proves you understand security concepts like encryption, risk, and network protocols.\n*   **The Cloud Foundation:** **AWS Cloud Practitioner**, **Azure Fundamentals (AZ-900)**, or **GCP Cloud Digital Leader**.\n*   **The Specializations (What gets you hired):**\n    *   **AWS Certified Security – Specialty (SCS-C02)**: Highly respected and commands a premium on resumes.\n    *   **Microsoft AZ-500 (Azure Security Engineer)** or **SC-200 (Security Operations Analyst)**.\n    *   **Google Cloud Professional Cloud Security Engineer**.\n    *   **Associate of ISC2 (CCSP / Certified Cloud Security Professional)**: If you pass the CCSP exam, you can list \"Associate of ISC2 (CCSP)\" on your resume while you work toward the 5-year experience requirement.\n\n---\n\n### 5. Framing Your Experience: The \"Action-Impact\" Method\nWhen describing past roles (even if they are non-technical, such as IT Helpdesk, Retail, or general Administration), you must phrase your accomplishments to emphasize security, customer trust, and analytical thinking.\n\n*   **Avoid passive descriptions:** *\"Responsible for monitoring the helpdesk ticketing queue and helping users with passwords.\"*\n*   **Use active, security-focused language:** *\"Managed identity and access provisioning for 150+ users; enforced multi-factor authentication (MFA) and least-privilege access, eliminating unauthorized login attempts.\"*\n\nBy prioritizing **code-based cloud infrastructure (IaC)**, showcasing a **public Github portfolio of automated security configurations**, and aligning your resume keywords with **modern DevSecOps tools (like Terraform and Checkov)**, you will successfully position yourself as a highly capable, low-risk candidate for entry-level cloud security roles in 2026.",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 4,
+          "name": "Resume___Portfolio_Agent_google_search_agent",
+          "kind": "search",
+          "start": 45.298,
+          "fingerprint": "0665a74eff0367dcea595c8853a3bef6da59f7140a6221fbe111a6072d18f44b",
+          "args": {
+            "request": "entry level cloud security resume 2026 trends"
+          },
+          "end": 62.578,
+          "duration": 17.28,
+          "quality_output": "In 2026, the cloud security landscape has undergone a major structural shift. With traditional network perimeters largely dissolved, companies are focusing heavily on **Zero Trust, decentralized identity (IAM), DevSecOps automation, and artificial intelligence**. \n\nAccording to the latest cybersecurity workforce data, **AI security** and **cloud computing security** are the two largest skills gaps facing organizations. If you are writing an entry-level cloud security resume in 2026, you must align your resume with these realities. \n\nA guide to the top 2026 trends for entry-level cloud security resumes, complete with actionable examples, can help you stand out.\n\n---\n\n### 1. Key 2026 Trends to Showcase on Your Resume\n\n#### Trend 1: AI-Security & AI-Assisted Defenses\nAI is no longer a future concept—it is the single largest skills gap in cybersecurity. Employers are looking for candidates who understand how to both **use AI tools safely** and **defend AI environments**.\n*   **What to show:** Experience using AI/ML for alert triage and anomaly detection. Highlight your understanding of securing GenAI/LLM pipelines (e.g., defending against prompt injection, preventing sensitive data leakage into LLMs, or AI threat modeling).\n*   *Resume Bullet Example:* *\"Configured security guardrails for a private LLM deployment, implementing data loss prevention (DLP) rules to block sensitive credential leakage.\"*\n\n#### Trend 2: Identity (IAM) is the New Perimeter\nTraditional firewalls have taken a back seat to Identity & Access Management (IAM). In 2026, zero-trust architectures dictate that access must be continuous, verified, and strictly restricted.\n*   **What to show:** Hands-on knowledge of multi-factor authentication (MFA), Just-in-Time (JIT) access, Single Sign-On (SSO), and the principle of least privilege.\n*   *Resume Bullet Example:* *\"Reconfigured AWS IAM roles for a multi-tier web application, enforcing the principle of least privilege and reducing over-privileged accounts by 80%.\"*\n\n#### Trend 3: \"Shift Left\" and Infrastructure as Code (IaC)\nEmployers no longer want security teams to review code *after* deployment; they expect security to be baked into the development pipeline (DevSecOps).\n*   **What to show:** Knowledge of scanning tools (Snyk, Checkov, Prisma Cloud) and Infrastructure as Code (IaC) tools like Terraform or CloudFormation. Showing you can spot misconfigured cloud templates *before* they build is a massive differentiator.\n*   *Resume Bullet Example:* *\"Integrated automated security scanning (Checkov) into a GitHub Actions CI/CD pipeline, catching 100% of high-severity Terraform misconfigurations before deployment.\"*\n\n#### Trend 4: Proving Skills via \"Quantifiable\" Home Labs \nIf you don't have corporate experience, the generic \"Projects\" section won't cut it. Employers in 2026 want to see structured home labs and Capture the Flag (CTF) participation backed by **metrics and methodologies**.\n*   **What to show:** Quantify the scope of your labs. Did you build a SIEM? How many logs did it ingest? How many custom detection rules did you write?\n*   *Resume Bullet Example:* *\"Built a Microsoft Sentinel home-lab environment to ingest Azure Activity and Active Directory logs, writing 15 custom KQL detection rules to alert on privilege escalation attempts.\"*\n\n---\n\n### 2. Resume Structure & Content Strategy\n\n#### A. The Header & Title\nDo not just put \"Recent Graduate\" or \"Entry-Level Professional\" as your title. Align yourself with the job you want. Use headings like:\n> **Jane Doe** | *Cloud Security Associate / IAM Analyst*\n\n#### B. The Professional Summary (2026 Style)\nDitch the generic objective statement (\"Looking for a challenging role where I can grow...\"). Instead, highlight your specialization, hands-on hours, and key focus areas.\n> *\"Cloud Security Associate with hands-on experience designing secure cloud architectures (AWS/Azure) and automating identity controls. Proficient in leveraging AI-assisted threat detection and implementing zero-trust frameworks. Proven ability to build, monitor, and defend cloud environments through 300+ hours of dedicated home-lab scenarios.\"*\n\n#### C. The Skills Matrix (Tools > Vague Terms)\nATS (Applicant Tracking Systems) and hiring managers scan for specific platforms and tools. Avoid generic terms like \"network security\" in favor of the exact toolsets:\n*   **Cloud Platforms:** AWS (IAM, CloudTrail, GuardDuty), Microsoft Azure (Entra ID, Sentinel)\n*   **DevSecOps & IaC:** Terraform, GitHub Actions, Docker, Snyk\n*   **Security & Monitoring:** SIEM (Splunk, Sentinel), Wireshark, Nmap\n*   **Methodologies:** Zero Trust, NIST CSF, MITRE ATT&CK, Shared Responsibility Model\n\n---\n\n### 3. Entry-Level Experience / Project Bullet Point Examples\nIf you are transitioning from general IT (like Help Desk or SysAdmin) or starting from scratch, rewrite your experiences through a **security lens**. \n\n*   **If transitioning from Help Desk:**\n    *   *Instead of:* \"Reset user passwords and managed accounts.\"\n    *   *Write:* *\"Provisioned access control utilizing Entra ID (Azure AD), ensuring compliance with MFA enrollment and identity governance workflows for over 150 remote employees.\"*\n*   **If showcasing a Capstone/Home Lab Project:**\n    *   *Instead of:* \"Set up an AWS cloud environment with a database.\"\n    *   *Write:* *\"Designed a secure, multi-tier AWS network utilizing VPCs, Private Subnets, and Security Groups; implemented continuous threat monitoring via AWS GuardDuty to detect simulated network anomalies.\"*\n\n---\n\n### 4. Which Certifications Matter Most in 2026?\nCerts often bypass the initial HR filter. If you are entry-level, pair a foundational security cert with a cloud-specific one:\n*   **Foundational Security:** CompTIA Security+ (the baseline resume standard).\n*   **Cloud Specific:** AWS Certified Cloud Practitioner / AWS Certified Security – Specialty, or Microsoft Azure Fundamentals (AZ-900) / Azure Security Technologies (AZ-500).\n*   **Identity Specific:** Microsoft Certified: Identity and Access Administrator Associate (SC-300) — *highly valued due to the massive IAM boom in 2026*.",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Resume___Portfolio_Agent_google_search_agent",
+          "kind": "search",
+          "start": 9.563,
+          "index": 1,
+          "end": 16.61,
+          "duration": 7.047
+        },
+        {
+          "agent": "Resume___Portfolio_Agent_google_search_agent",
+          "kind": "search",
+          "start": 18.118,
+          "index": 2,
+          "end": 43.683,
+          "duration": 25.565
+        },
+        {
+          "agent": "Resume___Portfolio_Agent_google_search_agent",
+          "kind": "search",
+          "start": 45.308,
+          "index": 3,
+          "end": 62.577,
+          "duration": 17.269
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.015,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 3.434,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 3.434,
+          "duration": 3.419
+        },
+        {
+          "agent": "resume__portfolio_agent",
+          "start": 3.44,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 9.552,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 9.552,
+          "duration": 6.112
+        },
+        {
+          "agent": "Resume___Portfolio_Agent_google_search_agent",
+          "start": 9.564,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "October 22 2026 day of week"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVWfqiAyGLQnAMFZskEQJLhI09nJV56SLWSLgkE1spKrqQcbedYQiFhb2kXPlxHGRVa_X9pOykzM2kRYzNsQidulxTFCyKNytF_CHSmzmTgcsF2X90aCuxr3OOJBVB",
+              "title": "truecalendar.com"
+            }
+          ],
+          "response_received": 16.609,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 16.609,
+          "duration": 7.045
+        },
+        {
+          "agent": "resume__portfolio_agent",
+          "start": 16.614,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 18.106,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 18.106,
+          "duration": 1.492
+        },
+        {
+          "agent": "Resume___Portfolio_Agent_google_search_agent",
+          "start": 18.119,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "entry level cloud security resume requirements skills projects 2026",
+            "entry level cloud security engineer requirements 2025 2026"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHMa-42OOByET9d73TY_-pdG0HSCNH786LjoDHpWeQ7tkSfmict3DMW99942VbtX8mROkZVZFvebC84eOLMte7IwLZQKzR12SBHn-Gato1Q-cAukSdVCINMkksISDrBdXshAnMCgKzshYtQ0PxB_wMzzbao8N2EAQ==",
+              "title": "enhancv.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHUGPY_ELdUzX_yqGgE-J9tOGKXjJitPGxbcG3amvCEoU9uUWlBj41mVJp9dERcavqwdFgMqIYi3ZVfTX9MyHxyvp59M3tL2monxeb971rhl36uoiNRVTC4rf7QA3nH97qA-azk4eqoLO3B4-AZe11PdCf3O1lDNAXTbG9ta7ZO98z3xpe",
+              "title": "serveracademy.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGVsG2LxovLD5w7KwRhoTXFgf2K5JL4ky-1EQIDy8M-eR830o6Bm0vUO7OhrYbpC-_RrUSpKeY88DcyoqVlkjY_Sl60qCdGdXoql4VXaSq6z9g3VxXuHhf-W0ATiy2kswYJGC6ZF-gCcZYpIj3Sj_aCVOU4DHb4kR3n",
+              "title": "pwnedlabs.io"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5ia-54txCRsRq8-10446qPjcKllyAQB9m3R36MDmowUnxAY-2oa3rLtUqoaqi8wTJzxaRx1XojnpJfwKB-Rstt1UL9vtvEJkyZcaY9gNOJxAp6yauU8nITzcprDKUfUY_bR8l2wzEZ67UEQRefwksPWKKTrg7xd0tGl8LZykdv0ZmALHGiJh3wAEhuTIL5Cq84Fyvl74jtmtDbwKpXupwx1YpVy8=",
+              "title": "tryhackme.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPkorfsJ16-TGLyIFgPhicxdpW1RJztP53QxPgFn4VyQvZ7jah34P1uluoJo7Mo6G4ipTyUEERsicNybuSl5CX3ehb5Dq8TnwC_biu3uXfS25B4LRANJVg_i5O3ka40tcg_m8ZLK1olcq5xoXiQjNHrlcuAau8mg==",
+              "title": "scaler.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFjTa1Nzh3zjoBuuk2BNiHTQcX_VUFTGMOrFqlE4lGUDbQ-gCU5Xb9Hk6a60lWhIaHSSic2ovLVV9Ho-Iq8GBE8CYsIH9QoNGc7dI_qp97_c1IY4gLahh2pRwmJ7h5Sg5e88Dmf3yKSi4DX",
+              "title": "airesume.guru"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH7WEFobnRmHo4Dcz7y0QMkDtw48pZbx45okOpwU1rJJFFEGFGxyprJYHNl5RXwHeSE_n1KuWc7RpDlNMNfFg0s0r_uuUeycYapFiQpRI0yH_TaWCdczrfqN--3D8eEbL-3k2_Lrki3e6gujgRY4gb3aVh_oqJItRB3X8NnAw==",
+              "title": "futurense.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG412A9U4GQQvDObcDerh1hNSG568elrNXNMuOodgI3xE2QqmKiZBdC0cFZJzCQxmGD9cg5L-NDwNyaUZxBJHOrortnNouCumKHkw-VqAGm8JSa4MRiUy-_ZVWSn3PkhsGwpQArm_WoGIEz6u8w1NhABWx5f6-3xLVbhA==",
+              "title": "tealhq.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQPDMbR6X2zUTwTiNzkiyLHWLIVL46u3mv83yy-tZXIbrKEc1WEgCoOt3ZdtT5xFssqNrnzAhmUwftbhxRL9J55zZYtqTWDSdN8cKLfDrrT2Os3S2rpc-oc8mugvFL2Sc5s1LDxgUgoWXpjr7VKdZ9RRLL7Q==",
+              "title": "coursera.org"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAWBcdFJkLFgVZ8NqY9D224gKcGF0phuO09ClvYTmn8WHHdqWBwt0LPhxuPkhlYY6qbGD3rBIX4PG-STxyQjyr0o9860FGT5mNVih9DQLRfJw-jkjMGRRWtX6fuCd-Z1kL7j82KfuODPN3XS_g3YUhUTfMWnwYzc5DBIRTrPOQOVzvqKg6-0qy00m2m6Xjdw0KtSbykUFQ3tKtzaseu5F1",
+              "title": "refontelearning.com"
+            }
+          ],
+          "response_received": 43.681,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 43.681,
+          "duration": 25.562
+        },
+        {
+          "agent": "resume__portfolio_agent",
+          "start": 43.688,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 45.297,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 45.297,
+          "duration": 1.609
+        },
+        {
+          "agent": "Resume___Portfolio_Agent_google_search_agent",
+          "start": 45.309,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "entry level cloud security resume trends 2026",
+            "cloud security resume trends 2026",
+            "cybersecurity resume trends 2026"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHP5gbIYuJrdZtNGKI_0zE4QfpzqvEg3GImk_pReZIIZKOfVajuCL0L4BWRF9s1mh9pThx5ZSD5j2tl5UWZ1TKkI-cC3QTTDFfDf_sdLa-dpcKXZZ7IdIr21T0-3NtdYFlzQ_aw8bKa5QkJjYxTbQuun1Ww_EFF",
+              "title": "spectraforce.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCuOJ-QxOu-Ki3jCECpRLA_yup3vicTmdH4XchbgNc_0BPdmtstrcb7g4RGW2Bzj95a7j6nNbtov5r748vGUf_XLuaJdNBpE0q4xlYkfAXjpV45xHNDYrE54i18NtNA1tV5A19LSk9ucsNysMekNf5Tn_UZ4xyzrDSOgIUYP3gMSvmraQXXGJBAS2yNO-f",
+              "title": "sentinelone.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGeQu_cjFD7EsSRJ8P4WcOwEtz-5geaXy5sChZ-a-J-a55z1BO-tWNlHnZEfQRQe95YjxInXQ7dJxTR59esC-Xzhuh2kO2Gj5vOcQLufnVf2EeoL7ZAH-zGOwNWNVfRX6VLulZRJXND5t4oXwldki5yiwsmlzkNRVT2UkaZsCL1UcPh8IDWkgVR-Jq7uPAqXThj58zKhELj0M-lMxoWbu5U",
+              "title": "refontelearning.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGEcG49Z9vWiOvFrEwsl9uY8dVOS5qKiocJIsy1BP5u1juii2ghLyP3ArRhTKLR3jYmqrkYYR1nXrQv4f-VwjtQ9i365tNGbQm3xCpM5jGrjLyWD3A4EyhaVCuytlkBdmgMA3ySyx9FTlJu",
+              "title": "airesume.guru"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTG2F2_Nx9zv9El9A5iWLpbsycef0gz8w7T_H6eJhrbhds9bgOtz342jtdotg5LNMuUPfKzmJGaC2u4pLwYbkt0X3Hr8P2vDBH2dv-RJKVM9wjVrGaU9wB0s7GBcKgy8FHqL6dv9QBIcQA77oQgEJ9zKrQ",
+              "title": "destcert.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHR1lsmIMzn0PgNDZUVLI_0k-UM-xt2RfJjGyx_o-NlYSoh0emTMHV137DDIOVepAc7ZVXC3i5Kq4B4q51gcJ7qtQE9ILEvlel12E5j90jqCenmyqDtRnml2mQUG8ARFNhM9Gat8eAxgrFx0ZOsbL6P7oU7e7ItxQ==",
+              "title": "c4techservices.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEQw5BpaJOJ6DLYB6kkLVFDXR0vH2HR2PUiMB0zQ0MjTpZDsWcwBJjExaHrMTfQbC8v3J6fLKa7u3KhS2pJ3D8rhWSrhafXq7nIiRMRbpJOdUy5J0vX93Usp9QqC6C9UnQFx6hqxrYWfEqQ2OpfmYO9O0TeJaPHhEIE7cnEUNHO7aV1wOvfOMNuRXN141v1JsJDNf2O09OrikeKKuCML3BtKrNKu9Yq",
+              "title": "tekskillsacademy.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEik3jQeYc5Q8fUb6lzgVRGrsXnxdJvw3oINo7DDY2ibVZ3SEjP-JdyDeYjeBDDdw_QfuMxw-VNpgdPbOvcn7pUpgUfxNTTcG_0i2Td4EPuW4WDHKHvElierLEJzeqwBSwEggZWFGgXVzp0F5Ppl-mDcY2lj4lj2ctoRg==",
+              "title": "tealhq.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBo7UGf5Ao1Injm8r6b6WD-nBwnVy3XlGf7o_oq6l2NdQYIcVwTTEvRzDVfH7Q6JUxQ95hGCogQPlX6zfrfloSeV8kjUI0-Yt3StPtYrdqoWO3zc1Z1WZDDw_53bq43BLy1UyKwSvTah-SIAtG7_7B5WR_fgfCJZBxalOYkCwXl6sw4IlqgSH5FsGFasHyat4KBsGZpew_thVYqMS_GhV9ms6ffMJouNK0",
+              "title": "reddit.com"
+            }
+          ],
+          "response_received": 62.575,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 62.575,
+          "duration": 17.266
+        },
+        {
+          "agent": "resume__portfolio_agent",
+          "start": 62.582,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 75.013,
+          "duration": 12.431,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "deadline",
+          "type": "TimeoutError",
+          "code": null,
+          "t": 75.014
+        }
+      ],
+      "events": [
+        {
+          "t": 3.435,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "resume__portfolio_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 3.436,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 9.553,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "tool": "Resume___Portfolio_Agent_google_search_agent",
+              "args": {
+                "request": "current calendar year date"
+              }
+            }
+          ]
+        },
+        {
+          "t": 16.61,
+          "author": "Resume___Portfolio_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "The current date is **Thursday, October 22, 2026**."
+            }
+          ]
+        },
+        {
+          "t": 16.611,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "tool_result": "Resume___Portfolio_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 18.107,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "tool": "Resume___Portfolio_Agent_google_search_agent",
+              "args": {
+                "request": "entry-level cloud security resume expectations requirements 2026"
+              }
+            }
+          ]
+        },
+        {
+          "t": 43.683,
+          "author": "Resume___Portfolio_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "In 2026, breaking into cloud security requires a strategic approach. Hiring managers and recruiter screening tools (ATS) have become highly sophisticated. Because cloud security is traditionally considered a \"mid-level\" specialization rather than a true entry-level job, **your resume cannot just list what you know; it must prove what you can do.**\n\nTo stand out for junior roles (such as *Junior Cloud Security Analyst*, *Associate Cloud Security Engineer*, or *Cloud DevSecOps Associate*), your resume must meet the following expectations, layout requirements, and technical standards.\n\n---\n\n### 1. The 2026 Resume Blueprint (Structure & Formatting)\nBecause you may have limited paid experience in cloud security, a **hybrid (combination) resume format** is highly recommended. It prioritizes your skills, certifications, and hands-on projects, followed by your professional history.\n\n*   **Page Limit:** Keep it strictly to **one page** (unless you have 5+ years of prior non-cloud IT experience).\n*   **Header:** Include your name, contact info, LinkedIn profile, and a link to your **GitHub** or **Portfolio Website**. A public code repository is the modern equivalent of a \"first interview.\"\n*   **Professional Summary:** Craft a 3-sentence \"elevator pitch\" highlighting your drive and credentials. \n    * *Example:* *\"CompTIA Security+ and AWS Security-Specialty certified professional with hands-on experience designing secure cloud architectures. Skilled in automating IAM compliance and integrating IaC security scanning into CI/CD pipelines. Looking to leverage practical lab experience to secure enterprise cloud environments.\"*\n*   **Section Order (Top to Bottom):** \n    1. Professional Summary\n    2. Core Technical Skills (categorized)\n    3. Hands-on Projects & Lab Portfolio (The most important section!)\n    4. Certifications\n    5. Professional Experience (highlighting transferable IT, Helpdesk, or software skills)\n    6. Education\n\n---\n\n### 2. Core Technical Skills to List (ATS Optimization)\nIn 2026, the expectation is that **cloud security engineers must know code and configuration, not just security theory.** Group your skills so recruiters can quickly verify your toolkit:\n\n*   **Cloud Platforms:** AWS, Microsoft Azure, or GCP (Master *one* deeply rather than trying to learn all three).\n*   **Identity & Access Management (IAM):** Role-Based Access Control (RBAC), Least Privilege design, Multi-Factor Authentication (MFA) enforcement, Single Sign-On (SSO).\n*   **Infrastructure as Code (IaC) & DevSecOps:** Terraform, GitHub Actions/GitLab CI, Checkov, tfsec, Trivy.\n*   **Network Security:** VPC segmentation, Security Groups, NACLs, Cloud Firewalls, VPNs, Zero-Trust Architecture.\n*   **Logging, Monitoring & SIEM:** AWS CloudTrail, GuardDuty, AWS Config (or Azure Sentinel/Defender), Splunk, Wireshark.\n*   **Container Security:** Docker, Kubernetes basic security, Container image scanning.\n*   **Scripting/Automation:** Python, Bash, or PowerShell.\n*   **Frameworks:** NIST CSF, ISO 27001, SOC 2, CIS Benchmarks.\n\n---\n\n### 3. The \"Golden Ticket\": Hands-On Cloud Projects\nIf your resume lacks corporate cloud security experience, your **Projects section** must do the heavy lifting. You need to show that you can build, break, and secure environments. Dedicate significant real estate to 2 or 3 of the following project types:\n\n#### Project Example A: The Secure Multi-Account Cloud Architecture\n*   **What you did:** Built a secure-by-default multi-account AWS (or Azure) environment using Terraform.\n*   **Resume Bullet Points:**\n    * \"Engineered a secure-by-default AWS landing zone using Terraform, establishing separate organizational units (OUs) for Dev, Prod, and Security.\"\n    * \"Implemented Service Control Policies (SCPs) to globally restrict risky API actions (e.g., preventing S3 buckets from being public, disabling CloudTrail logging).\"\n    * \"Configured centralized logging to forward VPC Flow Logs and CloudTrail events to a secured, read-only S3 bucket in a dedicated Security Account.\"\n\n#### Project Example B: DevSecOps \"Shift-Left\" CI/CD Pipeline\n*   **What you did:** Created a automated deployment pipeline that blocks insecure code from going live.\n*   **Resume Bullet Points:**\n    * \"Designed a CI/CD pipeline in GitHub Actions that automatically scans Terraform templates for misconfigurations using Checkov and tfsec.\"\n    * \"Integrated Trivy to scan Docker container images for vulnerabilities, successfully blocking deployments with CVSS scores higher than 7.0.\"\n    * \"Automated vulnerability alerting via Slack, reducing feedback loop to development teams for security fixes.\"\n\n#### Project Example C: SIEM Logging & Threat Detection Lab\n*   **What you did:** Ingested cloud logs into a SIEM and wrote custom alerts to spot attackers.\n*   **Resume Bullet Points:**\n    * \"Configured an Amazon GuardDuty and CloudTrail integration to forward high-severity alerts to a centralized Splunk/Microsoft Sentinel dashboard.\"\n    * \"Authored custom correlation rules to detect suspicious activities, including brute-force login attempts and IAM privilege escalation patterns.\"\n    * \"Built automated containment scripts (Python/Lambda) to automatically isolate compromised EC2 instances during simulated attacks.\"\n\n---\n\n### 4. Certifications to Target for 2026\nIn 2026, certifications are used to pass the initial automated resume screen, but they must be paired with your project portfolio. \n\n*   **The Baseline (Must-Have):** **CompTIA Security+** or **ISC2 Certified in Cybersecurity (CC)**. This proves you understand security concepts like encryption, risk, and network protocols.\n*   **The Cloud Foundation:** **AWS Cloud Practitioner**, **Azure Fundamentals (AZ-900)**, or **GCP Cloud Digital Leader**.\n*   **The Specializations (What gets you hired):**\n    *   **AWS Certified Security – Specialty (SCS-C02)**: Highly respected and commands a premium on resumes.\n    *   **Microsoft AZ-500 (Azure Security Engineer)** or **SC-200 (Security Operations Analyst)**.\n    *   **Google Cloud Professional Cloud Security Engineer**.\n    *   **Associate of ISC2 (CCSP / Certified Cloud Security Professional)**: If you pass the CCSP exam, you can list \"Associate of ISC2 (CCSP)\" on your resume while you work toward the 5-year experience requirement.\n\n---\n\n### 5. Framing Your Experience: The \"Action-Impact\" Method\nWhen describing past roles (even if they are non-technical, such as IT Helpdesk, Retail, or general Administration), you must phrase your accomplishments to emphasize security, customer trust, and analytical thinking.\n\n*   **Avoid passive descriptions:** *\"Responsible for monitoring the helpdesk ticketing queue and helping users with passwords.\"*\n*   **Use active, security-focused language:** *\"Managed identity and access provisioning for 150+ users; enforced multi-factor authentication (MFA) and least-privilege access, eliminating unauthorized login attempts.\"*\n\nBy prioritizing **code-based cloud infrastructure (IaC)**, showcasing a **public Github portfolio of automated security configurations**, and aligning your resume keywords with **modern DevSecOps tools (like Terraform and Checkov)**, you will successfully position yourself as a highly capable, low-risk candidate for entry-level cloud security roles in 2026."
+            }
+          ]
+        },
+        {
+          "t": 43.685,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "tool_result": "Resume___Portfolio_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 45.298,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "tool": "Resume___Portfolio_Agent_google_search_agent",
+              "args": {
+                "request": "entry level cloud security resume 2026 trends"
+              }
+            }
+          ]
+        },
+        {
+          "t": 62.577,
+          "author": "Resume___Portfolio_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "In 2026, the cloud security landscape has undergone a major structural shift. With traditional network perimeters largely dissolved, companies are focusing heavily on **Zero Trust, decentralized identity (IAM), DevSecOps automation, and artificial intelligence**. \n\nAccording to the latest cybersecurity workforce data, **AI security** and **cloud computing security** are the two largest skills gaps facing organizations. If you are writing an entry-level cloud security resume in 2026, you must align your resume with these realities. \n\nA guide to the top 2026 trends for entry-level cloud security resumes, complete with actionable examples, can help you stand out.\n\n---\n\n### 1. Key 2026 Trends to Showcase on Your Resume\n\n#### Trend 1: AI-Security & AI-Assisted Defenses\nAI is no longer a future concept—it is the single largest skills gap in cybersecurity. Employers are looking for candidates who understand how to both **use AI tools safely** and **defend AI environments**.\n*   **What to show:** Experience using AI/ML for alert triage and anomaly detection. Highlight your understanding of securing GenAI/LLM pipelines (e.g., defending against prompt injection, preventing sensitive data leakage into LLMs, or AI threat modeling).\n*   *Resume Bullet Example:* *\"Configured security guardrails for a private LLM deployment, implementing data loss prevention (DLP) rules to block sensitive credential leakage.\"*\n\n#### Trend 2: Identity (IAM) is the New Perimeter\nTraditional firewalls have taken a back seat to Identity & Access Management (IAM). In 2026, zero-trust architectures dictate that access must be continuous, verified, and strictly restricted.\n*   **What to show:** Hands-on knowledge of multi-factor authentication (MFA), Just-in-Time (JIT) access, Single Sign-On (SSO), and the principle of least privilege.\n*   *Resume Bullet Example:* *\"Reconfigured AWS IAM roles for a multi-tier web application, enforcing the principle of least privilege and reducing over-privileged accounts by 80%.\"*\n\n#### Trend 3: \"Shift Left\" and Infrastructure as Code (IaC)\nEmployers no longer want security teams to review code *after* deployment; they expect security to be baked into the development pipeline (DevSecOps).\n*   **What to show:** Knowledge of scanning tools (Snyk, Checkov, Prisma Cloud) and Infrastructure as Code (IaC) tools like Terraform or CloudFormation. Showing you can spot misconfigured cloud templates *before* they build is a massive differentiator.\n*   *Resume Bullet Example:* *\"Integrated automated security scanning (Checkov) into a GitHub Actions CI/CD pipeline, catching 100% of high-severity Terraform misconfigurations before deployment.\"*\n\n#### Trend 4: Proving Skills via \"Quantifiable\" Home Labs \nIf you don't have corporate experience, the generic \"Projects\" section won't cut it. Employers in 2026 want to see structured home labs and Capture the Flag (CTF) participation backed by **metrics and methodologies**.\n*   **What to show:** Quantify the scope of your labs. Did you build a SIEM? How many logs did it ingest? How many custom detection rules did you write?\n*   *Resume Bullet Example:* *\"Built a Microsoft Sentinel home-lab environment to ingest Azure Activity and Active Directory logs, writing 15 custom KQL detection rules to alert on privilege escalation attempts.\"*\n\n---\n\n### 2. Resume Structure & Content Strategy\n\n#### A. The Header & Title\nDo not just put \"Recent Graduate\" or \"Entry-Level Professional\" as your title. Align yourself with the job you want. Use headings like:\n> **Jane Doe** | *Cloud Security Associate / IAM Analyst*\n\n#### B. The Professional Summary (2026 Style)\nDitch the generic objective statement (\"Looking for a challenging role where I can grow...\"). Instead, highlight your specialization, hands-on hours, and key focus areas.\n> *\"Cloud Security Associate with hands-on experience designing secure cloud architectures (AWS/Azure) and automating identity controls. Proficient in leveraging AI-assisted threat detection and implementing zero-trust frameworks. Proven ability to build, monitor, and defend cloud environments through 300+ hours of dedicated home-lab scenarios.\"*\n\n#### C. The Skills Matrix (Tools > Vague Terms)\nATS (Applicant Tracking Systems) and hiring managers scan for specific platforms and tools. Avoid generic terms like \"network security\" in favor of the exact toolsets:\n*   **Cloud Platforms:** AWS (IAM, CloudTrail, GuardDuty), Microsoft Azure (Entra ID, Sentinel)\n*   **DevSecOps & IaC:** Terraform, GitHub Actions, Docker, Snyk\n*   **Security & Monitoring:** SIEM (Splunk, Sentinel), Wireshark, Nmap\n*   **Methodologies:** Zero Trust, NIST CSF, MITRE ATT&CK, Shared Responsibility Model\n\n---\n\n### 3. Entry-Level Experience / Project Bullet Point Examples\nIf you are transitioning from general IT (like Help Desk or SysAdmin) or starting from scratch, rewrite your experiences through a **security lens**. \n\n*   **If transitioning from Help Desk:**\n    *   *Instead of:* \"Reset user passwords and managed accounts.\"\n    *   *Write:* *\"Provisioned access control utilizing Entra ID (Azure AD), ensuring compliance with MFA enrollment and identity governance workflows for over 150 remote employees.\"*\n*   **If showcasing a Capstone/Home Lab Project:**\n    *   *Instead of:* \"Set up an AWS cloud environment with a database.\"\n    *   *Write:* *\"Designed a secure, multi-tier AWS network utilizing VPCs, Private Subnets, and Security Groups; implemented continuous threat monitoring via AWS GuardDuty to detect simulated network anomalies.\"*\n\n---\n\n### 4. Which Certifications Matter Most in 2026?\nCerts often bypass the initial HR filter. If you are entry-level, pair a foundational security cert with a cloud-specific one:\n*   **Foundational Security:** CompTIA Security+ (the baseline resume standard).\n*   **Cloud Specific:** AWS Certified Cloud Practitioner / AWS Certified Security – Specialty, or Microsoft Azure Fundamentals (AZ-900) / Azure Security Technologies (AZ-500).\n*   **Identity Specific:** Microsoft Certified: Identity and Access Administrator Associate (SC-300) — *highly valued due to the massive IAM boom in 2026*."
+            }
+          ]
+        },
+        {
+          "t": 62.579,
+          "author": "resume__portfolio_agent",
+          "parts": [
+            {
+              "tool_result": "Resume___Portfolio_Agent_google_search_agent"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "INVOKED / DIAGNOSTIC CUTOFF",
+        "notes": "Current canary checks retrieval availability only; 75-second diagnostic ceiling. No current factual-quality pass or latency improvement is claimed.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "research_current_1",
+      "domain": "research",
+      "label": "Research & Graduate Pathways",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity research or graduate opportunities should I investigate at Morgan State?",
+      "status": "failed",
+      "completed_utc": "2026-10-22T21:16:31.236220+00:00",
+      "orchestrator_request_start": 0.013,
+      "total_seconds": 19.905,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 2.593,
+        "target": "research__graduate_pathways_agent"
+      },
+      "actual_specialist": "research__graduate_pathways_agent",
+      "route_match": true,
+      "first_specialist_start": 2.595,
+      "first_specialist_event": 8.83,
+      "handoff_seconds": 6.237,
+      "first_helper": 8.843,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 11.062,
+      "specialist_model_seconds": 6.232,
+      "orchestrator_model_seconds": 2.579,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 2.593,
+          "fingerprint": "75d4f7d0c37ea2e8b824e87b656b93a4fc1573c0bb9fad421012ba1515729957",
+          "args": {
+            "agent_name": "research__graduate_pathways_agent"
+          },
+          "end": 2.593,
+          "duration": 0.0,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "kind": "search",
+          "start": 8.831,
+          "fingerprint": "18ebbcb21ade1d12f7992857e0ea1458b16067930571f89380c48444e1748217",
+          "args": {
+            "request": "current year date"
+          },
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null,
+          "end": 19.905,
+          "duration": 11.074,
+          "censored": true
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "kind": "search",
+          "start": 8.843,
+          "index": 1,
+          "end": 19.905,
+          "duration": 11.062,
+          "censored": true
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.013,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 2.592,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 2.592,
+          "duration": 2.579
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "start": 2.597,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 8.829,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.829,
+          "duration": 6.232
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "start": 8.845,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 19.9,
+          "duration": 11.055,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 19.9
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 19.9
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 19.901
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 19.905
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 19.905
+        }
+      ],
+      "events": [
+        {
+          "t": 2.593,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "research__graduate_pathways_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 2.594,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 8.83,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool": "Research___Graduate_Pathways_Agent_google_search_agent",
+              "args": {
+                "request": "current year date"
+              }
+            }
+          ]
+        },
+        {
+          "t": 19.901,
+          "author": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "parts": []
+        },
+        {
+          "t": 19.904,
+          "author": "research__graduate_pathways_agent",
+          "parts": []
+        }
+      ],
+      "quality_review": {
+        "verdict": "ATTEMPTED / CAPACITY BLOCKED",
+        "notes": "Current canary checks retrieval availability only; 75-second diagnostic ceiling. No current factual-quality pass or latency improvement is claimed. Calendar Search invocation was provider-blocked; no successful domain discovery.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    },
+    {
+      "id": "roadmap_current_probe_1",
+      "domain": "roadmap",
+      "label": "Skill Gap & Career Roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "current_probe",
+      "prompt": "For my cloud security skill-gap roadmap, what current tools and technologies should I prioritize based on recent entry-level job postings?",
+      "status": "timeout_censored",
+      "completed_utc": "2026-10-22T21:20:51.517926+00:00",
+      "orchestrator_request_start": 0.959,
+      "total_seconds": 75.024,
+      "band": "RED",
+      "first_transfer": {
+        "t": 11.666,
+        "target": "skill_gap__career_roadmap_agent"
+      },
+      "actual_specialist": "skill_gap__career_roadmap_agent",
+      "route_match": true,
+      "first_specialist_start": 11.673,
+      "first_specialist_event": 18.159,
+      "handoff_seconds": 6.493,
+      "first_helper": 18.171,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 56.852,
+      "specialist_model_seconds": 6.482,
+      "orchestrator_model_seconds": 10.706,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 11.667,
+          "fingerprint": "a1badb4e54885a3922ee2236ff1d6944c59915c05b198d9d10052445e8a6af09",
+          "args": {
+            "agent_name": "skill_gap__career_roadmap_agent"
+          },
+          "end": 11.67,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Skill_Gap___Career_Roadmap_Agent_google_search_agent",
+          "kind": "search",
+          "start": 18.159,
+          "fingerprint": "281494cda2906b4d2222fdd1b2394357b1beffd580b5da07ba196e67ee0ecba6",
+          "args": {
+            "request": "current year and month"
+          },
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null,
+          "end": 75.024,
+          "duration": 56.865,
+          "censored": true
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Skill_Gap___Career_Roadmap_Agent_google_search_agent",
+          "kind": "search",
+          "start": 18.171,
+          "index": 1,
+          "end": 75.023,
+          "duration": 56.852
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.959,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 11.665,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 11.665,
+          "duration": 10.706
+        },
+        {
+          "agent": "skill_gap__career_roadmap_agent",
+          "start": 11.676,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 18.158,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 18.158,
+          "duration": 6.482
+        },
+        {
+          "agent": "Skill_Gap___Career_Roadmap_Agent_google_search_agent",
+          "start": 18.173,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 75.022,
+          "duration": 56.849,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "deadline",
+          "type": "TimeoutError",
+          "code": null,
+          "t": 75.024
+        }
+      ],
+      "events": [
+        {
+          "t": 11.666,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "skill_gap__career_roadmap_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 11.672,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 18.159,
+          "author": "skill_gap__career_roadmap_agent",
+          "parts": [
+            {
+              "tool": "Skill_Gap___Career_Roadmap_Agent_google_search_agent",
+              "args": {
+                "request": "current year and month"
+              }
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "INVOKED / DIAGNOSTIC CUTOFF",
+        "notes": "Current canary checks retrieval availability only; 75-second diagnostic ceiling. No current factual-quality pass or latency improvement is claimed. Only calendar Search was invoked; helper did not return before cutoff. Domain market discovery remains unverified.",
+        "scope": "manual public-answer review, not independent source verification"
+      }
+    }
+  ],
+  "planned_case_ids": [
+    "internship_stable_1",
+    "internship_stable_2",
+    "roadmap_stable_1",
+    "roadmap_stable_2",
+    "internship_current_1",
+    "resume_current_1",
+    "roadmap_current_probe_1",
+    "research_current_1"
+  ],
+  "remaining": [],
+  "review_method": "Stable fast-path usefulness and unsupported current-specific claim review; superseded failures retained. Current checks establish activation only."
+}
