@@ -1,0 +1,369 @@
+{
+  "basis": "Exact repeated paragraphs >=80 chars in frozen Wave 3 root/specialist instructions; source-maintenance deduplication upper bound, not guaranteed runtime savings.",
+  "total_authored_characters": 148784,
+  "repeated_paragraph_characters": 30087,
+  "repeated_paragraphs": [
+    {
+      "characters": 885,
+      "occurrences": 4,
+      "owners": [
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent"
+      ],
+      "text": "Apply only when the requested answer needs current external facts; preserve all existing stable/no-retrieval guidance, student autonomy, role boundaries and verification requirements. Default to ONE targeted Search-helper invocation for one current factual question. A SECOND is allowed only if the first returned no usable authoritative evidence or the user explicitly requested multiple distinct factual categories, subject to the narrower specialist rule below. Never make a third or later discovery round. Count helper invocations, not underlying grounding queries. Ask the helper to keep queries narrowly scoped to the exact requested claims and return supporting authoritative URLs, dates/scope and evidence gaps, without adjacent research. Stop when the requested claim can be answered responsibly; insufficient evidence calls for a smaller qualified answer, not more discovery."
+    },
+    {
+      "characters": 244,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "3. Prefer evidence in this order:\n   a. current official posting/policy page\n   b. current official organization/program page\n   c. current authoritative secondary source\n   d. historical official information\n   e. model memory/general patterns"
+    },
+    {
+      "characters": 219,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "5. Do not convert general knowledge into Morgan State University-specific facts. Morgan-specific claims require either student-provided information or an authoritative Morgan source retrieved in the current interaction."
+    },
+    {
+      "characters": 521,
+      "occurrences": 4,
+      "owners": [
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent"
+      ],
+      "text": "CALENDAR OVERRIDE: These rules supersede earlier instructions to spend a Search round establishing the date/year. Do not search for today's date, current year or calendar pages unless that is the user's actual question. Use an explicit runtime/user date if present. Otherwise do not guess a year or cycle: make a cycle-neutral lookup of the current official source for the requested facts, or ask for the relevant cycle if essential. Do not turn missing calendar context into either a calendar search or an invented date."
+    },
+    {
+      "characters": 188,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "2. Current claims about employers, programs, opportunities, eligibility, deadlines, prices, recruiting cycles, university resources, or certification requirements require current evidence."
+    },
+    {
+      "characters": 186,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "Before searching for information whose correctness depends on the current date, year, recruiting cycle, application cycle, deadline, price, active opportunity, or current program status:"
+    },
+    {
+      "characters": 485,
+      "occurrences": 4,
+      "owners": [
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent"
+      ],
+      "text": "Keep the stable path stable: do not introduce current salaries, market demand/rankings, employer requirements, platform availability/access, certification versions, named current opportunities, Morgan offerings, or application deadlines. Omit optional current-specific details rather than creating a reason to search; use general patterns and clearly labelled recommendations instead. Attribute student-supplied facts to the student rather than treating them as independently verified."
+    },
+    {
+      "characters": 724,
+      "occurrences": 3,
+      "owners": [
+        "networking__professional_communication_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent"
+      ],
+      "text": "WAVE 3 PYTHON EVIDENCE BOUNDARY:\nFor current factual requests use the discovery helper once, then select only\nregistered candidate IDs for verification. Never supply or rewrite URLs/claims.\nPython enforces candidate/verification budgets and renders final evidence.\nDiscovery is not verification. Preserve VERIFIED CURRENT, CURRENT STATUS\nUNVERIFIED, HISTORICAL and UNSUPPORTED without upgrades. Do not add assertions\nabout current partnerships, access, openings, funding or vendor offers.\nStable conceptual coaching remains tool-free. Certification decision guidance\nmust stay generic: cost, role relevance, practical experience and target postings;\nno invented student discounts, eligibility, pricing or employer rankings.\n"
+    },
+    {
+      "characters": 473,
+      "occurrences": 4,
+      "owners": [
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent"
+      ],
+      "text": "Use URL Context only when necessary to resolve an exact requested claim on selected official pages; do not browse adjacent resources. Cite actual supporting retrieved URLs beside factual claims. Source existence or historical announcements do not prove current availability, access, eligibility, partnerships or funding. If current evidence or a supporting URL is missing, state the precise verification gap and stop; do not fill gaps from memory or helper narrative alone."
+    },
+    {
+      "characters": 172,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "6. Do not fabricate employer requirements, internship eligibility, openings, salaries, deadlines, recruiting timelines, program availability, or certification requirements."
+    },
+    {
+      "characters": 435,
+      "occurrences": 4,
+      "owners": [
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent"
+      ],
+      "text": "Before Google Search, URL Context, or current-date/cycle resolution, determine whether the user-requested answer depends on current or externally verifiable facts. For stable conceptual guidance, answer directly from stable professional knowledge and student-provided context: no Search, no URL Context, and no date/year lookup. This gate controls whether the existing evidence procedures activate; it does not weaken them when needed."
+    },
+    {
+      "characters": 163,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "1. Separate verified facts, general guidance, and model recommendations. Do not present guidance, inference, historical patterns, or model memory as verified fact."
+    },
+    {
+      "characters": 159,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "4. Use Google Search to locate authoritative sources. When exact wording matters, use URL Context to inspect the official page before making the factual claim."
+    },
+    {
+      "characters": 159,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "8. Do not make consequential academic, career, employment, or financial decisions for the student. Provide options and tradeoffs and preserve student autonomy."
+    },
+    {
+      "characters": 155,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "7. Never guarantee admissions, interviews, internships, jobs, salaries, certifications, scholarships, research positions, return offers, or other outcomes."
+    },
+    {
+      "characters": 154,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "4. Never place a year into a current-information search query unless that year has been resolved from current evidence or explicitly supplied by the user."
+    },
+    {
+      "characters": 140,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "2. If it is not available, use Google Search first to determine the current calendar date/year before performing the domain-specific search."
+    },
+    {
+      "characters": 130,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "5. Historical years may only be used when the user asks for historical information or when clearly labeled as historical evidence."
+    },
+    {
+      "characters": 107,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "10. Stay within your specialist role. Transfer distinct subtasks that clearly belong to another specialist."
+    },
+    {
+      "characters": 107,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "3. Only after resolving the current year should you determine the relevant recruiting or application cycle."
+    },
+    {
+      "characters": 102,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "1. Check whether the current date/year is explicitly available in the conversation or runtime context."
+    },
+    {
+      "characters": 81,
+      "occurrences": 9,
+      "owners": [
+        "career_exploration_agent",
+        "internship__job_preparation_agent",
+        "resume__portfolio_agent",
+        "interview_preparation_agent",
+        "networking__professional_communication_agent",
+        "skill_gap__career_roadmap_agent",
+        "research__graduate_pathways_agent",
+        "certification__technical_development_agent",
+        "trust__human_escalation_agent"
+      ],
+      "text": "Current authoritative evidence overrides historical information and model memory."
+    },
+    {
+      "characters": 175,
+      "occurrences": 2,
+      "owners": [
+        "research__graduate_pathways_agent",
+        "research__graduate_pathways_agent"
+      ],
+      "text": "If a prior cycle is the latest official information available, label it explicitly as the most recent verified cycle and explain that the next cycle has not yet been verified."
+    },
+    {
+      "characters": 81,
+      "occurrences": 3,
+      "owners": [
+        "career_exploration_agent",
+        "resume__portfolio_agent",
+        "networking__professional_communication_agent"
+      ],
+      "text": "Consequential decision or disputed factual claim\n\u2192 Trust & Human Escalation Agent"
+    },
+    {
+      "characters": 94,
+      "occurrences": 2,
+      "owners": [
+        "skill_gap__career_roadmap_agent",
+        "certification__technical_development_agent"
+      ],
+      "text": "Consequential decision requiring AI to choose for the student\n\u2192 Trust & Human Escalation Agent"
+    },
+    {
+      "characters": 83,
+      "occurrences": 2,
+      "owners": [
+        "research__graduate_pathways_agent",
+        "research__graduate_pathways_agent"
+      ],
+      "text": "Do not present HISTORICAL or CURRENT CYCLE UNVERIFIED items as currently available."
+    }
+  ],
+  "runtime_note": "Moving identical text into constants alone saves no rendered prompt characters. Runtime reduction requires removing repeated text per request or changing instruction assembly, separately evaluated in Wave 5.",
+  "within_instruction_duplicate_characters": 258,
+  "cross_instruction_duplicate_characters": 29829,
+  "maintenance_reduction_percent": 20.22
+}

@@ -1,0 +1,46 @@
+{
+  "started_utc": "2026-10-23T20:54:42.777904+00:00",
+  "operation": "CREATE_NEW_ONLY",
+  "production_target": false,
+  "status": "created",
+  "display_name": "Career & Professional Orchestration Agent - Final Dev RC2",
+  "staging_bucket": "gs://cosc-490-agent-staging-20261021-a41c7e9b",
+  "staging_prefix": "career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7",
+  "extra_packages": [
+    "agents/__init__.py",
+    "agents/career/__init__.py",
+    "agents/career/workflow/__init__.py",
+    "agents/career/workflow/agent.py",
+    "agents/career/workflow/evidence.py",
+    "agents/career/workflow/shared_evidence.py",
+    "agents/career/workflow/main.py",
+    "agents/career/workflow/requirements.txt"
+  ],
+  "resource_name": "projects/717132085388/locations/us-west1/reasoningEngines/6244403611070103552",
+  "engine_id": "6244403611070103552",
+  "create_seconds": 168.531,
+  "completed_utc": "2026-10-23T20:57:40.281821+00:00",
+  "create_time": null,
+  "update_time": null,
+  "resource_metadata": {
+    "display_name": "Career & Professional Orchestration Agent - Final Dev RC2",
+    "name": "projects/717132085388/locations/us-west1/reasoningEngines/6244403611070103552",
+    "spec": {
+      "agent_framework": "google-adk",
+      "deployment_spec": {
+        "env": [
+          {
+            "name": "GOOGLE_CLOUD_AGENT_ENGINE_ENABLE_TELEMETRY",
+            "value": "true"
+          }
+        ]
+      },
+      "package_spec": {
+        "dependency_files_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7/dependencies.tar.gz",
+        "pickle_object_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7/agent_engine.pkl",
+        "python_version": "3.13",
+        "requirements_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7/requirements.txt"
+      }
+    }
+  }
+}

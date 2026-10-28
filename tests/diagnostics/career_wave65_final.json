@@ -1,0 +1,73 @@
+{
+  "decision": "WAVE 6 BLOCKER CLEARED",
+  "recommendation": "Proceed directly to Wave 7 as a separately authorized deployment task; no deployment now.",
+  "rule": "\n\nPLATFORM-SPECIFIC FACT BOUNDARY\nOn stable/no-retrieval guidance, do not state exact platform-specific limits, requirements, feature rules, pricing, allowances, account restrictions, or current product behavior (including LinkedIn connection-note/message limits, InMail allowances and recruiter/Premium features), unless explicitly supplied by the user; attribute those facts to the user, not independent verification. Say \"Keep the connection note brief and personalized,\" not \"Keep it under 300 characters.\" If an exact platform fact materially matters, retrieve and support it through the existing current-fact path or explicitly say it was not verified. An explicit request such as \"What is LinkedIn's current connection-request note character limit?\" qualifies for current-fact retrieval. Generic recruiter templates, outreach/follow-up strategy, tone, personalization and relationship-building remain useful and tool-free; do not search merely to enrich them.\n",
+  "old_networking_sha256": "d7751ec046a23d95d7e35dacd8f7bd8f737b61f22f90272a61240e23548dd3a4",
+  "new_networking_sha256": "b512838305e558ecfd6a39b067fff900fbd01f9417aa57ddef5dc318999d0226",
+  "before_chars": 13911,
+  "after_chars": 14878,
+  "character_delta": 967,
+  "other_instruction_hashes_unchanged": 29,
+  "models_tools_relationships_callbacks_unchanged": true,
+  "changed_files": [
+    "agents/career/workflow/agent.py",
+    "tests/diagnostics/career_wave5.py",
+    "tests/diagnostics/test_career_wave5_parity.py",
+    "agents/career/workflow/OPTIMIZATION_REPORT.md"
+  ],
+  "created_files": [
+    "tests/diagnostics/career_wave65.py",
+    "tests/diagnostics/career_wave65_final.json",
+    "tests/diagnostics/career_wave65_live.json",
+    "tests/diagnostics/career_wave65_live.py",
+    "tests/diagnostics/career_wave65_offline_adk.json",
+    "tests/diagnostics/career_wave65_offline_pytest.json",
+    "tests/diagnostics/career_wave65_parity.json",
+    "tests/diagnostics/career_wave65_validation.json",
+    "tests/diagnostics/test_career_wave65_contract.py",
+    "tests/diagnostics/test_career_wave65_runner.py"
+  ],
+  "live_summary": {
+    "attempts": 3,
+    "completed": 3,
+    "capacity_failures": 0,
+    "networking_stable_passed": 2,
+    "unrelated_stable_passed": 1,
+    "search_helpers": 0,
+    "url_context_helpers": 0,
+    "unsupported_platform_limits_observed": false,
+    "decision": "WAVE 6 BLOCKER CLEARED"
+  },
+  "offline": {
+    "pytest_passed": 74,
+    "adk_unittest_passed": 68,
+    "total_passed": 142,
+    "known_stale_failed": 1,
+    "new_contract_tests": 14,
+    "new_mocked_runner_tests": 5,
+    "stale_test": "tests/test_agents.py::test_agent_starter_endpoint[career]: obsolete HTTP 501 expectation, implemented endpoint returns 503 with authentication blocked."
+  },
+  "current_platform_retrieval": "Exact LinkedIn current note-limit question reaches 1 Search helper and 1 URL Context verification in mocked real Runner; unsupported evidence remains UNSUPPORTED, no numeric limit asserted. Existing Networking Morgan-authority restrictions are unchanged; retrieval eligibility is not a claim that LinkedIn facts will be promoted to VERIFIED CURRENT.",
+  "limitations": [
+    "Instruction-only patch, no deterministic output filter. Mocks prove contract delivery/plumbing, not arbitrary model obedience.",
+    "Two healthy live target samples show blocker absent, not universal reliability.",
+    "Draft templates still require factual personalization before use; no broad template rewrite.",
+    "Prior Wave 6 live current-coverage gaps remain historical and were not rerun."
+  ],
+  "no_deployment": true,
+  "nothing_staged_committed_pushed": true,
+  "final_validation": {
+    "passed": true,
+    "source_hashes": true,
+    "other29_instructions_exact": true,
+    "restored_ast_exact": true,
+    "prior_json_preserved": true,
+    "report_prefix_preserved": true,
+    "privacy_passed": true,
+    "syntax_files": 35,
+    "whitespace_passed": true,
+    "git_diff_check_passed": true,
+    "index_empty": true,
+    "head_unchanged": true
+  }
+}

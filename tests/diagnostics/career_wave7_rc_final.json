@@ -1,0 +1,476 @@
+{
+  "decision": "RELEASE CANDIDATE — NO-GO",
+  "deployment": {
+    "started_utc": "2026-10-23T20:00:28.023674+00:00",
+    "operation": "CREATE_NEW_ONLY",
+    "production_target": false,
+    "status": "created",
+    "display_name": "Career & Professional Orchestration Agent - Final Dev RC",
+    "staging_bucket": "gs://cosc-490-agent-staging-20261021-a41c7e9b",
+    "staging_prefix": "career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f",
+    "extra_packages": [
+      "agents/__init__.py",
+      "agents/career/__init__.py",
+      "agents/career/workflow/__init__.py",
+      "agents/career/workflow/agent.py",
+      "agents/career/workflow/evidence.py",
+      "agents/career/workflow/shared_evidence.py",
+      "agents/career/workflow/main.py",
+      "agents/career/workflow/requirements.txt"
+    ],
+    "resource_name": "projects/717132085388/locations/us-west1/reasoningEngines/932407850586603520",
+    "engine_id": "932407850586603520",
+    "create_seconds": 157.715,
+    "completed_utc": "2026-10-23T20:03:15.478608+00:00",
+    "create_time": "2026-10-23T20:00:46.298162Z",
+    "update_time": "2026-10-23T20:03:13.963316Z",
+    "resource_metadata": {
+      "display_name": "Career & Professional Orchestration Agent - Final Dev RC",
+      "name": "projects/717132085388/locations/us-west1/reasoningEngines/932407850586603520",
+      "spec": {
+        "agent_framework": "google-adk",
+        "deployment_spec": {
+          "env": [
+            {
+              "name": "GOOGLE_CLOUD_AGENT_ENGINE_ENABLE_TELEMETRY",
+              "value": "true"
+            }
+          ]
+        },
+        "package_spec": {
+          "dependency_files_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/dependencies.tar.gz",
+          "pickle_object_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/agent_engine.pkl",
+          "python_version": "3.13",
+          "requirements_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/requirements.txt"
+        }
+      }
+    }
+  },
+  "packaging_repair": "Exactly one shared_evidence.py entry added to deploy_dev.py extra_packages.",
+  "package_parity": {
+    "prefix": "career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f",
+    "objects": [
+      "career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/agent_engine.pkl",
+      "career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/dependencies.tar.gz",
+      "career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/requirements.txt"
+    ],
+    "archive_members": [
+      "agents/__init__.py",
+      "agents/career/__init__.py",
+      "agents/career/workflow/__init__.py",
+      "agents/career/workflow/agent.py",
+      "agents/career/workflow/evidence.py",
+      "agents/career/workflow/shared_evidence.py",
+      "agents/career/workflow/main.py",
+      "agents/career/workflow/requirements.txt"
+    ],
+    "byte_parity": {
+      "agents/career/workflow/agent.py": {
+        "local_sha256": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+        "staged_sha256": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+        "match": true
+      },
+      "agents/career/workflow/evidence.py": {
+        "local_sha256": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+        "staged_sha256": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+        "match": true
+      },
+      "agents/career/workflow/shared_evidence.py": {
+        "local_sha256": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123",
+        "staged_sha256": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123",
+        "match": true
+      },
+      "agents/career/workflow/main.py": {
+        "local_sha256": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+        "staged_sha256": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+        "match": true
+      },
+      "agents/career/workflow/requirements.txt": {
+        "local_sha256": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720",
+        "staged_sha256": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720",
+        "match": true
+      }
+    },
+    "sdk_runtime_requirements": "google-cloud-aiplatform[agent_engines,adk]==1.165.1\ngoogle-adk==2.12.0\ncloudpickle==3.1.2\npydantic==2.14.1"
+  },
+  "source_validation": {
+    "instruction_hashes_unchanged": 30,
+    "models_unchanged": true,
+    "callbacks_tools_relationships_unchanged": true,
+    "root_specialists": 9,
+    "syntax_files": 42,
+    "source_freeze_passed": true,
+    "only_product_change": "deploy_dev.py: one shared_evidence.py extra_packages entry"
+  },
+  "remote_summary": {
+    "attempts": 15,
+    "diagnostic_protocol_errors": 1,
+    "completed": 12,
+    "capacity_failed_attempts": 2,
+    "reliability_failed_completed_samples": 1,
+    "stable_routes_correct": 9,
+    "stable_answers_completed": 8,
+    "observability": "Outer SSE calls/timing only; nested URL Context/model/grounding work is not fully exposed. Networking current has 1 observed Search and 2 verification calls; do not call its nested URL workload zero."
+  },
+  "stable_matrix": {
+    "career": {
+      "status": "completed",
+      "routed": "career_exploration_agent",
+      "route_match": true,
+      "query_seconds": 28.951,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    },
+    "internship": {
+      "status": "completed",
+      "routed": "internship__job_preparation_agent",
+      "route_match": true,
+      "query_seconds": 23.621,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    },
+    "resume": {
+      "status": "completed",
+      "routed": "resume__portfolio_agent",
+      "route_match": true,
+      "query_seconds": 24.594,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    },
+    "interview": {
+      "status": "completed",
+      "routed": "interview_preparation_agent",
+      "route_match": true,
+      "query_seconds": 21.484,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    },
+    "networking": {
+      "status": "completed",
+      "routed": "networking__professional_communication_agent",
+      "route_match": true,
+      "query_seconds": 13.813,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    },
+    "roadmap": {
+      "status": "completed",
+      "routed": "skill_gap__career_roadmap_agent",
+      "route_match": true,
+      "query_seconds": 27.558,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    },
+    "research": {
+      "status": "completed",
+      "routed": "research__graduate_pathways_agent",
+      "route_match": true,
+      "query_seconds": 20.723,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    },
+    "certification": {
+      "status": "runtime_error",
+      "routed": "certification__technical_development_agent",
+      "route_match": true,
+      "query_seconds": 25.701,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": true
+    },
+    "trust": {
+      "status": "completed",
+      "routed": "trust__human_escalation_agent",
+      "route_match": true,
+      "query_seconds": 2.985,
+      "search": 0,
+      "url_observed": 0,
+      "capacity": false
+    }
+  },
+  "current_checks": {
+    "career": {
+      "status": "runtime_error",
+      "review": "PROVIDER_CAPACITY; no reliability verdict",
+      "capacity_failure": true
+    },
+    "networking": {
+      "status": "completed",
+      "review": "RELIABILITY_FAILURE: goals/vision treated as verified current benefits",
+      "capacity_failure": false
+    },
+    "certification": {
+      "status": "DEFERRED",
+      "reason": "Stopped on capacity, then a genuine evidence reliability defect; no more inference."
+    },
+    "interview": {
+      "status": "DEFERRED",
+      "reason": "Stopped on capacity, then a genuine evidence reliability defect; no more inference."
+    },
+    "trust": {
+      "status": "completed",
+      "review": "Bounded clarification; UNRESOLVED retained. One Search call despite missing source pair; no broad loop or invented resolution.",
+      "capacity_failure": false
+    },
+    "research": {
+      "status": "DEFERRED",
+      "reason": "Stopped on capacity, then a genuine evidence reliability defect; no more inference."
+    },
+    "networking_platform": {
+      "status": "DEFERRED",
+      "reason": "Stopped on capacity, then a genuine evidence reliability defect; no more inference."
+    }
+  },
+  "flask": {
+    "results": [
+      {
+        "case": "fresh",
+        "http_status": 200,
+        "total_seconds": 25.04,
+        "reply": "Exploring cloud security and risk management is an excellent direction. These fields sit at the intersection of infrastructure design, defensive engineering, and strategic business decision-making. \n\nBecause your interests span both technical protection and strategic risk, you can explore several paths. They range from highly technical, hands-on engineering roles to strategic, governance-focused positions.\n\n---\n\n### Plausible Career Paths to Explore\n\n#### 1. Cloud Security Engineer\nThis is a highly technical, hands-on engineering role. Cloud Security Engineers build, configure, and maintain the systems that protect cloud infrastructure and data.\n*   **Typical Problems Solved:** How do we configure our virtual network to prevent unauthorized external access? How do we automate security checks in our deployment pipeline? How do we ensure that only authorized services can talk to our databases?\n*   **Day-to-Day Responsibilities:** Writing security-as-code templates, configuring cloud identity and access management (IAM) policies, setting up automated threat detection and logging, and conducting vulnerability scans.\n*   **Core Skills:** Scripting (e.g., Python or Bash), infrastructure-as-code, deep understanding of virtual networking, container security, and automated deployment pipelines.\n\n#### 2. Cybersecurity Risk & Compliance Analyst (or IT Risk Consultant)\nThis path focuses on governance, risk assessment, and ensuring that cloud environments meet regulatory and organizational security standards. It sits closer to the business and policy side of security.\n*   **Typical Problems Solved:** Is our cloud environment compliant with healthcare or financial security standards? What is the financial and operational impact if a critical cloud database goes offline? How do we evaluate the security of a third-party cloud service we want to use?\n*   **Day-to-Day Responsibilities:** Performing qualitative and quantitative risk assessments, interviewing engineering teams to document security controls, auditing cloud environments against security control frameworks, and writing security policies.\n*   **Core Skills:** Analytical thinking, structured risk modeling, strong written and verbal communication, and understanding how technical risks map to business objectives.\n\n#### 3. Security Architect (Long-term Target)\nThis is a senior-level pathway that bridges engineering and risk management. Security Architects design the overall security blueprints for enterprise cloud environments.\n*   **Typical Problems Solved:** How do we design an enterprise cloud environment that is both highly resilient to attack and compliant with industry regulations?\n*   **Day-to-Day Responsibilities:** Defining security standards and architectural patterns, evaluating complex cloud designs for systemic weaknesses, and advising engineering leaders on security strategies.\n*   **Core Skills:** Systems thinking, threat modeling, deep knowledge of both technical cloud architectures and risk management principles.\n\n---\n\n### Comparing the Tradeoffs\n\n| Dimension | Cloud Security Engineer | Cybersecurity Risk & Compliance Analyst |\n| :--- | :--- | :--- |\n| **Technical Depth** | High (involves scripting, system configuration, and debugging). | Moderate (requires understanding technical concepts but not writing code). |\n| **Work Style** | Technical problem-solving, building, and troubleshooting. | Analyzing, documenting, interviewing, and assessing. |\n| **Ambiguity vs. Structure** | Structured technical environments with concrete \"working\" or \"not working\" states. | More ambiguous; balancing security ideals with business realities and operational constraints. |\n| **Interaction** | Primarily collaborates with developers, DevOps teams, and system administrators. | Interacts broadly with business leaders, legal teams, external auditors, and engineers. |\n\n---\n\n### Low-Risk Ways to Test Your Interest\n\nTo find out which side of the spectrum fits you best, you can try small, practical exercises before committing to a specific career path:\n\n*   **To test Cloud Security Engineering (Hands-on):**\n    *   *Activity:* Set up a small, local virtual environment or mock cloud infrastructure on your computer using open-source tools.\n    *   *Challenge:* Configure a virtual network with strict firewall rules. Create a mock database and implement \"least privilege\" access controls so only a specific mock application can communicate with it. Attempt to bypass your own controls to see how secure your setup is.\n*   **To test Risk Management (Strategic/Analytical):**\n    *   *Activity:* Design a hypothetical risk register.\n    *   *Challenge:* Imagine a university cloud-based portal that stores student transcripts and financial aid information. Identify three major risks to this system (e.g., database exposure, ransomware attack, administrative misconfiguration). For each risk, assess the potential business impact, estimate the likelihood, and document the specific technical or administrative controls needed to mitigate that risk.\n*   **Observe Real-World Roles:**\n    *   Search online job boards for generic terms like *\"Associate Cloud Security Engineer\"* and *\"Cybersecurity Risk Analyst.\"* Compare the requirements and responsibilities listed in the descriptions to see which day-to-day work sounds more engaging to you.\n\n---\n\n### Continuing Your Exploration\n\nTo help tailor this direction, it would be useful to learn a bit more about your background:\n1.  **What is your current academic year**, and have you taken any networking, operating systems, or security-related courses yet?\n2.  **How do you feel about coding?** Do you enjoy building software and writing scripts to automate tasks, or do you prefer analyzing systems, writing documentation, and mapping out security strategies?",
+        "error": null,
+        "managed_session_present": true,
+        "user_matches": true
+      },
+      {
+        "case": "followup",
+        "http_status": 200,
+        "total_seconds": 19.352,
+        "reply": "For someone who already possesses IT risk management experience, the transition depends on whether you want to **leverage and expand** your current strengths or **pivot** into a highly technical engineering role. \n\nHere is how your existing experience maps to each path and which direction might fit you best:\n\n---\n\n### 1. The Direct Match: Cybersecurity Risk & Compliance Analyst (Cloud Focus)\nIf you want to maximize the value of your existing experience immediately, the **Risk & Compliance** path is the most natural fit. \n\n*   **How your experience connects:** You already understand how to identify, assess, and prioritize risks, use structured control frameworks, document findings, and communicate technical risks to business stakeholders. \n*   **The learning curve:** Your primary task will be translating your existing IT risk knowledge into the cloud paradigm. You will need to learn cloud-specific concepts such as:\n    *   **The Shared Responsibility Model:** Understanding what security controls the cloud provider manages versus what the customer must secure.\n    *   **Cloud-Specific Risks:** Learning about modern cloud vulnerabilities, such as identity misconfigurations, exposed storage containers, and API security.\n    *   **Cloud Compliance Standards:** Familiarizing yourself with standard industry guidelines specifically designed for secure cloud configurations.\n*   **Why it matches:** This path allows you to hit the ground running while upgrading your skillset to focus on modern, cloud-based infrastructures.\n\n---\n\n### 2. The Strategic Bridge: Cloud Security Architect (Medium-to-Long Term)\nIf you want to eventually design security environments, your risk management background is a massive asset for an **Architect** role.\n\n*   **How your experience connects:** Excellent security architects do not just understand technology; they understand *business risk*. Because you already know how to evaluate the business impact of a technical failure, you are well-positioned to design architectures that align with corporate risk tolerances.\n*   **The learning curve:** This is typically a mid-to-late career role. You would need to spend time gaining deep, hands-on experience with cloud system design, networking, and engineering before you can effectively architect enterprise-scale cloud security blueprints.\n*   **Why it matches:** This is an outstanding long-term goal where your risk management background will actively differentiate you from architects who only have technical engineering experience.\n\n---\n\n### 3. The Technical Pivot: Cloud Security Engineer\nIf you are looking to move away from policy, auditing, and risk registers and want to get your hands dirty building systems, this is a **pivot**.\n\n*   **How your experience connects:** Your IT risk background gives you a strong sense of *why* certain security controls are necessary. You will understand the threat landscape better than an entry-level engineer who has never thought about business risk.\n*   **The learning curve:** This requires a significant technical climb. You will need to learn scripting, infrastructure-as-code, command-line interfaces, and hands-on cloud platform configuration. \n*   **Why it matches:** It is a great path if you feel restricted by policy work and genuinely want to write code, configure active defenses, and build security automation.\n\n---\n\n### Summary Recommendation\n\n*   If you want to **leverage your current strengths** and make an efficient, high-impact transition into the cloud space, target **Cloud Risk & Compliance** roles. \n*   If you want to **transition into hands-on building**, use your risk background as a foundation but focus your immediate learning entirely on coding, networking, and hands-on cloud engineering to pivot into **Cloud Security Engineering**.\n\nTo help narrow this down: **What aspects of your current IT risk management experience do you enjoy the most, and which parts are you hoping to do less of in your next role?**",
+        "error": null,
+        "managed_session_present": true,
+        "user_matches": true,
+        "same_session_retained": true
+      },
+      {
+        "case": "different_user",
+        "http_status": 200,
+        "total_seconds": 14.397,
+        "reply": "Since this is a brand-new conversation, we haven't discussed any specific career paths yet! \n\nAs the **Career Exploration Agent**, my role is to help you explore, compare, and investigate different directions in tech to see what aligns best with your interests, skills, and long-term goals. \n\nTo help us get started, here is a high-level overview of some of the common paths computer science students often explore:\n\n### 1. Software Engineering (SWE)\n*   **What it is:** Designing, building, testing, and maintaining software applications, systems, or platforms.\n*   **Work Style:** Heavily focused on active coding, logical problem-solving, and system design.\n*   **Tradeoff:** Offers continuous building and immediate visual or functional feedback on your work, but can involve high ambiguity when translating user needs into code.\n*   **Generic Experiment:** Build and run a small, local command-line or web application from scratch.\n\n### 2. Cybersecurity (Engineering vs. Governance)\n*   **What it is:** Protecting systems, networks, and data from digital threats. This can be highly technical (Security Engineering, penetration testing) or focused on risk and policy (Governance, Risk, and Compliance).\n*   **Work Style:** Analytical, defensive, and risk-oriented. You are often trying to anticipate how things might fail or be exploited.\n*   **Tradeoff:** Highly critical and intellectually stimulating, but can involve high-stress environments or significant documentation and regulatory compliance.\n*   **Generic Experiment:** Create a simple risk register or threat model for a hypothetical web application, mapping out potential vulnerabilities and how to mitigate them.\n\n### 3. Artificial Intelligence & Machine Learning (AI/ML)\n*   **What it is:** Developing algorithms and statistical models that enable computers to learn from data and make predictions or decisions.\n*   **Work Style:** Mathematically and statistically intensive. Highly focused on data engineering, model training, and evaluation.\n*   **Tradeoff:** At the cutting edge of technology, but often involves dealing with highly unstructured data, experimental uncertainty, and less \"traditional\" software development.\n*   **Generic Experiment:** Write a simple Python script using local datasets to train a basic predictive model (like linear regression) and evaluate its accuracy.\n\n### 4. Cloud Computing & DevOps\n*   **What it is:** Managing the infrastructure, deployment pipelines, and environment where software runs.\n*   **Work Style:** Focused on automation, system reliability, network configuration, and scalability.\n*   **Tradeoff:** Highly portable skills that are essential to almost every modern tech company, but requires a strong understanding of systems and less focus on building user-facing features.\n*   **Generic Experiment:** Map out a multi-tier system architecture on paper, showing how a user request flows through a web server, application server, and database.\n\n---\n\n### How We Can Customize This For You\n\nTo help narrow things down, I'd love to learn a little bit about your background. If you're open to sharing:\n1. **What academic year are you currently in?**\n2. **Have you taken any computer science classes or worked on any projects that you particularly enjoyed (or really disliked)?**\n3. **Do you find yourself more drawn to *building* things, *analyzing/securing* things, or *working with data and math*?**\n\nThere are no right or wrong answers, and we can explore as many options as you'd like!",
+        "error": null,
+        "managed_session_present": true,
+        "user_matches": true,
+        "separate_session": true
+      },
+      {
+        "case": "missing_question",
+        "http_status": 400,
+        "total_seconds": 0.025,
+        "reply": null,
+        "error": "Please enter a question.",
+        "managed_session_present": false,
+        "user_matches": true,
+        "expected_status": 400
+      },
+      {
+        "case": "invalid_user",
+        "http_status": 400,
+        "total_seconds": 0.025,
+        "reply": null,
+        "error": "Invalid user_id.",
+        "managed_session_present": false,
+        "user_matches": false,
+        "expected_status": 400
+      },
+      {
+        "case": "invalid_session",
+        "http_status": 400,
+        "total_seconds": 0.024,
+        "reply": null,
+        "error": "Invalid session_id.",
+        "managed_session_present": false,
+        "user_matches": true,
+        "expected_status": 400
+      },
+      {
+        "case": "too_long",
+        "http_status": 413,
+        "total_seconds": 0.027,
+        "reply": null,
+        "error": "Question is too long.",
+        "managed_session_present": false,
+        "user_matches": true,
+        "expected_status": 413
+      }
+    ]
+  },
+  "browser": {
+    "port": 5002,
+    "initial_message": true,
+    "input_works": true,
+    "shift_enter_newline_without_send": true,
+    "character_counter_observed": [
+      "22 / 8000",
+      "406 / 8000",
+      "0 / 8000"
+    ],
+    "autogrow": {
+      "before_height": 76,
+      "after_height": 240,
+      "after_scroll_height": 458,
+      "overflow": "auto"
+    },
+    "new_chat_clears_draft": true,
+    "new_chat_reset_message": true,
+    "inference_checks": "PASS",
+    "enter_sends": true,
+    "thinking_visible": true,
+    "busy_controls_disabled": true,
+    "markdown": {
+      "table_count": 1,
+      "heading_count": 2,
+      "strong_count": 14,
+      "dompurify_path": "Unchanged renderMarkdown uses DOMPurify.sanitize(marked.parse(text)); successful browser rendering, both CDN scripts present and no console errors. No malicious payload injected."
+    },
+    "timestamps_visible": true,
+    "copy_feedback": "Copied",
+    "scroll_latest": {
+      "bottom_distance": 5,
+      "hidden_at_bottom": true
+    },
+    "refresh_visual_history": "Resets to welcome; managed-session continuity tested separately",
+    "browser_fresh_http_200": true,
+    "refresh_session_retained": true,
+    "persistent_user_same": true,
+    "refresh_context_continuity": "Remembered IT risk management and the two paths without restatement.",
+    "new_chat_fresh_backend_session": true,
+    "new_chat_old_context_absent": true,
+    "new_chat_backend_audit": "Same user ordinal 3; fresh session requested; returned session differs from prior; reply says no experience shared.",
+    "retry_visibility": "No natural browser failure occurred. Existing Retry/error textContent branch inspected unchanged; not fault-injected.",
+    "browser_console_errors": []
+  },
+  "flask_observed_timings": [
+    "CAREER_LATENCY auth_session_init=3.319s",
+    "CAREER_LATENCY auth_session=3.320s",
+    "CAREER_LATENCY session_create=0.901s",
+    "CAREER_LATENCY stream_query=20.784s",
+    "CAREER_LATENCY parse_response=0.000s",
+    "CAREER_LATENCY answer_total=25.005s new_session=true",
+    "CAREER_LATENCY auth_session_cached=0.000s",
+    "CAREER_LATENCY auth_session=0.000s",
+    "CAREER_LATENCY stream_query=19.317s",
+    "CAREER_LATENCY parse_response=0.000s",
+    "CAREER_LATENCY answer_total=19.317s new_session=false",
+    "CAREER_LATENCY auth_session_cached=0.000s",
+    "CAREER_LATENCY auth_session=0.000s",
+    "CAREER_LATENCY session_create=0.190s",
+    "CAREER_LATENCY stream_query=14.194s",
+    "CAREER_LATENCY parse_response=0.000s",
+    "CAREER_LATENCY answer_total=14.385s new_session=true",
+    "CAREER_LATENCY auth_session_cached=0.000s",
+    "CAREER_LATENCY auth_session=0.000s",
+    "CAREER_LATENCY session_create=0.227s",
+    "CAREER_LATENCY stream_query=13.701s",
+    "CAREER_LATENCY parse_response=0.000s",
+    "CAREER_LATENCY answer_total=13.929s new_session=true",
+    "CAREER_LATENCY auth_session_cached=0.000s",
+    "CAREER_LATENCY auth_session=0.000s",
+    "CAREER_LATENCY stream_query=4.397s",
+    "CAREER_LATENCY parse_response=0.000s",
+    "CAREER_LATENCY answer_total=4.397s new_session=false",
+    "CAREER_LATENCY auth_session_cached=0.000s",
+    "CAREER_LATENCY auth_session=0.000s",
+    "CAREER_LATENCY session_create=0.204s",
+    "CAREER_LATENCY stream_query=4.742s",
+    "CAREER_LATENCY parse_response=0.000s",
+    "CAREER_LATENCY answer_total=4.947s new_session=true"
+  ],
+  "provider_failures": [
+    {
+      "case": "rc_certification_stable",
+      "classification": "SPECIALIST_CAPACITY"
+    },
+    {
+      "case": "rc_career_current",
+      "classification": "ROOT_CAPACITY"
+    }
+  ],
+  "exact_release_blocker": {
+    "case": "rc_networking_current",
+    "claim": "C1: SACS membership plus mentoring/workshops/networking benefits",
+    "rendered_status": "VERIFIED CURRENT",
+    "citation_http_status": 200,
+    "resolved_source_url": "https://www.morgan.edu/computer-science/current-students/sacs",
+    "canonical_review_source": "https://www.morgan.edu/computer-science/current-students/sacs",
+    "source_sections": {
+      "goals": true,
+      "vision": true,
+      "join_invitation": true
+    },
+    "review": "Membership invitation is supported; goals/vision for mentoring/workshops do not establish current delivery of the entire composite claim. The response treats the full claim as VERIFIED CURRENT without a stated current date/cycle or benefit limitation.",
+    "internal_date_value": "Not exposed in outer response; no unobserved verifier field is inferred.",
+    "decision": "RELIABILITY_FAILURE",
+    "minimal_required_repair": "Tighten Networking evidence adjudication for goal/vision language: retain the supported membership scope and mark unestablished operational benefits CURRENT STATUS UNVERIFIED; add a captured-case regression. Inspect the shared_evidence.py verifier status acceptance before proposing the narrow change; no prompt/model/tool/graph redesign."
+  },
+  "minimal_repair_scope": "Networking evidence adjudication/currentness acceptance only, with a captured-case regression. No repair applied; wait for separate authorization.",
+  "offline": {
+    "passed": 142,
+    "known_stale_failed": 1,
+    "pytest_passed": 74,
+    "adk_unittest_passed": 68,
+    "final_rerun_confirmed": true
+  },
+  "stale_test": "Career HTTP 501 legacy expectation remains; auth-blocked implemented endpoint returns 503. Not the release blocker.",
+  "production_untouched": true,
+  "old_dev_engines_untouched": true,
+  "new_rc_preserved": true,
+  "production_fallback_unchanged": true,
+  "nothing_staged_committed_pushed": true,
+  "optimization_stopped": true,
+  "final_validation": {
+    "privacy_passed": true,
+    "syntax_files": 43,
+    "source_freeze_passed": true,
+    "package_byte_parity_passed": true,
+    "instruction_hashes_unchanged": 30,
+    "git_diff_check_passed": true,
+    "untracked_whitespace_passed": true,
+    "index_empty": true,
+    "head_unchanged": true
+  },
+  "artifacts": [
+    "tests/diagnostics/career_wave7_preflight.py",
+    "tests/diagnostics/career_wave7_freeze.json",
+    "tests/diagnostics/career_wave7_packaging.json",
+    "tests/diagnostics/career_wave7_predeploy_adk.json",
+    "tests/diagnostics/career_wave7_predeploy_pytest.json",
+    "tests/diagnostics/career_wave7_validation.json",
+    "tests/diagnostics/career_wave7_report.py",
+    "tests/diagnostics/career_wave7_final.json",
+    "tests/diagnostics/career_wave7_final_adk.json",
+    "tests/diagnostics/career_wave7_final_pytest.json",
+    "tests/diagnostics/career_wave7_resume_freeze.json",
+    "tests/diagnostics/career_wave7_repaired_pytest.json",
+    "tests/diagnostics/career_wave7_repaired_adk.json",
+    "tests/diagnostics/career_wave7_resume.py",
+    "tests/diagnostics/career_wave7_resume_package.json",
+    "tests/diagnostics/career_wave7_resume_verified_pytest.json",
+    "tests/diagnostics/career_wave7_create_rc.py",
+    "tests/diagnostics/career_wave7_resume_verified_adk.json",
+    "tests/diagnostics/career_wave7_rc_deployment.json",
+    "tests/diagnostics/career_wave7_rc_staged.json",
+    "tests/diagnostics/career_wave7_remote.py",
+    "tests/diagnostics/career_wave7_rc_remote.json",
+    "tests/diagnostics/career_wave7_flask_rc.py",
+    "tests/diagnostics/career_wave7_flask_checks.py",
+    "tests/diagnostics/career_wave7_rc_flask_audit.json",
+    "tests/diagnostics/career_wave7_rc_malformed.json",
+    "tests/diagnostics/career_wave7_rc_browser.json",
+    "tests/diagnostics/career_wave7_resume_final_adk.json",
+    "tests/diagnostics/career_wave7_resume_final_pytest.json",
+    "tests/diagnostics/career_wave7_rc_flask_checks.json",
+    "tests/diagnostics/career_wave7_rc_final_validation.json",
+    "tests/diagnostics/career_wave7_rc_reliability.json",
+    "tests/diagnostics/career_wave7_rc_report.py",
+    "tests/diagnostics/career_wave7_rc_final.json",
+    "tests/diagnostics/career_wave7_release_final_adk.json",
+    "tests/diagnostics/career_wave7_release_final_pytest.json"
+  ]
+}

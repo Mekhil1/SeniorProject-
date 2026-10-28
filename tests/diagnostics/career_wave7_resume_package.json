@@ -1,0 +1,51 @@
+{
+  "archive_members": [
+    "agents/__init__.py",
+    "agents/career/__init__.py",
+    "agents/career/workflow/__init__.py",
+    "agents/career/workflow/agent.py",
+    "agents/career/workflow/evidence.py",
+    "agents/career/workflow/shared_evidence.py",
+    "agents/career/workflow/main.py",
+    "agents/career/workflow/requirements.txt"
+  ],
+  "byte_parity": {
+    "agents/career/workflow/agent.py": {
+      "local_sha256": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+      "packaged_sha256": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+      "match": true
+    },
+    "agents/career/workflow/evidence.py": {
+      "local_sha256": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+      "packaged_sha256": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+      "match": true
+    },
+    "agents/career/workflow/shared_evidence.py": {
+      "local_sha256": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123",
+      "packaged_sha256": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123",
+      "match": true
+    },
+    "agents/career/workflow/main.py": {
+      "local_sha256": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+      "packaged_sha256": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+      "match": true
+    },
+    "agents/career/workflow/requirements.txt": {
+      "local_sha256": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720",
+      "packaged_sha256": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720",
+      "match": true
+    }
+  },
+  "isolated_import": {
+    "app": "AdkApp",
+    "root": "Career___Professional_Orchestration_Agent",
+    "specialists": 9
+  },
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "runtime_only_config": "Append original requirements.txt to this deployment archive; set requested RC display name. No additional product source edit.",
+  "deploy_source_sha256": "03a90dc226efb741f687b70b290519e0400d3365167c62dced77202ef3537326",
+  "passed": true
+}

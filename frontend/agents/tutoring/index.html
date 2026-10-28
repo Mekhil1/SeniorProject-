@@ -3,12 +3,265 @@
 <title>CS Learning & Tutoring | Morgan State CS</title>
 <style>
 :root{--navy:#003a70;--orange:#f76900;--text:#17243a;--muted:#5b6879}*{box-sizing:border-box}body{margin:0;background:#f5f7fa;font:15px/1.6 system-ui,-apple-system,sans-serif;color:var(--text)}header{background:var(--navy);color:white;padding:19px max(24px,calc((100vw - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px}header strong{font-size:19px}a{color:inherit}header a{text-decoration:none;font-weight:650}main{max-width:1100px;margin:42px auto;padding:0 22px}.eyebrow{color:var(--orange);font-weight:800;font-size:12px;letter-spacing:.13em;text-transform:uppercase}h1{font-size:clamp(30px,4vw,46px);margin:8px 0}h2{font-size:19px}p{color:var(--muted)}.layout{display:grid;grid-template-columns:1fr 300px;gap:22px;margin-top:30px}.panel{background:white;border:1px solid #e2e8f0;border-radius:13px;padding:24px}.chat{height:300px;overflow:auto;background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:16px}.msg{white-space:pre-wrap;padding:12px;margin-bottom:12px;border-radius:9px;background:white;border:1px solid #e2e8f0}.msg.me{background:#e7f1fb;margin-left:15%}.msg.error{border-color:#f5b8a4}form{display:flex;gap:9px;margin-top:15px}input{min-width:0;flex:1;padding:13px;border:1px solid #cbd5e1;border-radius:8px;font:inherit}button{border:0;background:var(--orange);color:#fff;padding:12px 17px;border-radius:8px;font:700 14px system-ui;cursor:pointer}button:disabled{opacity:.55}.topic{padding:12px 0;border-bottom:1px solid #edf0f4}.note{font-size:12px;background:#fff7ed;border-left:4px solid var(--orange);padding:12px;margin-top:18px}@media(max-width:760px){.layout{grid-template-columns:1fr}header{padding:17px 22px}}
+
+textarea{min-width:0;flex:1;padding:13px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;resize:vertical;min-height:50px}
+.suggestions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.suggestions[hidden]{display:none}
+.suggestions button,.message-actions button{background:#e7f1fb;color:var(--navy);padding:6px 10px;font-size:12px}
+.message-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:8px;white-space:normal}
+.message-meta time{font-size:11px;color:var(--muted)}
+.message-actions{display:flex;gap:8px}
+.thinking{color:var(--muted);animation:thinking-pulse 1.2s ease-in-out infinite}
+@keyframes thinking-pulse{50%{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.thinking{animation:none}}
+
+/* Keep the composer and message controls usable on narrow screens. */
+.panel,.chat,.msg,.message-content{min-width:0}
+.msg{overflow-wrap:anywhere}
+.message-content{max-width:100%;overflow-x:auto}
+.msg pre{max-width:100%;overflow-x:auto;overflow-wrap:normal}
+.msg table{display:block;max-width:100%;overflow-x:auto}
+.chat-heading,.message-meta,.message-actions{flex-wrap:wrap}
+.chat-heading h2{margin-right:auto}
+#newChat{flex-shrink:0}
+.service-badge{display:inline-block;max-width:100%;background:#e7f1fb;color:var(--navy);font-size:12px;font-weight:700;border-radius:20px;padding:4px 10px;margin:4px 0 10px;overflow-wrap:anywhere}
+.start-state{font-size:13px;margin:0 0 12px}
+textarea{resize:none;max-height:240px;overflow-y:hidden}
+form{align-items:flex-end}
+#send{min-height:48px}
+.character-count{font-size:12px;color:var(--muted);text-align:right;margin-top:5px}
+.character-count.near-limit{color:var(--navy);font-weight:700}
+.scroll-controls{display:flex;justify-content:flex-end;min-height:36px;padding-top:5px}
+#scrollLatest{font-size:12px;padding:6px 10px;background:#e7f1fb;color:var(--navy)}
+#scrollLatest[hidden]{display:none}
+.message-meta time{flex-shrink:0}
+.suggestions button{max-width:100%;white-space:normal;text-align:left;overflow-wrap:anywhere}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+@media(max-width:480px){
+    main{margin:24px auto;padding:0 12px}
+    header{flex-wrap:wrap;gap:8px}
+    .panel{padding:16px}
+    .chat{padding:10px}
+    .msg{padding:10px}
+    .msg.me{margin-left:6%}
+    .message-actions button,.suggestions button,#scrollLatest{min-height:36px}
+    textarea{padding:10px;font-size:16px}
+    #send{padding:12px;flex-shrink:0}
+}
 </style></head><body><header><strong>Morgan State <span style="color:#ffa66e">/</span> Computer Science</strong><a href="/chat">← Student Hub</a></header><main>
 <div class="eyebrow">Student Services / TUTORING</div><h1>CS Learning & Tutoring</h1><p>Explanations, visual learning, practice problems, and guided tutoring.</p>
-<div class="layout"><section class="panel"><h2>Ask a question</h2><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><form id="form"><input id="question" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required><button id="send">Send</button></form><div class="note" id="notice">Starter integration: this service is not implemented yet. Your teammate can build its backend independently.</div></section><aside class="panel"><h2>Explore this service</h2><div class="topic">Topic explanations</div><div class="topic">Practice problems</div><div class="topic">Learning strategies</div><div class="topic">Tutoring</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
+<div class="layout"><section class="panel">
+<div class="chat-heading" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+    <h2>Ask a question</h2>
+    <button id="newChat" type="button">New chat</button>
+</div><div class="service-badge">Tutoring</div><p id="startState" class="start-state">Ask for explanations, guided practice, study help, and concept review. Integration is still in development.</p><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div class="scroll-controls"><button id="scrollLatest" type="button" aria-label="Scroll to latest message" aria-controls="messages" hidden>↓ Latest message</button></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Explain a concept</button><button type="button">Quiz me</button><button type="button">Walk me through a problem</button><button type="button">Help me study</button></div><form id="form"><textarea id="question" rows="1" aria-describedby="characterCount" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div id="characterCount" class="character-count">0 / 8000</div><div class="note" id="notice">Starter integration: this service is not implemented yet. Your teammate can build its backend independently.</div></section><aside class="panel"><h2>Explore this service</h2><div class="topic">Topic explanations</div><div class="topic">Practice problems</div><div class="topic">Learning strategies</div><div class="topic">Tutoring</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
 <script>
 const API='/api/tutoring';
 const form=document.getElementById('form'),question=document.getElementById('question'),messages=document.getElementById('messages'),send=document.getElementById('send');
-function add(text,kind=''){const node=document.createElement('div');node.className='msg '+kind;node.textContent=text;messages.appendChild(node);messages.scrollTop=messages.scrollHeight;return node}
-form.addEventListener('submit',async event=>{event.preventDefault();const q=question.value.trim();if(!q)return;question.value='';add(q,'me');send.disabled=true;const output=add('Checking…');try{const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q})});const data=await response.json();output.textContent=data.reply||data.error||'No response available.';if(!response.ok)output.classList.add('error')}catch(err){output.textContent='Cannot reach the server. Check that Flask is running.';output.classList.add('error')}finally{send.disabled=false;question.focus()}});
+const newChat = document.getElementById('newChat');
+
+// Reuse an existing Career identity without changing Career's storage or sessions.
+// randomUUID requires a secure context; HTTP network addresses still support
+// getRandomValues. This ID separates browser clients; it is not authentication.
+function createUserId() {
+    if (typeof crypto.randomUUID === 'function') {
+        return crypto.randomUUID();
+    }
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
+    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+}
+
+let userId = localStorage.getItem('student_user_id');
+if (!userId) {
+    userId = localStorage.getItem('career_user_id') || createUserId();
+    localStorage.setItem('student_user_id', userId);
+}
+
+// TODO: This backend is stateless and does not accept or return session IDs.
+// True multi-turn continuity needs backend support before sending/storing session_id.
+let busy = false;
+const suggestions = document.getElementById('suggestions');
+
+const characterCount = document.getElementById('characterCount');
+const scrollLatest = document.getElementById('scrollLatest');
+const startState = document.getElementById('startState');
+
+function updateComposer() {
+    const count = question.value.length;
+    characterCount.textContent = `${count} / ${question.maxLength}`;
+    characterCount.classList.toggle('near-limit', count >= question.maxLength * 0.9);
+    question.style.height = 'auto';
+    const height = Math.min(question.scrollHeight + 2, 240);
+    question.style.height = `${height}px`;
+    question.style.overflowY = question.scrollHeight + 2 > 240 ? 'auto' : 'hidden';
+}
+
+function updateScrollControl() {
+    scrollLatest.hidden = messages.scrollHeight - messages.clientHeight - messages.scrollTop <= 40;
+}
+
+question.addEventListener('input', updateComposer);
+messages.addEventListener('scroll', updateScrollControl);
+scrollLatest.addEventListener('click', () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    messages.scrollTo({top: messages.scrollHeight, behavior: reducedMotion ? 'auto' : 'smooth'});
+});
+window.addEventListener('resize', () => {
+    updateComposer();
+    updateScrollControl();
+});
+updateComposer();
+updateScrollControl();
+
+function scrollMessages() {
+    messages.scrollTop = messages.scrollHeight;
+    updateScrollControl();
+}
+
+function add(text, kind = '') {
+    const node = document.createElement('div');
+    node.className = 'msg ' + kind;
+    const content = document.createElement('div');
+    content.className = 'message-content';
+    content.textContent = text;
+    node.appendChild(content);
+    messages.appendChild(node);
+    scrollMessages();
+    return node;
+}
+
+function stamp(node) {
+    const meta = document.createElement('div');
+    meta.className = 'message-meta';
+    const time = document.createElement('time');
+    const now = new Date();
+    time.dateTime = now.toISOString();
+    time.textContent = now.toLocaleTimeString([], {hour: 'numeric', minute: '2-digit'});
+    meta.appendChild(time);
+    node.appendChild(meta);
+    return meta;
+}
+
+function action(meta, label, handler) {
+    const actions = document.createElement('div');
+    actions.className = 'message-actions';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = label;
+    button.addEventListener('click', handler);
+    actions.appendChild(button);
+    meta.appendChild(actions);
+    return button;
+}
+
+function setBusy(value) {
+    busy = value;
+    send.disabled = value;
+    newChat.disabled = value;
+    messages.querySelectorAll('.retry').forEach(button => { button.disabled = value; });
+}
+
+async function requestAnswer(q, output = add('')) {
+    if (busy) return;
+    setBusy(true);
+    output.replaceChildren();
+    output.className = 'msg';
+    output.setAttribute('aria-busy', 'true');
+    const content = document.createElement('div');
+    content.className = 'message-content thinking';
+    content.textContent = 'AI is thinking…';
+    output.appendChild(content);
+    scrollMessages();
+    let failed = false;
+    try {
+        const payload = {question: q, user_id: userId};
+
+        const response = await fetch(API, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+
+        failed = !response.ok || Boolean(data.error) || !data.reply;
+        if (failed) {
+            content.textContent = data.error || data.reply || 'No response available.';
+        } else {
+            content.textContent = data.reply;
+        }
+    } catch (err) {
+        failed = true;
+        content.textContent = 'Cannot reach the server. Check that Flask is running.';
+    } finally {
+        content.classList.remove('thinking');
+        output.removeAttribute('aria-busy');
+        output.classList.toggle('error', failed);
+        const meta = stamp(output);
+        if (failed) {
+            const retry = action(meta, 'Retry', () => {
+                if (!busy) requestAnswer(q, output);
+            });
+            retry.className = 'retry';
+        } else {
+            const copy = action(meta, 'Copy', async () => {
+                try {
+                    // Read only the response, excluding timestamps and controls.
+                    await navigator.clipboard.writeText(content.innerText || content.textContent);
+                    copy.textContent = 'Copied';
+                } catch (err) {
+                    copy.textContent = 'Copy unavailable';
+                }
+                setTimeout(() => { copy.textContent = 'Copy'; }, 1800);
+            });
+            copy.setAttribute('aria-live', 'polite');
+        }
+        setBusy(false);
+        scrollMessages();
+        question.focus();
+    }
+}
+
+suggestions.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', () => {
+        question.value = button.textContent;
+        updateComposer();
+        question.focus();
+    });
+});
+
+question.addEventListener('keydown', event => {
+    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+        event.preventDefault();
+        if (!busy && question.value.trim()) form.requestSubmit();
+    }
+});
+
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    const q = question.value.trim();
+    if (!q || busy) return;
+    question.value = '';
+    updateComposer();
+    startState.hidden = true;
+    suggestions.hidden = true;
+    stamp(add(q, 'me'));
+    requestAnswer(q);
+});
+
+newChat.addEventListener('click', () => {
+    if (busy) return;
+
+    sessionStorage.removeItem('tutoring_session_id');
+    messages.replaceChildren();
+    add('New conversation started. What would you like help with today?');
+    suggestions.hidden = false;
+    startState.hidden = false;
+    question.value = '';
+    updateComposer();
+    updateScrollControl();
+    question.focus();
+});
 </script></body></html>

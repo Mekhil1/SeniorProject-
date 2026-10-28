@@ -1,0 +1,9 @@
+{
+  "instruction_hashes_unchanged": 30,
+  "models_unchanged": true,
+  "callbacks_tools_relationships_unchanged": true,
+  "root_specialists": 9,
+  "syntax_files": 42,
+  "source_freeze_passed": true,
+  "only_product_change": "deploy_dev.py: one shared_evidence.py extra_packages entry"
+}

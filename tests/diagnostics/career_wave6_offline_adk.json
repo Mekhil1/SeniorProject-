@@ -1,0 +1,11 @@
+{
+  "suite": "adk_unittest",
+  "tests_run": 63,
+  "passed": 63,
+  "failed": 0,
+  "errors": 0,
+  "successful": true,
+  "failure_tests": [],
+  "error_tests": [],
+  "network_and_auth_blocked": true
+}

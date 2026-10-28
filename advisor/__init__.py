@@ -7,7 +7,7 @@ from flask_cors import CORS
 
 
 def create_app(test_config=None):
-    project_root = Path(__file__).resolve().parents[2]
+    project_root = Path(__file__).resolve().parents[1]
     app = Flask(__name__)
     app.config.from_mapping(
         DATABASE=str(Path(__file__).resolve().parents[1] / "student_advisor.db"),

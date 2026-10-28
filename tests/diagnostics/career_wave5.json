@@ -1,0 +1,597 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "ba8023845ef6e66f74a34e0ed6fb88beaacb2de2554e50e92ba5ab660cf2b3b2",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+    "agents\\career\\workflow\\shared_evidence.py": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "wave5_health_probe",
+      "domain": "networking",
+      "label": "Networking & Professional Communication",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T10:33:03.435537+00:00",
+      "orchestrator_request_start": 1.134,
+      "total_seconds": 25.197,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 9.328,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 9.337,
+      "first_specialist_event": 9.337,
+      "handoff_seconds": 0.009,
+      "first_helper": null,
+      "first_text": 25.195,
+      "final_answer": "Introducing yourself to a cybersecurity recruiter is all about showing your specific technical interest, keeping the message concise, and making a clear, low-pressure request. \n\nBecause recruiters read dozens of messages a day, a successful introduction avoids generic fluff and gets straight to the point.\n\nHere is a simple structure you can use, followed by a couple of examples.\n\n### The Structure of a Strong Introduction\n1. **The Hook (Who you are):** State your name, your major at Morgan State University, and your focus on cybersecurity.\n2. **The \"Why\" (Why this company/role):** Mention a specific internship posting, a recent security initiative the company announced, or why you are drawn to their security team.\n3. **The Evidence (Your background):** Briefly mention one relevant thing—this could be a hands-on class project, participation in a Capture the Flag (CTF) competition, a cybersecurity club activity, or a certification you are preparing for.\n4. **The Ask (Call to Action):** Ask a polite, low-pressure question about their hiring timeline or if they are the correct person to connect with.\n\n---\n\n### Example 1: LinkedIn Connection Request (Under 300 characters)\n*Keep it very brief for the initial connection invite.*\n\n> \"Hi [Recruiter's Name], I’m a Computer Science student at Morgan State focused on cybersecurity. I saw your post about the [Company] Security Analyst internship and love your team's focus on threat intelligence. I’d love to connect to learn more about the role. Thanks! — [Your Name]\"\n\n---\n\n### Example 2: Short Email or LinkedIn InMail\n*Use this if you have more character space or are sending an email.*\n\n> **Subject:** Morgan State CS Student – Inquiry regarding [Specific Role Name]\n>\n> \"Hi [Recruiter's Name],\n>\n> I hope you’re having a great week. \n>\n> I’m a [Junior/Senior] Computer Science student at Morgan State University, specializing in cybersecurity. I’m reaching out because I recently applied for the [Specific Internship/Role Name] at [Company] and wanted to introduce myself.\n>\n> This past semester, I’ve been focusing on [mention a specific project, e.g., setting up a home lab to analyze network traffic / participating in CTF competitions with our cyber club]. I am particularly drawn to [Company] because of [mention a genuine reason, e.g., your focus on cloud security / your recent work in incident response].\n>\n> I know you are busy, but if you have a moment, could you let me know if you are the primary recruiter managing this role? I would love to ensure my application is in the right hands.\n>\n> Thank you for your time and consideration.\n>\n> Sincerely,\n>\n> [Your Name]  \n> [Your LinkedIn Profile Link]  \n> [Your Portfolio/GitHub Link, if applicable]\"\n\n---\n\n### Let's Tailor This for You\nTo help you draft the perfect, personalized message, could you tell me a bit more about your situation?\n1. **How are you contacting them?** (e.g., LinkedIn message, email, or preparing for an in-person conversation like a career fair?)\n2. **Do you have a specific company or job posting in mind?** \n3. **What cybersecurity experiences do you have?** (e.g., specific courses, personal projects, CTFs, student clubs, or certifications?)",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 15.851,
+      "orchestrator_model_seconds": 8.191,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.133,
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 9.34,
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 27494,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 9.328,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 9.331,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.134,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 9.325,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 9.325,
+          "duration": 8.191
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 9.341,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 27494,
+          "tool_description_count": 3,
+          "response_received": 25.192,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 25.192,
+          "duration": 15.851
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 9.328,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 9.335,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 9.337,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 25.194,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "Introducing yourself to a cybersecurity recruiter is all about showing your specific technical interest, keeping the message concise, and making a clear, low-pressure request. \n\nBecause recruiters read dozens of messages a day, a successful introduction avoids generic fluff and gets straight to the point.\n\nHere is a simple structure you can use, followed by a couple of examples.\n\n### The Structure of a Strong Introduction\n1. **The Hook (Who you are):** State your name, your major at Morgan State University, and your focus on cybersecurity.\n2. **The \"Why\" (Why this company/role):** Mention a specific internship posting, a recent security initiative the company announced, or why you are drawn to their security team.\n3. **The Evidence (Your background):** Briefly mention one relevant thing—this could be a hands-on class project, participation in a Capture the Flag (CTF) competition, a cybersecurity club activity, or a certification you are preparing for.\n4. **The Ask (Call to Action):** Ask a polite, low-pressure question about their hiring timeline or if they are the correct person to connect with.\n\n---\n\n### Example 1: LinkedIn Connection Request (Under 300 characters)\n*Keep it very brief for the initial connection invite.*\n\n> \"Hi [Recruiter's Name], I’m a Computer Science student at Morgan State focused on cybersecurity. I saw your post about the [Company] Security Analyst internship and love your team's focus on threat intelligence. I’d love to connect to learn more about the role. Thanks! — [Your Name]\"\n\n---\n\n### Example 2: Short Email or LinkedIn InMail\n*Use this if you have more character space or are sending an email.*\n\n> **Subject:** Morgan State CS Student – Inquiry regarding [Specific Role Name]\n>\n> \"Hi [Recruiter's Name],\n>\n> I hope you’re having a great week. \n>\n> I’m a [Junior/Senior] Computer Science student at Morgan State University, specializing in cybersecurity. I’m reaching out because I recently applied for the [Specific Internship/Role Name] at [Company] and wanted to introduce myself.\n>\n> This past semester, I’ve been focusing on [mention a specific project, e.g., setting up a home lab to analyze network traffic / participating in CTF competitions with our cyber club]. I am particularly drawn to [Company] because of [mention a genuine reason, e.g., your focus on cloud security / your recent work in incident response].\n>\n> I know you are busy, but if you have a moment, could you let me know if you are the primary recruiter managing this role? I would love to ensure my application is in the right hands.\n>\n> Thank you for your time and consideration.\n>\n> Sincerely,\n>\n> [Your Name]  \n> [Your LinkedIn Profile Link]  \n> [Your Portfolio/GitHub Link, if applicable]\"\n\n---\n\n### Let's Tailor This for You\nTo help you draft the perfect, personalized message, could you tell me a bit more about your situation?\n1. **How are you contacting them?** (e.g., LinkedIn message, email, or preparing for an in-person conversation like a career fair?)\n2. **Do you have a specific company or job posting in mind?** \n3. **What cybersecurity experiences do you have?** (e.g., specific courses, personal projects, CTFs, student clubs, or certifications?)"
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 8.191,
+          "SPECIALIST_PRE_TOOL_WAIT": 15.851,
+          "STREAM_FINALIZATION": 0.002,
+          "UNOBSERVED_RUNTIME_WAIT": 1.153
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 9.328,
+          "transfer_to_agent": {
+            "t": 9.328,
+            "target": "networking__professional_communication_agent"
+          },
+          "first_specialist_event": 9.337,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 25.195,
+          "stream_completion": 25.197
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "HEALTH GATE PASS; zero-tool Networking stable sample",
+        "notes": "Correct route and useful communication guidance. Examples require student adaptation. The under-300-character heading also appeared in the pre-compression health probe, so it is not evidence of a new compression regression."
+      },
+      "primary_failure_category": null,
+      "source_changed_during_run": false,
+      "compression_causal_latency_claim": false
+    },
+    {
+      "id": "wave5_certification_stable",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T10:34:50.912542+00:00",
+      "orchestrator_request_start": 1.06,
+      "total_seconds": 27.096,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.995,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 9.006,
+      "first_specialist_event": 9.006,
+      "handoff_seconds": 0.011,
+      "first_helper": null,
+      "first_text": 27.094,
+      "final_answer": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 18.082,
+      "orchestrator_model_seconds": 7.933,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.059,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 9.009,
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 26274,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.996,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 9.0,
+          "duration": 0.004,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.06,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 8.993,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.993,
+          "duration": 7.933
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 9.01,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 26274,
+          "tool_description_count": 3,
+          "response_received": 27.092,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 27.092,
+          "duration": 18.082
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.995,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 9.003,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 9.006,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 27.094,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 7.933,
+          "SPECIALIST_PRE_TOOL_WAIT": 18.082,
+          "STREAM_FINALIZATION": 0.002,
+          "UNOBSERVED_RUNTIME_WAIT": 1.079
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 8.995,
+          "transfer_to_agent": {
+            "t": 8.995,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 9.006,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 27.094,
+          "stream_completion": 27.096
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "PASS",
+        "notes": "Zero retrieval; same generic decision framework; no unsupported offers, discounts, pricing or eligibility."
+      },
+      "primary_failure_category": null,
+      "source_changed_during_run": false,
+      "compression_causal_latency_claim": false
+    },
+    {
+      "id": "wave5_interview_stable",
+      "domain": "interview",
+      "label": "Interview Preparation",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role.",
+      "status": "failed",
+      "completed_utc": "2026-10-23T10:35:43.772858+00:00",
+      "orchestrator_request_start": 1.139,
+      "total_seconds": 12.818,
+      "band": "GREEN",
+      "first_transfer": {
+        "t": 8.57,
+        "target": "interview_preparation_agent"
+      },
+      "actual_specialist": "interview_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 8.58,
+      "first_specialist_event": 8.58,
+      "handoff_seconds": 0.01,
+      "first_helper": null,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 4.23,
+      "orchestrator_model_seconds": 7.428,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.138,
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "t": 8.583,
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 29781,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.571,
+          "fingerprint": "b2b2470a1f10ed405f93fc57548b668bcd8a5dd8c2751d502405205c64ddbb46",
+          "args": {
+            "agent_name": "interview_preparation_agent"
+          },
+          "end": 8.574,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.139,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 8.567,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.567,
+          "duration": 7.428
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 8.584,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 29781,
+          "tool_description_count": 3,
+          "end": 12.814,
+          "duration": 4.23,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 12.814
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 12.814
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 12.815
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 12.817
+        }
+      ],
+      "events": [
+        {
+          "t": 8.57,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "interview_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.578,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 8.58,
+          "author": "interview_preparation_agent",
+          "parts": []
+        },
+        {
+          "t": 12.815,
+          "author": "interview_preparation_agent",
+          "parts": []
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 7.428,
+          "SPECIALIST_PRE_TOOL_WAIT": 4.23,
+          "UNOBSERVED_RUNTIME_WAIT": 1.16
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 8.57,
+          "transfer_to_agent": {
+            "t": 8.57,
+            "target": "interview_preparation_agent"
+          },
+          "first_specialist_event": 8.58,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": null,
+          "stream_completion": 12.818
+        },
+        "failure": {
+          "cause": "PROVIDER_CAPACITY",
+          "stage": "SPECIALIST_CAPACITY"
+        }
+      },
+      "manual_review": {
+        "verdict": "UNASSESSED: SPECIALIST_CAPACITY 429",
+        "notes": "Correct Interview transfer, then 429 before specialist answer. Not a completed-answer latency or a compression failure."
+      },
+      "primary_failure_category": "SPECIALIST_CAPACITY",
+      "source_changed_during_run": false,
+      "compression_causal_latency_claim": false
+    }
+  ],
+  "planned_case_ids": [
+    "wave5_health_probe",
+    "wave5_certification_stable",
+    "wave5_interview_stable",
+    "wave5_networking_stable",
+    "wave5_research_stable",
+    "wave5_certification_current",
+    "wave5_networking_current"
+  ],
+  "remaining": [
+    "wave5_networking_stable",
+    "wave5_research_stable",
+    "wave5_certification_current",
+    "wave5_networking_current"
+  ],
+  "deferred_cases": [
+    {
+      "id": "wave5_networking_stable",
+      "reason": "Stopped all live calls immediately after Interview specialist 429; no retries."
+    },
+    {
+      "id": "wave5_research_stable",
+      "reason": "Stopped all live calls immediately after Interview specialist 429; no retries."
+    },
+    {
+      "id": "wave5_certification_current",
+      "reason": "Stopped all live calls immediately after Interview specialist 429; no retries."
+    },
+    {
+      "id": "wave5_networking_current",
+      "reason": "Stopped all live calls immediately after Interview specialist 429; no retries."
+    }
+  ],
+  "live_status": "INCOMPLETE DUE TO PROVIDER CAPACITY",
+  "summary": {
+    "attempts": 3,
+    "completed": 2,
+    "capacity_failed_attempts": 1,
+    "reverts": [],
+    "latency_improvement_demonstrated": false,
+    "current_factual_canaries_attempted": 0
+  }
+}

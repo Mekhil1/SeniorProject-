@@ -1,0 +1,326 @@
+{
+  "pytest_exit_code": 1,
+  "network_and_auth_blocked": true,
+  "pytest_results": [
+    {
+      "test": "tests/test_agents.py::test_agent_page[academic]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_agents.py::test_agent_page[tutoring]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_agents.py::test_agent_page[career]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_agents.py::test_agent_page[success]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_agents.py::test_agent_starter_endpoint[tutoring]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_agents.py::test_agent_starter_endpoint[career]",
+      "phase": "call",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/test_agents.py::test_agent_starter_endpoint[success]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_agents.py::test_advising_remains_available",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_api.py::test_health",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_api.py::test_adviser_requires_question",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_api.py::test_semester_query_uses_database",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_api.py::test_math_query_uses_database",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_api.py::test_frontend_routes",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_engine_selection_and_all_runtime_urls[None-3463694723959488512]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_engine_selection_and_all_runtime_urls[7801100969768386560-7801100969768386560]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[ ]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[abc]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[123/456]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[-123]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[123?x=1]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[123\\n]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[\\uff11\\uff12\\uff13]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/test_career_config.py::test_invalid_engine_fails_before_authentication_or_network[ 123 ]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_baseline.py::test_plan_covers_domains_and_repeated_stable_samples",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_baseline.py::test_triage_boundaries",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_baseline.py::test_thoughts_and_signature_fields_are_not_serialized",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_baseline.py::test_credential_redaction",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_baseline.py::test_retrieval_union_does_not_double_count_overlap",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_baseline.py::test_429_detection_without_recording_exception_text",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_baseline.py::test_model_timing_excludes_tools_awaited_after_response",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave2_parity.py::test_every_component_matches_reviewed_wave2_hashes",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave2_parity.py::test_wave1_gates_and_other_entry_instructions_are_preserved",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave2_parity.py::test_names_models_tools_relationships_and_callbacks_match_checkpoint",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave2_parity.py::test_current_canaries_are_scoped_and_in_requested_order",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_search_budget.py::test_third_search_is_denied_without_increasing_execution_count",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_search_budget.py::test_new_turn_resets_budget_even_when_state_is_reused",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_search_budget.py::test_specialist_and_session_counters_are_isolated",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_search_budget.py::test_nonsearch_tools_are_untouched_and_do_not_consume_budget",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave3.py::test_phases_are_disjoint_and_sum_to_total",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave3.py::test_capacity_phase_and_censored_helper_stall",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave3.py::test_distribution_does_not_conclude_from_single_run",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave3.py::test_previous_instruction_prefixes_all_preserved",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave3.py::test_previous_artifacts_unchanged",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave3.py::test_prompt_metrics_are_local_counts_only",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave3.py::test_between_helpers_is_post_tool_wait",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave4_parity.py::test_exact_wave3_ast_after_declared_additions_removed",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave4_parity.py::test_previous_artifacts_and_workflow_files_identical",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave4_parity.py::test_compression_estimate_is_not_runtime_reduction",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_only_seven_instruction_expressions_changed",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_each_replacement_is_auditable_and_all_other_text_preserved[interview_preparation_agent]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_each_replacement_is_auditable_and_all_other_text_preserved[research__graduate_pathways_agent]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_each_replacement_is_auditable_and_all_other_text_preserved[networking__professional_communication_agent]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_each_replacement_is_auditable_and_all_other_text_preserved[certification__technical_development_agent]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_each_replacement_is_auditable_and_all_other_text_preserved[internship__job_preparation_agent]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_each_replacement_is_auditable_and_all_other_text_preserved[resume__portfolio_agent]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_each_replacement_is_auditable_and_all_other_text_preserved[skill_gap__career_roadmap_agent]",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_mechanics_models_helpers_career_trust_root_and_previous_artifacts_unchanged",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_date_and_evidence_scopes_not_removed",
+      "phase": "call",
+      "outcome": "passed"
+    },
+    {
+      "test": "tests/diagnostics/test_career_wave5_parity.py::test_historical_test_normalization_rejects_unmeasured_prompt",
+      "phase": "call",
+      "outcome": "passed"
+    }
+  ],
+  "legacy_stale_test": "tests/test_agents.py::test_agent_starter_endpoint[career] expects the old 501 stub; authentication-blocked implemented service returns 503.",
+  "adk_unittest": {
+    "tests_run": 63,
+    "failures": 0,
+    "errors": 0,
+    "successful": true,
+    "requests": "mocked only; no cloud calls"
+  },
+  "additional_pytest_validation": {
+    "command": "pytest tests/diagnostics/test_career_wave5_parity.py -q -p no:cacheprovider",
+    "passed": 12,
+    "new_unique_test": "test_reduction_is_not_only_whitespace",
+    "new_unique_test_passed": true
+  },
+  "unique_totals": {
+    "passed": 123,
+    "known_stale_failed": 1,
+    "total": 124,
+    "career_evidence_configuration_diagnostic_passed": 111
+  }
+}

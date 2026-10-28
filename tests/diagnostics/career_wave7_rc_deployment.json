@@ -1,0 +1,46 @@
+{
+  "started_utc": "2026-10-23T20:00:28.023674+00:00",
+  "operation": "CREATE_NEW_ONLY",
+  "production_target": false,
+  "status": "created",
+  "display_name": "Career & Professional Orchestration Agent - Final Dev RC",
+  "staging_bucket": "gs://cosc-490-agent-staging-20261021-a41c7e9b",
+  "staging_prefix": "career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f",
+  "extra_packages": [
+    "agents/__init__.py",
+    "agents/career/__init__.py",
+    "agents/career/workflow/__init__.py",
+    "agents/career/workflow/agent.py",
+    "agents/career/workflow/evidence.py",
+    "agents/career/workflow/shared_evidence.py",
+    "agents/career/workflow/main.py",
+    "agents/career/workflow/requirements.txt"
+  ],
+  "resource_name": "projects/717132085388/locations/us-west1/reasoningEngines/932407850586603520",
+  "engine_id": "932407850586603520",
+  "create_seconds": 157.715,
+  "completed_utc": "2026-10-23T20:03:15.478608+00:00",
+  "create_time": "2026-10-23T20:00:46.298162Z",
+  "update_time": "2026-10-23T20:03:13.963316Z",
+  "resource_metadata": {
+    "display_name": "Career & Professional Orchestration Agent - Final Dev RC",
+    "name": "projects/717132085388/locations/us-west1/reasoningEngines/932407850586603520",
+    "spec": {
+      "agent_framework": "google-adk",
+      "deployment_spec": {
+        "env": [
+          {
+            "name": "GOOGLE_CLOUD_AGENT_ENGINE_ENABLE_TELEMETRY",
+            "value": "true"
+          }
+        ]
+      },
+      "package_spec": {
+        "dependency_files_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/dependencies.tar.gz",
+        "pickle_object_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/agent_engine.pkl",
+        "python_version": "3.13",
+        "requirements_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-1c1060c9113a433ba3462b274eb30c4f/requirements.txt"
+      }
+    }
+  }
+}

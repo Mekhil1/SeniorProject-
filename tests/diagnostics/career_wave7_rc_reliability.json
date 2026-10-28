@@ -1,0 +1,17 @@
+{
+  "case": "rc_networking_current",
+  "claim": "C1: SACS membership plus mentoring/workshops/networking benefits",
+  "rendered_status": "VERIFIED CURRENT",
+  "citation_http_status": 200,
+  "resolved_source_url": "https://www.morgan.edu/computer-science/current-students/sacs",
+  "canonical_review_source": "https://www.morgan.edu/computer-science/current-students/sacs",
+  "source_sections": {
+    "goals": true,
+    "vision": true,
+    "join_invitation": true
+  },
+  "review": "Membership invitation is supported; goals/vision for mentoring/workshops do not establish current delivery of the entire composite claim. The response treats the full claim as VERIFIED CURRENT without a stated current date/cycle or benefit limitation.",
+  "internal_date_value": "Not exposed in outer response; no unobserved verifier field is inferred.",
+  "decision": "RELIABILITY_FAILURE",
+  "minimal_required_repair": "Tighten Networking evidence adjudication for goal/vision language: retain the supported membership scope and mark unestablished operational benefits CURRENT STATUS UNVERIFIED; add a captured-case regression. Inspect the shared_evidence.py verifier status acceptance before proposing the narrow change; no prompt/model/tool/graph redesign."
+}

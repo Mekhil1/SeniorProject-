@@ -1,0 +1,22 @@
+{
+  "git_diff_check_passed": true,
+  "new_artifact_whitespace_passed": true,
+  "privacy_passed": true,
+  "source_parity_passed": true,
+  "report_historical_prefix_preserved": true,
+  "index_empty": true,
+  "head": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "working_tree_status": " M agents/career/workflow/agent.py\n M agents/career/workflow/deploy_dev.py\n?? agents/career/workflow/OPTIMIZATION_REPORT.md\n?? agents/career/workflow/shared_evidence.py\n?? tests/diagnostics/\n",
+  "acceptance_files": [
+    "tests/diagnostics/career_rc2_completion_freeze.json",
+    "tests/diagnostics/career_rc2_completion_remote.py",
+    "tests/diagnostics/career_rc2_completion_remote.json",
+    "tests/diagnostics/career_rc2_completion_flask.py",
+    "tests/diagnostics/career_rc2_completion_flask_checks.py",
+    "tests/diagnostics/career_rc2_completion_final.json",
+    "tests/diagnostics/career_wave7_rc2_completion_adk.json",
+    "tests/diagnostics/career_wave7_rc2_completion_pytest.json"
+  ],
+  "report": "agents/career/workflow/OPTIMIZATION_REPORT.md",
+  "product_source_changes_this_run": []
+}

@@ -1,0 +1,1374 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "3a69f9fe3d62cf52b504cbd6821fcc47e67c95061c75a70021f92d9d66a5e60e",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "wave2_certification_current",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?",
+      "status": "failed",
+      "completed_utc": "2026-10-22T21:34:51.554061+00:00",
+      "orchestrator_request_start": 1.088,
+      "total_seconds": 18.544,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 7.351,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 7.359,
+      "first_specialist_event": 14.08,
+      "handoff_seconds": 6.729,
+      "first_helper": 14.094,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 4.45,
+      "specialist_model_seconds": 6.717,
+      "orchestrator_model_seconds": 6.261,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.352,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 7.355,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.081,
+          "fingerprint": "ddc9172cdfa31bfb3e1bab7924274b259d4f5d6f381ed680df20dca22d286c63",
+          "args": {
+            "request": "CompTIA Security+ official exam code version price site:comptia.org"
+          },
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null,
+          "end": 18.544,
+          "duration": 4.463,
+          "censored": true
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.094,
+          "index": 1,
+          "end": 18.544,
+          "duration": 4.45,
+          "censored": true
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.088,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.349,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.349,
+          "duration": 6.261
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 7.362,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 14.079,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 14.079,
+          "duration": 6.717
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 14.097,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 18.538,
+          "duration": 4.441,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 18.538
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 18.539
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 18.539
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 18.543
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 18.544
+        }
+      ],
+      "events": [
+        {
+          "t": 7.351,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.358,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 14.08,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "CompTIA Security+ official exam code version price site:comptia.org"
+              }
+            }
+          ]
+        },
+        {
+          "t": 18.539,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": []
+        },
+        {
+          "t": 18.543,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        }
+      ],
+      "quality_review": {
+        "verdict": "CAPACITY BLOCKED",
+        "notes": "Final guarded source hit 429 inside first Search helper; no final answer or grounded queries. Not a completed latency, query-reduction or reliability result; no further current Certification attempt."
+      }
+    },
+    {
+      "id": "wave2_networking_current",
+      "domain": "networking",
+      "label": "Networking & Professional Communication",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:39:08.049919+00:00",
+      "orchestrator_request_start": 1.065,
+      "total_seconds": 47.526,
+      "band": "ORANGE",
+      "first_transfer": {
+        "t": 8.28,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 8.289,
+      "first_specialist_event": 13.924,
+      "handoff_seconds": 5.644,
+      "first_helper": 13.937,
+      "first_text": 47.524,
+      "final_answer": "Based on current Morgan State University resources, computer science students have several highly active, department-supported channels and organizations designed to help them build professional networks, meet recruiters, and connect with peers. \n\nThe three strongest and most direct networking resources for Morgan State CS students are:\n\n### 1. The Society for the Advancement of Computer Science (SACS)\n* **What it is:** Founded in 1964, SACS is the cornerstone computer science student organization at Morgan State and serves as an official affiliate student chapter of the **Association for Computing Machinery (ACM)**.\n* **How it helps you network:** SACS is one of the primary pipelines for corporate partners looking to recruit MSU tech talent. The group frequently hosts technical workshops, mock interviews, and peer mentoring. They partner with more than 15 corporate sponsors to bring industry professionals and alumni directly to students for recruitment and networking opportunities.\n* **How to connect:** Students can find SACS and sign up for membership through **The Bears Den** (Morgan State's student organization hub).\n\n### 2. Women in Computer Science (WiCS)\n* **What it is:** WiCS is an active campus organization dedicated to supporting, mentoring, and advancing women pursuing degrees in technology.\n* **How it helps you network:** WiCS hosts professional development and branding workshops (such as resume reviews and interview preparation) and organizes community service projects. Additionally, the group facilitates group attendance and networking at major external national conferences, such as the **Grace Hopper Celebration of Women in Computing**, which is one of the largest career fairs for women in tech globally.\n* **How to connect:** Look up WiCS on **The Bears Den** or inquire directly within the Computer Science Department office.\n\n### 3. Google in Residence (GIR) & Departmental Recruiting Events\n* **What it is:** Morgan State is one of a select group of HBCUs that hosts the **Google in Residence** program, where an active Google software engineer spends a semester on campus teaching introductory courses and engaging with students.\n* **How it helps you network:** This program gives you direct, weekly access to a professional engineer at a major tech company. The resident engineer hosts open office hours, conducts mock technical interviews, and provides insider guidance on breaking into the tech industry. Additionally, the CS department hosts tech mixers, company information sessions (featuring employers like Microsoft, JP Morgan Chase, and Stanley Black & Decker), and technical events.\n* **How to connect:** To find out when the resident engineer is holding office hours or when upcoming company info sessions are scheduled, monitor the department's active X/Twitter account (**@Morgan_CompSci**) and check bulletin boards in the CS department.\n\n---\n\n### What to Keep in Mind (Verification Gaps)\nWhile these resources are actively established at Morgan State, exact dates, active office hours, corporate visitor schedules, and event registration details (such as for the annual *Morgan TechFest* or specific hackathons) change each semester. \n\n* **To verify current schedules:** Log into **The Bears Den** or visit the Computer Science Department office directly to ensure you have the most up-to-date meeting times and contact information for current student officers.",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 10,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 25.681,
+      "specialist_model_seconds": 13.528,
+      "orchestrator_model_seconds": 7.213,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.281,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 8.284,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 13.924,
+          "fingerprint": "313c95cfd9fcef4d513a56ab4621e25b921bdadf88329f69391f53a1e7a84220",
+          "args": {
+            "request": "Morgan State University Computer Science student organizations clubs networking"
+          },
+          "end": 39.618,
+          "duration": 25.694,
+          "quality_output": "Computer Science and technology students at Morgan State University (MSU) have access to a rich ecosystem of student organizations, professional associations, and networking initiatives. These clubs play a vital role in helping students build technical skills, secure internships, find mentors, and connect with top-tier technology companies. \n\nThe primary student organizations, professional chapters, and networking opportunities available to Computer Science majors at Morgan State University include:\n\n---\n\n### 1. Primary Computer Science & Tech Clubs\n\n#### **The Society for the Advancement of Computer Science (SACS)**\n* **Overview:** Founded in 1964, SACS is the cornerstone computer science club on campus. In 1976, SACS officially became a student affiliate chapter of the **Association for Computing Machinery (ACM)**, though it continues to proudly use the SACS name to honor its history. \n* **Who it’s for:** Primarily Computer Science, Information Systems, Computer Engineering, and other tech-focused majors.\n* **Networking & Professional Focus:** \n  * Partners with over 15 corporate sponsors to expand job and career opportunities.\n  * Hosts technical workshops and mock interview preparation.\n  * Offers tutoring for CS courses and peer-to-peer mentoring.\n  * Connects students directly with industry professionals and MSU alumni.\n\n#### **Women in Computer Science (WiCS)**\n* **Overview:** WiCS is a highly active organization dedicated to supporting and elevating women in tech, providing a strong sense of sisterhood, service, and professional advancement. \n* **Networking & Professional Focus:** \n  * Hosts professional development workshops, such as \"Beauty & Branding\" events, focused on resume building and technical interview prep.\n  * Coordinates attendance and networking at major external events like the **Grace Hopper Celebration of Women in Computing** and local hackathons.\n  * Partners with organizations like the Baltimore Hunger Project for community service (\"Pack with Purpose\") to foster strong leadership and team-building skills.\n\n#### **Association of Information Technology Professionals (AITP)**\n* **Overview:** Chartered in 1984 as the \"IT Club\" and housed under the Information Systems program, AITP welcomes members from all technology-focused majors. \n* **Networking & Professional Focus:** \n  * Offers workshops on programming, database management, and networking.\n  * Facilitates team-based projects and sponsors students to compete in national IT competitions.\n  * Connects students with employers and managers looking for tech and information systems talent.\n\n---\n\n### 2. Broader STEM & Engineering Networks\n\nBecause computer science overlaps heavily with engineering, CS students benefit immensely from joining broader STEM networks on campus:\n\n#### **National Society of Black Engineers (NSBE) - MSU Chapter**\n* **Overview:** The MSU Clarence M. Mitchell Jr. School of Engineering hosts a highly decorated chapter of NSBE. \n* **Networking & Professional Focus:** \n  * NSBE is one of the most powerful networking vehicles for minority tech students in the country.\n  * Provides access to massive national and regional career fairs, corporate sponsorships, and exclusive recruitment pipelines with Fortune 500 tech companies.\n\n#### **IEEE Solid-State Circuits Society (SSCS) Student Branch Chapter**\n* **Overview:** Morgan State University made history as the **first-ever HBCU** to establish an IEEE SSCS Student Branch Chapter. It is closely advised by Dr. Kevin T. Kornegay, director of the Cybersecurity Assurance and Policy (CAP) Center.\n* **Networking & Professional Focus:** \n  * Connects students to the global semiconductor, hardware systems, and microelectronics industries.\n  * Hosts Distinguished Lecture Series and technical discussions featuring global experts in secure hardware design.\n\n---\n\n### 3. Key Tech Programs and Networking Events\n\nIn addition to clubs, the Computer Science Department hosts structured programs designed to bridge the gap between classroom learning and career entry:\n\n* **Google in Residence (GIR) Program:** MSU is one of a select group of universities partnering with Google for this initiative. A Google Software Engineer spends a semester on campus teaching introductory CS courses, hosting open office hours, conducting mock interviews, and providing direct technical interview prep.\n* **Morgan TechFest:** This is an annual, all-day technology event hosted by the CS Department. It is a premier networking hub where students can pitch their research or projects (in AI, Cybersecurity, Robotics, and Blockchain), interact with tech experts, and apply for tech industry jobs on-site.\n* **The CAP Center (Cybersecurity Assurance & Policy):** For students interested in cybersecurity, the CAP Center (an NSA/DHS National Center of Academic Excellence) provides a built-in network. It features peer and industry mentoring, research funding (such as the CyberCorps Scholarship for Service), and highly direct recruitment pipelines to federal agencies and defense contractors like the NSA, NIST, and Johns Hopkins.\n\n---\n\n### How to Get Involved\nStudents can easily find and join these clubs using **The Bears Den**, Morgan State’s online student organization hub. For real-time updates on tech mixers, company information sessions (with partners like Microsoft, Stanley Black & Decker, and JP Morgan Chase), and hackathons, students should follow the CS department's active Twitter account: **@Morgan_CompSci**.",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 13.937,
+          "index": 1,
+          "end": 39.618,
+          "duration": 25.681
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.065,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 8.278,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.278,
+          "duration": 7.213
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 8.292,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 13.922,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 13.922,
+          "duration": 5.63
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "start": 13.941,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Morgan State University Computer Science student organizations clubs",
+            "Morgan State University CS student organizations",
+            "Morgan State University NSBE",
+            "Morgan State University cybersecurity club student organization",
+            "Morgan State University Women in Computer Science",
+            "Morgan State University tech clubs networking",
+            "\"Society for the Advancement of Computer Science\" Morgan State University",
+            "Morgan State University WiCS",
+            "Morgan State University ACM student chapter",
+            "Morgan State University IEEE student chapter"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFE92JX5YSe536xnakGf3MRe4pPVKllfeBPa0hxA-balygRUvzVLCFl8_sx1RI9FK90GacrUPG1B_kj8-WsNgVcjdmpGKiO58LuoFh7v3cIcGtHPGGc15cYN501xbn2We_I-mRqJz75Ww5lZGVYnyRYHeOnMxtAf4Y=",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHw9ByZjmAjyOp0qxcF609hfedrPD7cnWpmX6_9rH7mMeN-uPDI0qNyMtt7DAmhmmwgU-OylbdBzEwut7hGOgQtjlARTh_j8RdFs0r-WmMCaNw9zyk8LY2BsxVoW7s_9VsBjAlXduzlydtgbeyydSiIitFB7l0SxcQgDCOzgJwVggK0lhq2SQY5np5OBjoNNEs-AYyKhQvA7cfGedJG7UuKAQZge7X1IeviODAXx1Cw0RRmGhC-bo4h4P6zKnjOGr3Gfh_wJelkyCJgHElXRRYXDxX6QVPmk8Mc9dvYWJYLqCcl7kERpmS9C-KCz0UrGtW5cs20fg==",
+              "title": "researchgate.net"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE4z80iUJE61HaRDOEQfX73RmRrW30NbuCqIps2FU_iNC9Z8X5YIrWgIzsa9CLmpYvifQm_fJJPmAQ1Irle8tMC1lxS9Fxg7OfFm-M9J4AAUkCb1vaWYyrcOJKMwhfjjKLqrJ4=",
+              "title": "instagram.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFJXm4AWkiZwKNVxTh09TbcrMekqsuTqk5ocezgW15xOr9HV_vYQXyrBXep5mYlxotHOYg-ypr5Skg9dr9v8emQm06-uZTwlHdq7ViCkQmsmP-UEJi5gjCLhbYxOXegtG8gEX83eKUWGJiJsdtEbiLpQK-shGUZ1OcLzLI4-gcD4kUzp63QabXMxc78gnCqk5G5sI5IIRUExTVDI2CDzTpkX9iPzVOH2-0I-FiVk-OskR0oAdGyLDzwOPHzB0-prC2WliDsOqRhyUgXUBJamq0ZB0nq-yV0JRznMe-PZbyFcm-c_PMzFz7_UjhwMH-HKMl5YolPna1FCDkFtHS",
+              "title": "bowiestate.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEPetlnQmt3K77js52T2hOc2ZcWaP6KxBvhe26argtOdHRe0t6gBSOVQFR-L8YABUxihUwUUy2ebLnbuDFpm-PSgHTchep6U7prR5aRB_W3xcMZI2Yy2yn08D4v2IuojUjeJvc=",
+              "title": "instagram.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7yV63jMA1rwIzbS49CjakIryiggM1C-YpK_SWY3tCSlq7u7b1HwuYes8zHL44HVIumfTk_efliFmeBzuxcmPtbO-VPsxvbDjOII0SI714eubIeL1sQEoYyIoh7WjIcKYP_6XVyOGD2LE4sblcyr3tqmHM8azzpWozwsPP9dR9uQGk4BLx2TcP23zbWSBl0QO-JE1_tTM=",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPjNXpcGJEKCMuzPci6Au6lIW67l_KvqdFa8KTGyN-ERoMatNLsYXl8V2HZYcUxyDgdIqR_NwE3_vIFggTqdlTvcfq-KszDCFuFoiGGLghJG4vGunbdS0Ak8TTlGPCL-GuYA5iIdDuVV9QO0CCZ_-xPnuc-gGHWrCuNXSfNnMWZlYGuMBmOpKfiUR1G2z6EtMz-ALWBZoUqtsVIJxhvtdcE_PCy9d92vfcMn3A",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG87LS307O6Os6KDXNDCc3o_8JKBCf7KFV6MMNNkifnd8_q51nr_bpSsdK2xw98YVaVlVczzxc7QJE2DBheupIOkbewyNWkc4RcEOeH6krxsE3JCF3AnCOeKBmHfBxv4uKWAyYlinpFLKrTe3G2zRqLZXHQkNmy4Gm1CVvgNbcqRwTLDEyxNGfuUVc5U4s4milr5A==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSyF-2l9k8QzQTMfs6GlFjykj-Jr_PKIoGiTCeCh29gT9aSJvl8EcnsmezaGxanJ5VlThEDB5ZjU3YOOqBhk3rfhRp8JnmUluBSXZpO9tGex8IaLjPFf7n5gg5rArHlCUgkaBT_k3UFgQH6lUSqzHJ3hGGlolorpkuEt6k1U0tA1B5LcswST0GCRJr6valLwz8ZyRZYtdnIOWW_R8RhcTVwD3UiJs409OKqn71yaeYSvVF",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGHLppj39aqwcSwt33vz2RtZhTC6dfNceaGsR9f3azQgwQsRtL5WwsKQIwjOB-MQj-NQksMIeTq1HEmpN0urP8D9d9ZP1bKA0Ri1VdoCJCRcYQihDjESazhNCZr_zSTICgFV0Uo5N3CpEjOAn3D4PxUERF2-nzpPw7o5Vb28L94GNw_PhxfLKle",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtFTK9Coy8q1W-GzPLCdWIe7TyNYiImx7dWJMi-vBosO4-GXH_IOPZfuF0hePZmXdCeImdK3AHqCelnURdB-LYvQqbv2Y2Aqc74yFmUDs_j-6_5QoYk_q6sf2vt0RBvvOVeBh88Q==",
+              "title": "nsf.gov"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5eQJxvsBuS-3Z7z3xg9f3aX2Y__wkDreCG0pzCIaG86KR4MtHRfNjKN8ZJ4biPKUyWgGaUx_9Na2YRTjtTydeiYYSv3wn-T6YC6H-SU5C148eXypYw9G1Btbu_YopmN6s8U9xT2kkio7h",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHheVI5HfwdUHSvrGPyBnL2qss2ZyTCaDLMqm--Sc7R1GUBbT1W66Ui4vKLDIRguQzwzeFlHgCzaU78f_yL82ca0npxcRQbRJhr6pKr0KNbhi0_aTWXneXkKDnOk_JwFZdYxg==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7cuWiu0cL5qt6dHDdgiaKkJ_65tLDaaWue-1E5-gHGKccguqpNj85Nw-M8r02yA9mgDyuMHWAc8oX_Xprpxw4lnee9KB20hs6aKFXx3nWq5e_L5k1",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDK9OX_fZlqrdJDWkOOtluMmAid1jBr-CEhELRWxEuIYk5Ko0dt6FRoKHraaIh1xWWxcxHkSTVChFf2KO3WYXrO7p2NY8BtKvGJHlJ5kf3lts0qFSWzDZTnuQgqpJBgnJi3g==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7YeMVVCS1-gKr4wPPNhXHsVgi3lQwVBfkojXdGt2ZDOMsr09KHYsxuzYsjm5-ROEGzlgAXWHUWbUOr-J4yN-uk4dmOkhQ8knX2HKZy2HKQWw_YbqsXDN1_DeWgzUfF0XBY6Ff7-gHyXw0lBcaxXp_vZ0y",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLgR3YgtGLTf0eB96aXzlrmFqr2UjabxdutG1j8axreEVXvi2dBFvc8QB2oLl7_DnNg0NOWY-_CbZro0lee-GZ8Pyop9EDt1HGXZNbl1eAZnt0AnX4d7esvFWAOpq7sG-D7VoI7YlHvg3oNcUcx3-F8KbAl_pzMo_uGX3N0kG7750Fje5eT5hT_tvtmHvI",
+              "title": "morgan.edu"
+            }
+          ],
+          "response_received": 39.614,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 39.614,
+          "duration": 25.673
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 39.624,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 47.522,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 47.522,
+          "duration": 7.898
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.28,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.287,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 13.924,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "Networking___Professional_Communication_Agent_google_search_agent",
+              "args": {
+                "request": "Morgan State University Computer Science student organizations clubs networking"
+              }
+            }
+          ]
+        },
+        {
+          "t": 39.617,
+          "author": "Networking___Professional_Communication_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "Computer Science and technology students at Morgan State University (MSU) have access to a rich ecosystem of student organizations, professional associations, and networking initiatives. These clubs play a vital role in helping students build technical skills, secure internships, find mentors, and connect with top-tier technology companies. \n\nThe primary student organizations, professional chapters, and networking opportunities available to Computer Science majors at Morgan State University include:\n\n---\n\n### 1. Primary Computer Science & Tech Clubs\n\n#### **The Society for the Advancement of Computer Science (SACS)**\n* **Overview:** Founded in 1964, SACS is the cornerstone computer science club on campus. In 1976, SACS officially became a student affiliate chapter of the **Association for Computing Machinery (ACM)**, though it continues to proudly use the SACS name to honor its history. \n* **Who it’s for:** Primarily Computer Science, Information Systems, Computer Engineering, and other tech-focused majors.\n* **Networking & Professional Focus:** \n  * Partners with over 15 corporate sponsors to expand job and career opportunities.\n  * Hosts technical workshops and mock interview preparation.\n  * Offers tutoring for CS courses and peer-to-peer mentoring.\n  * Connects students directly with industry professionals and MSU alumni.\n\n#### **Women in Computer Science (WiCS)**\n* **Overview:** WiCS is a highly active organization dedicated to supporting and elevating women in tech, providing a strong sense of sisterhood, service, and professional advancement. \n* **Networking & Professional Focus:** \n  * Hosts professional development workshops, such as \"Beauty & Branding\" events, focused on resume building and technical interview prep.\n  * Coordinates attendance and networking at major external events like the **Grace Hopper Celebration of Women in Computing** and local hackathons.\n  * Partners with organizations like the Baltimore Hunger Project for community service (\"Pack with Purpose\") to foster strong leadership and team-building skills.\n\n#### **Association of Information Technology Professionals (AITP)**\n* **Overview:** Chartered in 1984 as the \"IT Club\" and housed under the Information Systems program, AITP welcomes members from all technology-focused majors. \n* **Networking & Professional Focus:** \n  * Offers workshops on programming, database management, and networking.\n  * Facilitates team-based projects and sponsors students to compete in national IT competitions.\n  * Connects students with employers and managers looking for tech and information systems talent.\n\n---\n\n### 2. Broader STEM & Engineering Networks\n\nBecause computer science overlaps heavily with engineering, CS students benefit immensely from joining broader STEM networks on campus:\n\n#### **National Society of Black Engineers (NSBE) - MSU Chapter**\n* **Overview:** The MSU Clarence M. Mitchell Jr. School of Engineering hosts a highly decorated chapter of NSBE. \n* **Networking & Professional Focus:** \n  * NSBE is one of the most powerful networking vehicles for minority tech students in the country.\n  * Provides access to massive national and regional career fairs, corporate sponsorships, and exclusive recruitment pipelines with Fortune 500 tech companies.\n\n#### **IEEE Solid-State Circuits Society (SSCS) Student Branch Chapter**\n* **Overview:** Morgan State University made history as the **first-ever HBCU** to establish an IEEE SSCS Student Branch Chapter. It is closely advised by Dr. Kevin T. Kornegay, director of the Cybersecurity Assurance and Policy (CAP) Center.\n* **Networking & Professional Focus:** \n  * Connects students to the global semiconductor, hardware systems, and microelectronics industries.\n  * Hosts Distinguished Lecture Series and technical discussions featuring global experts in secure hardware design.\n\n---\n\n### 3. Key Tech Programs and Networking Events\n\nIn addition to clubs, the Computer Science Department hosts structured programs designed to bridge the gap between classroom learning and career entry:\n\n* **Google in Residence (GIR) Program:** MSU is one of a select group of universities partnering with Google for this initiative. A Google Software Engineer spends a semester on campus teaching introductory CS courses, hosting open office hours, conducting mock interviews, and providing direct technical interview prep.\n* **Morgan TechFest:** This is an annual, all-day technology event hosted by the CS Department. It is a premier networking hub where students can pitch their research or projects (in AI, Cybersecurity, Robotics, and Blockchain), interact with tech experts, and apply for tech industry jobs on-site.\n* **The CAP Center (Cybersecurity Assurance & Policy):** For students interested in cybersecurity, the CAP Center (an NSA/DHS National Center of Academic Excellence) provides a built-in network. It features peer and industry mentoring, research funding (such as the CyberCorps Scholarship for Service), and highly direct recruitment pipelines to federal agencies and defense contractors like the NSA, NIST, and Johns Hopkins.\n\n---\n\n### How to Get Involved\nStudents can easily find and join these clubs using **The Bears Den**, Morgan State’s online student organization hub. For real-time updates on tech mixers, company information sessions (with partners like Microsoft, Stanley Black & Decker, and JP Morgan Chase), and hackathons, students should follow the CS department's active Twitter account: **@Morgan_CompSci**."
+            }
+          ]
+        },
+        {
+          "t": 39.621,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "Networking___Professional_Communication_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 47.523,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "Based on current Morgan State University resources, computer science students have several highly active, department-supported channels and organizations designed to help them build professional networks, meet recruiters, and connect with peers. \n\nThe three strongest and most direct networking resources for Morgan State CS students are:\n\n### 1. The Society for the Advancement of Computer Science (SACS)\n* **What it is:** Founded in 1964, SACS is the cornerstone computer science student organization at Morgan State and serves as an official affiliate student chapter of the **Association for Computing Machinery (ACM)**.\n* **How it helps you network:** SACS is one of the primary pipelines for corporate partners looking to recruit MSU tech talent. The group frequently hosts technical workshops, mock interviews, and peer mentoring. They partner with more than 15 corporate sponsors to bring industry professionals and alumni directly to students for recruitment and networking opportunities.\n* **How to connect:** Students can find SACS and sign up for membership through **The Bears Den** (Morgan State's student organization hub).\n\n### 2. Women in Computer Science (WiCS)\n* **What it is:** WiCS is an active campus organization dedicated to supporting, mentoring, and advancing women pursuing degrees in technology.\n* **How it helps you network:** WiCS hosts professional development and branding workshops (such as resume reviews and interview preparation) and organizes community service projects. Additionally, the group facilitates group attendance and networking at major external national conferences, such as the **Grace Hopper Celebration of Women in Computing**, which is one of the largest career fairs for women in tech globally.\n* **How to connect:** Look up WiCS on **The Bears Den** or inquire directly within the Computer Science Department office.\n\n### 3. Google in Residence (GIR) & Departmental Recruiting Events\n* **What it is:** Morgan State is one of a select group of HBCUs that hosts the **Google in Residence** program, where an active Google software engineer spends a semester on campus teaching introductory courses and engaging with students.\n* **How it helps you network:** This program gives you direct, weekly access to a professional engineer at a major tech company. The resident engineer hosts open office hours, conducts mock technical interviews, and provides insider guidance on breaking into the tech industry. Additionally, the CS department hosts tech mixers, company information sessions (featuring employers like Microsoft, JP Morgan Chase, and Stanley Black & Decker), and technical events.\n* **How to connect:** To find out when the resident engineer is holding office hours or when upcoming company info sessions are scheduled, monitor the department's active X/Twitter account (**@Morgan_CompSci**) and check bulletin boards in the CS department.\n\n---\n\n### What to Keep in Mind (Verification Gaps)\nWhile these resources are actively established at Morgan State, exact dates, active office hours, corporate visitor schedules, and event registration details (such as for the annual *Morgan TechFest* or specific hackathons) change each semester. \n\n* **To verify current schedules:** Log into **The Bears Den** or visit the Computer Science Department office directly to ensure you have the most up-to-date meeting times and contact information for current student officers."
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "CALL BUDGET PASS / RELIABILITY & SCOPE FAIL",
+        "notes": "One helper, ten queries, three headline resources, no calendar call; 47.526 s. Helper broadened into historical clubs/sponsors/programs and mixed sources. Final has no source URLs and asserts active Google in Residence weekly access, more than 15 corporate sponsors and current named employer events without current claim-level evidence. Schedule caveats do not verify those active/access/partnership claims. Needs selective deterministic evidence enforcement; facts are unsupported within this run, not independently disproven. Three headline candidates were followed by adjacent event/resource details; candidate scope is still soft."
+      }
+    },
+    {
+      "id": "wave2_research_current",
+      "domain": "research",
+      "label": "Research & Graduate Pathways",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity research opportunities are available at Morgan State?",
+      "status": "timeout_censored",
+      "completed_utc": "2026-10-22T21:43:34.138970+00:00",
+      "orchestrator_request_start": 1.185,
+      "total_seconds": 180.028,
+      "band": "RED",
+      "first_transfer": {
+        "t": 7.562,
+        "target": "research__graduate_pathways_agent"
+      },
+      "actual_specialist": "research__graduate_pathways_agent",
+      "route_match": true,
+      "first_specialist_start": 7.571,
+      "first_specialist_event": 14.929,
+      "handoff_seconds": 7.367,
+      "first_helper": 14.944,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 165.082,
+      "specialist_model_seconds": 7.353,
+      "orchestrator_model_seconds": 6.374,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.564,
+          "fingerprint": "75d4f7d0c37ea2e8b824e87b656b93a4fc1573c0bb9fad421012ba1515729957",
+          "args": {
+            "agent_name": "research__graduate_pathways_agent"
+          },
+          "end": 7.566,
+          "duration": 0.002,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.93,
+          "fingerprint": "6cdc9987c9f93f280becbdd7e39bed16beb9c4b6a57feab8918c6f75ada41662",
+          "args": {
+            "request": "\"cybersecurity\" research center lab faculty \"Morgan State University\" computer science"
+          },
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null,
+          "end": 180.028,
+          "duration": 165.098,
+          "censored": true
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.944,
+          "index": 1,
+          "end": 180.026,
+          "duration": 165.082
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.185,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.559,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.559,
+          "duration": 6.374
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "start": 7.575,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 14.928,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 14.928,
+          "duration": 7.353
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "start": 14.948,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 180.025,
+          "duration": 165.077,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "deadline",
+          "type": "TimeoutError",
+          "code": null,
+          "t": 180.027
+        }
+      ],
+      "events": [
+        {
+          "t": 7.562,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "research__graduate_pathways_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.569,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 14.929,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool": "Research___Graduate_Pathways_Agent_google_search_agent",
+              "args": {
+                "request": "\"cybersecurity\" research center lab faculty \"Morgan State University\" computer science"
+              }
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "WAIT CENSORED / QUALITY UNKNOWN",
+        "notes": "One targeted non-calendar Search helper; parent-to-helper request scoped to Morgan cybersecurity research. First helper waited about 165.08 s without returning before 180 s ceiling. No repeated discovery, no grounded metadata, no final answer, no 429. Candidate count, authoritative source use and availability/funding/eligibility assertions cannot be assessed. Zero exposed queries is missing response metadata, not a proven query reduction."
+      }
+    },
+    {
+      "id": "wave2_interview_current",
+      "domain": "interview",
+      "label": "Interview Preparation",
+      "expected": "interview_preparation_agent",
+      "mode": "current",
+      "prompt": "What is the current interview process for an entry-level cybersecurity role at Microsoft?",
+      "status": "failed",
+      "completed_utc": "2026-10-22T21:44:30.216870+00:00",
+      "orchestrator_request_start": 1.162,
+      "total_seconds": 9.068,
+      "band": "GREEN",
+      "first_transfer": null,
+      "actual_specialist": null,
+      "route_match": false,
+      "first_specialist_start": null,
+      "first_specialist_event": null,
+      "handoff_seconds": null,
+      "first_helper": null,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 0,
+      "orchestrator_model_seconds": 7.901,
+      "tools": [],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.162,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 9.063,
+          "duration": 7.901,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 9.063
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 9.064
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 9.065
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 9.067
+        }
+      ],
+      "events": [
+        {
+          "t": 9.065,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        }
+      ],
+      "quality_review": {
+        "verdict": "ROOT CAPACITY BLOCKED / UNASSESSED",
+        "notes": "429 at root before first transfer, specialist or helper. No current Microsoft process answer, no retrieval behavior or quality can be assessed; not a completed latency or query reduction. No retry."
+      }
+    },
+    {
+      "id": "wave2_certification_stable",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:49:17.693314+00:00",
+      "orchestrator_request_start": 1.129,
+      "total_seconds": 103.381,
+      "band": "RED",
+      "first_transfer": {
+        "t": 8.342,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 8.351,
+      "first_specialist_event": 103.379,
+      "handoff_seconds": 95.037,
+      "first_helper": null,
+      "first_text": 103.38,
+      "final_answer": "Deciding whether to invest time, energy, and money into a cybersecurity certification is a highly individual decision. To help you evaluate whether a credential is worth pursuing for your specific situation, you can use the following decision framework.\n\n---\n\n### **The Evaluation Framework**\n\n#### **1. Career Goal Alignment**\nDifferent certifications target different subfields of cybersecurity. You should match the certification to your target area:\n*   **Defensive Security / SecOps:** Focuses on monitoring, threat detection, and incident response (e.g., CompTIA Security+, CySA+).\n*   **Offensive Security / Penetration Testing:** Focuses on ethical hacking and vulnerability assessment (e.g., OSCP, CompTIA PenTest+).\n*   **Cloud Security:** Focuses on securing cloud architectures (e.g., AWS Certified Security - Specialty, Certificate of Cloud Security Knowledge [CCSK]).\n*   **Governance, Risk, and Compliance (GRC):** Focuses on policy, risk management, and auditing (e.g., ISACA CISA or CRISC).\n\n#### **2. Real-World Job Market Demand**\nBefore paying for an exam, look up 10–15 entry-level internships or job postings in your target geographic area or target companies:\n*   *Are employers actually listing this certification as a \"required\" or \"preferred\" qualification?* \n*   If most postings list the certification, it may help you pass initial automated resume screens. If they do not list it, your time might be better spent elsewhere.\n\n#### **3. Prerequisites and Eligibility**\n*   **Required vs. Recommended:** Some certifications have strict professional experience requirements (e.g., the CISSP requires years of cumulative, paid work experience, though you can take the exam to become an \"Associate\" first). Ensure you meet the official criteria before paying for materials.\n*   **Academic vs. Professional:** Some entry-level certifications (like CompTIA Security+ or Cisco CCNA) do not have formal eligibility barriers and are highly accessible to students.\n\n#### **4. Cost and Resource Constraints**\n*   **Total Expense:** Calculate the full cost, which includes the exam voucher, study materials (books, practice exams, labs), potential retake fees, and annual maintenance/renewal fees.\n*   **Student Discounts:** Many providers (such as CompTIA) offer academic discounts (often 40–50% off) for students with a valid `.edu` email address. Always verify if student pricing is available before purchasing at retail price.\n\n#### **5. Technical Alternatives**\nA certification validates knowledge, but practical experience demonstrates capability. Ask yourself if your time and money would be better spent on:\n*   **Hands-on Projects:** Building a home lab, configuring active directory, analyzing malware in a sandbox, or setting up firewalls.\n*   **Capture the Flag (CTF) Competitions:** Participating in platforms like Hack The Box, TryHackMe, or college CTF events.\n*   **Open Source or GitHub Contributions:** Developing security tools or scripts.\n\n---\n\n### **To Help Tailor This to You**\nTo help customize this evaluation, could you share a bit more context?\n1.  **Which specific certifications** (if any) are you currently considering?\n2.  **What is your academic year** (e.g., Freshman, Sophomore, Junior, Senior, Graduate student)?\n3.  **What specific subfield or role** in cybersecurity interests you most?\n4.  **What is your general budget and weekly time commitment** available for studying outside of your regular university coursework?",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 95.024,
+      "orchestrator_model_seconds": 7.211,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.342,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 8.346,
+          "duration": 0.004,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.129,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 8.34,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.34,
+          "duration": 7.211
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 8.354,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 103.378,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 103.378,
+          "duration": 95.024
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.342,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.349,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 103.379,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "Deciding whether to invest time, energy, and money into a cybersecurity certification is a highly individual decision. To help you evaluate whether a credential is worth pursuing for your specific situation, you can use the following decision framework.\n\n---\n\n### **The Evaluation Framework**\n\n#### **1. Career Goal Alignment**\nDifferent certifications target different subfields of cybersecurity. You should match the certification to your target area:\n*   **Defensive Security / SecOps:** Focuses on monitoring, threat detection, and incident response (e.g., CompTIA Security+, CySA+).\n*   **Offensive Security / Penetration Testing:** Focuses on ethical hacking and vulnerability assessment (e.g., OSCP, CompTIA PenTest+).\n*   **Cloud Security:** Focuses on securing cloud architectures (e.g., AWS Certified Security - Specialty, Certificate of Cloud Security Knowledge [CCSK]).\n*   **Governance, Risk, and Compliance (GRC):** Focuses on policy, risk management, and auditing (e.g., ISACA CISA or CRISC).\n\n#### **2. Real-World Job Market Demand**\nBefore paying for an exam, look up 10–15 entry-level internships or job postings in your target geographic area or target companies:\n*   *Are employers actually listing this certification as a \"required\" or \"preferred\" qualification?* \n*   If most postings list the certification, it may help you pass initial automated resume screens. If they do not list it, your time might be better spent elsewhere.\n\n#### **3. Prerequisites and Eligibility**\n*   **Required vs. Recommended:** Some certifications have strict professional experience requirements (e.g., the CISSP requires years of cumulative, paid work experience, though you can take the exam to become an \"Associate\" first). Ensure you meet the official criteria before paying for materials.\n*   **Academic vs. Professional:** Some entry-level certifications (like CompTIA Security+ or Cisco CCNA) do not have formal eligibility barriers and are highly accessible to students.\n\n#### **4. Cost and Resource Constraints**\n*   **Total Expense:** Calculate the full cost, which includes the exam voucher, study materials (books, practice exams, labs), potential retake fees, and annual maintenance/renewal fees.\n*   **Student Discounts:** Many providers (such as CompTIA) offer academic discounts (often 40–50% off) for students with a valid `.edu` email address. Always verify if student pricing is available before purchasing at retail price.\n\n#### **5. Technical Alternatives**\nA certification validates knowledge, but practical experience demonstrates capability. Ask yourself if your time and money would be better spent on:\n*   **Hands-on Projects:** Building a home lab, configuring active directory, analyzing malware in a sandbox, or setting up firewalls.\n*   **Capture the Flag (CTF) Competitions:** Participating in platforms like Hack The Box, TryHackMe, or college CTF events.\n*   **Open Source or GitHub Contributions:** Developing security tools or scripts.\n\n---\n\n### **To Help Tailor This to You**\nTo help customize this evaluation, could you share a bit more context?\n1.  **Which specific certifications** (if any) are you currently considering?\n2.  **What is your academic year** (e.g., Freshman, Sophomore, Junior, Senior, Graduate student)?\n3.  **What specific subfield or role** in cybersecurity interests you most?\n4.  **What is your general budget and weekly time commitment** available for studying outside of your regular university coursework?"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "ZERO-TOOL PASS / QUALITY FAIL / LATENCY OUTLIER",
+        "notes": "Completed useful decision framework with Search=URL=0, but specialist model wait was 95.024 s and total 103.381 s versus baseline 16.22-20.26 s. Repeated unsupported 40-50 percent academic-discount and .edu eligibility claims plus exact certification eligibility assertions. Similar stable vendor leakage existed in baseline; zero retrieval is not a factual-quality pass. No model/tool loop occurred. One sample cannot isolate provider variance versus prompt effects; stable performance is not validated as unchanged."
+      }
+    },
+    {
+      "id": "wave2_networking_stable",
+      "domain": "networking",
+      "label": "Networking & Professional Communication",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:50:43.154139+00:00",
+      "orchestrator_request_start": 1.032,
+      "total_seconds": 20.312,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 7.774,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 7.783,
+      "first_specialist_event": 20.309,
+      "handoff_seconds": 12.535,
+      "first_helper": null,
+      "first_text": 20.31,
+      "final_answer": "An introduction to a recruiter should be **concise, professional, and clear about what you are looking for and what you bring to the table**. Recruiters read hundreds of messages, so keeping yours brief and direct will help it stand out.\n\nA strong introduction typically includes:\n1. **Who you are:** Your name, major, university, and current year.\n2. **Your focus:** Your specific interest in cybersecurity (e.g., security operations, penetration testing, GRC, cloud security) and any key hands-on experience (projects, labs, or coursework).\n3. **The reason you are reaching out:** A specific inquiry about an open role, an internship cycle, or a brief question about their team's hiring process.\n4. **A clear, low-pressure next step:** Asking if they are the right point of contact or if they would be open to sharing how candidates are typically selected for these roles.\n\n---\n\n### Three Ways to Introduce Yourself (Templates)\n\nHere are three common formats depending on how you are reaching out. *Remember to replace the bracketed information with your own actual details.*\n\n#### Option 1: The LinkedIn Connection Request (Under 300 characters)\n*Keep this extremely short, as LinkedIn limits character counts for connection notes.*\n\n> \"Hi [Recruiter Name], I’m a Computer Science student at Morgan State focused on cybersecurity. I’ve been practicing on TryHackMe and building home labs. I see you recruit for [Company Name]’s security team and wanted to connect to keep an eye on future internship opportunities. Thanks! — [Your Name]\"\n\n#### Option 2: The Professional Email (Direct Outreach)\n*Use this if you have their email address and want to ask about a specific internship or entry-level role.*\n\n> **Subject:** Morgan State CS Student – Inquiry regarding [Company Name] Cybersecurity Internships\n>\n> \"Hi [Recruiter Name],\n>\n> I hope your week is going well. My name is [Your Name], and I am a [Freshman/Sophomore/Junior/Senior] Computer Science student at Morgan State University, specializing in cybersecurity. \n> \n> I’ve recently completed coursework in [mention 1-2 relevant classes, e.g., Network Security or Operating Systems] and built a [mention a project, e.g., home lab testing packet capture tools / an AWS security group auditing script]. \n>\n> I am very interested in the [Specific Role Name, if applicable, or \"upcoming cybersecurity internship opportunities\"] at [Company Name]. Could you let me know if your team is currently accepting applications for this cycle, or if there is a preferred channel where I should submit my resume?\n>\n> I’ve attached my resume for your review. Thank you for your time and guidance.\n>\n> Best regards,\n>\n> [Your Name]  \n> [Your LinkedIn Profile URL]  \n> [Your Phone Number]\"\n\n#### Option 3: The 30-Second Elevator Pitch (For Career Fairs or In-Person Events)\n*Keep this conversational and natural. Do not try to memorize it word-for-word.*\n\n> \"Hi, I’m [Your Name]. I’m a [Junior] Computer Science student at Morgan State, and my main focus is cybersecurity. Lately, I’ve been working on [mention a specific project or lab, e.g., configuring firewalls in a virtual lab or practicing network analysis on Wireshark]. I saw that [Company Name] has a security analyst internship open, and I wanted to introduce myself to see what specific skills or tools your team values most in candidates for this role.\"\n\n---\n\n### Let's Tailor This to You\nTo help you write a highly personalized message that fits your style, could you tell me a little more about your situation?\n\n1. **How are you contacting them?** (e.g., LinkedIn, email, an upcoming career fair, or following up after an event?)\n2. **What is your current academic year?** (e.g., Sophomore, Junior, Senior?)\n3. **Do you have a specific company or role in mind?** \n4. **Is there a particular cybersecurity project, course, lab, or certification (like Security+) you would like to mention?**",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 12.521,
+      "orchestrator_model_seconds": 6.74,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.775,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 7.778,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.032,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.772,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.772,
+          "duration": 6.74
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 7.786,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 20.307,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 20.307,
+          "duration": 12.521
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.774,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.781,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 20.309,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "An introduction to a recruiter should be **concise, professional, and clear about what you are looking for and what you bring to the table**. Recruiters read hundreds of messages, so keeping yours brief and direct will help it stand out.\n\nA strong introduction typically includes:\n1. **Who you are:** Your name, major, university, and current year.\n2. **Your focus:** Your specific interest in cybersecurity (e.g., security operations, penetration testing, GRC, cloud security) and any key hands-on experience (projects, labs, or coursework).\n3. **The reason you are reaching out:** A specific inquiry about an open role, an internship cycle, or a brief question about their team's hiring process.\n4. **A clear, low-pressure next step:** Asking if they are the right point of contact or if they would be open to sharing how candidates are typically selected for these roles.\n\n---\n\n### Three Ways to Introduce Yourself (Templates)\n\nHere are three common formats depending on how you are reaching out. *Remember to replace the bracketed information with your own actual details.*\n\n#### Option 1: The LinkedIn Connection Request (Under 300 characters)\n*Keep this extremely short, as LinkedIn limits character counts for connection notes.*\n\n> \"Hi [Recruiter Name], I’m a Computer Science student at Morgan State focused on cybersecurity. I’ve been practicing on TryHackMe and building home labs. I see you recruit for [Company Name]’s security team and wanted to connect to keep an eye on future internship opportunities. Thanks! — [Your Name]\"\n\n#### Option 2: The Professional Email (Direct Outreach)\n*Use this if you have their email address and want to ask about a specific internship or entry-level role.*\n\n> **Subject:** Morgan State CS Student – Inquiry regarding [Company Name] Cybersecurity Internships\n>\n> \"Hi [Recruiter Name],\n>\n> I hope your week is going well. My name is [Your Name], and I am a [Freshman/Sophomore/Junior/Senior] Computer Science student at Morgan State University, specializing in cybersecurity. \n> \n> I’ve recently completed coursework in [mention 1-2 relevant classes, e.g., Network Security or Operating Systems] and built a [mention a project, e.g., home lab testing packet capture tools / an AWS security group auditing script]. \n>\n> I am very interested in the [Specific Role Name, if applicable, or \"upcoming cybersecurity internship opportunities\"] at [Company Name]. Could you let me know if your team is currently accepting applications for this cycle, or if there is a preferred channel where I should submit my resume?\n>\n> I’ve attached my resume for your review. Thank you for your time and guidance.\n>\n> Best regards,\n>\n> [Your Name]  \n> [Your LinkedIn Profile URL]  \n> [Your Phone Number]\"\n\n#### Option 3: The 30-Second Elevator Pitch (For Career Fairs or In-Person Events)\n*Keep this conversational and natural. Do not try to memorize it word-for-word.*\n\n> \"Hi, I’m [Your Name]. I’m a [Junior] Computer Science student at Morgan State, and my main focus is cybersecurity. Lately, I’ve been working on [mention a specific project or lab, e.g., configuring firewalls in a virtual lab or practicing network analysis on Wireshark]. I saw that [Company Name] has a security analyst internship open, and I wanted to introduce myself to see what specific skills or tools your team values most in candidates for this role.\"\n\n---\n\n### Let's Tailor This to You\nTo help you write a highly personalized message that fits your style, could you tell me a little more about your situation?\n\n1. **How are you contacting them?** (e.g., LinkedIn, email, an upcoming career fair, or following up after an event?)\n2. **What is your current academic year?** (e.g., Sophomore, Junior, Senior?)\n3. **Do you have a specific company or role in mind?** \n4. **Is there a particular cybersecurity project, course, lab, or certification (like Security+) you would like to mention?**"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "ZERO-TOOL PASS / TEMPLATE QUALITY CAVEATS",
+        "notes": "Completed useful recruiter-introduction templates with Search=URL=0 in 20.312 s versus baseline 16.95-18.02 s. Residual quality issues: LinkedIn 300-character limit is an unverified platform-specific rule; a template asserts TryHackMe/home-lab experience not supplied by the student. These are not verified facts or student history. Stable coaching output needs separate tightening without adding retrieval."
+      }
+    },
+    {
+      "id": "wave2_research_stable",
+      "domain": "research",
+      "label": "Research & Graduate Pathways",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "stable",
+      "prompt": "What are the general steps to prepare for graduate cybersecurity research? Focus on research readiness, not current programs.",
+      "status": "failed",
+      "completed_utc": "2026-10-22T21:52:03.959476+00:00",
+      "orchestrator_request_start": 1.207,
+      "total_seconds": 12.318,
+      "band": "GREEN",
+      "first_transfer": {
+        "t": 7.963,
+        "target": "research__graduate_pathways_agent"
+      },
+      "actual_specialist": "research__graduate_pathways_agent",
+      "route_match": true,
+      "first_specialist_start": 7.972,
+      "first_specialist_event": null,
+      "handoff_seconds": null,
+      "first_helper": null,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 4.338,
+      "orchestrator_model_seconds": 6.753,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.963,
+          "fingerprint": "75d4f7d0c37ea2e8b824e87b656b93a4fc1573c0bb9fad421012ba1515729957",
+          "args": {
+            "agent_name": "research__graduate_pathways_agent"
+          },
+          "end": 7.966,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.207,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.96,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.96,
+          "duration": 6.753
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "start": 7.976,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 12.314,
+          "duration": 4.338,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 12.314
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 12.315
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 12.316
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 12.318
+        }
+      ],
+      "events": [
+        {
+          "t": 7.963,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "research__graduate_pathways_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.969,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 12.316,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        }
+      ],
+      "quality_review": {
+        "verdict": "CAPACITY BLOCKED / REGRESSION UNCONFIRMED",
+        "notes": "Reached Research, then specialist model returned 429 before any helper or final answer. Search=URL=0 is an attempted count, not a completed stable fast-path pass. Wave 1 instruction hash is unchanged, but online regression remains unconfirmed; no retry."
+      }
+    },
+    {
+      "id": "wave2_interview_stable",
+      "domain": "interview",
+      "label": "Interview Preparation",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role.",
+      "status": "completed",
+      "completed_utc": "2026-10-22T21:56:54.717754+00:00",
+      "orchestrator_request_start": 1.05,
+      "total_seconds": 115.051,
+      "band": "RED",
+      "first_transfer": {
+        "t": 7.452,
+        "target": "interview_preparation_agent"
+      },
+      "actual_specialist": "interview_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 7.46,
+      "first_specialist_event": 14.978,
+      "handoff_seconds": 7.526,
+      "first_helper": 14.993,
+      "first_text": 115.048,
+      "final_answer": "An effective technical interview preparation strategy for an entry-level cybersecurity role focuses on demonstrating **foundational concepts, practical troubleshooting logic, and structured communication**. \n\nBecause cybersecurity is a broad field, entry-level interviews rarely expect you to know everything. Instead, interviewers look for strong fundamentals, a methodical approach to problem-solving, and a commitment to continuous learning.\n\nThis strategy is based on **general industry patterns** mapped to standard frameworks (such as CompTIA Security+, the NIST NICE Workforce Framework, and SANS training guidelines). \n\n---\n\n### Step 1: Identify Your Target Sub-Domain\nEntry-level roles generally fall into one of three areas. Align your preparation with the specific path you are pursuing:\n*   **Defensive Security / Security Operations (SOC Analyst, Incident Responder):** Focuses heavily on network protocols, log analysis, alert triage, and system administration (Windows/Linux).\n*   **Offensive Security (Junior Penetration Tester, Application Security):** Focuses on common web vulnerabilities (OWASP Top 10), scripting, exploitation concepts, and security testing tools.\n*   **Governance, Risk, and Compliance (GRC Analyst):** Focuses on security frameworks (NIST, ISO, CIS), risk management, audits, and policy enforcement.\n\n---\n\n### Step 2: Master the Core Conceptual Pillars\nRegardless of the role, expect questions testing your understanding of fundamental security principles. Ensure you can confidently explain:\n1.  **The CIA Triad:** Confidentiality, Integrity, and Availability. Be prepared to explain how specific controls (such as encryption, hashing, and backups) support each element.\n2.  **Defense-in-Depth:** The practice of layering multiple security controls (e.g., firewalls, multi-factor authentication, endpoint detection, and physical security) so that the failure of one control does not compromise the entire network.\n3.  **Least Privilege & Zero Trust:** The philosophy of granting only the minimum access necessary for a user or system to perform its function, and verifying every request as if it originates from an open network.\n4.  **Symmetric vs. Asymmetric Encryption:** Knowing that symmetric encryption uses a single shared key (fast, ideal for bulk data), while asymmetric uses a public/private key pair (used for secure key exchange).\n5.  **Hashing vs. Encryption:** Knowing that hashing is a one-way, irreversible function used to verify integrity (e.g., password storage, file hashes), whereas encryption is a two-way, reversible function used for confidentiality.\n\n---\n\n### Step 3: Deepen Your System & Network Competencies\nA security analyst cannot secure what they do not understand. You must be prepared to answer questions about how computers and networks communicate:\n1.  **The TCP/IP and OSI Models:** Be comfortable explaining how data moves through network layers. You should be able to explain the **TCP Three-Way Handshake** (SYN $\\rightarrow$ SYN-ACK $\\rightarrow$ ACK) and the difference between TCP (connection-oriented, reliable) and UDP (connectionless, fast).\n2.  **Core Ports and Protocols:** Know these key ports by heart:\n    *   **Port 22:** SSH (Secure Shell)\n    *   **Port 53:** DNS (Domain Name System)\n    *   **Port 80 / 443:** HTTP / HTTPS\n    *   **Port 445:** SMB (Server Message Block)\n    *   **Port 3389:** RDP (Remote Desktop Protocol)\n3.  **Firewalls, IDS, and IPS:** Understand that a firewall filters traffic based on rules, an **IDS** (Intrusion Detection System) monitors and alerts on suspicious traffic, and an **IPS** (Intrusion Prevention System) actively blocks malicious packets.\n4.  **Operating System Basics:** Be comfortable explaining basic Linux navigation (using commands like `grep`, `tail -f` to monitor logs, and `chmod` for permissions) and basic Windows concepts (Active Directory, Group Policy Objects).\n\n---\n\n### Step 4: Practice Scenario-Based Troubleshooting\nInterviewers frequently use hypothetical scenarios to see how you think under pressure. \n*   **The Scenario:** *\"An alert shows a user's computer is communicating with a known malicious IP address. What do you do?\"*\n*   **Your Strategy:** Do not guess a single \"correct\" answer. Instead, walk through a logical, phased response:\n    1.  **Containment:** \"First, I would isolate the affected system from the network to prevent lateral movement.\"\n    2.  **Investigation:** \"Next, I would analyze host logs and network traffic (using tools like a SIEM or Wireshark) to identify what process initiated the connection and what data, if any, was sent.\"\n    3.  **Remediation:** \"Once understood, I would remove the malicious file, run an full EDR scan, and update our detection rules to flag this behavior in the future.\"\n    4.  **Prevention/Reflection:** \"Finally, I would review how the user was compromised (e.g., a phishing email) to see if we need to adjust email filters or user training.\"\n\n---\n\n### Step 5: Structure Your Technical Answers\nWhen asked to explain a specific threat or technical concept (e.g., SQL Injection, Phishing, or Man-in-the-Middle attacks), use the **\"Define, Example, Mitigate\"** structure to keep your answers concise and authoritative:\n*   **Define:** Explain the concept in clear terms. *(e.g., \"SQL Injection is a vulnerability where an attacker inputs malicious SQL statements into an entry field...\")*\n*   **Example:** Provide a concrete example of how it occurs. *(... \"such as typing `' OR '1'='1` into a login username box to bypass authentication...\")*\n*   **Mitigate:** Explain how to prevent it. *(... \"which can be prevented by using parameterized queries and strict input validation.\")*\n\n---\n\n### How We Can Customize This Strategy\nTo tailor this preparation specifically to your upcoming goals, tell me a bit more about where you stand:\n\n1.  **Do you have an upcoming interview with a specific employer, or are you preparing generally?** (If you have a target company, I can help search for any verified, official recruiting patterns they publish).\n2.  **What specific role title are you targeting?** (e.g., SOC Analyst, Security Consultant, GRC Specialist).\n3.  **What is your timeline?** (Are we doing a short-term interview triage for an interview next week, or do you have more time to practice?)\n4.  **What would you like to do next?** We can:\n    *   Run a **Mock Cybersecurity Scenario** where I act as the interviewer.\n    *   Do a deep dive into **technical concepts** (like Web Attacks, Networking, or Cryptography).\n    *   Practice **behavioral questions** (like \"Tell me about a time you had to deal with a security issue or technical project conflict\").\n\n*(Note: If you need to build a long-term development roadmap over several months, or want to decide which certifications to register for next semester, I can transfer you to the **Skill Gap & Career Roadmap Agent** or the **Certification & Technical Development Agent**.)*",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 13,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 86.746,
+      "specialist_model_seconds": 20.813,
+      "orchestrator_model_seconds": 6.399,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.453,
+          "fingerprint": "b2b2470a1f10ed405f93fc57548b668bcd8a5dd8c2751d502405205c64ddbb46",
+          "args": {
+            "agent_name": "interview_preparation_agent"
+          },
+          "end": 7.455,
+          "duration": 0.002,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Interview_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.979,
+          "fingerprint": "1454796952d7c2d3d669af70e81fbd076486fec1f2ebdf23c485fe45b40627e6",
+          "args": {
+            "request": "entry level cybersecurity technical interview topics site:sans.org OR site:nist.gov OR site:comptia.org"
+          },
+          "end": 101.74,
+          "duration": 86.761,
+          "quality_output": "Preparing for an entry-level cybersecurity technical interview requires a solid understanding of fundamental security principles, networking, operating systems, and basic security tools. \n\nTo help you prepare, the following guide categorizes essential technical interview topics based directly on the curriculums, guidelines, and frameworks defined by **CompTIA**, **NIST (National Institute of Standards and Technology)**, and **SANS**.\n\n---\n\n### 1. CompTIA Security+ Framework Focus (General Security & Threats)\nCompTIA's Security+ (specifically mapped to the SY0-701 objectives) is the industry-standard baseline for entry-level roles. In interviews, you will be expected to define, provide examples of, and explain how to mitigate the following:\n\n*   **General Security Concepts:**\n    *   **The CIA Triad:** Confidentiality, Integrity, and Availability. Expect to explain how security controls (like encryption, hashing, and backups) support each element.\n    *   **Least Privilege & Zero Trust:** The philosophy of granting only the minimum access necessary for a user/system to perform its function.\n    *   **Defense-in-Depth:** Layering security controls (e.g., combining firewalls, Endpoint Detection & Response (EDR), Multi-Factor Authentication (MFA), and physical security) so that if one fails, others protect the asset.\n*   **Threats, Attacks, and Vulnerabilities:**\n    *   **Social Engineering:** Phishing, spear-phishing, vishing, and tailgating.\n    *   **Common Malware:** The differences between Viruses, Worms, Trojans, and Ransomware.\n    *   **Web Application Attacks:** Explain the OWASP Top 10, specifically focusing on **SQL Injection (SQLi)** and **Cross-Site Scripting (XSS)**. (e.g., *How does XSS happen and how do you defend against it?*).\n    *   **Network Attacks:** Man-in-the-Middle (MitM) attacks, Distributed Denial of Service (DDoS), and ARP poisoning.\n*   **Cryptography & Access Control:**\n    *   **Symmetric vs. Asymmetric Encryption:** Knowing that symmetric uses a single shared key (fast) while asymmetric uses a public/private key pair (secure key exchange).\n    *   **Hashing vs. Encryption:** Knowing that hashing is a one-way function used for integrity/password storage, while encryption is reversible and used for confidentiality.\n    *   **MFA & Authentication Factors:** Something you know (password), something you have (token), and something you are (biometrics).\n\n---\n\n### 2. NIST NICE Framework Focus (Competencies & Role-Specific Tasks)\nThe **NIST NICE Workforce Framework for Cybersecurity (SP 800-181)** categorizes cybersecurity work into Work Roles, Tasks, Knowledge, and Skills (TKS). For entry-level positions—primarily in **Protection & Defense (SOC Analyst, Incident Responder)** or **Implementation & Operation (System/Network Administrator)**—NIST emphasizes these technical competencies:\n\n*   **Network Operations & Security Controls:**\n    *   **TCP/IP & OSI Models:** Understanding how data flows across layers, and the difference between connection-oriented TCP (three-way handshake: SYN, SYN-ACK, ACK) and connectionless UDP.\n    *   **Port & Service Mapping:** Knowing core ports by heart:\n        *   `Port 22` (SSH)\n        *   `Port 53` (DNS)\n        *   `Port 80/443` (HTTP/HTTPS)\n        *   `Port 445` (SMB)\n        *   `Port 3389` (RDP)\n    *   **Firewalls, IDS, and IPS:** \n        *   *Firewalls:* Packet filtering, stateful, and Next-Generation Firewalls (NGFW).\n        *   *IDS vs. IPS:* An Intrusion Detection System alerts on suspicious activity; an Intrusion Prevention System actively blocks it.\n*   **Vulnerability & Risk Management:**\n    *   **Vulnerability vs. Threat vs. Risk:** A *vulnerability* is a weakness, a *threat* is what can exploit it, and *risk* is the probability and impact of that exploitation.\n    *   **Vulnerability Assessment:** Basic understanding of scanning tools (like Nessus, OpenVAS, or Nmap) and the process of remediating discovered flaws.\n\n---\n\n### 3. SANS Institute Focus (Practical, Hands-on & Lab Skills)\nSANS defensive security training (such as SEC401/SEC501) and the GIAC certifications place a heavy emphasis on **demonstrable, practical technical skills**. SANS-influenced interviews will move past dictionary definitions and ask you *how* you would perform a task:\n\n*   **Command Line & Operating System Administration:**\n    *   **Linux/Unix Command Line:** Being comfortable with navigating the filesystem, file permissions, and utilities like `grep`, `tail -f` (to watch logs live), `cat`, and using pipes (`|`).\n    *   **Windows Administration:** Basic Active Directory (AD) concepts, group policies (GPOs), and identifying abnormal system processes.\n*   **Log Analysis & Alert Triage (SOC focus):**\n    *   **SIEM Systems:** Understanding how Security Information and Event Management systems aggregate, correlate, and parse logs from multiple sources to trigger alerts.\n    *   **Analyzing PCAP (Packet Captures):** Using tools like **Wireshark** or **tcpdump** to inspect a network packet, identify abnormal traffic patterns, and locate where a malicious payload might be hidden.\n    *   **Indicators of Compromise (IoCs):** Explaining the difference between IP addresses, domain names, and file hashes (such as MD5/SHA-256) used to trace malicious activity.\n*   **Active Defense & Tools:**\n    *   **Nmap Scanning:** Understanding how to run a basic discovery scan (e.g., `nmap -sV` for version detection).\n    *   **Endpoint Detection & Response (EDR):** How EDR tools differ from traditional antivirus (signature-based vs. behavioral-based detection).\n\n---\n\n### Pro-Tips for the Interview (Compiled from SANS, NIST, & CompTIA Career Guides)\n\n1.  **Use the \"Define, Example, Mitigate\" Structure:**\n    When asked about an attack (like SQL Injection), structure your answer clearly:\n    *   *Define:* \"SQL Injection is when an attacker inputs malicious SQL code into an application form...\"\n    *   *Example:* \"...such as typing `' OR '1'='1` into a password field to bypass login screens\".\n    *   *Mitigate:* \"...which can be prevented using parameterized queries and input validation\".\n2.  **Speak Logically through Scenarios:**\n    If given a scenario (e.g., *\"An alert shows a user downloaded a suspicious file, what do you do?\"*), walk the interviewer through your reasoning out loud:\n    *   Isolate the host first (containment).\n    *   Analyze the file hash on VirusTotal.\n    *   Check firewall/proxy logs to see if the host made any outbound connections to known bad IPs.\n3.  **The \"Golden Phrase\":**\n    As an entry-level candidate, you will inevitably face a technical question you don't know the answer to. SANS and CompTIA career advisors emphasize that saying **\"I don't know\"** is perfectly acceptable, but it must be immediately followed by: **\"But here is how I would find the answer.\"** (e.g., referring to internal documentation, checking SANS Internet Storm Center, referencing vendor documentation, or escalating to a tier-2 analyst).",
+          "necessity_initial": "UNNECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.993,
+          "index": 1,
+          "end": 101.739,
+          "duration": 86.746
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.05,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.449,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.449,
+          "duration": 6.399
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 7.464,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 14.978,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 14.978,
+          "duration": 7.514
+        },
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "start": 14.996,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "entry level cybersecurity technical interview topics site sans org OR site nist gov OR site comptia org",
+            "cybersecurity interview questions site comptia org OR site sans org",
+            "\"cybersecurity\" \"interview\"",
+            "\"interview\" OR \"interview questions\"",
+            "NICE Framework \"entry level\" skills",
+            "\"entry level\" cybersecurity interview",
+            "\"interview questions\"",
+            "\"cybersecurity interview\"",
+            "\"interview questions\" cybersecurity",
+            "\"interview\" OR \"career\" \"entry level\" OR \"junior\"",
+            "\"interview questions\" Security+",
+            "NICE framework \"cybersecurity\" \"entry level\"",
+            "SOC analyst interview questions"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGAJ4YFz04SILK_MdQwAzEu9xybmY6Nqy6rtNtqccvCGz_qJSWJZw9hQeESMYis-EkI0OY_OvrboOY0zhBwwL9C1D5tOxQWPJs47N_Dh6fT74PN7GsSWLhDQkD0d7IApuN52-4Sp_B0rJObAVTXLFsdAV4yM_bgXUdscRGqRihfTAsuNEhRRtcYQTAboKljZQlyKvEL268NkNZgG5vO25BgrQEKA==",
+              "title": "infosecinstitute.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFteW_mzkihqwgyLD1lhlX-4YwQIaN2KDltteed8UZeDWrEeasc2DKLVCHkqHL_QCQvyoivnWxk4IDTkdqAYi8sbHVS4SLTjaqMfngJf2bu0Luwncn9n1n4_kgBD2Tx6K7DPtGDM3y2IAgwnjmgjW-Z2pvQcsTEHcnwL3PM2N4qwHqeWa6pM5Sq6ElBL8GRB3liScelAQZOXYPmyiWURw==",
+              "title": "webasha.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzDF3J2lF7I12CAt3ScOrrDYrCIQWXRMyDrab3Io7kzRpIaxLRiDRweXFVTPZgjLk92EtwwXNimKttqeqhKy3hQk44X9F3nHGioSP76VvO7w25e1qphU-6K92VXNqsN3NEEDdYId7rBV_Mc24DOGRt83JBJlkR2pr6XgQ4E1EqidrR1opZoRk8GcBFbudA",
+              "title": "webasha.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvUlSVSu0p4JuIwnRln49GJG31Ftt0v7-AsjLhojFYHnbLtopYUNBmvK2ayc5IRYnxH2Q84_mcihVroSd7A0Hzj8n57zpuBntwTYbKmR-pPoB0nq99mFoXz1tGaEPiZBa68pv3ySRQWTeJWYRx3ORYjUP3uMuo8I-ah7COsnMuU5c6TSlg8lRixQgeE-v8Ot2aNgZ0xnPxMgTCEHmMWIjF0QA=",
+              "title": "reddit.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHC5kBSDVvp6rDW01lE1CnsToRqCtxCrks-BAP7OoLkw3s0_sebWTUx6Tgnhu_nEg0d-4htobzgoaPWqXpm207ARzBqpUzRolaoDH9jJnTnmnu2BJmkQyoI8AkdEcoAyOFbtg22jZlQUHRPTgDcsOwAYTXj0rd4Gu_iI1L5ZoPjfGv-RyX8vbN0384ryA44LDNC6ePm_d8orfBFcCDa19FPZzrJwYLeDuxW_w==",
+              "title": "multisoftsystems.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8SM6vA8ye9tcAMJLwcUK-6a7mibXoyVC9BM5247ns0tE58whnL-Vte8ExD150GYwYVEwweQOEbvDgZPHPZ7hLsc9m3rII2UWw67ybKQDa4AupVH_QrdUKz3oMLonkLFD5MZJVRrcAPWx2NXK1fO6jZnO_7FeRxsTK1xdjnamNwqjntXBj787_OFE=",
+              "title": "geeksforgeeks.org"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjZktcn3ETbWOArTDYjFGnWavqD4OKebSAxfhRgIDa3v1wk5UD_v8mJx14ZWA6HgeKkLEMydjsH00UX_xTcvlSfseYuGcp_Yk0ldBsw7n4bv3wcEto2O9lgauEoNVhqHOGTvn1QfHcPyRRPmhB0ZatGvl0Atm4FHAHciM5bjMF24QwFQ==",
+              "title": "umgc.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsNLsJ3_r02ylTXzUOFLXQRmRVHfODMuNaMyol5Wo_Fq3hX3JQB4ywc0tAAAjewk1rN-RzWiAEDEO1_x3aNBtMXmK0GbMS_5M50xYojoi2mOHZk1XiesXrABEImsKFbBl2PZYEqvCZLKVLNzkps7iTjrRNTXXddUCJiIYVvz13XOeyn_ykR7WhoFUZ",
+              "title": "securityinfinity.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHq9-cTv19bgYAVhvwRniDhqIhPPlqAc0ESDwk8l5IuYduMtfs0y7gWPynGEoFs7P5RTJKw5dAppC1p7-KFKK4OFaVzYNKtnLZajEJjPjdB7yVp0zUsJ4EUWjhvrfSIK_nnEpjaBnKXQuoO7Hr7JKVldhjX34J8ABhQvF8=",
+              "title": "vinsys.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPydtt8bM-mvJZc0BCWESlSShKTUuSwAW6Lv3NSx-EhcdVqgTnw4TEHnuanfbSUIVI5xGXCtd6PcAaNN6P395K2bvoJiHQU-HTvvjakyeD4dwG_FcBBtGS2l3TZStynFS7FRYTtp-FLfobMsBiYJaXtaZ_VMjK8ADYDmxcXEJk0j_rCpYDpnA0GSrxNg==",
+              "title": "crucialexams.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYqKnyIyW81eUYUJpIcg2CwJQ7UuxZo8MnvCAvhX0Y8DlZZuq-JixGG02C6hRf8SGjoqFI2J2jUzkznlGrwIqIdbb3a-sgoQFSbrTMcHPau2V380rbGv3g_pvq-39hrqkWK1EhhqRdIEkuqJ2_uuxb_jhijMs-9KA=",
+              "title": "unihackers.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXMshzBQZPUCeeQj6KqdCG7iVFwUDY6GGPA6CFFOA0QTygK4rcQxvDO0d4jjxnF7-5EMaLkC6-nqkP2nRUqmm0Gcr0SXVFqyvkwwqFjOPbxWLYTiM5DRODutkYcLAoFa-88WwFxkfWF4ujzNlmZehuZkahldil6WtcN07url9WNI-ewShRoNH6VARD5X4e73s3ZItw6UGl794ncayp0A==",
+              "title": "webasha.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEClKr3z05H1VG2h_lYxZuwpUygOgA-NbGjVxz4mwYHjGX2d-Lv17NR5FoD9OMsrtkwBXYBPCy9Gh-Q9h9NOW4qWfQoNfFukHPhoiTGOSwpuZAhgfU2JUajaRUbnNK7L8Y27KD3n0c=",
+              "title": "youtube.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnu-eYNxxk8UcbWyA8LxUDcNJRJzcG0kXIi7ScDqWn8WMc6apEZUvepAXjE7obbSNtw_0cHSDCKOo-7mLhP53ULJF8ZHZex7BfYK1Qo_DzgnANKBhvoEMCDGpu-6Ze-LpG1yFi0R-q3uTFe4bAu5h0xuobRo3tDssUHbopYTJiaNItTphIi8okChhuJZrrvNL82fie8EZWR1wrWZ931TeMaV8FZdRXYsERfzSx7JeoS3alGZzLyK7f_Wm0brSNY3Y1duBJdlNaM-vFo-gqXYQV3_GkdUHLYKzZWMthQo9ZSuxrkw5kfix6OcjwEOj8DCFe3TI1wNU-bKoF",
+              "title": "cisa.gov"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEacChvYPFXe0dDgXkbcvqDMG4vY79sGRFNUI5BEq765Ds1Md8yh9_BtU-Vvx2jH2A8VEHwMPHN0mIAoEKCVL1XXYy7gjYs5ScPcrDFPIeZxNfrup4yv44XbnhvRTU-9JDQ9TnpPbF84vxQiRHKtN8xxoOjAZ_FnIA6AdnJcBxJqkxMcTuV4uIrpM9fcdn04BoQXm4CTaAEpdWqZ0Vu",
+              "title": "infosecinstitute.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtniF1mLxsA38ka1tjp6Id4t5XSMu30z3SBsIpkOxoiSqvUN20ZsIwVhz34mKidfG9alIQtLP7Gt_aywS1d9GUhZNDN_oIhqw0TJ6uUDqIpOrB7SooM_aP9BF4jjsK6w3C5X9i86Scr8JD3m5_SbkSCzqXf-BVB8Ck",
+              "title": "cybersecurityacademy.in"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEp34A00VCTezdy61hMELYf-_R6aMjZPk0VlR6xJBez2akoQnu4xAjgaSZxC4VH5BaM_C4PEjAomZqHgmm1_0zkoULyo-1QZD5Xf5jg-K4cQ_dvQP_daNybtRrKlLRjbW-8fkNw0l-Bfo0Gy6PtxkMakilpL8Z0UKs9TwN3xaYFciZG3qEEQi4m5rB",
+              "title": "tryhackme.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHO5ReSU81W3OzLCH61qnXryLFatpHukzPA-OSN0KUE9yPQhct0oSyh-LGHG_WuKif5fSBlFVzfK4JxFDdqFP11ZOTkvAN70NkOC6i8YkKK-J6F6ABaIg07lXvwEAabs5rwqJCrxeG1Zj8K6K4V2OhiShlzpxj1u-_8czOFYQ==",
+              "title": "totalsem.com"
+            }
+          ],
+          "response_received": 101.736,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 101.736,
+          "duration": 86.74
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 101.746,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 115.045,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 115.045,
+          "duration": 13.299
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.452,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "interview_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.458,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 14.978,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "tool": "Interview_Preparation_Agent_google_search_agent",
+              "args": {
+                "request": "entry level cybersecurity technical interview topics site:sans.org OR site:nist.gov OR site:comptia.org"
+              }
+            }
+          ]
+        },
+        {
+          "t": 101.739,
+          "author": "Interview_Preparation_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "Preparing for an entry-level cybersecurity technical interview requires a solid understanding of fundamental security principles, networking, operating systems, and basic security tools. \n\nTo help you prepare, the following guide categorizes essential technical interview topics based directly on the curriculums, guidelines, and frameworks defined by **CompTIA**, **NIST (National Institute of Standards and Technology)**, and **SANS**.\n\n---\n\n### 1. CompTIA Security+ Framework Focus (General Security & Threats)\nCompTIA's Security+ (specifically mapped to the SY0-701 objectives) is the industry-standard baseline for entry-level roles. In interviews, you will be expected to define, provide examples of, and explain how to mitigate the following:\n\n*   **General Security Concepts:**\n    *   **The CIA Triad:** Confidentiality, Integrity, and Availability. Expect to explain how security controls (like encryption, hashing, and backups) support each element.\n    *   **Least Privilege & Zero Trust:** The philosophy of granting only the minimum access necessary for a user/system to perform its function.\n    *   **Defense-in-Depth:** Layering security controls (e.g., combining firewalls, Endpoint Detection & Response (EDR), Multi-Factor Authentication (MFA), and physical security) so that if one fails, others protect the asset.\n*   **Threats, Attacks, and Vulnerabilities:**\n    *   **Social Engineering:** Phishing, spear-phishing, vishing, and tailgating.\n    *   **Common Malware:** The differences between Viruses, Worms, Trojans, and Ransomware.\n    *   **Web Application Attacks:** Explain the OWASP Top 10, specifically focusing on **SQL Injection (SQLi)** and **Cross-Site Scripting (XSS)**. (e.g., *How does XSS happen and how do you defend against it?*).\n    *   **Network Attacks:** Man-in-the-Middle (MitM) attacks, Distributed Denial of Service (DDoS), and ARP poisoning.\n*   **Cryptography & Access Control:**\n    *   **Symmetric vs. Asymmetric Encryption:** Knowing that symmetric uses a single shared key (fast) while asymmetric uses a public/private key pair (secure key exchange).\n    *   **Hashing vs. Encryption:** Knowing that hashing is a one-way function used for integrity/password storage, while encryption is reversible and used for confidentiality.\n    *   **MFA & Authentication Factors:** Something you know (password), something you have (token), and something you are (biometrics).\n\n---\n\n### 2. NIST NICE Framework Focus (Competencies & Role-Specific Tasks)\nThe **NIST NICE Workforce Framework for Cybersecurity (SP 800-181)** categorizes cybersecurity work into Work Roles, Tasks, Knowledge, and Skills (TKS). For entry-level positions—primarily in **Protection & Defense (SOC Analyst, Incident Responder)** or **Implementation & Operation (System/Network Administrator)**—NIST emphasizes these technical competencies:\n\n*   **Network Operations & Security Controls:**\n    *   **TCP/IP & OSI Models:** Understanding how data flows across layers, and the difference between connection-oriented TCP (three-way handshake: SYN, SYN-ACK, ACK) and connectionless UDP.\n    *   **Port & Service Mapping:** Knowing core ports by heart:\n        *   `Port 22` (SSH)\n        *   `Port 53` (DNS)\n        *   `Port 80/443` (HTTP/HTTPS)\n        *   `Port 445` (SMB)\n        *   `Port 3389` (RDP)\n    *   **Firewalls, IDS, and IPS:** \n        *   *Firewalls:* Packet filtering, stateful, and Next-Generation Firewalls (NGFW).\n        *   *IDS vs. IPS:* An Intrusion Detection System alerts on suspicious activity; an Intrusion Prevention System actively blocks it.\n*   **Vulnerability & Risk Management:**\n    *   **Vulnerability vs. Threat vs. Risk:** A *vulnerability* is a weakness, a *threat* is what can exploit it, and *risk* is the probability and impact of that exploitation.\n    *   **Vulnerability Assessment:** Basic understanding of scanning tools (like Nessus, OpenVAS, or Nmap) and the process of remediating discovered flaws.\n\n---\n\n### 3. SANS Institute Focus (Practical, Hands-on & Lab Skills)\nSANS defensive security training (such as SEC401/SEC501) and the GIAC certifications place a heavy emphasis on **demonstrable, practical technical skills**. SANS-influenced interviews will move past dictionary definitions and ask you *how* you would perform a task:\n\n*   **Command Line & Operating System Administration:**\n    *   **Linux/Unix Command Line:** Being comfortable with navigating the filesystem, file permissions, and utilities like `grep`, `tail -f` (to watch logs live), `cat`, and using pipes (`|`).\n    *   **Windows Administration:** Basic Active Directory (AD) concepts, group policies (GPOs), and identifying abnormal system processes.\n*   **Log Analysis & Alert Triage (SOC focus):**\n    *   **SIEM Systems:** Understanding how Security Information and Event Management systems aggregate, correlate, and parse logs from multiple sources to trigger alerts.\n    *   **Analyzing PCAP (Packet Captures):** Using tools like **Wireshark** or **tcpdump** to inspect a network packet, identify abnormal traffic patterns, and locate where a malicious payload might be hidden.\n    *   **Indicators of Compromise (IoCs):** Explaining the difference between IP addresses, domain names, and file hashes (such as MD5/SHA-256) used to trace malicious activity.\n*   **Active Defense & Tools:**\n    *   **Nmap Scanning:** Understanding how to run a basic discovery scan (e.g., `nmap -sV` for version detection).\n    *   **Endpoint Detection & Response (EDR):** How EDR tools differ from traditional antivirus (signature-based vs. behavioral-based detection).\n\n---\n\n### Pro-Tips for the Interview (Compiled from SANS, NIST, & CompTIA Career Guides)\n\n1.  **Use the \"Define, Example, Mitigate\" Structure:**\n    When asked about an attack (like SQL Injection), structure your answer clearly:\n    *   *Define:* \"SQL Injection is when an attacker inputs malicious SQL code into an application form...\"\n    *   *Example:* \"...such as typing `' OR '1'='1` into a password field to bypass login screens\".\n    *   *Mitigate:* \"...which can be prevented using parameterized queries and input validation\".\n2.  **Speak Logically through Scenarios:**\n    If given a scenario (e.g., *\"An alert shows a user downloaded a suspicious file, what do you do?\"*), walk the interviewer through your reasoning out loud:\n    *   Isolate the host first (containment).\n    *   Analyze the file hash on VirusTotal.\n    *   Check firewall/proxy logs to see if the host made any outbound connections to known bad IPs.\n3.  **The \"Golden Phrase\":**\n    As an entry-level candidate, you will inevitably face a technical question you don't know the answer to. SANS and CompTIA career advisors emphasize that saying **\"I don't know\"** is perfectly acceptable, but it must be immediately followed by: **\"But here is how I would find the answer.\"** (e.g., referring to internal documentation, checking SANS Internet Storm Center, referencing vendor documentation, or escalating to a tier-2 analyst)."
+            }
+          ]
+        },
+        {
+          "t": 101.742,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "tool_result": "Interview_Preparation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 115.047,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "text": "An effective technical interview preparation strategy for an entry-level cybersecurity role focuses on demonstrating **foundational concepts, practical troubleshooting logic, and structured communication**. \n\nBecause cybersecurity is a broad field, entry-level interviews rarely expect you to know everything. Instead, interviewers look for strong fundamentals, a methodical approach to problem-solving, and a commitment to continuous learning.\n\nThis strategy is based on **general industry patterns** mapped to standard frameworks (such as CompTIA Security+, the NIST NICE Workforce Framework, and SANS training guidelines). \n\n---\n\n### Step 1: Identify Your Target Sub-Domain\nEntry-level roles generally fall into one of three areas. Align your preparation with the specific path you are pursuing:\n*   **Defensive Security / Security Operations (SOC Analyst, Incident Responder):** Focuses heavily on network protocols, log analysis, alert triage, and system administration (Windows/Linux).\n*   **Offensive Security (Junior Penetration Tester, Application Security):** Focuses on common web vulnerabilities (OWASP Top 10), scripting, exploitation concepts, and security testing tools.\n*   **Governance, Risk, and Compliance (GRC Analyst):** Focuses on security frameworks (NIST, ISO, CIS), risk management, audits, and policy enforcement.\n\n---\n\n### Step 2: Master the Core Conceptual Pillars\nRegardless of the role, expect questions testing your understanding of fundamental security principles. Ensure you can confidently explain:\n1.  **The CIA Triad:** Confidentiality, Integrity, and Availability. Be prepared to explain how specific controls (such as encryption, hashing, and backups) support each element.\n2.  **Defense-in-Depth:** The practice of layering multiple security controls (e.g., firewalls, multi-factor authentication, endpoint detection, and physical security) so that the failure of one control does not compromise the entire network.\n3.  **Least Privilege & Zero Trust:** The philosophy of granting only the minimum access necessary for a user or system to perform its function, and verifying every request as if it originates from an open network.\n4.  **Symmetric vs. Asymmetric Encryption:** Knowing that symmetric encryption uses a single shared key (fast, ideal for bulk data), while asymmetric uses a public/private key pair (used for secure key exchange).\n5.  **Hashing vs. Encryption:** Knowing that hashing is a one-way, irreversible function used to verify integrity (e.g., password storage, file hashes), whereas encryption is a two-way, reversible function used for confidentiality.\n\n---\n\n### Step 3: Deepen Your System & Network Competencies\nA security analyst cannot secure what they do not understand. You must be prepared to answer questions about how computers and networks communicate:\n1.  **The TCP/IP and OSI Models:** Be comfortable explaining how data moves through network layers. You should be able to explain the **TCP Three-Way Handshake** (SYN $\\rightarrow$ SYN-ACK $\\rightarrow$ ACK) and the difference between TCP (connection-oriented, reliable) and UDP (connectionless, fast).\n2.  **Core Ports and Protocols:** Know these key ports by heart:\n    *   **Port 22:** SSH (Secure Shell)\n    *   **Port 53:** DNS (Domain Name System)\n    *   **Port 80 / 443:** HTTP / HTTPS\n    *   **Port 445:** SMB (Server Message Block)\n    *   **Port 3389:** RDP (Remote Desktop Protocol)\n3.  **Firewalls, IDS, and IPS:** Understand that a firewall filters traffic based on rules, an **IDS** (Intrusion Detection System) monitors and alerts on suspicious traffic, and an **IPS** (Intrusion Prevention System) actively blocks malicious packets.\n4.  **Operating System Basics:** Be comfortable explaining basic Linux navigation (using commands like `grep`, `tail -f` to monitor logs, and `chmod` for permissions) and basic Windows concepts (Active Directory, Group Policy Objects).\n\n---\n\n### Step 4: Practice Scenario-Based Troubleshooting\nInterviewers frequently use hypothetical scenarios to see how you think under pressure. \n*   **The Scenario:** *\"An alert shows a user's computer is communicating with a known malicious IP address. What do you do?\"*\n*   **Your Strategy:** Do not guess a single \"correct\" answer. Instead, walk through a logical, phased response:\n    1.  **Containment:** \"First, I would isolate the affected system from the network to prevent lateral movement.\"\n    2.  **Investigation:** \"Next, I would analyze host logs and network traffic (using tools like a SIEM or Wireshark) to identify what process initiated the connection and what data, if any, was sent.\"\n    3.  **Remediation:** \"Once understood, I would remove the malicious file, run an full EDR scan, and update our detection rules to flag this behavior in the future.\"\n    4.  **Prevention/Reflection:** \"Finally, I would review how the user was compromised (e.g., a phishing email) to see if we need to adjust email filters or user training.\"\n\n---\n\n### Step 5: Structure Your Technical Answers\nWhen asked to explain a specific threat or technical concept (e.g., SQL Injection, Phishing, or Man-in-the-Middle attacks), use the **\"Define, Example, Mitigate\"** structure to keep your answers concise and authoritative:\n*   **Define:** Explain the concept in clear terms. *(e.g., \"SQL Injection is a vulnerability where an attacker inputs malicious SQL statements into an entry field...\")*\n*   **Example:** Provide a concrete example of how it occurs. *(... \"such as typing `' OR '1'='1` into a login username box to bypass authentication...\")*\n*   **Mitigate:** Explain how to prevent it. *(... \"which can be prevented by using parameterized queries and strict input validation.\")*\n\n---\n\n### How We Can Customize This Strategy\nTo tailor this preparation specifically to your upcoming goals, tell me a bit more about where you stand:\n\n1.  **Do you have an upcoming interview with a specific employer, or are you preparing generally?** (If you have a target company, I can help search for any verified, official recruiting patterns they publish).\n2.  **What specific role title are you targeting?** (e.g., SOC Analyst, Security Consultant, GRC Specialist).\n3.  **What is your timeline?** (Are we doing a short-term interview triage for an interview next week, or do you have more time to practice?)\n4.  **What would you like to do next?** We can:\n    *   Run a **Mock Cybersecurity Scenario** where I act as the interviewer.\n    *   Do a deep dive into **technical concepts** (like Web Attacks, Networking, or Cryptography).\n    *   Practice **behavioral questions** (like \"Tell me about a time you had to deal with a security issue or technical project conflict\").\n\n*(Note: If you need to build a long-term development roadmap over several months, or want to decide which certifications to register for next semester, I can transfer you to the **Skill Gap & Career Roadmap Agent** or the **Certification & Technical Development Agent**.)*"
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "STABLE RETRIEVAL REGRESSION / SUPERSEDED",
+        "notes": "General preparation request unnecessarily searched SANS/NIST/CompTIA interview topics: one helper / 13 queries, 86.740 s helper wait, 115.051 s total. Useful final strategy but this failed the expected zero-tool stable behavior. Retained; led to an explicit stable-preparation priority gate, without changing original instructions or current employer rules."
+      }
+    }
+  ],
+  "planned_case_ids": [
+    "wave2_certification_current",
+    "wave2_networking_current",
+    "wave2_research_current",
+    "wave2_interview_current",
+    "wave2_certification_stable",
+    "wave2_networking_stable",
+    "wave2_research_stable",
+    "wave2_interview_stable"
+  ],
+  "remaining": []
+}

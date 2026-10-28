@@ -1,0 +1,11 @@
+{
+  "tests_run": 68,
+  "passed": 67,
+  "failed": 1,
+  "errors": 0,
+  "failed_tests": [
+    "test_protected_workflow_files_identical (test_career_shared_evidence.EvidenceTests.test_protected_workflow_files_identical)"
+  ],
+  "error_tests": [],
+  "external_network_and_auth_blocked": true
+}

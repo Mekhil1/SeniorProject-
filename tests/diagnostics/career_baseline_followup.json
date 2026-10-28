@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "0aab7eb86aeebc7849ee9436f78b23547e24d837347a1b6a64b92824fd350e29",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "certification_current_1",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?",
+      "status": "failed",
+      "completed_utc": "2026-10-22T20:02:44.926918+00:00",
+      "orchestrator_request_start": 1.078,
+      "total_seconds": 91.939,
+      "band": "RED",
+      "first_transfer": {
+        "t": 9.515,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 9.524,
+      "first_specialist_event": 18.521,
+      "handoff_seconds": 9.006,
+      "first_helper": 18.536,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 3,
+      "search_enabled_model_requests": 3,
+      "search_grounded_requests": 2,
+      "search_queries_reported": 4,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 69.669,
+      "specialist_model_seconds": 12.69,
+      "orchestrator_model_seconds": 8.434,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 9.516,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 9.519,
+          "duration": 0.003,
+          "duplicate_input_of": null,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "reviewed_necessity": "NECESSARY",
+          "review_note": "Routing dispatch; excluded from retrieval counts."
+        },
+        {
+          "index": 2,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 18.522,
+          "fingerprint": "261f963a9f3a0426d2c293022e8e4bd4f8d3c94cace96d6a1864b5a67eec915f",
+          "args": {
+            "request": "current year"
+          },
+          "end": 25.855,
+          "duration": 7.333,
+          "quality_output": "The current year is **2026**.",
+          "duplicate_input_of": null,
+          "necessity_initial": "NECESSARY",
+          "reviewed_necessity": "OPTIONAL",
+          "review_note": "Cycle context is useful, but a future trusted runtime timestamp could replace a calendar search; none was injected here."
+        },
+        {
+          "index": 3,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 27.595,
+          "fingerprint": "b3c0767f3eed4a529cc0b4d6313c8e9e75993e9de0d79019bb36ce9b61439792",
+          "args": {
+            "request": "current CompTIA Security+ exam version 2026"
+          },
+          "end": 37.722,
+          "duration": 10.127,
+          "quality_output": "In 2026, the CompTIA Security+ certification is in a transition phase between two exam versions:\n\n### 1. **CompTIA Security+ SY0-701 (Version 7)** — *Current Active Version*\n* **Launch Date:** November 7, 2023\n* **Retirement Date:** **June 11, 2027** (for the English exam) and August 13, 2027 (for Japanese, Portuguese, Spanish, and Thai versions). \n* **Status:** This is the most widely taken and supported version for the majority of 2026. If you have already started studying with SY0-701 materials, you can safely take and pass this exam through mid-2027.\n\n### 2. **CompTIA Security+ SY0-801 (Version 8)** — *Newest Version*\n* **Launch Date:** **November 17, 2026**\n* **Retirement Date:** Estimated late 2029 (typically 3 years after launch).\n* **Status:** This version is launching soon. It is designed for candidates starting their study journey in late 2026 or planning to take their test in 2027 and beyond.\n\n---\n\n### Key Differences & What's New in SY0-801\nWhile the fundamental goal of proving entry-to-mid-level cybersecurity skills remains the same, the **SY0-801** blueprint introduces several key updates to reflect modern IT environments:\n* **Artificial Intelligence (AI) Risks:** SY0-801 explicitly integrates objectives covering the security risks of AI and Large Language Models (LLMs), including prompt injection, data poisoning, hallucinations, and jailbreaking.\n* **Shift in Domain Weights:** There is a heavier emphasis on hands-on **Security Operations** (Domain 4) and architectural resilience, while administrative theory and program management (Domain 5) have been slightly scaled down.\n* **Modern Architectures:** Deeper focus on Zero Trust architectures, secure access service edge (SASE), cloud security posture management (CSPM), and hybrid/distributed environments.\n\n---\n\n### Quick Exam Details (Applies to both SY0-701 & SY0-801)\n* **Format:** Maximum of 90 questions (a mix of multiple-choice and performance-based questions)\n* **Duration:** 90 minutes\n* **Passing Score:** 750 (on a scale of 100 to 900)\n* **Standard Voucher Price:** ~$425–$439 USD\n\n### Which one should you take?\n* **If you are already studying:** Finish your prep and take the **SY0-701**. It is fully valid, widely recognized, and your certification will remain active for 3 years from the date you pass, regardless of the exam version you took. \n* **If you are starting from scratch in late 2026:** You can choose either, but preparing for **SY0-801** ensures your study material aligns with the newest objectives that will remain current for the next three years. *Note: Exam vouchers are version-specific, so make sure you purchase the correct voucher for the version you plan to sit.*",
+          "duplicate_input_of": null,
+          "necessity_initial": "NECESSARY",
+          "reviewed_necessity": "NECESSARY",
+          "review_note": "Current external claim needs evidence; number of calls alone does not establish redundancy."
+        },
+        {
+          "index": 4,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 39.69,
+          "fingerprint": "b74e9be36e4a6e4cba3cbb3772cda0563146b3000ef983db1ce57e547614bb93",
+          "args": {
+            "request": "site:comptia.org \"Security+\" exam code \"SY0-701\" price OR voucher"
+          },
+          "duplicate_input_of": null,
+          "end": 91.939,
+          "duration": 52.249,
+          "censored": true,
+          "necessity_initial": "NECESSARY",
+          "reviewed_necessity": "NECESSARY",
+          "review_note": "Current external claim needs evidence; number of calls alone does not establish redundancy."
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 18.536,
+          "index": 1,
+          "end": 25.854,
+          "duration": 7.318
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 27.607,
+          "index": 2,
+          "end": 37.721,
+          "duration": 10.114
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 39.702,
+          "index": 3,
+          "end": 91.939,
+          "duration": 52.237,
+          "censored": true
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.078,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 9.512,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 9.512,
+          "duration": 8.434
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 9.527,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 18.52,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 18.52,
+          "duration": 8.993
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 18.54,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "current year"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHj1IVUT9KHrLVy_42m3cLjEOqfd20LlVZH5reZVm5qm6lzfqt2Ab_aSg3vslydS3VT4LODaKq5X3Au7Z3iIkkcx0uDKM0rtRf8OA2iyDfWf-B3UL6fqgTJu95iSJNN56pBVzI=",
+              "title": "thecurrentdate.com"
+            }
+          ],
+          "response_received": 25.852,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 25.852,
+          "duration": 7.312
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 25.859,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 27.594,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 27.594,
+          "duration": 1.735
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 27.609,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "current CompTIA Security exam version 2026",
+            "CompTIA Security SY0 801 release date",
+            "CompTIA Security plus exam version 2026"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGe2mso1PIyPU0xdq0ip89Kik7stS-5mADnSS56DhYe4O84aK3v5OgJMUq78C41cVlOEwDA_Th5A5X5kn_kvGI4hCMT9iPxmutR8nGOgXunvRaT7yBEqDq9YOj6JoUtP7NgZLt25G-omV1KGJ6ftRVVzOYr",
+              "title": "certgps.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEINK2a0c7rRcdByDqiTkJckwwrR8bcD0SbULYyCjPCptYlWlIl4Eon1je6PktwtcHEcR-EQe_eSswEPstDw7Qv7CokedijKx99AnNYGKkyYE6qXf6bC5-YOdXnWnA6QccwHvPh0CZR1cDPHBCbgcEjJMZk39i4Z0cChRkXDQDE5QKJAvfi1AUcJgo=",
+              "title": "acilearning.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEm6ujX_MXxDrh5qIYLoC6v6mdGDC-QP2PlRz4hTRjq_setEUPlxyfoKQrc8CGvv4s5fp8EhLrcoCLiiQXNGpfEw2k0xdnAeruVH2xiSvLNVsZz1o0QMg9P3Mda-1r-nTVD5PjoTqOJkczBR0-Zj2EVMb0aMnSoBCz0jSuHTN-zJMxgCZk=",
+              "title": "cyberkrafttraining.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEv5ophEn3I9UfB4F9N_SYCW3QxsQ8LyeU80JlVkjP89bxJwry8JIwAW7W48U3NIUL9am-Gtu19B13LXEj2sjNW7fSsVhxeaHfc1LisBQSQAOA_suWewU-HcMYqE_32ZW8NcwKI___XkxmxfKSMtQ==",
+              "title": "secuspark.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTChulFiauTYR5E_i8cn2oJrH03Gs42WwOFTlfS4w4TjERT7jw8s2b1mbaA8q3ydyaU6Xnirr2E_nKyIZyVtHtXeDkE4wEZ8dXcehGLieERlEY-DU-9csFr2lEKaJUSfuUcBMMnE5xrWfF4ydgVQNlT7X3bA==",
+              "title": "comptia.org"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtlq4k_H3OYnFGVLyaJjB2PplzR9UJSkY1VfJ2ERx2zcjdz1yZVHPX1SaTOd2RY6VCLferhX9VCoBJI_JSS5bM7jgl1ffm1YPVhyJszwsPBp958ni4invwQfMvOHnnefGEUoXWJDTCf0a0Ti4fnh4GcjGtQV1bhMc1m6qCMfrNdIW1LhW1zZDNSYzBybRq4MO2RDG7VvgirIqrGGY=",
+              "title": "getcertified4less.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFdfWSUalbC2dToQ_3ZE6U1fU14zTehoSEcZVTdjzMxe6Y_XKwgXwuhZTCm4W5xck54etS5DhgCfzdxXiojIk1wkgxXvH49pQ113StA9zvyU_thxz3U4K8YhQdoi8YNzWGd5x1F",
+              "title": "youtube.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEG8lD_Hnw_wahAuq1dTABFr08ICuc_oJDELghjJ-DwXbYJjaXf9XjEx8EKwciIicSP3TjQ4H4GH-i-Yod7sTIbN_1jKYIQ34SVPcv9gAkBw_YyrDfx7ewJKFG61q48haklkg8Dir53k98hWYwtULcuOpS1xS64AI2EtzWKcUmHAHjUxFYcJ3ZvzmyaTg8yzA==",
+              "title": "epicdetect.io"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5YYpCA-uOjmw2jz3t1wKoqnSa07NjWCybydvkczpPVV49yw3gfBZF9d-5D2qFh_RHxAmkMYdbj2reKv-Ej0kKPSFMBH2hJon7iuM7ARY-TGDr1cQ9KsMvV_ZAl06ijKbHSmSrnWB6yeNASeeNpw6IkASyXZo7aebYoohI82S8d6dYzCxpkKweNnDEX78ZUojTAlosVPtQU5DEKQXxVis2TA==",
+              "title": "trainingcamp.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtQzNmIiM3jIR9WWtOcmVVpFG0ZP0Iqdq0XjE4Cn_LfguKD4a2Zhyk2oyimaZK4SIFBtJLQ3c8E2vAnQ26DjpzUFwSsvoy3ZHa8x4WIdrNlvZZypD7Dt7OsC_n2fCc5R_PsOfE6FLs4mBLYFMOKHidGqH90wn8",
+              "title": "figigexams.com"
+            }
+          ],
+          "response_received": 37.72,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 37.72,
+          "duration": 10.111
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 37.726,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 39.688,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 39.688,
+          "duration": 1.962
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 39.704,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 91.933,
+          "duration": 52.229,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 91.933
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 91.934
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 91.934
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 91.938
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 91.939
+        }
+      ],
+      "events": [
+        {
+          "t": 9.515,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 9.522,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 18.521,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "current year"
+              }
+            }
+          ]
+        },
+        {
+          "t": 25.853,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "The current year is **2026**."
+            }
+          ]
+        },
+        {
+          "t": 25.855,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "Certification___Technical_Development_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 27.595,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "current CompTIA Security+ exam version 2026"
+              }
+            }
+          ]
+        },
+        {
+          "t": 37.721,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "In 2026, the CompTIA Security+ certification is in a transition phase between two exam versions:\n\n### 1. **CompTIA Security+ SY0-701 (Version 7)** — *Current Active Version*\n* **Launch Date:** November 7, 2023\n* **Retirement Date:** **June 11, 2027** (for the English exam) and August 13, 2027 (for Japanese, Portuguese, Spanish, and Thai versions). \n* **Status:** This is the most widely taken and supported version for the majority of 2026. If you have already started studying with SY0-701 materials, you can safely take and pass this exam through mid-2027.\n\n### 2. **CompTIA Security+ SY0-801 (Version 8)** — *Newest Version*\n* **Launch Date:** **November 17, 2026**\n* **Retirement Date:** Estimated late 2029 (typically 3 years after launch).\n* **Status:** This version is launching soon. It is designed for candidates starting their study journey in late 2026 or planning to take their test in 2027 and beyond.\n\n---\n\n### Key Differences & What's New in SY0-801\nWhile the fundamental goal of proving entry-to-mid-level cybersecurity skills remains the same, the **SY0-801** blueprint introduces several key updates to reflect modern IT environments:\n* **Artificial Intelligence (AI) Risks:** SY0-801 explicitly integrates objectives covering the security risks of AI and Large Language Models (LLMs), including prompt injection, data poisoning, hallucinations, and jailbreaking.\n* **Shift in Domain Weights:** There is a heavier emphasis on hands-on **Security Operations** (Domain 4) and architectural resilience, while administrative theory and program management (Domain 5) have been slightly scaled down.\n* **Modern Architectures:** Deeper focus on Zero Trust architectures, secure access service edge (SASE), cloud security posture management (CSPM), and hybrid/distributed environments.\n\n---\n\n### Quick Exam Details (Applies to both SY0-701 & SY0-801)\n* **Format:** Maximum of 90 questions (a mix of multiple-choice and performance-based questions)\n* **Duration:** 90 minutes\n* **Passing Score:** 750 (on a scale of 100 to 900)\n* **Standard Voucher Price:** ~$425–$439 USD\n\n### Which one should you take?\n* **If you are already studying:** Finish your prep and take the **SY0-701**. It is fully valid, widely recognized, and your certification will remain active for 3 years from the date you pass, regardless of the exam version you took. \n* **If you are starting from scratch in late 2026:** You can choose either, but preparing for **SY0-801** ensures your study material aligns with the newest objectives that will remain current for the next three years. *Note: Exam vouchers are version-specific, so make sure you purchase the correct voucher for the version you plan to sit.*"
+            }
+          ]
+        },
+        {
+          "t": 37.723,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "Certification___Technical_Development_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 39.689,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "site:comptia.org \"Security+\" exam code \"SY0-701\" price OR voucher"
+              }
+            }
+          ]
+        },
+        {
+          "t": 91.934,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": []
+        },
+        {
+          "t": 91.938,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        }
+      ]
+    },
+    {
+      "id": "internship_stable_2",
+      "domain": "internship",
+      "label": "Internship & Job Preparation",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?",
+      "status": "completed",
+      "completed_utc": "2026-10-22T20:40:15.810595+00:00",
+      "orchestrator_request_start": 1.097,
+      "total_seconds": 90.291,
+      "band": "RED",
+      "first_transfer": {
+        "t": 7.995,
+        "target": "internship__job_preparation_agent"
+      },
+      "actual_specialist": "internship__job_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 8.004,
+      "first_specialist_event": 15.27,
+      "handoff_seconds": 7.275,
+      "first_helper": 15.284,
+      "first_text": 90.289,
+      "final_answer": "Preparing for cybersecurity roles as a Computer Science senior is an exciting and highly rewarding path. Because the industry moves quickly and recruitment cycles are highly structured, your preparation strategy will depend heavily on your graduation timeline and target sector.\n\nCurrently, we are in **October 2026**. Recruiting for Summer 2027 internships and Fall 2027 full-time roles is **actively underway right now** (historically peaking between August and November, and continuing through early spring). \n\nHere is a prioritized, stage-appropriate guide to help you prepare, leverage your Morgan State resources, and target the right opportunities.\n\n---\n\n### 1. Clarify Your Graduation Timeline & Target the Right Roles\nAs a senior, your graduation date dictates which types of roles you are eligible for:\n*   **If you graduate in December 2026 or May 2027:** Many structured \"internship\" programs require you to return to school for at least one semester after the internship. If this is your timeline, you should primarily target **Entry-Level Full-Time Roles** (e.g., Associate Security Analyst, SOC Analyst, Associate Security Engineer), **New Graduate Rotational Programs**, or internships that explicitly state they accept recent graduates.\n*   **If you graduate in December 2027 (or later):** You are fully eligible for traditional **Summer 2027 Cybersecurity Internships**.\n\n---\n\n### 2. Leverage Morgan State University's Cyber Network\nMorgan State is officially designated as a **National Center of Academic Excellence in Cyber Defense Education (NCAE-CD)**, which gives you a major competitive advantage. You should immediately leverage these on-campus resources:\n*   **The Cybersecurity Assurance & Policy (CAP) Center:** The CAP Center is the hub of security research and federal agency relationships at MSU. Stop by or reach out to CAP Center faculty to ask about current research, federal agency pipelines, or industry partnerships.\n*   **SACS (Society for the Advancement of Computer Science):** As MSU's premier computing organization, SACS regularly partners with recruiters from Google, JP Morgan Chase, NASA, and the NSA. Attend their meetings and workshops to find out about exclusive resume-drops or networking events.\n*   **CyberCorps Scholarship for Service (SFS):** If you are considering staying at Morgan State for a master's degree or have a remaining year of study, look into the **Secure Embedded Systems Scholarship (SES²)** program through the CAP Center. It offers full tuition and substantial stipends in exchange for post-graduation federal service.\n\n---\n\n### 3. Build a Cybersecurity-Specific Technical Profile\nBecause Computer Science degrees are typically development-heavy, recruiters want to see that you have gone out of your way to learn foundational security concepts and infrastructure:\n*   **Networking Fundamentals:** Ensure you can confidently explain the OSI model, TCP/IP, DNS, DHCP, routing, firewalls, and VPNs.\n*   **Linux Command Line:** Almost all security tools run on Linux. If your CS classes have been Windows- or MacOS-centric, practice navigating the Linux command line (terminal).\n*   **Security-Specific Tools:** Gain familiarity with industry-standard tools like **Wireshark** (packet analysis), **Nmap** (network scanning), and basic SIEM (Security Information and Event Management) platforms like **Splunk** or **Elastic**.\n*   **Hands-on Evidence (The Differentiator):** Having a Github portfolio or documentation of practical work is what gets seniors hired. Focus on:\n    *   **Home Labs:** Document a lab you built (e.g., setting up a virtual network using VirtualBox, running vulnerability scans, or analyzing logs).\n    *   **Capture the Flag (CTF) / Gamified Platforms:** Active practice on platforms like *TryHackMe, HackTheBox, or picoCTF* proves your interest and practical skills. Mentioning your rank or write-ups of completed challenges on your resume is highly valued.\n\n---\n\n### 4. Target the Right Sectors\n*   **Defense & Federal Contractors:** Companies like Northrop Grumman, Lockheed Martin, Booz Allen Hamilton, or federal agencies (CISA, NSA) actively recruit CS majors from NCAE-CD schools like Morgan State. Note that these roles almost always require **U.S. Citizenship** and the ability to obtain a security clearance.\n*   **Corporate & Financial Sectors:** Companies like JPMorgan Chase, Capital One, and technical vendors (e.g., Fortinet, IBM) hire heavily for security operations, cloud security, and application security.\n\n---\n\n### What are your immediate next steps?\n\nTo help me tailor this preparation specifically to you, **what is your expected graduation month and year?** \n\nAdditionally, we have specialized career agents ready to help you execute specific parts of your preparation. Which of these areas would you like to focus on next?\n\n1.  **Tailor your resume, GitHub, or LinkedIn** to showcase your cyber projects and labs. *(I will transfer you to the **Resume & Portfolio Agent**)*\n2.  **Plan your technical certifications** (such as CompTIA Security+ or ISC2 Certified in Cybersecurity). *(I will transfer you to the **Certification & Technical Development Agent**)*\n3.  **Map out a personal learning plan** to bridge gaps in your networking or security tool knowledge. *(I will transfer you to the **Skill Gap & Career Roadmap Agent**)*\n4.  **Prepare for upcoming technical or behavioral security interviews**. *(I will transfer you to the **Interview Preparation Agent**)*\n5.  **Draft outreach messages to recruiters or MSU alumni** working in cyber. *(I will transfer you to the **Networking & Professional Communication Agent**)*",
+      "search_helper_invocations": 3,
+      "search_enabled_model_requests": 3,
+      "search_grounded_requests": 3,
+      "search_queries_reported": 15,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 53.311,
+      "specialist_model_seconds": 28.91,
+      "orchestrator_model_seconds": 6.895,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.995,
+          "fingerprint": "613eee80c2c5cba13f2b3e0a4d3919b9c08ecb8dc8d3a740c3b844d7fbfe276f",
+          "args": {
+            "agent_name": "internship__job_preparation_agent"
+          },
+          "end": 7.998,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null,
+          "reviewed_necessity": "NECESSARY",
+          "review_note": "Routing dispatch; excluded from retrieval counts."
+        },
+        {
+          "index": 2,
+          "name": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 15.271,
+          "fingerprint": "18ebbcb21ade1d12f7992857e0ea1458b16067930571f89380c48444e1748217",
+          "args": {
+            "request": "current year date"
+          },
+          "end": 25.859,
+          "duration": 10.588,
+          "quality_output": "Today's date is **Thursday, October 22, 2026**.",
+          "necessity_initial": "UNNECESSARY",
+          "duplicate_input_of": null,
+          "reviewed_necessity": "UNNECESSARY",
+          "review_note": "Judge against the original conceptual request; omit unsolicited current facts rather than retaining them ungrounded."
+        },
+        {
+          "index": 3,
+          "name": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 28.588,
+          "fingerprint": "cda080e1e44db09133849313387021f3ddf94708083e91cd3d72c93498587391",
+          "args": {
+            "request": "cybersecurity internship requirements 2027 entry level"
+          },
+          "end": 46.903,
+          "duration": 18.315,
+          "quality_output": "If you are looking to secure an entry-level **cybersecurity internship for 2027**, preparation and timing are key. Because the recruiting cycle for Summer 2027 internships peaks during the **Fall of 2026 and runs through early 2027**, you should begin aligning your resume, skills, and portfolio immediately. \n\nWhile exact requirements vary by industry (e.g., defense, finance, tech, healthcare), recruiters generally look for a blend of foundational academic knowledge, hands-on self-study, and core technical skills.\n\n---\n\n### 1. Academic & General Eligibility Requirements\nMost structured internship programs (especially in Big Tech, banking, and consulting) have baseline eligibility requirements:\n*   **Education:** Current enrollment in (or recent graduation from) an Associate’s, Bachelor’s, or Master’s degree program. Common majors include **Cybersecurity, Computer Science, Information Technology, Computer Engineering, or Management Information Systems (MIS)**.\n*   **Graduation Timeline:** Most summer 2027 programs target \"rising juniors\" or \"rising seniors\"—meaning you are expected to graduate between **December 2027 and Summer 2028**. \n*   **GPA:** While some companies have dropped GPA requirements entirely to focus on skills, many traditional firms still list a **minimum GPA of 3.0** (on a 4.0 scale).\n*   **Citizenship & Clearances:** If you are applying to government agencies (CISA, NSA, FBI) or defense contractors, **U.S. citizenship** is strictly required, and you must be able to pass a rigorous background check/security clearance.\n\n### 2. Core Technical Requirements\nYou do not need to be an expert, but recruiters expect entry-level interns to understand the underlying mechanics of computers and networks:\n*   **Networking Fundamentals:** A firm grasp of how data travels. You should understand the **OSI model, TCP/IP, DNS, DHCP, routing, firewalls, and VPNs**.\n*   **Operating Systems:** Comfortable working in both Windows and **Linux**. Because most security tools and servers run on Linux, knowing how to navigate the command line (terminal) is a major requirement.\n*   **Scripting & Automation:** Knowing how to write basic scripts to automate repetitive tasks or parse log files. **Python** is the industry favorite, though familiarity with **Bash** or **PowerShell** is also highly valued.\n*   **Security Concepts:** Familiarity with the **CIA Triad** (Confidentiality, Integrity, Availability), common attack vectors, the OWASP Top 10 vulnerabilities, and basic threat analysis.\n\n### 3. Hands-On Tools & Practical Experience (The Differentiator)\nWith high competition for internships, having a **GitHub portfolio** or a personal blog documenting your practical work will set you apart from other applicants:\n*   **Home Labs:** Set up a virtual lab using VirtualBox or VMware. Document how you configured a firewalled network, ran vulnerability scans, or set up an intrusion detection system. \n*   **Security Tools:** Get hands-on exposure to standard tools like **Wireshark** (packet analysis), **Nmap** (network scanning), and basic SIEM (Security Information and Event Management) platforms like **Splunk** or **Elastic**.\n*   **CTF & Gamified Platforms:** Active participation in Capture the Flag (CTF) competitions or practice platforms like **TryHackMe, HackTheBox, or picoCTF**. Listing your rank or write-ups of completed rooms on your resume shows initiative and genuine interest.\n\n### 4. Certifications (Highly Valued but Often Optional)\nCertifications are highly regarded in cybersecurity because they validate that you have a standardized baseline of knowledge. Having at least one of these on your resume for 2027 will make you stand out:\n*   **CompTIA Security+:** The \"gold standard\" for early-career security roles. It is widely recognized and frequently required for defense/government contractor internships.\n*   **ISC2 Certified in Cybersecurity (CC):** A great, highly accessible, and often free entry-level certification that covers security principles and network security.\n*   **Google Cybersecurity Professional Certificate (via Coursera):** An excellent foundational certificate that teaches Python, SQL, and SIEM tools.\n*   **eJPT (eLearnSecurity Junior Penetration Tester):** If you are specifically targeting offensive security, penetration testing, or red-teaming internships, this practical, hands-on exam is highly recommended.\n\n### 5. Essential Soft Skills\nTechnical skills will get you the interview, but soft skills will get you the job. Security teams are highly collaborative, and you must be able to translate complex technical issues to non-technical stakeholders:\n*   **Problem-Solving & Critical Thinking:** The ability to look at anomalous data and logically piece together what happened.\n*   **Communication:** Strong written and verbal communication for writing incident reports or explaining vulnerabilities.\n*   **Attention to Detail:** Cybersecurity is a game of inches; missing a single log entry or misconfiguring a port can have massive consequences.\n\n---\n\n### Strategy for Applying to 2027 Internships:\n1.  **Start Early (Fall 2026/Winter 2027):** Large financial firms (JPMorgan, Capital One), consulting agencies (Accenture, EY, KPMG), and tech companies (IBM, Fortinet) actively post their Summer 2027 internship listings starting in the **late summer and fall of 2026**. \n2.  **Tailor Your Resume:** Put your projects, CTF rankings, and home labs near the top of your resume if you don't have prior corporate IT experience. Use industry keywords (e.g., \"threat monitoring,\" \"log analysis,\" \"network security\") to pass Applicant Tracking Systems (ATS).\n3.  **Network:** Join local professional chapters (like ISACA, OWASP, or ISSA) or your university's cybersecurity club. Many internship opportunities are filled through referrals and networking events.",
+          "necessity_initial": "UNNECESSARY",
+          "duplicate_input_of": null,
+          "reviewed_necessity": "UNNECESSARY",
+          "review_note": "Judge against the original conceptual request; omit unsolicited current facts rather than retaining them ungrounded."
+        },
+        {
+          "index": 4,
+          "name": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 53.244,
+          "fingerprint": "0bb8c26f7c301924e42e3e1a32b0231a4c72c2b2c5ab08cafef8acac302f9ed0",
+          "args": {
+            "request": "Morgan State University cybersecurity club program"
+          },
+          "end": 77.692,
+          "duration": 24.448,
+          "quality_output": "At Morgan State University (MSU), a designated National Center of Academic Excellence in Cyber Defense Education (NCAE-CD/NCAE-C), cybersecurity is supported through student-run clubs, academic degree programs, specialized research centers, and scholarship opportunities. \n\nThe primary clubs, academic tracks, and special programs related to cybersecurity at Morgan State include:\n\n---\n\n### 1. Student Clubs & Professional Organizations\nWhile Morgan State does not have a standalone club solely named the \"Cybersecurity Club,\" cybersecurity students actively participate and lead within the university's main technology-focused student organizations:\n\n* **SACS (Society for the Advancement of Computer Science):**\n  * **What it is:** Founded in 1964 and recognized officially as MSU's student affiliate of the Association for Computing Machinery (ACM). SACS is the premier technology and computing club on campus.\n  * **Cybersecurity Focus:** The club’s membership primarily consists of Computer Science, Computer Engineering, and Information Systems majors, with a massive growing interest in software engineering, cybersecurity, and artificial intelligence. \n  * **What they do:** SACS organizes technical workshops, peer-to-peer and alumni mentoring, and cybersecurity-focused tutoring. They also partner with top-tier private and government organizations (such as Google, JP Morgan Chase, NASA, and the NSA) to help students secure cybersecurity internships and full-time careers.\n* **IEEE SSCS Student Branch Chapter (SBC):**\n  * **What it is:** Advised by Dr. Kevin Kornegay (director of the CAP Center), Morgan State made history as the first Historically Black College or University (HBCU) to establish an IEEE Solid-State Circuits Society (SSCS) Student Branch.\n  * **Cybersecurity Focus:** This group connects students directly to research and technical developments in **hardware security**, secure semiconductor design, and secure System-on-Chip (SoC) integration.\n\n---\n\n### 2. The Cybersecurity Assurance & Policy (CAP) Center\nThe **CAP Center** is the heart of Morgan State's cybersecurity research and workforce development initiatives. \n* **Focus Areas:** The center conducts cutting-edge research in physical layer and hardware security, embedded systems, and securing Internet of Things (IoT) devices from physical and network-level manipulation. \n* **Academics & Research:** Students working within the CAP Center gain hands-on lab experience, participate in high-level research, and represent the university in national cybersecurity initiatives and challenges.\n\n---\n\n### 3. CyberCorps Scholarship for Service (SFS)\nMorgan State hosts the National Science Foundation's CyberCorps Scholarship for Service program. \n* **Program Name:** **Secure Embedded Systems Scholarship (SES²)**.\n* **What it offers:** Managed by the CAP Center, this prestigious program provides full tuition, professional development, and annual stipends (up to $25,000 for undergraduates and $34,000 for graduate students) for students pursuing cybersecurity-focused degrees. In exchange, graduates commit to working in federal, state, local, or tribal government cybersecurity roles.\n\n---\n\n### 4. Academic Degree Offerings\nMorgan State offers distinct tracks depending on whether a student wants a highly technical engineering approach or a strategic business/policy approach:\n* **B.S. in Cybersecurity Intelligence Management (CyIM):** Housed in the Graves School of Business and Management. This is a non-technical degree program focusing on cyber threats, compliance, cybersecurity law, privacy, risk management, and security planning.\n* **B.S. in Computer Science (Cybersecurity Concentration):** Offered through the Computer Science Department, this route is highly technical, focusing on secure software development, secure systems, and defensive programming.\n* **Electrical and Computer Engineering Pathways:** Focuses on hardware assurance and secure embedded systems under the CAP Center.\n\n---\n\n### 5. Outreach & Youth Programs\n* **FACS / GenCyber (Females are Cyber Stars):** Sponsored by the CAP Center, this is a free, highly interactive summer program for local Baltimore-area middle school girls. The program focuses on teaching girls the fundamentals of cybersecurity, smart home (IoT) security, and connects them with prominent women in STEM fields.",
+          "necessity_initial": "UNNECESSARY",
+          "duplicate_input_of": null,
+          "reviewed_necessity": "UNNECESSARY",
+          "review_note": "Judge against the original conceptual request; omit unsolicited current facts rather than retaining them ungrounded."
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 15.284,
+          "index": 1,
+          "end": 25.858,
+          "duration": 10.574
+        },
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 28.6,
+          "index": 2,
+          "end": 46.902,
+          "duration": 18.302
+        },
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 53.256,
+          "index": 3,
+          "end": 77.691,
+          "duration": 24.435
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.097,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.992,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.992,
+          "duration": 6.895
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 8.006,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 15.269,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 15.269,
+          "duration": 7.263
+        },
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "start": 15.287,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "date today"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTkqWx7CQjb6tY-fGNt2fhPN4MN-N3D_cZG1SqNN1uZ7t2a4V3j3C9yRzcov-BEU0c-tzKAq6WnMk7cweV6sZzQa4yrdXMTDJ0ebjvualnoK_F1Zg9K52VUDQTwKYDsl2V6FMQ",
+              "title": "saturdaygift.com"
+            }
+          ],
+          "response_received": 25.857,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 25.857,
+          "duration": 10.57
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 25.863,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 28.586,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 28.586,
+          "duration": 2.723
+        },
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "start": 28.602,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "cybersecurity internship requirements entry level",
+            "entry level cybersecurity internship skills certifications 2027"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxa_M6f0WrftPp7R826V3JG0CXaEgfuy0ffOkTfUG92Zicdx5sGsdUpBDmG51D5oxl2nxh4jgIgJnPcvhWHMzSIXqC-SVSSOAjhFoKw-joSjdRaXk823HiDgayCrVUbIWBGX9ZzKWpK5SokxDgzVaeJ8TgctZ2IimIdA==",
+              "title": "chiaroai.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHxMWQ_i5OKKIqrJpAoY1CjN4nstmPTSkqIz0NH7nmsFuh1PH-r6iepTHTPdTNFCXBgNLzAUWrUDosVEFcJ3P-n-qYMVsprrm2lgqHWGYB8OzKq3w5vvq-nZ5droHxqE4cn2eO4_FQI6OljfkjT7CUGrysT2IAzaf5-KxEmxlQ2I-Ky",
+              "title": "extern.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjlWTKkVbVJ8vD6zKH8boGoEuPi1ZhBEmJvIeizYqZk_Cjf73CudC-CIdxc9-zMDe-c2FcdUFqQXxdAzo2wAv-FBmVIdypFTxgpo4pHq-o042V7QfO7X_QnX0EFaC3NMK5RssNbpOId8N6sJ-wMdpUYI-oYuEVvVcF",
+              "title": "sandiego.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGk6gjctU8gr5lgKRj5mZAHtwNvDsWTv0JgnDKjEMEXi7rw1-gg0Wh57cRusf1GtH9F6_dZnZtnyHWDIq-wdewmkFXzPZLEu_q1D-F6eealX9EtVMTFMS_JMY3rz-su6pnVvk-mH8F_yJkn8p06OCI0CcbGwUpVCZBZ2hHz8J0GyvPmSFL_nldNRaha5bwDMcI1SC3u9i4=",
+              "title": "ibm.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPOjL4gOL66WF8Ut87i3tTUdmiF2TkCLgJoufGYbIncrSzyqnPHINdqfM_XARvGyYNxg4YW7j_q5bJoRMrcvH9AlCO2PGlUYjVsBx2FEMmb7xApV2E88XbUNERTlIuGpfjuPM4VVISxoBCwaTFdrAswl5FsPDiKuYcEfA90oLrUxPCdgJqKzawN3J1m5t8Cs-BNQ4bjEd0P_c=",
+              "title": "research.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFxaEZGWED9T2Fvuo9jfPdhLwaM_am15L-Cl09Zmek522Fqo7xarxJBL-S4-aEkuI89e_chXCdWa_NjkDRZGUD10X1fFztg_ffXnECJKuI4bw0S7EJXHs_M4hvrHJAAbnlOUJelDNK0HvfJ89Lq_AF9PpIFagL-Yn38pepp6AEnPBgh",
+              "title": "coursera.org"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEf8UzsDqbUyRAaEc8hP05dj4P6veIMrODymiN_jgqOUNog9HIz0mbb7fA_ggXLDCL7evmC94-2Bk2rEikfIfL1P8_acO3-Uinzhj_udeXopyRU-8g_DiJwVlY7kITize7vok4epmlq31pHbhJMMEkebGybKXQ3dG4dv3nMGCLQ_vzrM43Q_N3vkTn776Q=",
+              "title": "cybrary.it"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH1eGKuuvXvemqCizB7KkJ26DiTwSZ7zuiUkGoiTB0gcBoRMAi_CduxRPsbri77_Q21VIit_U-t4plsWyesvRDeUlU33CTaQHV3MSuoOV7P5bXe8xYz4EezV_yMX1Cf-9FBQ-aFDE8Y_KpQOuJ4ncykH7oANugDExwyWBMvJ__YIt9_0OEs0k_9Jo9BVTnFcAHoFfZ_yIIPVjPi5DrnFbarmsTwhcm9GoCEv8b4mdMqMPLgnuC7cQ87it8mzOXJyvlP9-WWVAH8hSqK4o9q",
+              "title": "ziprecruiter.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGZoLZlttaJM9hi8K_H38O0w7n2eTvKgAIWBSDEGdQs8artQCxK2EWEEVdOYHLxLZDOujwcrmU0T-XpScAkT87EED0DIthz5U0yS9zEWFJyIafkAOkGQmq7vR0kJmKzclsp06omhAud21x8oKTCV03jkVsMNVvtp5Yg1VclsXK1tzzPo1fTMRpkzA==",
+              "title": "grm.institute"
+            }
+          ],
+          "response_received": 46.899,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 46.899,
+          "duration": 18.297
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 46.908,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 53.243,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 53.243,
+          "duration": 6.335
+        },
+        {
+          "agent": "Internship___Job_Preparation_Agent_google_search_agent",
+          "start": 53.257,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Morgan State University cybersecurity club",
+            "Morgan State University cybersecurity program",
+            "\"Morgan State University\" \"cybersecurity club\" OR \"cyber club\"",
+            "\"Morgan State\" \"cybersecurity team\" OR \"cyber team\"",
+            "Morgan State University \"cybersecurity\" student organization OR club",
+            "Morgan State University SACS club cybersecurity",
+            "\"Amina Jade Washington\" OR \"Omar El Miloudi\" \"Cybersecurity Club\"",
+            "\"SACS\" \"Morgan State\" cybersecurity OR \"computer science club\"",
+            "\"Morgan State University\" \"Cybersecurity Club\" OR \"Cyber Club\" OR \"Cybersecurity Team\"",
+            "Morgan State University \"Cybersecurity Assurance\" \"club\" OR \"student organization\" OR \"program\"",
+            "\"Morgan State\" \"cyber security\" club OR \"cybersecurity club\" OR \"cyber club\"",
+            "\"Morgan State\" \"IEEE\" \"Cybersecurity\" OR \"cyber\""
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE35AfWA33Ve6_l9WtDEdwZjEM54nPWyDtwpe11b2F3ctOft_hKhAsdLwr6Z0pz9cEQWUWUMQbUC4V3WaGVTfsrmJzyTz4sX9GV2zp_7tn8Y4P12XYwmMimY6onx4--PX2AzoidLytj78i7mNo2gvlOPnNfdeF94xFoHnuPapId2RhLseGJRAkFnWIqz4jhcqtjSWQgLcfwVFHzdh3aVXBRTLcvHPWR_nLQy3Mv0MIym-0Z0hHfZ20=",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG89O-hgqhMjAmw7SOoqQWQOoYtXh9A5THgbozjqd51DhypWYblRvjC75HUTqj2zFq9oE7V5TWZczYK4x-CEzmb_84BnevetrPAK4iePTgCSF9ZAYzaIIdzyPcNEOS6VXjvp5jyhxHOxJomWTo8R88IYk-dI-GFMm4=",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFm-lk-3j_0gZUNAAxqEPKpB47gxWbuq0MF2n3YPJN4AA7hFxPGc83DYteB-UB1ZMo_xIwViDf63UPw_cEa47esd29Z4ssBoPZ6iW6Z5LCI0DqQtrkfNDjv4NdQQCoPNQ5uAeR1pZwpmtcNUjaBsYXc6l6p",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGQb-tchhKZyXCWZPhh8x7aOdGnyXoAD0e8DIWYcukD8nAxvd72EZtDfVHMZYK6geuAjOHmjCTHgDhUnZ0Hvj6F0VLCRo1S76nl4yhPynE9a3OMisBP_JHsDt7xpywvxTu-TIZiGEuCDmoZkPfHDNjEyY1JZyJs7rY8HMUq8H-ubL4jDl3zC6Ij",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1fWslMqW4MjudNz36uFXjPhtVfunRWIn-r9VkqkGpgD6VlYcTR8LyMqu82lTHSpMY7QnCxNWJhoGW_HZFeCRp4uW6_4ipYjLvVZ8uLp0tyU9YT-YcARVud0QLFmYi-bjTD0CPJ9beEnDPP6w5JmXDqWEQk5wz3XTRITMi6KHI_WVXBU1XfGoVsGzlZ6-L10Xf4mfRpYwZZYYNEV2sXQ73VqCrHEcWuJ9EkH7gqhVoRKAy",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE88YO8fwT-fT6O3CEnN8RrNVRqm5m8JmD0Y38hvzaKEON9w2HOXXdBsglCQOoXQRepds4QvKeoQEy4IA11THmWMA3egpyTNrMjr9VFDdS352qvS0ZUbTSgeM5_Ws9gw_xxil8J3g==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2rOVszzTKPY4XwaRQ_6a2miDxKzR4AwSAUoIsCTjn7D_sxrDjGWbhY_H-OKeq74uNX5z3IiLYGp5m3KjMb-l6HM87yC79XTxBkopizvQlcdRBcnz_",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIe3NtCglu5FZfxTNtRcUTiAJZAF26p0jUsCb7D8CqSSykJ4k9zoItFF2lx5OFU0wxPd6kjPl3vQdoBSMUII3hCsxRkF8IzMcWjNU8RRT1fW6DEfvgLhhyYEDziCsv-Pkwgj6-l4m6jscDkKYde5b5jNKRszCVzySHRQlpmUEt8-2JM2ee4KBi8ULq0euIb-2NzTIeYtup",
+              "title": "hbcubuzz.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIU6vrfHFnVpWzIqAnulV0AbzQ0S2f0iFoXG9Kx0I9lnrY9MX2IQL8D_fELyfaM9oX8tiWlYXgoHAM81cY8yZF93awSM7F16QarAmx0YTsXk7gTxlEntAGmEiuEnwwDFd7lJT-aXKNfGir897cWQ==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEO4012FoYhjt0rMhHaoNcOV9CjaOobWOIiUfqUHHBwJeBBZEXci1m2BrdmmrRwUiNqp8KQTEMamJnSn7OE5MDl9O7dLfe9M2-9O00lXgNsHndU_P6s3ZSMxtEAXFRcWSmBdrsCR-R4Km0GWXMoZqV5epohgSc6Ri5GPFYWm6ku23HIKA==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGxnlWBS59p_1c5WIawjTdLnqFwXMsA5SgP1F5cWtwbmWUNSqg7o2DTlVgoNZkQLm_yLJ-U-9GPKY6JZ-F6d9INErjwDjbxNcNUiV5ijyZpwX_JbMDyAVMYmFeef011Y94WP4uUqQdWgIKDuhxwI46PhZVa1UDy9TUAJQ==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGNe48jjz__dGfg08U6690dKXY83zQJjcoi8U2FnxjVcKW1YMkMk6Me7XwX2_9W-FR_R7C00GpaPNi-sYLDPS_OW40dXq8toduBreYSxbPxUdF8BoukBdT88PmaQ7cj3jL0CeztqN5FA_a698PLDTdMosqf",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFW_-c1ka_qOBgN15pRSFAJuCPsfDozXICLoWpfdRu0_31ck8BJgGpaRwb7LnjaiYy91kQR_6nE584SVi3YJl5lpoqlFJNdM6gcl5_GIHsL27YLJJ8X2LkPUg2i5x5tT0UUR5WDeHs=",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4P3iZm8_S-HMyJOi5yJ9M3rWpirk8InuZcP9ahRUJO8WqOM7j6ddUhi4wlkK6LRMF9M1zvD4lkvG3OIxnZzqVTdkgnOchdLryBynMh2_j0nQYUYREBqTBV3L-HvGd9XSkqO5IZkR9n60f8WQuzp5Mklb4dg==",
+              "title": "morgan.edu"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPf3TvUC4rk4IU8JCo5RN--3KROEYPAVcArNiMApOAhx8kUrutquWWocfQ30mPOxEPmZ_5ueKDantpCoGe1OWJeQYwDp3pFOx7bVRTpCvrBgm8wSfsr06dq52ta8dphJa21BzLeRSBrhBU-czSCSBdBUzPM6aoWkxY3iTuk5rFbYChpo1PUQ==",
+              "title": "facebook.com"
+            }
+          ],
+          "response_received": 77.689,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 77.689,
+          "duration": 24.432
+        },
+        {
+          "agent": "internship__job_preparation_agent",
+          "start": 77.697,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 90.286,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 90.286,
+          "duration": 12.589
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.995,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "internship__job_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.001,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 15.27,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool": "Internship___Job_Preparation_Agent_google_search_agent",
+              "args": {
+                "request": "current year date"
+              }
+            }
+          ]
+        },
+        {
+          "t": 25.857,
+          "author": "Internship___Job_Preparation_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "Today's date is **Thursday, October 22, 2026**."
+            }
+          ]
+        },
+        {
+          "t": 25.859,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool_result": "Internship___Job_Preparation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 28.587,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool": "Internship___Job_Preparation_Agent_google_search_agent",
+              "args": {
+                "request": "cybersecurity internship requirements 2027 entry level"
+              }
+            }
+          ]
+        },
+        {
+          "t": 46.902,
+          "author": "Internship___Job_Preparation_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "If you are looking to secure an entry-level **cybersecurity internship for 2027**, preparation and timing are key. Because the recruiting cycle for Summer 2027 internships peaks during the **Fall of 2026 and runs through early 2027**, you should begin aligning your resume, skills, and portfolio immediately. \n\nWhile exact requirements vary by industry (e.g., defense, finance, tech, healthcare), recruiters generally look for a blend of foundational academic knowledge, hands-on self-study, and core technical skills.\n\n---\n\n### 1. Academic & General Eligibility Requirements\nMost structured internship programs (especially in Big Tech, banking, and consulting) have baseline eligibility requirements:\n*   **Education:** Current enrollment in (or recent graduation from) an Associate’s, Bachelor’s, or Master’s degree program. Common majors include **Cybersecurity, Computer Science, Information Technology, Computer Engineering, or Management Information Systems (MIS)**.\n*   **Graduation Timeline:** Most summer 2027 programs target \"rising juniors\" or \"rising seniors\"—meaning you are expected to graduate between **December 2027 and Summer 2028**. \n*   **GPA:** While some companies have dropped GPA requirements entirely to focus on skills, many traditional firms still list a **minimum GPA of 3.0** (on a 4.0 scale).\n*   **Citizenship & Clearances:** If you are applying to government agencies (CISA, NSA, FBI) or defense contractors, **U.S. citizenship** is strictly required, and you must be able to pass a rigorous background check/security clearance.\n\n### 2. Core Technical Requirements\nYou do not need to be an expert, but recruiters expect entry-level interns to understand the underlying mechanics of computers and networks:\n*   **Networking Fundamentals:** A firm grasp of how data travels. You should understand the **OSI model, TCP/IP, DNS, DHCP, routing, firewalls, and VPNs**.\n*   **Operating Systems:** Comfortable working in both Windows and **Linux**. Because most security tools and servers run on Linux, knowing how to navigate the command line (terminal) is a major requirement.\n*   **Scripting & Automation:** Knowing how to write basic scripts to automate repetitive tasks or parse log files. **Python** is the industry favorite, though familiarity with **Bash** or **PowerShell** is also highly valued.\n*   **Security Concepts:** Familiarity with the **CIA Triad** (Confidentiality, Integrity, Availability), common attack vectors, the OWASP Top 10 vulnerabilities, and basic threat analysis.\n\n### 3. Hands-On Tools & Practical Experience (The Differentiator)\nWith high competition for internships, having a **GitHub portfolio** or a personal blog documenting your practical work will set you apart from other applicants:\n*   **Home Labs:** Set up a virtual lab using VirtualBox or VMware. Document how you configured a firewalled network, ran vulnerability scans, or set up an intrusion detection system. \n*   **Security Tools:** Get hands-on exposure to standard tools like **Wireshark** (packet analysis), **Nmap** (network scanning), and basic SIEM (Security Information and Event Management) platforms like **Splunk** or **Elastic**.\n*   **CTF & Gamified Platforms:** Active participation in Capture the Flag (CTF) competitions or practice platforms like **TryHackMe, HackTheBox, or picoCTF**. Listing your rank or write-ups of completed rooms on your resume shows initiative and genuine interest.\n\n### 4. Certifications (Highly Valued but Often Optional)\nCertifications are highly regarded in cybersecurity because they validate that you have a standardized baseline of knowledge. Having at least one of these on your resume for 2027 will make you stand out:\n*   **CompTIA Security+:** The \"gold standard\" for early-career security roles. It is widely recognized and frequently required for defense/government contractor internships.\n*   **ISC2 Certified in Cybersecurity (CC):** A great, highly accessible, and often free entry-level certification that covers security principles and network security.\n*   **Google Cybersecurity Professional Certificate (via Coursera):** An excellent foundational certificate that teaches Python, SQL, and SIEM tools.\n*   **eJPT (eLearnSecurity Junior Penetration Tester):** If you are specifically targeting offensive security, penetration testing, or red-teaming internships, this practical, hands-on exam is highly recommended.\n\n### 5. Essential Soft Skills\nTechnical skills will get you the interview, but soft skills will get you the job. Security teams are highly collaborative, and you must be able to translate complex technical issues to non-technical stakeholders:\n*   **Problem-Solving & Critical Thinking:** The ability to look at anomalous data and logically piece together what happened.\n*   **Communication:** Strong written and verbal communication for writing incident reports or explaining vulnerabilities.\n*   **Attention to Detail:** Cybersecurity is a game of inches; missing a single log entry or misconfiguring a port can have massive consequences.\n\n---\n\n### Strategy for Applying to 2027 Internships:\n1.  **Start Early (Fall 2026/Winter 2027):** Large financial firms (JPMorgan, Capital One), consulting agencies (Accenture, EY, KPMG), and tech companies (IBM, Fortinet) actively post their Summer 2027 internship listings starting in the **late summer and fall of 2026**. \n2.  **Tailor Your Resume:** Put your projects, CTF rankings, and home labs near the top of your resume if you don't have prior corporate IT experience. Use industry keywords (e.g., \"threat monitoring,\" \"log analysis,\" \"network security\") to pass Applicant Tracking Systems (ATS).\n3.  **Network:** Join local professional chapters (like ISACA, OWASP, or ISSA) or your university's cybersecurity club. Many internship opportunities are filled through referrals and networking events."
+            }
+          ]
+        },
+        {
+          "t": 46.905,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool_result": "Internship___Job_Preparation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 53.244,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool": "Internship___Job_Preparation_Agent_google_search_agent",
+              "args": {
+                "request": "Morgan State University cybersecurity club program"
+              }
+            }
+          ]
+        },
+        {
+          "t": 77.69,
+          "author": "Internship___Job_Preparation_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "At Morgan State University (MSU), a designated National Center of Academic Excellence in Cyber Defense Education (NCAE-CD/NCAE-C), cybersecurity is supported through student-run clubs, academic degree programs, specialized research centers, and scholarship opportunities. \n\nThe primary clubs, academic tracks, and special programs related to cybersecurity at Morgan State include:\n\n---\n\n### 1. Student Clubs & Professional Organizations\nWhile Morgan State does not have a standalone club solely named the \"Cybersecurity Club,\" cybersecurity students actively participate and lead within the university's main technology-focused student organizations:\n\n* **SACS (Society for the Advancement of Computer Science):**\n  * **What it is:** Founded in 1964 and recognized officially as MSU's student affiliate of the Association for Computing Machinery (ACM). SACS is the premier technology and computing club on campus.\n  * **Cybersecurity Focus:** The club’s membership primarily consists of Computer Science, Computer Engineering, and Information Systems majors, with a massive growing interest in software engineering, cybersecurity, and artificial intelligence. \n  * **What they do:** SACS organizes technical workshops, peer-to-peer and alumni mentoring, and cybersecurity-focused tutoring. They also partner with top-tier private and government organizations (such as Google, JP Morgan Chase, NASA, and the NSA) to help students secure cybersecurity internships and full-time careers.\n* **IEEE SSCS Student Branch Chapter (SBC):**\n  * **What it is:** Advised by Dr. Kevin Kornegay (director of the CAP Center), Morgan State made history as the first Historically Black College or University (HBCU) to establish an IEEE Solid-State Circuits Society (SSCS) Student Branch.\n  * **Cybersecurity Focus:** This group connects students directly to research and technical developments in **hardware security**, secure semiconductor design, and secure System-on-Chip (SoC) integration.\n\n---\n\n### 2. The Cybersecurity Assurance & Policy (CAP) Center\nThe **CAP Center** is the heart of Morgan State's cybersecurity research and workforce development initiatives. \n* **Focus Areas:** The center conducts cutting-edge research in physical layer and hardware security, embedded systems, and securing Internet of Things (IoT) devices from physical and network-level manipulation. \n* **Academics & Research:** Students working within the CAP Center gain hands-on lab experience, participate in high-level research, and represent the university in national cybersecurity initiatives and challenges.\n\n---\n\n### 3. CyberCorps Scholarship for Service (SFS)\nMorgan State hosts the National Science Foundation's CyberCorps Scholarship for Service program. \n* **Program Name:** **Secure Embedded Systems Scholarship (SES²)**.\n* **What it offers:** Managed by the CAP Center, this prestigious program provides full tuition, professional development, and annual stipends (up to $25,000 for undergraduates and $34,000 for graduate students) for students pursuing cybersecurity-focused degrees. In exchange, graduates commit to working in federal, state, local, or tribal government cybersecurity roles.\n\n---\n\n### 4. Academic Degree Offerings\nMorgan State offers distinct tracks depending on whether a student wants a highly technical engineering approach or a strategic business/policy approach:\n* **B.S. in Cybersecurity Intelligence Management (CyIM):** Housed in the Graves School of Business and Management. This is a non-technical degree program focusing on cyber threats, compliance, cybersecurity law, privacy, risk management, and security planning.\n* **B.S. in Computer Science (Cybersecurity Concentration):** Offered through the Computer Science Department, this route is highly technical, focusing on secure software development, secure systems, and defensive programming.\n* **Electrical and Computer Engineering Pathways:** Focuses on hardware assurance and secure embedded systems under the CAP Center.\n\n---\n\n### 5. Outreach & Youth Programs\n* **FACS / GenCyber (Females are Cyber Stars):** Sponsored by the CAP Center, this is a free, highly interactive summer program for local Baltimore-area middle school girls. The program focuses on teaching girls the fundamentals of cybersecurity, smart home (IoT) security, and connects them with prominent women in STEM fields."
+            }
+          ]
+        },
+        {
+          "t": 77.694,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "tool_result": "Internship___Job_Preparation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 90.288,
+          "author": "internship__job_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for cybersecurity roles as a Computer Science senior is an exciting and highly rewarding path. Because the industry moves quickly and recruitment cycles are highly structured, your preparation strategy will depend heavily on your graduation timeline and target sector.\n\nCurrently, we are in **October 2026**. Recruiting for Summer 2027 internships and Fall 2027 full-time roles is **actively underway right now** (historically peaking between August and November, and continuing through early spring). \n\nHere is a prioritized, stage-appropriate guide to help you prepare, leverage your Morgan State resources, and target the right opportunities.\n\n---\n\n### 1. Clarify Your Graduation Timeline & Target the Right Roles\nAs a senior, your graduation date dictates which types of roles you are eligible for:\n*   **If you graduate in December 2026 or May 2027:** Many structured \"internship\" programs require you to return to school for at least one semester after the internship. If this is your timeline, you should primarily target **Entry-Level Full-Time Roles** (e.g., Associate Security Analyst, SOC Analyst, Associate Security Engineer), **New Graduate Rotational Programs**, or internships that explicitly state they accept recent graduates.\n*   **If you graduate in December 2027 (or later):** You are fully eligible for traditional **Summer 2027 Cybersecurity Internships**.\n\n---\n\n### 2. Leverage Morgan State University's Cyber Network\nMorgan State is officially designated as a **National Center of Academic Excellence in Cyber Defense Education (NCAE-CD)**, which gives you a major competitive advantage. You should immediately leverage these on-campus resources:\n*   **The Cybersecurity Assurance & Policy (CAP) Center:** The CAP Center is the hub of security research and federal agency relationships at MSU. Stop by or reach out to CAP Center faculty to ask about current research, federal agency pipelines, or industry partnerships.\n*   **SACS (Society for the Advancement of Computer Science):** As MSU's premier computing organization, SACS regularly partners with recruiters from Google, JP Morgan Chase, NASA, and the NSA. Attend their meetings and workshops to find out about exclusive resume-drops or networking events.\n*   **CyberCorps Scholarship for Service (SFS):** If you are considering staying at Morgan State for a master's degree or have a remaining year of study, look into the **Secure Embedded Systems Scholarship (SES²)** program through the CAP Center. It offers full tuition and substantial stipends in exchange for post-graduation federal service.\n\n---\n\n### 3. Build a Cybersecurity-Specific Technical Profile\nBecause Computer Science degrees are typically development-heavy, recruiters want to see that you have gone out of your way to learn foundational security concepts and infrastructure:\n*   **Networking Fundamentals:** Ensure you can confidently explain the OSI model, TCP/IP, DNS, DHCP, routing, firewalls, and VPNs.\n*   **Linux Command Line:** Almost all security tools run on Linux. If your CS classes have been Windows- or MacOS-centric, practice navigating the Linux command line (terminal).\n*   **Security-Specific Tools:** Gain familiarity with industry-standard tools like **Wireshark** (packet analysis), **Nmap** (network scanning), and basic SIEM (Security Information and Event Management) platforms like **Splunk** or **Elastic**.\n*   **Hands-on Evidence (The Differentiator):** Having a Github portfolio or documentation of practical work is what gets seniors hired. Focus on:\n    *   **Home Labs:** Document a lab you built (e.g., setting up a virtual network using VirtualBox, running vulnerability scans, or analyzing logs).\n    *   **Capture the Flag (CTF) / Gamified Platforms:** Active practice on platforms like *TryHackMe, HackTheBox, or picoCTF* proves your interest and practical skills. Mentioning your rank or write-ups of completed challenges on your resume is highly valued.\n\n---\n\n### 4. Target the Right Sectors\n*   **Defense & Federal Contractors:** Companies like Northrop Grumman, Lockheed Martin, Booz Allen Hamilton, or federal agencies (CISA, NSA) actively recruit CS majors from NCAE-CD schools like Morgan State. Note that these roles almost always require **U.S. Citizenship** and the ability to obtain a security clearance.\n*   **Corporate & Financial Sectors:** Companies like JPMorgan Chase, Capital One, and technical vendors (e.g., Fortinet, IBM) hire heavily for security operations, cloud security, and application security.\n\n---\n\n### What are your immediate next steps?\n\nTo help me tailor this preparation specifically to you, **what is your expected graduation month and year?** \n\nAdditionally, we have specialized career agents ready to help you execute specific parts of your preparation. Which of these areas would you like to focus on next?\n\n1.  **Tailor your resume, GitHub, or LinkedIn** to showcase your cyber projects and labs. *(I will transfer you to the **Resume & Portfolio Agent**)*\n2.  **Plan your technical certifications** (such as CompTIA Security+ or ISC2 Certified in Cybersecurity). *(I will transfer you to the **Certification & Technical Development Agent**)*\n3.  **Map out a personal learning plan** to bridge gaps in your networking or security tool knowledge. *(I will transfer you to the **Skill Gap & Career Roadmap Agent**)*\n4.  **Prepare for upcoming technical or behavioral security interviews**. *(I will transfer you to the **Interview Preparation Agent**)*\n5.  **Draft outreach messages to recruiters or MSU alumni** working in cyber. *(I will transfer you to the **Networking & Professional Communication Agent**)*"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "roadmap_stable_2",
+      "domain": "roadmap",
+      "label": "Skill Gap & Career Roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "stable",
+      "prompt": "I want to become a cloud security engineer. What skills should I build over the next year?",
+      "status": "failed",
+      "completed_utc": "2026-10-22T20:41:56.160186+00:00",
+      "orchestrator_request_start": 0.015,
+      "total_seconds": 80.33,
+      "band": "RED",
+      "first_transfer": null,
+      "actual_specialist": null,
+      "route_match": false,
+      "first_specialist_start": null,
+      "first_specialist_event": null,
+      "handoff_seconds": null,
+      "first_helper": null,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 0,
+      "orchestrator_model_seconds": 80.311,
+      "tools": [],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.015,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 80.326,
+          "duration": 80.311,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 80.326
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 80.326
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 80.327
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 80.33
+        }
+      ],
+      "events": [
+        {
+          "t": 80.327,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        }
+      ]
+    }
+  ],
+  "planned_case_ids": [
+    "certification_current_1",
+    "internship_stable_2",
+    "roadmap_stable_2"
+  ],
+  "remaining": [],
+  "review_method": "Request-relative manual tool review; completion is not an independent factual-quality pass. See OPTIMIZATION_REPORT.md."
+}

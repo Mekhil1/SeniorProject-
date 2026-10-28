@@ -1,0 +1,2810 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "b7b0b32b85e2bd2ca8890aff2cde4dd1a07c18b4aee89be19d23b6700c8fd080",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+    "agents\\career\\workflow\\shared_evidence.py": "216ac87d2c63b01bf21bbe1e8a5372d99fdf480ff5107930aaa06e8aca97b94b"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "wave3_certification_stable_1",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:36:15.447396+00:00",
+      "orchestrator_request_start": 1.133,
+      "total_seconds": 25.623,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.246,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 8.256,
+      "first_specialist_event": 8.257,
+      "handoff_seconds": 0.011,
+      "first_helper": null,
+      "first_text": 25.621,
+      "final_answer": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 17.355,
+      "orchestrator_model_seconds": 7.111,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.132,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 8.262,
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28159,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.247,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 8.25,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.133,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 8.244,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.244,
+          "duration": 7.111
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 8.263,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28159,
+          "tool_description_count": 3,
+          "response_received": 25.618,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 25.618,
+          "duration": 17.355
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.246,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.253,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 8.257,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 25.62,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 7.111,
+          "SPECIALIST_PRE_TOOL_WAIT": 17.355,
+          "STREAM_FINALIZATION": 0.002,
+          "UNOBSERVED_RUNTIME_WAIT": 1.155
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 8.246,
+          "transfer_to_agent": {
+            "t": 8.246,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 8.257,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 25.621,
+          "stream_completion": 25.623
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "STABLE ZERO-RETRIEVAL PASS",
+        "limits": "Single coaching canary except three fresh Certification samples; not a broad quality evaluation."
+      }
+    },
+    {
+      "id": "wave3_certification_stable_2",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:37:03.919804+00:00",
+      "orchestrator_request_start": 1.115,
+      "total_seconds": 22.897,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.35,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 8.359,
+      "first_specialist_event": 8.36,
+      "handoff_seconds": 0.01,
+      "first_helper": null,
+      "first_text": 22.896,
+      "final_answer": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 14.53,
+      "orchestrator_model_seconds": 7.233,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.113,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 8.363,
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28159,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.351,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 8.354,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.115,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 8.348,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.348,
+          "duration": 7.233
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 8.364,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28159,
+          "tool_description_count": 3,
+          "response_received": 22.894,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 22.894,
+          "duration": 14.53
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.35,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.357,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 8.36,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 22.896,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 7.233,
+          "SPECIALIST_PRE_TOOL_WAIT": 14.53,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 1.133
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 8.35,
+          "transfer_to_agent": {
+            "t": 8.35,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 8.36,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 22.896,
+          "stream_completion": 22.897
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "STABLE ZERO-RETRIEVAL PASS",
+        "limits": "Single coaching canary except three fresh Certification samples; not a broad quality evaluation."
+      }
+    },
+    {
+      "id": "wave3_certification_stable_3",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:38:00.584569+00:00",
+      "orchestrator_request_start": 1.075,
+      "total_seconds": 22.138,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 7.797,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 7.807,
+      "first_specialist_event": 7.808,
+      "handoff_seconds": 0.011,
+      "first_helper": null,
+      "first_text": 22.137,
+      "final_answer": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 14.321,
+      "orchestrator_model_seconds": 6.719,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.075,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 7.812,
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28159,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.798,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 7.801,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.075,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 7.794,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.794,
+          "duration": 6.719
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 7.814,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28159,
+          "tool_description_count": 3,
+          "response_received": 22.135,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 22.135,
+          "duration": 14.321
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.797,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.805,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 7.808,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 22.137,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 6.719,
+          "SPECIALIST_PRE_TOOL_WAIT": 14.321,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 1.097
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 7.797,
+          "transfer_to_agent": {
+            "t": 7.797,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 7.808,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 22.137,
+          "stream_completion": 22.138
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "STABLE ZERO-RETRIEVAL PASS",
+        "limits": "Single coaching canary except three fresh Certification samples; not a broad quality evaluation."
+      }
+    },
+    {
+      "id": "wave3_interview_stable",
+      "domain": "interview",
+      "label": "Interview Preparation",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role.",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:38:56.474899+00:00",
+      "orchestrator_request_start": 1.152,
+      "total_seconds": 25.183,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 6.815,
+        "target": "interview_preparation_agent"
+      },
+      "actual_specialist": "interview_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 6.823,
+      "first_specialist_event": 25.181,
+      "handoff_seconds": 18.366,
+      "first_helper": null,
+      "first_text": 25.182,
+      "final_answer": "Preparing for an entry-level cybersecurity technical interview requires a solid grasp of foundational computer science principles, practical systems knowledge, and security-specific analytical skills. \n\nSince cybersecurity roles can vary significantly—ranging from Security Operations Center (SOC) Analysts and Security Engineers to Application Security or Governance, Risk, and Compliance (GRC) specialists—this strategy is structured around **General Industry Patterns**. Once you have a specific employer or role in mind, we can verify official requirements and tailor this plan further.\n\n---\n\n### Phase 1: Core Technical Domains to Master\n\nMost entry-level cybersecurity technical interviews will evaluate your understanding of fundamentals rather than expecting you to be an expert in complex enterprise security architectures. Focus your study on these five pillars:\n\n#### 1. Networking Fundamentals (The Most Common Topic)\nYou cannot protect a network if you do not understand how data travels across it.\n*   **Concepts to Know:** The OSI Model vs. TCP/IP Model (know what happens at each layer), the TCP 3-way handshake, DNS resolution, DHCP, Subnetting, and NAT.\n*   **Protocols & Ports:** Memorize common ports and their security implications (e.g., HTTP 80 vs. HTTPS 443, SSH 22, FTP 20/21 vs. SFTP 22, RDP 3389, DNS 53).\n*   **Security Mechanisms:** Understand how SSL/TLS handshakes work, the role of firewalls (stateful vs. stateless), and the difference between IDS (intrusion detection) and IPS (intrusion prevention).\n\n#### 2. Operating Systems & System Reasoning\nSecurity analysts and engineers spend a lot of time investigating logs or hardening systems.\n*   **Linux/Unix:** Know basic command-line tools for system administration and investigation (`grep`, `find`, `chmod`, `chown`, `iptables`, `netstat`, `ps`).\n*   **Windows Security:** Understand Active Directory basics (Domain Controllers, GPOs, Kerberos vs. NTLM authentication) and Windows event logs.\n*   **Processes & Memory:** Have a high-level understanding of what happens during a buffer overflow or how privilege escalation occurs.\n\n#### 3. Security Fundamentals & Cryptography\n*   **Core Pillars:** The CIA Triad (Confidentiality, Integrity, Availability) and the AAA Framework (Authentication, Authorization, Accounting).\n*   **Cryptography:** Understand the difference between symmetric encryption (e.g., AES) and asymmetric encryption (e.g., RSA), and when to use each.\n*   **Hashing vs. Encryption:** Know that hashing is a one-way function used for integrity checks (e.g., SHA-256, MD5) and cannot be \"decrypted,\" whereas encryption is two-way and used for confidentiality.\n\n#### 4. Common Attack Vectors & Mitigations\n*   **Web Vulnerabilities:** Study the **OWASP Top 10** inside and out. Be ready to explain SQL Injection (SQLi), Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF), and how developers can prevent them (e.g., input sanitization, parameterized queries).\n*   **General Attacks:** Be able to explain Phishing, Man-in-the-Middle (MitM) attacks, DDoS, Malware types (Ransomware, Trojans, Rootkits), and social engineering.\n\n---\n\n### Phase 2: Scenario-Based Problem Solving (Incident Response)\n\nTechnical interviews for cybersecurity frequently use situational questions to test your analytical reasoning under pressure. They want to see your *process*, not just a memorized answer.\n\n**Common Interview Scenario:**\n> *\"An automated alert indicates that a workstation on the internal network is communicating with a known malicious IP address external to the company. What do you do?\"*\n\n**How to structure your response (The Triage Process):**\n1.  **Scope & Identify:** Ask clarifying questions. What kind of workstation is it? (An executive's laptop or a public terminal?) \n2.  **Containment:** Isolate the infected machine from the network (disable the network interface or unplug the network cable) to prevent lateral movement.\n3.  **Analysis:** Examine the network traffic logs, running processes on the machine, and system logs to identify the source of the communication.\n4.  **Eradication:** Remove the threat (terminate the malicious process, delete the malware, or re-image the machine if necessary).\n5.  **Recovery & Lessons Learned:** Restore the system to a known good state, monitor it closely, and document the incident to prevent future occurrences.\n\n---\n\n### Phase 3: Communication & Behavioral Frameworks\n\nA great cybersecurity professional must be able to communicate risks to non-technical stakeholders. \n*   **The \"Explain Like I'm 5\" Test:** Practice explaining complex technical concepts (like public-key cryptography or SQL injection) in plain English to someone who has no technical background.\n*   **Behavioral Questions:** Use the **STAR method** (Situation, Task, Action, Result) to talk about project work, school labs, or times you solved a difficult technical problem. Keep your contributions clear and honest—never invent metrics or experiences.\n\n---\n\n### Action Plan: How to Start Preparing Today\n\n1.  **Conduct a Self-Assessment:** Identify which of the domains above is your weakest (e.g., networking, Linux CLI, web vulnerabilities) and dedicate your first study sessions to that topic.\n2.  **Practice on the Command Line:** If you haven't already, install a virtual machine (like VirtualBox with Ubuntu or Kali Linux) and practice basic commands and basic packet analysis using Wireshark.\n3.  **Review Your Projects:** If you have cybersecurity projects on your resume (e.g., setting up a home lab, configuring a firewall, or analyzing traffic in a school lab), be prepared to explain the architecture, why you chose specific tools, and what you learned.\n\n---\n\n### To Customize This Strategy For Your Goals:\n\nTo help me tailor this preparation plan specifically to you, could you share a bit more context?\n1.  **Do you have a specific role or employer in mind?** (If so, let me know the company name or exact role title, and I can search for official recruitment guides or common patterns for that employer).\n2.  **When is your interview scheduled?** (Knowing if you have 3 days or 3 weeks helps us prioritize your time).\n3.  **Which technical area do you feel least confident about right now?**\n4.  **Would you like to run a mock interview question right now?** (We can start with a basic technical question or a realistic incident response scenario).",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 18.353,
+      "orchestrator_model_seconds": 5.66,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.152,
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "t": 6.826,
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 6.815,
+          "fingerprint": "b2b2470a1f10ed405f93fc57548b668bcd8a5dd8c2751d502405205c64ddbb46",
+          "args": {
+            "agent_name": "interview_preparation_agent"
+          },
+          "end": 6.818,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.152,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 6.812,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 6.812,
+          "duration": 5.66
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 6.826,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3,
+          "response_received": 25.179,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 25.179,
+          "duration": 18.353
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 6.815,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "interview_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 6.821,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 25.181,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "text": "Preparing for an entry-level cybersecurity technical interview requires a solid grasp of foundational computer science principles, practical systems knowledge, and security-specific analytical skills. \n\nSince cybersecurity roles can vary significantly—ranging from Security Operations Center (SOC) Analysts and Security Engineers to Application Security or Governance, Risk, and Compliance (GRC) specialists—this strategy is structured around **General Industry Patterns**. Once you have a specific employer or role in mind, we can verify official requirements and tailor this plan further.\n\n---\n\n### Phase 1: Core Technical Domains to Master\n\nMost entry-level cybersecurity technical interviews will evaluate your understanding of fundamentals rather than expecting you to be an expert in complex enterprise security architectures. Focus your study on these five pillars:\n\n#### 1. Networking Fundamentals (The Most Common Topic)\nYou cannot protect a network if you do not understand how data travels across it.\n*   **Concepts to Know:** The OSI Model vs. TCP/IP Model (know what happens at each layer), the TCP 3-way handshake, DNS resolution, DHCP, Subnetting, and NAT.\n*   **Protocols & Ports:** Memorize common ports and their security implications (e.g., HTTP 80 vs. HTTPS 443, SSH 22, FTP 20/21 vs. SFTP 22, RDP 3389, DNS 53).\n*   **Security Mechanisms:** Understand how SSL/TLS handshakes work, the role of firewalls (stateful vs. stateless), and the difference between IDS (intrusion detection) and IPS (intrusion prevention).\n\n#### 2. Operating Systems & System Reasoning\nSecurity analysts and engineers spend a lot of time investigating logs or hardening systems.\n*   **Linux/Unix:** Know basic command-line tools for system administration and investigation (`grep`, `find`, `chmod`, `chown`, `iptables`, `netstat`, `ps`).\n*   **Windows Security:** Understand Active Directory basics (Domain Controllers, GPOs, Kerberos vs. NTLM authentication) and Windows event logs.\n*   **Processes & Memory:** Have a high-level understanding of what happens during a buffer overflow or how privilege escalation occurs.\n\n#### 3. Security Fundamentals & Cryptography\n*   **Core Pillars:** The CIA Triad (Confidentiality, Integrity, Availability) and the AAA Framework (Authentication, Authorization, Accounting).\n*   **Cryptography:** Understand the difference between symmetric encryption (e.g., AES) and asymmetric encryption (e.g., RSA), and when to use each.\n*   **Hashing vs. Encryption:** Know that hashing is a one-way function used for integrity checks (e.g., SHA-256, MD5) and cannot be \"decrypted,\" whereas encryption is two-way and used for confidentiality.\n\n#### 4. Common Attack Vectors & Mitigations\n*   **Web Vulnerabilities:** Study the **OWASP Top 10** inside and out. Be ready to explain SQL Injection (SQLi), Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF), and how developers can prevent them (e.g., input sanitization, parameterized queries).\n*   **General Attacks:** Be able to explain Phishing, Man-in-the-Middle (MitM) attacks, DDoS, Malware types (Ransomware, Trojans, Rootkits), and social engineering.\n\n---\n\n### Phase 2: Scenario-Based Problem Solving (Incident Response)\n\nTechnical interviews for cybersecurity frequently use situational questions to test your analytical reasoning under pressure. They want to see your *process*, not just a memorized answer.\n\n**Common Interview Scenario:**\n> *\"An automated alert indicates that a workstation on the internal network is communicating with a known malicious IP address external to the company. What do you do?\"*\n\n**How to structure your response (The Triage Process):**\n1.  **Scope & Identify:** Ask clarifying questions. What kind of workstation is it? (An executive's laptop or a public terminal?) \n2.  **Containment:** Isolate the infected machine from the network (disable the network interface or unplug the network cable) to prevent lateral movement.\n3.  **Analysis:** Examine the network traffic logs, running processes on the machine, and system logs to identify the source of the communication.\n4.  **Eradication:** Remove the threat (terminate the malicious process, delete the malware, or re-image the machine if necessary).\n5.  **Recovery & Lessons Learned:** Restore the system to a known good state, monitor it closely, and document the incident to prevent future occurrences.\n\n---\n\n### Phase 3: Communication & Behavioral Frameworks\n\nA great cybersecurity professional must be able to communicate risks to non-technical stakeholders. \n*   **The \"Explain Like I'm 5\" Test:** Practice explaining complex technical concepts (like public-key cryptography or SQL injection) in plain English to someone who has no technical background.\n*   **Behavioral Questions:** Use the **STAR method** (Situation, Task, Action, Result) to talk about project work, school labs, or times you solved a difficult technical problem. Keep your contributions clear and honest—never invent metrics or experiences.\n\n---\n\n### Action Plan: How to Start Preparing Today\n\n1.  **Conduct a Self-Assessment:** Identify which of the domains above is your weakest (e.g., networking, Linux CLI, web vulnerabilities) and dedicate your first study sessions to that topic.\n2.  **Practice on the Command Line:** If you haven't already, install a virtual machine (like VirtualBox with Ubuntu or Kali Linux) and practice basic commands and basic packet analysis using Wireshark.\n3.  **Review Your Projects:** If you have cybersecurity projects on your resume (e.g., setting up a home lab, configuring a firewall, or analyzing traffic in a school lab), be prepared to explain the architecture, why you chose specific tools, and what you learned.\n\n---\n\n### To Customize This Strategy For Your Goals:\n\nTo help me tailor this preparation plan specifically to you, could you share a bit more context?\n1.  **Do you have a specific role or employer in mind?** (If so, let me know the company name or exact role title, and I can search for official recruitment guides or common patterns for that employer).\n2.  **When is your interview scheduled?** (Knowing if you have 3 days or 3 weeks helps us prioritize your time).\n3.  **Which technical area do you feel least confident about right now?**\n4.  **Would you like to run a mock interview question right now?** (We can start with a basic technical question or a realistic incident response scenario)."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 5.66,
+          "SPECIALIST_PRE_TOOL_WAIT": 18.353,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 1.169
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 6.815,
+          "transfer_to_agent": {
+            "t": 6.815,
+            "target": "interview_preparation_agent"
+          },
+          "first_specialist_event": 25.181,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 25.182,
+          "stream_completion": 25.183
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "STABLE ZERO-RETRIEVAL PASS",
+        "limits": "Single coaching canary except three fresh Certification samples; not a broad quality evaluation."
+      }
+    },
+    {
+      "id": "wave3_certification_current",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:40:02.759944+00:00",
+      "orchestrator_request_start": 1.056,
+      "total_seconds": 33.173,
+      "band": "ORANGE",
+      "first_transfer": {
+        "t": 7.477,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 7.485,
+      "first_specialist_event": 7.486,
+      "handoff_seconds": 0.009,
+      "first_helper": 14.323,
+      "first_text": 33.172,
+      "final_answer": "### Certification: evidence and status\n\nCURRENT STATUS UNVERIFIED — no requested current fact was verified in this request.\n\nConfirm unresolved current details with the official owner before relying on them.",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 5,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 18.843,
+      "specialist_model_seconds": 6.815,
+      "orchestrator_model_seconds": 6.418,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.055,
+          "history_messages": 1,
+          "visible_history_characters": 61,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 7.489,
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28159,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "t": 14.326,
+          "history_messages": 1,
+          "visible_history_characters": 827,
+          "instruction_characters": 2070,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 33.171,
+          "history_messages": 5,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28159,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.477,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 7.48,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.309,
+          "fingerprint": "36b190c8b539ba80fbf78856af46045819f384c1b3062fd683d2c0fcf5ea0392",
+          "args": {
+            "request": "site:comptia.org \"Security+\" exam code \"price\" OR \"USD\" OR \"buy\""
+          },
+          "end": 33.167,
+          "duration": 18.858,
+          "quality_output": "{\"candidates\": [], \"next_action\": \"Verify candidate IDs only.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 14.323,
+          "index": 1,
+          "end": 33.166,
+          "duration": 18.843
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.056,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 61,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 7.474,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.474,
+          "duration": 6.418
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 7.492,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28159,
+          "tool_description_count": 3,
+          "response_received": 14.307,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 14.307,
+          "duration": 6.815
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 14.326,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "\"Security+\" \"SY0-701\" OR \"SY0-801\" exam details price",
+            "\"Security+\" exam voucher price",
+            "\"Security+\" SY0-701 SY0-801",
+            "\"Security+\" \"SY0-701\" price OR voucher",
+            "exam details"
+          ],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 827,
+          "instruction_characters": 2070,
+          "tool_description_count": 0,
+          "response_received": 33.164,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 33.164,
+          "duration": 18.838
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.477,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.483,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 7.486,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 14.309,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "site:comptia.org \"Security+\" exam code \"price\" OR \"USD\" OR \"buy\""
+              }
+            }
+          ]
+        },
+        {
+          "t": 33.165,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "NO CANDIDATES"
+            }
+          ]
+        },
+        {
+          "t": 33.167,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "Certification___Technical_Development_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 33.172,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Certification: evidence and status\n\nCURRENT STATUS UNVERIFIED — no requested current fact was verified in this request.\n\nConfirm unresolved current details with the official owner before relying on them."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 6.418,
+          "SPECIALIST_PRE_TOOL_WAIT": 6.815,
+          "STREAM_FINALIZATION": 0.001,
+          "TOOL_WAIT": 18.843,
+          "UNOBSERVED_RUNTIME_WAIT": 1.096
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 7.477,
+          "transfer_to_agent": {
+            "t": 7.477,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 7.486,
+          "first_helper_request": 14.309,
+          "helper_completions": [
+            33.166
+          ],
+          "specialist_resumes": [
+            33.171
+          ],
+          "first_public_text": 33.172,
+          "stream_completion": 33.173
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "SAFE_ABSTENTION; requested version/price NOT answered",
+        "candidate_count": 0,
+        "verification_count": 0
+      }
+    },
+    {
+      "id": "wave3_networking_stable",
+      "domain": "networking",
+      "label": "Networking & Professional Communication",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:41:30.532268+00:00",
+      "orchestrator_request_start": 1.089,
+      "total_seconds": 18.806,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 6.814,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 6.823,
+      "first_specialist_event": 6.824,
+      "handoff_seconds": 0.01,
+      "first_helper": null,
+      "first_text": 18.805,
+      "final_answer": "Introducing yourself to a recruiter in cybersecurity is about being clear, concise, and purposeful. Recruiters talk to many candidates, so they appreciate knowing exactly who you are, what you are looking for, and what specific technical interest or project you are focusing on right now.\n\nTo make your introduction authentic and effective, the approach changes slightly depending on whether you are **writing a message** (like on LinkedIn or email) or **speaking in person** (like at a career fair or networking event).\n\n---\n\n### Option 1: Written Introduction (LinkedIn or Email)\nIf you are reaching out digitally, keep it under 4-5 sentences. \n\n**The Structure:**\n1. **Who you are:** Your name, major, and university (Morgan State).\n2. **Your focus:** The specific area of cybersecurity you are learning or building projects in.\n3. **The hook/connection:** Why you are reaching out to *them* or their company.\n4. **The call to action:** A brief, low-pressure request.\n\n**Example Template:**\n> \"Hi [Recruiter's Name], \n> \n> I hope you're doing well. My name is [Your Name], and I'm a Computer Science student at Morgan State University focusing on cybersecurity. \n> \n> I’ve been building my skills in [mention 1-2 specific areas, e.g., network security, penetration testing, or hands-on labs like TryHackMe/HackTheBox], and I see that [Company Name] is active in [mention something genuine about the company, e.g., cloud security/government contracting]. \n> \n> If you have a moment, I would love to connect to learn more about upcoming [internship/entry-level] opportunities on your team. \n> \n> Best regards,  \n> [Your Name]\"\n\n---\n\n### Option 2: Spoken Introduction (Elevator Pitch for Career Fairs)\nIf you are talking to a recruiter in person, keep it conversational and aim for about 30 to 45 seconds. \n\n**The Structure:**\n1. **The Hello & Background:** \"Hi, I’m [Name], a [Year/Junior/Senior] Computer Science major at Morgan State.\"\n2. **The \"What I'm Doing\" (Current Project/Skill):** \"Lately, I’ve been focusing heavily on cybersecurity, specifically [mention a class project, personal lab, or club activity, e.g., setting up a home lab to analyze network traffic].\"\n3. **The Connection & Ask:** \"I’ve been following [Company Name]’s work in [field/industry], and I wanted to introduce myself to see what skills your team looks for in incoming [interns/associates].\"\n\n---\n\n### Let's Tailor This to You\nTo help you draft the exact message or pitch you need, could you share a bit more context?\n\n1. **How are you reaching out?** (e.g., LinkedIn connection, direct email, or an upcoming career event?)\n2. **What is your current background?** (e.g., What year are you, and do you have a specific cybersecurity interest, class project, or certification you want to highlight?)\n3. **Do you have a specific company or role in mind?**",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 11.974,
+      "orchestrator_model_seconds": 5.722,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.089,
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 6.827,
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 6.814,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 6.817,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.089,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 59,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 6.811,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 6.811,
+          "duration": 5.722
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 6.828,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 18.802,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 18.802,
+          "duration": 11.974
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 6.814,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 6.821,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 6.824,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 18.804,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "Introducing yourself to a recruiter in cybersecurity is about being clear, concise, and purposeful. Recruiters talk to many candidates, so they appreciate knowing exactly who you are, what you are looking for, and what specific technical interest or project you are focusing on right now.\n\nTo make your introduction authentic and effective, the approach changes slightly depending on whether you are **writing a message** (like on LinkedIn or email) or **speaking in person** (like at a career fair or networking event).\n\n---\n\n### Option 1: Written Introduction (LinkedIn or Email)\nIf you are reaching out digitally, keep it under 4-5 sentences. \n\n**The Structure:**\n1. **Who you are:** Your name, major, and university (Morgan State).\n2. **Your focus:** The specific area of cybersecurity you are learning or building projects in.\n3. **The hook/connection:** Why you are reaching out to *them* or their company.\n4. **The call to action:** A brief, low-pressure request.\n\n**Example Template:**\n> \"Hi [Recruiter's Name], \n> \n> I hope you're doing well. My name is [Your Name], and I'm a Computer Science student at Morgan State University focusing on cybersecurity. \n> \n> I’ve been building my skills in [mention 1-2 specific areas, e.g., network security, penetration testing, or hands-on labs like TryHackMe/HackTheBox], and I see that [Company Name] is active in [mention something genuine about the company, e.g., cloud security/government contracting]. \n> \n> If you have a moment, I would love to connect to learn more about upcoming [internship/entry-level] opportunities on your team. \n> \n> Best regards,  \n> [Your Name]\"\n\n---\n\n### Option 2: Spoken Introduction (Elevator Pitch for Career Fairs)\nIf you are talking to a recruiter in person, keep it conversational and aim for about 30 to 45 seconds. \n\n**The Structure:**\n1. **The Hello & Background:** \"Hi, I’m [Name], a [Year/Junior/Senior] Computer Science major at Morgan State.\"\n2. **The \"What I'm Doing\" (Current Project/Skill):** \"Lately, I’ve been focusing heavily on cybersecurity, specifically [mention a class project, personal lab, or club activity, e.g., setting up a home lab to analyze network traffic].\"\n3. **The Connection & Ask:** \"I’ve been following [Company Name]’s work in [field/industry], and I wanted to introduce myself to see what skills your team looks for in incoming [interns/associates].\"\n\n---\n\n### Let's Tailor This to You\nTo help you draft the exact message or pitch you need, could you share a bit more context?\n\n1. **How are you reaching out?** (e.g., LinkedIn connection, direct email, or an upcoming career event?)\n2. **What is your current background?** (e.g., What year are you, and do you have a specific cybersecurity interest, class project, or certification you want to highlight?)\n3. **Do you have a specific company or role in mind?**"
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 5.722,
+          "SPECIALIST_PRE_TOOL_WAIT": 11.974,
+          "STREAM_FINALIZATION": 0.001,
+          "UNOBSERVED_RUNTIME_WAIT": 1.109
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 6.814,
+          "transfer_to_agent": {
+            "t": 6.814,
+            "target": "networking__professional_communication_agent"
+          },
+          "first_specialist_event": 6.824,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 18.805,
+          "stream_completion": 18.806
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "STABLE ZERO-RETRIEVAL PASS",
+        "limits": "Single coaching canary except three fresh Certification samples; not a broad quality evaluation."
+      }
+    },
+    {
+      "id": "wave3_networking_current",
+      "domain": "networking",
+      "label": "Networking & Professional Communication",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:43:25.217942+00:00",
+      "orchestrator_request_start": 1.104,
+      "total_seconds": 82.547,
+      "band": "RED",
+      "first_transfer": {
+        "t": 8.895,
+        "target": "networking__professional_communication_agent"
+      },
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "first_specialist_start": 8.903,
+      "first_specialist_event": 8.904,
+      "handoff_seconds": 0.009,
+      "first_helper": 17.087,
+      "first_text": 82.546,
+      "final_answer": "### Networking: evidence and status\n\n**C1 — UNSUPPORTED**\n\nProposed claim (not an assertion): Morgan State University Computer Science students can utilize the Society for the Advancement of Computer Science (SACS), a student affiliate of the Association for Computing Machinery (ACM), which offers peer, alumni, and industry mentoring, technical workshops, and partnerships with over 15 companies to provide career advancement and networking opportunities.\n\nEvidence limits: The claim that SACS currently 'offers... partnerships with over 15 companies' to provide career advancement and networking opportunities.\n\nAssessment: The source document specifies that partnering with over 15 different companies or organizations is an organizational goal, rather than an active, currently established offering. Under the verification guidelines, organizational goals do not establish active partnerships.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGWSXbrOqMUCb-NUpj0D-6y5i_s_maMKKEGHl1pNng29YwbL8ehpVUGC5pzNsX_NpKmpBXGiJQfEAHmM818CxAxMn_v7NeK6cl_NaYP3cakgNR3LGwo-63Wt6l_0jXqpqvaWAKtQQL0c8hVcxsIp5uS7Ess5T7No4=>)\n\n**C3 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Computer Science students at Morgan State University can utilize student organizations such as Women in Computer Science (WICS) and the Google Developer Student Club (GDSC), which offer events like mock interviews and technical interview preparation to assist students with peer networking and career readiness.\n\nEvidence limits: The active status and availability of these clubs to students in the current year (2026) is not established, nor does the text explicitly use the term 'Google Developer Student Club (GDSC)' (it refers to it as 'Developers Student Club (DSC)').\n\nAssessment: The source is an academic conference paper published in 2023. While it confirms the historical existence of these clubs and activities, it does not provide explicit current evidence for the year 2026, nor does it explicitly name the club as GDSC.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2QSepYc011hT_gmVgnJ_qZynncMf_F9H_XFOUSphJKFBb8iCQ7S-407y9tHQVJ3T-7AQq3MaqRQI84tW8cV3fb0crUFqwlpzM8SodFQzuysQLaJeRFhX6PUIQI60BJ9CzVW8BzQ==>)\n\nConfirm unresolved current details with the official owner before relying on them.",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 5,
+      "url_context_invocations": 2,
+      "total_retrieval_seconds": 60.88,
+      "specialist_model_seconds": 12.689,
+      "orchestrator_model_seconds": 7.788,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.103,
+          "history_messages": 1,
+          "visible_history_characters": 81,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 8.907,
+          "history_messages": 3,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "t": 17.09,
+          "history_messages": 1,
+          "visible_history_characters": 847,
+          "instruction_characters": 993,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 41.609,
+          "history_messages": 5,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "t": 44.243,
+          "history_messages": 1,
+          "visible_history_characters": 615,
+          "instruction_characters": 1540,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 63.239,
+          "history_messages": 7,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "t": 65.169,
+          "history_messages": 1,
+          "visible_history_characters": 539,
+          "instruction_characters": 1540,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "t": 82.544,
+          "history_messages": 9,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.895,
+          "fingerprint": "e0a287a93989c97d396b4a3996297387a460e0a9fd6949ea100e02a94a5aecdf",
+          "args": {
+            "agent_name": "networking__professional_communication_agent"
+          },
+          "end": 8.898,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 17.073,
+          "fingerprint": "2196511ebaa4895a6a6c6ce43bb36803911d5bd499bc1ad2879b3b076c157c67",
+          "args": {
+            "request": "\"Morgan State\" \"Computer Science\" student organizations OR career networking"
+          },
+          "end": 41.604,
+          "duration": 24.531,
+          "quality_output": "{\"candidates\": [{\"candidate_id\": \"C1\", \"claim\": \"Morgan State University Computer Science students can utilize the Society for the Advancement of Computer Science (SACS), a student affiliate of the Association for Computing Machinery (ACM), which offers peer, alumni, and industry mentoring, technical workshops, and partnerships with over 15 companies to provide career advancement and networking opportunities.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C2\", \"claim\": \"Morgan State Computer Science students can participate in campus networking mixers, such as the Fall 2026 Networking Mixer hosted by the Center for Career Development, to practice elevator pitches, obtain professional networking advice, and connect directly with industry employers.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C3\", \"claim\": \"Computer Science students at Morgan State University can utilize student organizations such as Women in Computer Science (WICS) and the Google Developer Student Club (GDSC), which offer events like mock interviews and technical interview preparation to assist students with peer networking and career readiness.\", \"source_type\": \"other\", \"discovery_status\": \"CANDIDATE CURRENT\"}], \"next_action\": \"Verify candidate IDs only.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "verify_networking_candidate",
+          "kind": "verification",
+          "start": 44.228,
+          "fingerprint": "98842cb0b05ed285bf91a066c514bb8ef6cff17467d4a05de8ea527dbfecb17f",
+          "args": {
+            "candidate_id": "C1"
+          },
+          "end": 63.235,
+          "duration": 19.007,
+          "quality_output": "{\"candidate_id\": \"C1\", \"status\": \"UNSUPPORTED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 4,
+          "name": "verify_networking_candidate",
+          "kind": "verification",
+          "start": 65.155,
+          "fingerprint": "15d6f0b585ab1363aa39e59b0aff91eff8213bade5206224847bb98483c9db05",
+          "args": {
+            "candidate_id": "C3"
+          },
+          "end": 82.539,
+          "duration": 17.384,
+          "quality_output": "{\"candidate_id\": \"C3\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "kind": "search",
+          "start": 17.087,
+          "index": 1,
+          "end": 41.602,
+          "duration": 24.515
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "kind": "url",
+          "start": 44.24,
+          "index": 1,
+          "end": 63.234,
+          "duration": 18.994
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "kind": "url",
+          "start": 65.167,
+          "index": 2,
+          "end": 82.538,
+          "duration": 17.371
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.104,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 81,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 8.892,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.892,
+          "duration": 7.788
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 8.911,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 17.071,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 17.071,
+          "duration": 8.16
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_google_search_agent",
+          "start": 17.091,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Morgan State University Computer Science student organizations networking",
+            "Morgan State Computer Science professional development networking resources",
+            "Morgan State Computer Science partners career networking",
+            "Morgan State University computer science career resources",
+            "\"Society for the Advancement of Computer Science\" morgan.edu"
+          ],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 847,
+          "instruction_characters": 993,
+          "tool_description_count": 0,
+          "response_received": 41.599,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 41.599,
+          "duration": 24.508
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 41.61,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 5,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 44.226,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 44.226,
+          "duration": 2.616
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "start": 44.243,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 615,
+          "instruction_characters": 1540,
+          "tool_description_count": 0,
+          "response_received": 63.232,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 63.232,
+          "duration": 18.989
+        },
+        {
+          "agent": "networking__professional_communication_agent",
+          "start": 63.24,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 7,
+          "visible_history_characters": 1284,
+          "instruction_characters": 29954,
+          "tool_description_count": 3,
+          "response_received": 65.153,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 65.153,
+          "duration": 1.913
+        },
+        {
+          "agent": "Networking___Professional_Communication_Agent_url_context_agent",
+          "start": 65.169,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 539,
+          "instruction_characters": 1540,
+          "tool_description_count": 0,
+          "response_received": 82.536,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 82.536,
+          "duration": 17.367
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.895,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "networking__professional_communication_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.901,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 8.904,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 17.073,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "Networking___Professional_Communication_Agent_google_search_agent",
+              "args": {
+                "request": "\"Morgan State\" \"Computer Science\" student organizations OR career networking"
+              }
+            }
+          ]
+        },
+        {
+          "t": 41.601,
+          "author": "Networking___Professional_Communication_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "EVIDENCE CANDIDATE 1\nCLAIM: Morgan State University Computer Science students can utilize the Society for the Advancement of Computer Science (SACS), a student affiliate of the Association for Computing Machinery (ACM), which offers peer, alumni, and industry mentoring, technical workshops, and partnerships with over 15 companies to provide career advancement and networking opportunities.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGWSXbrOqMUCb-NUpj0D-6y5i_s_maMKKEGHl1pNng29YwbL8ehpVUGC5pzNsX_NpKmpBXGiJQfEAHmM818CxAxMn_v7NeK6cl_NaYP3cakgNR3LGwo-63Wt6l_0jXqpqvaWAKtQQL0c8hVcxsIp5uS7Ess5T7No4=\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: SACS (Society for the Advancement of Computer Science) is an ACM student affiliate at Morgan State University that helps create networking and job opportunities, partners with organizations for career advancement, and provides mentoring from peers, alumni, and industry professionals.\nDISCOVERY LIMITS: The exact number or name of all current partner companies is not fully listed.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 2\nCLAIM: Morgan State Computer Science students can participate in campus networking mixers, such as the Fall 2026 Networking Mixer hosted by the Center for Career Development, to practice elevator pitches, obtain professional networking advice, and connect directly with industry employers.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVYEuvwE9rUQ2AwbcR-zt3Rmrg_Hj6_C8jYSOH5RrMPrSBiEArSCJoZsm3H9f4UY6kGncqiWzvKEZ8meAb9rM3f5F6aHoEsejvg7avvBcPeOUD5lbGYdhyD0AfPbD2gmAmSmt2-p6WQ_8_RJoBhu-sQ5KVkuU=\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: October 20, 2026\nDISCOVERY SUPPORT: The Center for Career Development hosts interactive networking mixers, such as the Fall 2026 Mixer, to build student professional networks and allow them to connect with employers from various industries.\nDISCOVERY LIMITS: This is a general university-wide career event rather than one strictly exclusive to Computer Science majors.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 3\nCLAIM: Computer Science students at Morgan State University can utilize student organizations such as Women in Computer Science (WICS) and the Google Developer Student Club (GDSC), which offer events like mock interviews and technical interview preparation to assist students with peer networking and career readiness.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2QSepYc011hT_gmVgnJ_qZynncMf_F9H_XFOUSphJKFBb8iCQ7S-407y9tHQVJ3T-7AQq3MaqRQI84tW8cV3fb0crUFqwlpzM8SodFQzuysQLaJeRFhX6PUIQI60BJ9CzVW8BzQ==\nSOURCE TYPE: other\nSOURCE TITLE: nsf.gov\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: Morgan State computer science clubs like SACS, Developers Student Club (GDSC), and Women in Computer Science (WICS) offer technical interview prep, mock interviews, and peer collaborative events to assist participants.\nDISCOVERY LIMITS: The frequency of these events in the current semester is not specified.\nDISCOVERY STATUS: CANDIDATE CURRENT"
+            }
+          ]
+        },
+        {
+          "t": 41.605,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "Networking___Professional_Communication_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 44.228,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate",
+              "args": {
+                "candidate_id": "C1"
+              }
+            }
+          ]
+        },
+        {
+          "t": 63.233,
+          "author": "Networking___Professional_Communication_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"UNSUPPORTED\",\n  \"source_title\": \"The Society for the Advancement of Computer Science - Morgan State University\",\n  \"source_date_or_cycle\": \"UNKNOWN\",\n  \"page_evidence\": \"The text lists under the heading 'The organization's goals are:' the following: 'To partner with over 15 different companies/organizations to provide Computer Science students at Morgan State University with access to opportunities for growth, development, and career advancement.'\",\n  \"supported_scope\": \"Morgan State University Computer Science students can utilize the Society for the Advancement of Computer Science (SACS), a student affiliate of the Association for Computing Machinery (ACM), which offers mentoring from peers, alumni, and industry professionals, as well as technical workshops.\",\n  \"not_established\": \"The claim that SACS currently 'offers... partnerships with over 15 companies' to provide career advancement and networking opportunities.\",\n  \"why\": \"The source document specifies that partnering with over 15 different companies or organizations is an organizational goal, rather than an active, currently established offering. Under the verification guidelines, organizational goals do not establish active partnerships.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": false,\n  \"authority_host\": \"morgan.edu\",\n  \"facts\": {}\n}"
+            }
+          ]
+        },
+        {
+          "t": 63.236,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 65.154,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "verify_networking_candidate",
+              "args": {
+                "candidate_id": "C3"
+              }
+            }
+          ]
+        },
+        {
+          "t": 82.538,
+          "author": "Networking___Professional_Communication_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"CURRENT STATUS UNVERIFIED\",\n  \"source_title\": \"Surveying the Importance of Integrating Technical Interviews into Computer Science Curriculums and Increasing Awareness in the Academy\",\n  \"source_date_or_cycle\": \"2023\",\n  \"page_evidence\": \"In addition to the GIR program Morgan's computer science clubs like Society for Advancement in Computer Science (SACs) [22], Developers Student Club (DSC), and Women in Computer Science (WICs) offer events like SAC's Wired Wednesday to host mock interview sessions in which students collaborate to solve interview problems, and assist participants with feedback on their performances.\",\n  \"supported_scope\": \"The source supports that in 2023, computer science student clubs at Morgan State University, including the Developers Student Club (DSC) and Women in Computer Science (WICs), offered mock interview sessions where students collaborated to solve technical interview problems and provided feedback, helping with interview prep.\",\n  \"not_established\": \"The active status and availability of these clubs to students in the current year (2026) is not established, nor does the text explicitly use the term 'Google Developer Student Club (GDSC)' (it refers to it as 'Developers Student Club (DSC)').\",\n  \"why\": \"The source is an academic conference paper published in 2023. While it confirms the historical existence of these clubs and activities, it does not provide explicit current evidence for the year 2026, nor does it explicitly name the club as GDSC.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": false,\n  \"authority_host\": \"vertexaisearch.cloud.google.com\",\n  \"facts\": {}\n}"
+            }
+          ]
+        },
+        {
+          "t": 82.54,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool_result": "verify_networking_candidate"
+            }
+          ]
+        },
+        {
+          "t": 82.545,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "### Networking: evidence and status\n\n**C1 — UNSUPPORTED**\n\nProposed claim (not an assertion): Morgan State University Computer Science students can utilize the Society for the Advancement of Computer Science (SACS), a student affiliate of the Association for Computing Machinery (ACM), which offers peer, alumni, and industry mentoring, technical workshops, and partnerships with over 15 companies to provide career advancement and networking opportunities.\n\nEvidence limits: The claim that SACS currently 'offers... partnerships with over 15 companies' to provide career advancement and networking opportunities.\n\nAssessment: The source document specifies that partnering with over 15 different companies or organizations is an organizational goal, rather than an active, currently established offering. Under the verification guidelines, organizational goals do not establish active partnerships.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGWSXbrOqMUCb-NUpj0D-6y5i_s_maMKKEGHl1pNng29YwbL8ehpVUGC5pzNsX_NpKmpBXGiJQfEAHmM818CxAxMn_v7NeK6cl_NaYP3cakgNR3LGwo-63Wt6l_0jXqpqvaWAKtQQL0c8hVcxsIp5uS7Ess5T7No4=>)\n\n**C3 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Computer Science students at Morgan State University can utilize student organizations such as Women in Computer Science (WICS) and the Google Developer Student Club (GDSC), which offer events like mock interviews and technical interview preparation to assist students with peer networking and career readiness.\n\nEvidence limits: The active status and availability of these clubs to students in the current year (2026) is not established, nor does the text explicitly use the term 'Google Developer Student Club (GDSC)' (it refers to it as 'Developers Student Club (DSC)').\n\nAssessment: The source is an academic conference paper published in 2023. While it confirms the historical existence of these clubs and activities, it does not provide explicit current evidence for the year 2026, nor does it explicitly name the club as GDSC.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG2QSepYc011hT_gmVgnJ_qZynncMf_F9H_XFOUSphJKFBb8iCQ7S-407y9tHQVJ3T-7AQq3MaqRQI84tW8cV3fb0crUFqwlpzM8SodFQzuysQLaJeRFhX6PUIQI60BJ9CzVW8BzQ==>)\n\nConfirm unresolved current details with the official owner before relying on them."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 7.788,
+          "SPECIALIST_POST_TOOL_WAIT": 4.529,
+          "SPECIALIST_PRE_TOOL_WAIT": 8.16,
+          "STREAM_FINALIZATION": 0.001,
+          "TOOL_WAIT": 60.88,
+          "UNOBSERVED_RUNTIME_WAIT": 1.189
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 8.895,
+          "transfer_to_agent": {
+            "t": 8.895,
+            "target": "networking__professional_communication_agent"
+          },
+          "first_specialist_event": 8.904,
+          "first_helper_request": 17.073,
+          "helper_completions": [
+            41.602,
+            63.234,
+            82.538
+          ],
+          "specialist_resumes": [
+            41.609,
+            63.239,
+            82.544
+          ],
+          "first_public_text": 82.546,
+          "stream_completion": 82.547
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "BOUNDED_STATUS_PRESERVATION_PASS; no verified current resource established",
+        "candidate_count": 3,
+        "verification_count": 2,
+        "statuses": {
+          "C1": "UNSUPPORTED",
+          "C3": "CURRENT STATUS UNVERIFIED"
+        },
+        "limits": "No independent truth guarantee; exact selected evidence and helper status retained; unselected C2 omitted."
+      }
+    },
+    {
+      "id": "wave3_research_stable",
+      "domain": "research",
+      "label": "Research & Graduate Pathways",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "stable",
+      "prompt": "What are the general steps to prepare for graduate cybersecurity research? Focus on research readiness, not current programs.",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:44:14.241473+00:00",
+      "orchestrator_request_start": 1.116,
+      "total_seconds": 24.031,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 7.396,
+        "target": "research__graduate_pathways_agent"
+      },
+      "actual_specialist": "research__graduate_pathways_agent",
+      "route_match": true,
+      "first_specialist_start": 7.405,
+      "first_specialist_event": 7.406,
+      "handoff_seconds": 0.01,
+      "first_helper": null,
+      "first_text": 24.029,
+      "final_answer": "Preparing for graduate-level cybersecurity research requires a strong blend of core technical foundations, academic literacy, and systematic experimentation. Because cybersecurity is an incredibly broad field—ranging from deeply mathematical cryptography to hardware security, systems security, and human-computer interaction—your preparation should focus on building versatile skills that allow you to read, analyze, and contribute to the academic community.\n\nBelow is a structured guide to building research readiness in cybersecurity.\n\n---\n\n### Phase 1: Solidifying Technical & Mathematical Foundations\nGraduate research requires you to look \"under the hood\" of systems rather than just using existing tools. Depending on your specific area of interest, you should focus on:\n\n*   **Systems and Networking Deep Dive:** \n    *   Understand operating system internals (such as memory management, system calls, and kernel architectures in Unix/Linux and Windows) and network protocols (TCP/IP, routing, and DNS). Research in systems security often involves understanding vulnerability vectors at these fundamental layers.\n*   **Mathematical Preparation:** \n    *   For research in cryptography, privacy-enhancing technologies, or machine learning security, strong foundations in discrete mathematics, linear algebra, probability, and number theory are essential.\n*   **Programming Proficiency:**\n    *   **Low-level languages (C/C++):** Crucial for binary analysis, reverse engineering, hardware security, and operating system security.\n    *   **High-level scripting (Python):** The standard for rapidly prototyping tools, conducting data analysis, implementing machine learning models, and parsing security logs.\n\n---\n\n### Phase 2: Developing Research Literacy (How to Read Papers)\nAcademic research is a continuous conversation. To join this conversation, you must learn to navigate academic literature.\n\n*   **Follow the Top Venues:** \n    *   Familiarize yourself with the premier academic cybersecurity conferences where pioneering work is published: **IEEE S&P (Oakland)**, **USENIX Security**, **ACM CCS**, and **NDSS**.\n*   **Active Reading Habits:** \n    *   When reading an academic paper, do not read it like a textbook. Focus on answering these core questions:\n        1.  *What is the threat model?* (What are the assumptions about the attacker's capabilities and goals?)\n        2.  *What is the main defense or attack contribution?*\n        3.  *How did the authors evaluate their work?* (What metrics, datasets, or experiments did they use?)\n        4.  *What are the limitations or assumptions left unaddressed?* (This is often where future research ideas are born).\n\n---\n\n### Phase 3: Practical Experimentation and Reproducibility\nOne of the best ways to prove you are ready for research is to show you can reproduce existing work.\n\n*   **Build a Safe Lab Environment:** \n    *   Set up a local, isolated virtualization environment (using tools like VirtualBox, VMware, or Docker containers) where you can safely analyze malware, study network protocols, or test exploits without risk to external systems.\n*   **Replicate a Published Result:** \n    *   Many research papers publish their code or datasets on platforms like GitHub. A low-risk, high-reward exercise is to download a paper's open-source artifact and try to replicate their experimental results in your lab. Documenting where the setup was fragile or how you resolved dependency issues builds excellent systems engineering skills.\n\n---\n\n### Phase 4: Narrowing Interests & Conceptualizing a Focus\nCybersecurity research generally splits into several sub-disciplines. Reflect on which of these areas align with your curiosity:\n*   **Systems & Software Security:** Vulnerability discovery, side-channel attacks, reverse engineering, trusted execution environments, or browser security.\n*   **Network & Web Security:** Protocol analysis, censorship resistance, DDoS mitigation, or wireless security.\n*   **Applied Cryptography & Privacy:** Zero-knowledge proofs, homomorphic encryption, anonymous communication, or differential privacy.\n*   **Machine Learning Security:** Adversarial machine learning (attacks on models) or utilizing AI to detect complex threats.\n*   **Human Factors in Security:** Usable security, phishing defense, or studying how administrators configure secure systems.\n\n---\n\n### Actionable Next Steps to Test Your Interest\n1.  **Read One Paper This Week:** Go to the website of a recent top conference (like *USENIX Security*), scan the table of contents, pick a paper with a title that interests you, and read the Abstract, Introduction, and Conclusion.\n2.  **Keep a Research Journal:** Start a simple markdown document or notebook where you write 2-3 sentence summaries of security papers you read or interesting security phenomena you observe.\n3.  **Identify Faculty Alignments:** Look up the research pages of faculty members in your department. What specific sub-fields of security are they publishing in?\n\n***\n\n**How can I help you tailor this roadmap?**\nTo help customize these steps for you, could you share:\n1.  **Your academic level** (e.g., sophomore, junior, senior)?\n2.  **Your experience level** with programming (especially C or Python) and systems/networking coursework?\n3.  **Which sub-areas of security** (e.g., cryptography, malware analysis, network security, AI security) sound the most exciting to you? \n\n*(Note: If you eventually want help drafting an outreach email to a professor to discuss these interests, I can hand you off to our Networking & Professional Communication specialist; if you want to refine your CV to highlight your class projects for a research application, we have a Resume specialist ready to help!)*",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 16.615,
+      "orchestrator_model_seconds": 6.278,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.115,
+          "history_messages": 1,
+          "visible_history_characters": 125,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "t": 7.409,
+          "history_messages": 3,
+          "visible_history_characters": 1317,
+          "instruction_characters": 30193,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.397,
+          "fingerprint": "75d4f7d0c37ea2e8b824e87b656b93a4fc1573c0bb9fad421012ba1515729957",
+          "args": {
+            "agent_name": "research__graduate_pathways_agent"
+          },
+          "end": 7.4,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.116,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 125,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 7.394,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.394,
+          "duration": 6.278
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "start": 7.41,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1317,
+          "instruction_characters": 30193,
+          "tool_description_count": 3,
+          "response_received": 24.025,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 24.025,
+          "duration": 16.615
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.396,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "research__graduate_pathways_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.403,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 7.406,
+          "author": "research__graduate_pathways_agent",
+          "parts": []
+        },
+        {
+          "t": 24.028,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "text": "Preparing for graduate-level cybersecurity research requires a strong blend of core technical foundations, academic literacy, and systematic experimentation. Because cybersecurity is an incredibly broad field—ranging from deeply mathematical cryptography to hardware security, systems security, and human-computer interaction—your preparation should focus on building versatile skills that allow you to read, analyze, and contribute to the academic community.\n\nBelow is a structured guide to building research readiness in cybersecurity.\n\n---\n\n### Phase 1: Solidifying Technical & Mathematical Foundations\nGraduate research requires you to look \"under the hood\" of systems rather than just using existing tools. Depending on your specific area of interest, you should focus on:\n\n*   **Systems and Networking Deep Dive:** \n    *   Understand operating system internals (such as memory management, system calls, and kernel architectures in Unix/Linux and Windows) and network protocols (TCP/IP, routing, and DNS). Research in systems security often involves understanding vulnerability vectors at these fundamental layers.\n*   **Mathematical Preparation:** \n    *   For research in cryptography, privacy-enhancing technologies, or machine learning security, strong foundations in discrete mathematics, linear algebra, probability, and number theory are essential.\n*   **Programming Proficiency:**\n    *   **Low-level languages (C/C++):** Crucial for binary analysis, reverse engineering, hardware security, and operating system security.\n    *   **High-level scripting (Python):** The standard for rapidly prototyping tools, conducting data analysis, implementing machine learning models, and parsing security logs.\n\n---\n\n### Phase 2: Developing Research Literacy (How to Read Papers)\nAcademic research is a continuous conversation. To join this conversation, you must learn to navigate academic literature.\n\n*   **Follow the Top Venues:** \n    *   Familiarize yourself with the premier academic cybersecurity conferences where pioneering work is published: **IEEE S&P (Oakland)**, **USENIX Security**, **ACM CCS**, and **NDSS**.\n*   **Active Reading Habits:** \n    *   When reading an academic paper, do not read it like a textbook. Focus on answering these core questions:\n        1.  *What is the threat model?* (What are the assumptions about the attacker's capabilities and goals?)\n        2.  *What is the main defense or attack contribution?*\n        3.  *How did the authors evaluate their work?* (What metrics, datasets, or experiments did they use?)\n        4.  *What are the limitations or assumptions left unaddressed?* (This is often where future research ideas are born).\n\n---\n\n### Phase 3: Practical Experimentation and Reproducibility\nOne of the best ways to prove you are ready for research is to show you can reproduce existing work.\n\n*   **Build a Safe Lab Environment:** \n    *   Set up a local, isolated virtualization environment (using tools like VirtualBox, VMware, or Docker containers) where you can safely analyze malware, study network protocols, or test exploits without risk to external systems.\n*   **Replicate a Published Result:** \n    *   Many research papers publish their code or datasets on platforms like GitHub. A low-risk, high-reward exercise is to download a paper's open-source artifact and try to replicate their experimental results in your lab. Documenting where the setup was fragile or how you resolved dependency issues builds excellent systems engineering skills.\n\n---\n\n### Phase 4: Narrowing Interests & Conceptualizing a Focus\nCybersecurity research generally splits into several sub-disciplines. Reflect on which of these areas align with your curiosity:\n*   **Systems & Software Security:** Vulnerability discovery, side-channel attacks, reverse engineering, trusted execution environments, or browser security.\n*   **Network & Web Security:** Protocol analysis, censorship resistance, DDoS mitigation, or wireless security.\n*   **Applied Cryptography & Privacy:** Zero-knowledge proofs, homomorphic encryption, anonymous communication, or differential privacy.\n*   **Machine Learning Security:** Adversarial machine learning (attacks on models) or utilizing AI to detect complex threats.\n*   **Human Factors in Security:** Usable security, phishing defense, or studying how administrators configure secure systems.\n\n---\n\n### Actionable Next Steps to Test Your Interest\n1.  **Read One Paper This Week:** Go to the website of a recent top conference (like *USENIX Security*), scan the table of contents, pick a paper with a title that interests you, and read the Abstract, Introduction, and Conclusion.\n2.  **Keep a Research Journal:** Start a simple markdown document or notebook where you write 2-3 sentence summaries of security papers you read or interesting security phenomena you observe.\n3.  **Identify Faculty Alignments:** Look up the research pages of faculty members in your department. What specific sub-fields of security are they publishing in?\n\n***\n\n**How can I help you tailor this roadmap?**\nTo help customize these steps for you, could you share:\n1.  **Your academic level** (e.g., sophomore, junior, senior)?\n2.  **Your experience level** with programming (especially C or Python) and systems/networking coursework?\n3.  **Which sub-areas of security** (e.g., cryptography, malware analysis, network security, AI security) sound the most exciting to you? \n\n*(Note: If you eventually want help drafting an outreach email to a professor to discuss these interests, I can hand you off to our Networking & Professional Communication specialist; if you want to refine your CV to highlight your class projects for a research application, we have a Resume specialist ready to help!)*"
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 6.278,
+          "SPECIALIST_PRE_TOOL_WAIT": 16.615,
+          "STREAM_FINALIZATION": 0.002,
+          "UNOBSERVED_RUNTIME_WAIT": 1.136
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 7.396,
+          "transfer_to_agent": {
+            "t": 7.396,
+            "target": "research__graduate_pathways_agent"
+          },
+          "first_specialist_event": 7.406,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 24.029,
+          "stream_completion": 24.031
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "STABLE ZERO-RETRIEVAL PASS",
+        "limits": "Single coaching canary except three fresh Certification samples; not a broad quality evaluation."
+      }
+    },
+    {
+      "id": "wave3_research_current",
+      "domain": "research",
+      "label": "Research & Graduate Pathways",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity research opportunities are available at Morgan State?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:45:59.547567+00:00",
+      "orchestrator_request_start": 1.119,
+      "total_seconds": 78.16,
+      "band": "RED",
+      "first_transfer": {
+        "t": 7.768,
+        "target": "research__graduate_pathways_agent"
+      },
+      "actual_specialist": "research__graduate_pathways_agent",
+      "route_match": true,
+      "first_specialist_start": 7.778,
+      "first_specialist_event": 7.779,
+      "handoff_seconds": 0.011,
+      "first_helper": 13.491,
+      "first_text": 78.159,
+      "final_answer": "### Research: evidence and status\n\n**C1 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University provides cybersecurity research opportunities for students to study secure embedded systems through the CyberCorps Scholarship for Service (SFS) program.\n\nEvidence limits: \n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWdp2lJXSJiZeRLl0iAKrVtVlR-SJdQ1QmJSuTVcTVwswk1Cp79cpSi5qDBLb6RCudyfQztQAusnErSpunT3SlKiAubr9Dg8HNGH-dHoZ943pTTouyNQhtbNfF18G18bO_TXLa5g==>)\n\n**C2 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University offers hands-on cybersecurity and quantum computing research opportunities through the Securing Experimental Quantum Computing Usage in Research Environments (SEQCURE) program.\n\nEvidence limits: The active status and ongoing availability of these opportunities under the SEQCURE program in the current timeframe (October 2026) are not established.\n\nAssessment: The source is a press release from March 19, 2025, stating the sub-award for the project is for a one-year term. Because the current date is October 2026 and there is no explicit evidence of renewal or active status beyond the initial one-year term, the current status remains unverified.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfRABgq0RadqsveWbz5CfkuKTcAOztzEvH8J59GN2oNAq_EPKo9Bi45wL98r4tCkOugBXzBA2diDDgG_cjD-ombW74sqLY5ylIvSPGP4qTb1t2ioUhoP2Xo15A0DQJvPUW-hn97yBe9E6Bg7a9uzSfI_Yo-rm8ul3HS9bWR2EcKgTtVPsPyeVo9zv2F-LD>)\n\nConfirm unresolved current details with the official owner before relying on them.",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 6,
+      "url_context_invocations": 2,
+      "total_retrieval_seconds": 61.341,
+      "specialist_model_seconds": 8.965,
+      "orchestrator_model_seconds": 6.647,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.119,
+          "history_messages": 1,
+          "visible_history_characters": 80,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "t": 7.782,
+          "history_messages": 3,
+          "visible_history_characters": 1272,
+          "instruction_characters": 30193,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "t": 13.495,
+          "history_messages": 1,
+          "visible_history_characters": 846,
+          "instruction_characters": 982,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "t": 44.808,
+          "history_messages": 5,
+          "visible_history_characters": 1272,
+          "instruction_characters": 30193,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "t": 46.515,
+          "history_messages": 1,
+          "visible_history_characters": 405,
+          "instruction_characters": 1529,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "t": 62.982,
+          "history_messages": 7,
+          "visible_history_characters": 1272,
+          "instruction_characters": 30193,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "t": 64.586,
+          "history_messages": 1,
+          "visible_history_characters": 480,
+          "instruction_characters": 1529,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "t": 78.157,
+          "history_messages": 9,
+          "visible_history_characters": 1272,
+          "instruction_characters": 30193,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.769,
+          "fingerprint": "75d4f7d0c37ea2e8b824e87b656b93a4fc1573c0bb9fad421012ba1515729957",
+          "args": {
+            "agent_name": "research__graduate_pathways_agent"
+          },
+          "end": 7.773,
+          "duration": 0.004,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "kind": "search",
+          "start": 13.476,
+          "fingerprint": "465debde210f896c08868675de02790ad7f9123b9513cc1f7ce701cc514f5ed8",
+          "args": {
+            "request": "Morgan State University computer science cybersecurity research opportunities labs centers"
+          },
+          "end": 44.803,
+          "duration": 31.327,
+          "quality_output": "{\"candidates\": [{\"candidate_id\": \"C1\", \"claim\": \"Morgan State University provides cybersecurity research opportunities for students to study secure embedded systems through the CyberCorps Scholarship for Service (SFS) program.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C2\", \"claim\": \"Morgan State University offers hands-on cybersecurity and quantum computing research opportunities through the Securing Experimental Quantum Computing Usage in Research Environments (SEQCURE) program.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C3\", \"claim\": \"Morgan State University provides research opportunities in consumer IoT security and privacy through the multi-institution SPLICE collaborative project.\", \"source_type\": \"official owner\", \"discovery_status\": \"POSSIBLY HISTORICAL\"}], \"next_action\": \"Verify candidate IDs only.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "verify_research_candidate",
+          "kind": "verification",
+          "start": 46.501,
+          "fingerprint": "98842cb0b05ed285bf91a066c514bb8ef6cff17467d4a05de8ea527dbfecb17f",
+          "args": {
+            "candidate_id": "C1"
+          },
+          "end": 62.978,
+          "duration": 16.477,
+          "quality_output": "{\"candidate_id\": \"C1\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 4,
+          "name": "verify_research_candidate",
+          "kind": "verification",
+          "start": 64.572,
+          "fingerprint": "05b2c8532887a411e45f1f651de8f29bf675a0ed5d1de063a35d6e3f25e7d85a",
+          "args": {
+            "candidate_id": "C2"
+          },
+          "end": 78.154,
+          "duration": 13.582,
+          "quality_output": "{\"candidate_id\": \"C2\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "kind": "search",
+          "start": 13.491,
+          "index": 1,
+          "end": 44.8,
+          "duration": 31.309
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "kind": "url",
+          "start": 46.513,
+          "index": 1,
+          "end": 62.977,
+          "duration": 16.464
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "kind": "url",
+          "start": 64.585,
+          "index": 2,
+          "end": 78.153,
+          "duration": 13.568
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.119,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 80,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 7.766,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.766,
+          "duration": 6.647
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "start": 7.786,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1272,
+          "instruction_characters": 30193,
+          "tool_description_count": 3,
+          "response_received": 13.474,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 13.474,
+          "duration": 5.688
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "start": 13.495,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Morgan State University cybersecurity research opportunities",
+            "Morgan State cybersecurity research center labs",
+            "\"CyberCorps Scholarship for Service: Secure Embedded Systems\" \"Morgan State\"",
+            "\"ASURE\" \"Morgan State\" cybersecurity",
+            "\"SPLICE\" \"Morgan State\" cybersecurity",
+            "\"SEQCURE\" \"Morgan State\" quantum cybersecurity"
+          ],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 846,
+          "instruction_characters": 982,
+          "tool_description_count": 0,
+          "response_received": 44.796,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 44.796,
+          "duration": 31.301
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "start": 44.809,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 5,
+          "visible_history_characters": 1272,
+          "instruction_characters": 30193,
+          "tool_description_count": 3,
+          "response_received": 46.499,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 46.499,
+          "duration": 1.69
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "start": 46.515,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 405,
+          "instruction_characters": 1529,
+          "tool_description_count": 0,
+          "response_received": 62.975,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 62.975,
+          "duration": 16.46
+        },
+        {
+          "agent": "research__graduate_pathways_agent",
+          "start": 62.983,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 7,
+          "visible_history_characters": 1272,
+          "instruction_characters": 30193,
+          "tool_description_count": 3,
+          "response_received": 64.57,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 64.57,
+          "duration": 1.587
+        },
+        {
+          "agent": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "start": 64.586,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 480,
+          "instruction_characters": 1529,
+          "tool_description_count": 0,
+          "response_received": 78.151,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 78.151,
+          "duration": 13.565
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 7.768,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "research__graduate_pathways_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.776,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 7.779,
+          "author": "research__graduate_pathways_agent",
+          "parts": []
+        },
+        {
+          "t": 13.476,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool": "Research___Graduate_Pathways_Agent_google_search_agent",
+              "args": {
+                "request": "Morgan State University computer science cybersecurity research opportunities labs centers"
+              }
+            }
+          ]
+        },
+        {
+          "t": 44.799,
+          "author": "Research___Graduate_Pathways_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "EVIDENCE CANDIDATE 1\nCLAIM: Morgan State University provides cybersecurity research opportunities for students to study secure embedded systems through the CyberCorps Scholarship for Service (SFS) program.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWdp2lJXSJiZeRLl0iAKrVtVlR-SJdQ1QmJSuTVcTVwswk1Cp79cpSi5qDBLb6RCudyfQztQAusnErSpunT3SlKiAubr9Dg8HNGH-dHoZ943pTTouyNQhtbNfF18G18bO_TXLa5g==\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: April 25, 2024\nDISCOVERY SUPPORT: Morgan State University runs the CyberCorps Scholarship for Service: Secure Embedded Systems program, supported by the NSF through an estimated end date of June 30, 2028, to fund and mentor students in secure embedded systems and hardware security.\nDISCOVERY LIMITS: The exact enrollment limits and specific application deadlines for upcoming cohorts are not detailed in this source.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 2\nCLAIM: Morgan State University offers hands-on cybersecurity and quantum computing research opportunities through the Securing Experimental Quantum Computing Usage in Research Environments (SEQCURE) program.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfRABgq0RadqsveWbz5CfkuKTcAOztzEvH8J59GN2oNAq_EPKo9Bi45wL98r4tCkOugBXzBA2diDDgG_cjD-ombW74sqLY5ylIvSPGP4qTb1t2ioUhoP2Xo15A0DQJvPUW-hn97yBe9E6Bg7a9uzSfI_Yo-rm8ul3HS9bWR2EcKgTtVPsPyeVo9zv2F-LD\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: March 19, 2025\nDISCOVERY SUPPORT: The SEQCURE program, a collaboration with the University of Maryland and ARLIS, provides funding for Morgan State graduate researchers and a postdoctoral fellow to test Zero-Trust Architecture and security frameworks on the U.S. Air Force's quantum computer.\nDISCOVERY LIMITS: The initial funding is for a one-year term, and renewals beyond the initial period are unproven.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 3\nCLAIM: Morgan State University provides research opportunities in consumer IoT security and privacy through the multi-institution SPLICE collaborative project.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqmg0GWj_4_Ly-ffEmGfux6d9hkbW7tG78Xcqsdk5M7xuk9vFhFJxUbp1JdKuhcD6qFm0yltu_1tD7V1MGDixm83q1xrxvpnE6k8YGtattF2-3WrrQD8zCxVYS8Wqt1lcwVFWpY_tpbU7xQIAR7wPQDjmJUQfvPU-D64_kNGgu4D91WlDxhEJCqUWaE6C5_bCALD_VOG05t8LEjRK3NLys-w==\nSOURCE TYPE: official owner\nSOURCE TITLE: morgan.edu\nAPPARENT DATE OR CYCLE: June 12, 2020\nDISCOVERY SUPPORT: Morgan State is part of the NSF-funded SPLICE project (Security and Privacy in the Lifecycle of IoT for Consumer Environments), which allows faculty, graduate, and undergraduate students at MSU's Cybersecurity Assurance and Policy (CAP) Center to conduct research on smart-home device security.\nDISCOVERY LIMITS: The project's initial estimated funding period ended on September 30, 2026, and current active status or extension beyond this date is unproven in this source.\nDISCOVERY STATUS: POSSIBLY HISTORICAL"
+            }
+          ]
+        },
+        {
+          "t": 44.804,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool_result": "Research___Graduate_Pathways_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 46.5,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool": "verify_research_candidate",
+              "args": {
+                "candidate_id": "C1"
+              }
+            }
+          ]
+        },
+        {
+          "t": 62.976,
+          "author": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"VERIFIED CURRENT\",\n  \"source_title\": \"CAP Center Research - Morgan State University\",\n  \"source_date_or_cycle\": \"UNKNOWN\",\n  \"page_evidence\": \"Under the 'Active Grants' section of Morgan State University's Cybersecurity Assurance & Policy (CAP) Center Research page, the grant 'CyberCorps Scholarship for Service: Secure Embedded Systems' is explicitly listed with a Start Date of July 15, 2021, and an Estimated End Date of June 30, 2028.\",\n  \"supported_scope\": \"The source fully supports the claim. It confirms that Morgan State University runs an active project supported by the CyberCorps Scholarship for Service (SFS) program focusing on 'Secure Embedded Systems' through June 30, 2028.\",\n  \"not_established\": \"\",\n  \"why\": \"The official Morgan State University webpage explicitly lists the 'CyberCorps Scholarship for Service: Secure Embedded Systems' program as an active grant extending to June 30, 2028, which directly validates the current availability and support of this student program.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": true,\n  \"authority_host\": \"morgan.edu\",\n  \"facts\": {}\n}"
+            }
+          ]
+        },
+        {
+          "t": 62.979,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool_result": "verify_research_candidate"
+            }
+          ]
+        },
+        {
+          "t": 64.572,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool": "verify_research_candidate",
+              "args": {
+                "candidate_id": "C2"
+              }
+            }
+          ]
+        },
+        {
+          "t": 78.152,
+          "author": "Research___Graduate_Pathways_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"CURRENT STATUS UNVERIFIED\",\n  \"source_title\": \"Morgan, UMD Partner to Expand Technological Frontiers in Quantum Computing Research to Support U.S. Air Force Project\",\n  \"source_date_or_cycle\": \"March 19, 2025\",\n  \"page_evidence\": \"Morgan State University is advancing its quantum computing research capacities by participating in the Securing Experimental Quantum Computing Usage in Research Environments (SEQCURE) program. ... As a component of this effort, Morgan students—including graduate researchers and a postdoctoral fellow—will directly engage in hands-on quantum computing research, gaining meaningful exposure to state-of-the-art quantum systems and testing new security frameworks and computational approaches in real-world applications. ... The $350,000 sub-award is for a one-year term with the prospect of renewal.\",\n  \"supported_scope\": \"In March 2025, Morgan State University began participating in the SEQCURE program, allowing students to engage in hands-on quantum computing and security framework research.\",\n  \"not_established\": \"The active status and ongoing availability of these opportunities under the SEQCURE program in the current timeframe (October 2026) are not established.\",\n  \"why\": \"The source is a press release from March 19, 2025, stating the sub-award for the project is for a one-year term. Because the current date is October 2026 and there is no explicit evidence of renewal or active status beyond the initial one-year term, the current status remains unverified.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": false,\n  \"authority_host\": \"morgan.edu\",\n  \"facts\": {}\n}"
+            }
+          ]
+        },
+        {
+          "t": 78.154,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "tool_result": "verify_research_candidate"
+            }
+          ]
+        },
+        {
+          "t": 78.158,
+          "author": "research__graduate_pathways_agent",
+          "parts": [
+            {
+              "text": "### Research: evidence and status\n\n**C1 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University provides cybersecurity research opportunities for students to study secure embedded systems through the CyberCorps Scholarship for Service (SFS) program.\n\nEvidence limits: \n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFWdp2lJXSJiZeRLl0iAKrVtVlR-SJdQ1QmJSuTVcTVwswk1Cp79cpSi5qDBLb6RCudyfQztQAusnErSpunT3SlKiAubr9Dg8HNGH-dHoZ943pTTouyNQhtbNfF18G18bO_TXLa5g==>)\n\n**C2 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State University offers hands-on cybersecurity and quantum computing research opportunities through the Securing Experimental Quantum Computing Usage in Research Environments (SEQCURE) program.\n\nEvidence limits: The active status and ongoing availability of these opportunities under the SEQCURE program in the current timeframe (October 2026) are not established.\n\nAssessment: The source is a press release from March 19, 2025, stating the sub-award for the project is for a one-year term. Because the current date is October 2026 and there is no explicit evidence of renewal or active status beyond the initial one-year term, the current status remains unverified.\n\nSource: [Exact inspected source](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHfRABgq0RadqsveWbz5CfkuKTcAOztzEvH8J59GN2oNAq_EPKo9Bi45wL98r4tCkOugBXzBA2diDDgG_cjD-ombW74sqLY5ylIvSPGP4qTb1t2ioUhoP2Xo15A0DQJvPUW-hn97yBe9E6Bg7a9uzSfI_Yo-rm8ul3HS9bWR2EcKgTtVPsPyeVo9zv2F-LD>)\n\nConfirm unresolved current details with the official owner before relying on them."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 6.647,
+          "SPECIALIST_POST_TOOL_WAIT": 3.277,
+          "SPECIALIST_PRE_TOOL_WAIT": 5.688,
+          "STREAM_FINALIZATION": 0.001,
+          "TOOL_WAIT": 61.341,
+          "UNOBSERVED_RUNTIME_WAIT": 1.206
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 7.768,
+          "transfer_to_agent": {
+            "t": 7.768,
+            "target": "research__graduate_pathways_agent"
+          },
+          "first_specialist_event": 7.779,
+          "first_helper_request": 13.476,
+          "helper_completions": [
+            44.8,
+            62.977,
+            78.153
+          ],
+          "specialist_resumes": [
+            44.808,
+            62.982,
+            78.157
+          ],
+          "first_public_text": 78.159,
+          "stream_completion": 78.16
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "BOUNDED_STATUS_PRESERVATION_PASS; no current opening/funding/eligibility established",
+        "candidate_count": 3,
+        "verification_count": 2,
+        "statuses": {
+          "C1": "CURRENT STATUS UNVERIFIED",
+          "C2": "CURRENT STATUS UNVERIFIED"
+        },
+        "limits": "C1 helper VERIFIED CURRENT downgraded by Python: dated current evidence missing."
+      }
+    },
+    {
+      "id": "wave3_interview_current",
+      "domain": "interview",
+      "label": "Interview Preparation",
+      "expected": "interview_preparation_agent",
+      "mode": "current",
+      "prompt": "What is the current interview process for an entry-level cybersecurity role at Microsoft?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T03:48:36.144553+00:00",
+      "orchestrator_request_start": 1.123,
+      "total_seconds": 96.547,
+      "band": "RED",
+      "first_transfer": {
+        "t": 9.482,
+        "target": "interview_preparation_agent"
+      },
+      "actual_specialist": "interview_preparation_agent",
+      "route_match": true,
+      "first_specialist_start": 9.491,
+      "first_specialist_event": 15.973,
+      "handoff_seconds": 6.491,
+      "first_helper": 15.988,
+      "first_text": 96.545,
+      "final_answer": "Based on current official recruiting pathways and career documentation from Microsoft, here is a detailed breakdown of the interview process for entry-level and university candidates. \n\nBecause \"cybersecurity\" can span multiple paths at Microsoft—such as **Security Software Engineering**, **Security Operations (SOC) Analyst**, or **Cybersecurity Consultant**—the technical details will vary by sub-role. The information below is organized by verified official processes, role-specific guidelines, and preparation strategies to help you navigate your upcoming interviews.\n\n---\n\n### 1. Verified Employer-Specific Information\n*Source: Official Microsoft Careers Student & Graduate Portal Documentation*\n\nFor entry-level and \"early-in-profession\" applicants, Microsoft utilizes a highly structured recruiting pipeline:\n\n*   **Application & Tracking:** You apply through the Microsoft Careers Student portal and track your application status in real-time via the online **Action Center**.\n*   **The Initial Screening (Online Assessment):**\n    *   For technical and engineering tracks (including Security Software Engineering), you will typically receive an online invitation to a timed **Online Assessment (OA)** (hosted on platforms like Codility or HackerRank). \n    *   This OA usually consists of 2–3 algorithmic or problem-solving tasks. \n    *   *Note:* At this initial screen, Microsoft evaluates you for a **functional discipline** (such as engineering or security generally) rather than a specific team.\n*   **Virtual Interview Day (The Final \"Loop\"):**\n    *   If you pass the initial assessment, you will be invited to a virtual interview day conducted entirely over **Microsoft Teams**.\n    *   The loop typically consists of **2 to 4 consecutive 1-on-1 interviews** (each up to 60 minutes) with built-in breaks.\n    *   At this stage, you are typically being evaluated for a specific division or organization (e.g., Cloud + AI, Security, or Windows Defender).\n*   **Core Evaluation Areas:** Microsoft explicitly evaluates candidates on their **Growth Mindset** (being a \"learn-it-all\" rather than a \"know-it-all\"), **Diversity & Inclusion** (how you value differences), and **One Microsoft** (how you collaborate and build on others' successes).\n*   **Policies:** Microsoft explicitly allows the ethical use of AI tools for *preparation*, but candidates must complete actual interviews and assessments independently. Unlike some peers, Microsoft does not utilize game-based company-wide cognitive assessments.\n\n---\n\n### 2. Official Employer Guidance & General Industry Patterns\n*Because Microsoft customizes the technical portion of the interview depending on the exact cybersecurity role, these details represent a blend of Microsoft's general technical guidelines and common security industry hiring patterns.*\n\n*   **Security Software Engineering (Coding-Heavy):**\n    *   **Secure System Design:** Expect to design a scalable system and discuss security-first architecture (e.g., identity separation, encryption-at-rest/in-transit, and input validation).\n    *   **Threat Modeling:** You may be asked to analyze a hypothetical feature or architecture, identify security boundaries, find potential exploits (using frameworks like STRIDE), and suggest mitigations.\n*   **Security Analyst / Incident Response (Operations-Heavy):**\n    *   **Security Ecosystem & Querying:** Familiarity with **KQL (Kusto Query Language)** is highly valued, as it is the underlying querying language for Microsoft Sentinel and Defender.\n    *   **Triage Scenarios:** You may be asked to walk through a hypothetical security alert (e.g., \"A user in the US logs in, and 5 minutes later, there is an active login from Europe. How do you investigate?\").\n    *   **Protocols & Infrastructure:** Strong knowledge of core networking (TCP/IP handshakes, SSL/TLS, DNS resolution) and cloud identity fundamentals (Active Directory, Microsoft Entra ID, OAuth/SAML).\n\n---\n\n### 3. How We Can Prepare Together\n\nTo give you the best possible chance of success, we should align your preparation with Microsoft's evaluation standards. We can practice in three ways:\n\n#### **Option A: Behavioral & Culture Fit Mock (Growth Mindset & STAR)**\nWe practice answering behavioral questions using the **STAR(R)** framework (Situation, Task, Action, Result, and *Re-learned*), tailoring your real projects and coursework at Morgan State to match Microsoft’s values. \n*   *Example Question:* \"Tell me about a time when you received constructive feedback that changed how you approached a project.\"\n\n#### **Option B: Cybersecurity Scenario & Threat Modeling Mock**\nWe run a technical simulation where I play the interviewer, and you walk me through your technical reasoning.\n*   *Example Scenario:* \"We are designing a new cloud-based file-sharing app for Microsoft Teams. Walk me through how you would threat model this application. Where are the trust boundaries, and what secure design principles will you enforce?\"\n\n#### **Option C: Core Technical Q&A (Networking, IAM, Cryptography)**\nWe do a rapid-fire review of core cybersecurity concepts you are likely to face.\n*   *Example topics:* Explaining public/private key infrastructure (PKI), the TLS handshake, or how multi-factor authentication (MFA) protects against session hijacking.\n\n---\n\n### Your Next Steps\n\n1.  **Which cybersecurity sub-path are you aiming for?** (e.g., Security Software Engineering, Security Consultant, or Security Analyst/Incident Response?)\n2.  **How is your timeline looking?** (Do you have an upcoming OA, or are you preparing for a final round loop?)\n3.  **Choose an option above (A, B, or C),** and we can start practicing immediately! If you'd like to work on your resume first before diving into mock interviews, let me know so I can hand you off to our **Resume & Portfolio Agent**.",
+      "search_helper_invocations": 2,
+      "search_enabled_model_requests": 2,
+      "search_grounded_requests": 2,
+      "search_queries_reported": 21,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 64.767,
+      "specialist_model_seconds": 22.237,
+      "orchestrator_model_seconds": 8.357,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.122,
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "t": 9.494,
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "t": 15.991,
+          "history_messages": 1,
+          "visible_history_characters": 84,
+          "instruction_characters": 229,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "t": 40.419,
+          "history_messages": 5,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "t": 42.053,
+          "history_messages": 1,
+          "visible_history_characters": 98,
+          "instruction_characters": 229,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "t": 82.401,
+          "history_messages": 7,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 9.483,
+          "fingerprint": "b2b2470a1f10ed405f93fc57548b668bcd8a5dd8c2751d502405205c64ddbb46",
+          "args": {
+            "agent_name": "interview_preparation_agent"
+          },
+          "end": 9.486,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Interview_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 15.974,
+          "fingerprint": "3a7eb0d8e6b317be4e3236603d7c933f768ebbcf78ee428a7b403af59194231a",
+          "args": {
+            "request": "site:careers.microsoft.com interview process university OR \"entry-level\" OR students"
+          },
+          "end": 40.414,
+          "duration": 24.44,
+          "quality_output": "Based on the official **Microsoft Careers** documentation and resources for students, recent graduates, and \"early in profession\" candidates, here is a detailed breakdown of the entry-level hiring and interview process:\n\n---\n\n### 1. The Core Philosophy\nMicrosoft’s student and entry-level recruitment focuses not just on what you currently know, but on your **growth potential**. They structure their process to evaluate:\n*   **Base knowledge** in your area of focus.\n*   **Critical thinking and problem-solving** skills.\n*   **Ability and willingness to learn** (your learning agility).\n*   **Culture Alignment**: Microsoft heavily assesses a **Growth Mindset** (being a \"learn-it-all\" rather than a \"know-it-all\"), **Diversity & Inclusion** (valuing differences), and **One Microsoft** (collaboration and building on the success of others).\n\n---\n\n### 2. The Step-by-Step Interview Process\n\n#### **Step 1: Application & Resume Review**\n*   **Submission:** Candidates apply online through the Microsoft Careers Student portal. \n*   **Tracking:** Once submitted, you can track your status in real-time via the **Action Center** on the careers site. Microsoft advises that application reviews and final decisions can take up to 90 days.\n\n#### **Step 2: Initial Screen / Online Assessment (OA)**\n*   If your resume aligns with open opportunities, you will be invited to an initial screening phase. \n*   **For Technical Roles (e.g., Software Engineering):** This typically involves an **Online Assessment (OA)** hosted on a platform like Codility or HackerRank. It generally features 2–3 Data Structures and Algorithms (DSA) questions to be completed under a time limit (often around 90 minutes).\n*   **Focus of the First Screen:** At this stage, candidates are typically being assessed for a **functional role** (such as software engineer, product manager, or mechanical engineer) globally across Microsoft, rather than for a specific team. \n\n#### **Step 3: Virtual Interview Day (Final Round)**\nIf you pass the initial screen, you will be invited to a final virtual interview loop.\n*   **Format:** All interviews are held entirely **virtually** (typically via Microsoft Teams).\n*   **Structure:** It consists of **1:1 meetings with Microsoft employees** (usually 2 to 4 conversations, each up to an hour) with built-in breaks in between.\n*   **Content:** Expect a mix of **behavioral questions** and **functional/technical discussions**:\n    *   *Technical Rounds:* Technical candidates will write code using a runnable coding tool in a language they know, covering problem-solving, design, and testing. Interviewers are highly interested in *how* you solve problems, so you are encouraged to ask clarifying questions and vocalize your thought process.\n    *   *Behavioral Rounds:* These focus on your past experiences, teamwork, adaptability, and culture fit. \n*   **Focus of the Final Round:** Unlike the first screen, during the final round, you are usually being evaluated for a specific organization or division within Microsoft (e.g., Cloud + AI, Experiences + Devices).\n\n#### **Step 4: Decision and Next Steps**\n*   Following the interviews, your recruiter will reach out with the final decision and guide you through the next steps (such as the offer and pre-onboarding process).\n\n---\n\n### 3. Key Policies to Keep in Mind\n\n*   **Responsible Use of AI:** Microsoft permits and encourages the ethical use of AI tools for **interview preparation**. However, during the actual assessments and interviews, candidates are expected to demonstrate their own skills without any outside assistance.\n*   **Candidate Code of Conduct:** Honest representation of your skills, resume details, and achievements is strictly required to build a foundation of trust.\n*   **No \"Game\" Assessments:** Unlike some other tech companies, Microsoft’s hiring process is heavily **interview-led** and does not use company-wide game-based assessments.\n\n### 4. Tips to Ace the Interview (from Microsoft Recruiters)\n1.  **Use the STAR(R) Method:** For behavioral questions, structure your answers around **S**ituation, **T**ask, **A**ction, **R**esult, and what you **R**elearned/learned from the experience. \n2.  **Over-communicate Your Logic:** If you get stuck on a coding or system design problem, ask clarifying questions. Recruiters emphasize that demonstrating curiosity and logical reasoning matters more than just arriving at a perfect, pre-memorized solution.\n3.  **Do Industry Research:** Be prepared to explain what Microsoft is doing in the industry, how its products stand out, and why you are interested in their specific tech stack or business model.",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "Interview_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 42.04,
+          "fingerprint": "1b2237845038acc3c1d692d10f9e56a02c6f1b5104db056379355a147af912ec",
+          "args": {
+            "request": "site:careers.microsoft.com \"security\" OR \"cybersecurity\" interview process OR rounds OR assessment"
+          },
+          "end": 82.395,
+          "duration": 40.355,
+          "quality_output": "At Microsoft, the hiring and interview process for **security and cybersecurity** roles (such as Security Engineers, Security Analysts/SOC, Security Researchers, and Cybersecurity Architects) is a structured, comprehensive experience. The end-to-end process typically spans **three to eight weeks** and is designed to assess technical depth, scenario-based reasoning, and alignment with Microsoft's cultural values.\n\n---\n\n### **1. The Microsoft Security Interview Process & Rounds**\n\nCandidates can expect the hiring pipeline to follow these main stages:\n\n#### **Stage 1: Application Review & Resume Screen**\n* **The Goal:** Recruiters filter applications against the specific needs of the security team.\n* **Prep Tip:** Ensure your resume clearly lists experience with the relevant tech stack (e.g., Azure, Microsoft Sentinel, Microsoft Defender, Entra ID) and any relevant security frameworks (e.g., NIST, Zero Trust).\n\n#### **Stage 2: Recruiter Screen**\n* **The Goal:** A 30-minute phone call to evaluate high-level qualifications, career interests, salary expectations, and overall cultural fit. \n\n#### **Stage 3: Online Technical Assessment (OA)**\n* **The Goal:** Commonly required for early-to-mid-career security engineering or analyst roles.\n* **Format:** This is usually a timed online challenge consisting of 1–2 algorithm/data structure problems (frequently LeetCode Medium level). You are free to write code in the programming language you are most comfortable with. \n\n#### **Stage 4: First-Round Technical Screen**\n* **The Goal:** A live, 45-to-60-minute conversational technical screen conducted over Microsoft Teams. \n* **Focus:** This round tests foundational technical concepts relevant to the role, such as core networking protocol behaviors (TCP/IP, TLS, BGP), authentication flows, and general cloud security mechanisms. \n\n#### **Stage 5: The Final Interview Loop (The Virtual \"On-Site\")**\nIf you pass the initial screen, you will move to the final loop, which consists of **4 to 5 individual interviews** (each 45–60 minutes long) conducted over Microsoft Teams. These sessions typically cover:\n\n* **Coding & Scripting Round:** Focusing on clean, bug-free, and highly secure code. You will be expected to think through testing scenarios, edge cases, boundaries, and potential security implications of the features you code. \n* **Security System Design & Architecture:** Designing secure, scalable, and resilient systems. You may be asked to design network segmentation, hybrid cloud integrations, or web-scale authorization architectures.\n* **Incident Response (IR) Walkthrough / Threat Modeling:** A deep dive into practical scenarios, such as how you would detect lateral movement, triage a high-priority alert, or respond to and isolate a system during a ransomware attack.\n* **Domain Skills & Microsoft Security Ecosystem:** For SOC or Security Analyst roles, your familiarity with Microsoft’s proprietary stack is heavily evaluated. Expect questions relating to **KQL (Kusto Query Language)**, as it is the query language underlying Sentinel and Defender. \n* **Behavioral & Growth Mindset Interview:** Evaluation of your professional collaboration style, dealing with cross-functional friction (e.g., engineering teams who view security as a roadblock), and your capacity for continuous learning.\n\n---\n\n### **2. Core Areas Tested in Microsoft Security Interviews**\n\nAccording to real candidate reports and Microsoft's official guides, your interviewers will evaluate you on:\n\n* **How You Think (Not Just Definitions):** Microsoft prioritizes your investigative reasoning, thought process, and problem-solving method over memorized textbook answers.\n* **Responsible AI:** When discussing modern applications, expect to be assessed on your awareness of safety, fairness, privacy, and reliability principles, aligned with Microsoft's Responsible AI initiative.\n* **Applied Cryptography & Protocols:** Expect to explain public/private key cryptography, hashing, SSL/TLS handshakes, and identity management protocols.\n\n---\n\n### **3. Preparation Tips for Acining the Interview**\n\n1. **Master KQL:** If you are interviewing for any Microsoft-centric Security Analyst or Threat Hunter position, **KQL is non-negotiable**. You must be comfortable writing queries from scratch on the fly.\n2. **Be Comfortable with \"Growth Mindset\" Pivots:** If you get stuck on an Azure-specific feature or security control during a technical round, do not give a flat \"I don't know.\" Pivot to demonstrate your general security logic instead: *\"I haven't set up that specific policy in Azure AD, but I have experience configuring equivalent multi-factor rules in Okta by doing X, Y, and Z.\"*\n3. **Use the STAR Method:** For behavioral and situational rounds, construct your answers using the **Situation, Task, Action, and Result** framework. This keeps answers structured and results-oriented.\n4. **Think Like an Attacker & a Defender:** Be prepared to think outside the norm. When asked to design a system, don't just build it; proactively explain how a bad actor might exploit it and how you have engineered mitigations.",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 15.988,
+          "index": 1,
+          "end": 40.413,
+          "duration": 24.425
+        },
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "kind": "search",
+          "start": 42.052,
+          "index": 2,
+          "end": 82.394,
+          "duration": 40.342
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.123,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 89,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 9.48,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 9.48,
+          "duration": 8.357
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 9.495,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3,
+          "response_received": 15.972,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 15.972,
+          "duration": 6.477
+        },
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "start": 15.992,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "site careers microsoft com interview process university OR entry level OR students",
+            "site careers microsoft com student interview process",
+            "\"careers.microsoft.com\" \"student\" OR \"university\" \"interview\" \"process\" OR \"tips\"",
+            "\"careers.microsoft.com\" \"Early in profession hiring tips\" OR \"Student and recent graduate interviews\"",
+            "\"student-interviewing\""
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGM1WBKberSfz4TIfG_ooX48JRPv-S4keLW-l2vdux4igICglrOkeM6i_gSiQS8Q4xHnhULzsUb6EDDh397uq2dRU5Ld8Dbllbvj8fF-MplxY2XNi3pV72E8zjzOiYzbv_DDufptGsUrOshpRK0NrYovDF5gDJn",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE5QXjv3vQcIE23vrZOeJBRSO7jZq75po29mj0A_EVwVi8ZPy4VfwwdEB91hPTmDuxaBR60a5FOWr9Sf63nJOYgWXyUphjyN5WkRpMAKu22kRhigGkll9YJpCE7QgZj7M_Ow2_gZ38PPJIfDwSEPljaRCYMZomiboNcvQUB93J4eCX-bcPncg==",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFSB7TX_VJ66Vxh6l-iOSYyrGahkVbn9C7derPZvh8sUIk5SIW4qG5F7QVtdlXKtrPcZ3kJMpbd6mBtadvTzlkuctvahUm_FivqvdSAzKedqu6jRtbbV64h7Lj8eXJadmZlv91hAC6yk5WQzWISq1rFrVcAguW0SqS6BPB92d7X83ThBfS7",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAFNUVVsGSXAXqUv6GJi5iDPEJEbI8HRh7EoyzlwJH3v_tWblg6zirUMJnxFbTKF_v8OMg19rddzwVinZyhI4BMf2nmlGtNB1Eei4Fuul3ZsJ9bfb5d-8IPcWe08VPDmDLeedgNlpdkYBgunxf2gZbFtFOnMXfOIWvb7qYxYgtCmKkJF8I8iQ782AqfIkdrgotcAAeAdSxoXpcCzkktXnejqZ98dwm3PvvpbvZOivOPdM-ErZMMEsyguU2U1gcguwR92nJ8Jv13LWHVU6m3fPxu46q8zihhgctOaQvyhsLdg94uhhO0pK71vnSquaGMQ==",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG99KLKlkK4AsLcXoJDaFIk4I1os4ak9lZelnU_qOmTiyg0P1LOU5dJXmTKbunLeihhsHi7kuQU20aHgmY-FWFP7y8oPk-Zqnb4lzRCkXJi5ReD6SHateRH8YMsoUGJX3h-6nGKk3OSJcOePWGtdANOBFiEIKs7yDl-3y4b1h7QcT8Im64d",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGtslzcH0w-czUBspJuaWkR85CQc69EY0AluUEYhL9DS2wdBWnmZkpLQ7DOfbxyHva-TyqOfIL1M3KVv2SA6dgf_sGrxU2NN8I8zIDuXOR0Omc9aga9-2daugqKLECqUUiGtWL3FU1BKl4AwgeAFa7XZiyHMAC9AazyFg==",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4fsZe76FUGNsgpFmV7GmvLEodpXnHOU5mpJPaDHWjPM2QXsDzcfBG-rtnFySCHfprWa5T94rmiSzX9XwgvxYdZo2OyDpPQASzywrLJZ87gdVwktXRfdnxrV3u-LXgmX52EYqKVOXGjZ0nyQBfUPKcPA==",
+              "title": "extern.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEtkcUd01HkkyszM2Dhsi3VA4t9dtDowl4v4o1gQqXwwov3fMKtTEuGrLQnV6WsShpObCCTcRFjNb_kDz9H7jk0x1ZBuDMsdwJya6gKrNnMvE05sbPomHTvO6fu0zSBK7FcmzP44BlH4zk9jVwXRRdYg==",
+              "title": "gameassessmentprep.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHah9eyW8x_GKb6DsMz1zkrwrbobW6WTp2MFcJPSs9nnKxuk8iEMT7qPj4kkU_LSm0eXJpTm_CakXoyJg1N-WIbC3T3lzuZkmtfoFO_ExYxS7QskPuT0sNpJiQsAJtlvqTKEn7wtYgTvnI-Mam4SJEBYOS9TNopWoW-DxdUC76lc_2jFHRpojKhhpGFmnfgZejx7_h0-4s=",
+              "title": "medium.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHwTCCJp6O96q6sVfp6bK755jAC2EU0pN8hiO9bIycRAYeyYbhOnML1xxmpdUn9j83Ezrp8Vnw7qCCTCv8d0dr7UP94Bn1SqJfjbogHe2dVGjy_tnw2NYPBVx-CST2A2bP5qLG8rYc_18dHtjonKSuiKNmPH6M",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFI8fBnXiwNURoJcBJjxm5oajGPelFYPlWZ1JlcCpgxPQWh02IX2HwQZ4f3Ah1lmMcW3Rf4uTJIFY4bW6saal28LMESOEca9makjaesEQeGH6UPyiB25p7a4nltAQj6Hb5maH1mMXs=",
+              "title": "youtube.com"
+            }
+          ],
+          "history_messages": 1,
+          "visible_history_characters": 84,
+          "instruction_characters": 229,
+          "tool_description_count": 0,
+          "response_received": 40.41,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 40.41,
+          "duration": 24.418
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 40.419,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 5,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3,
+          "response_received": 42.038,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 42.038,
+          "duration": 1.619
+        },
+        {
+          "agent": "Interview_Preparation_Agent_google_search_agent",
+          "start": 42.054,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "security OR cybersecurity interview process OR rounds OR assessment",
+            "\"security\" OR \"cybersecurity\" interview process OR rounds OR assessment",
+            "security interview",
+            "\"interview process\"",
+            "\"security\" OR \"cybersecurity\"",
+            "\"interview\"",
+            "\"interview preparation\"",
+            "security",
+            "cybersecurity",
+            "Microsoft security interview process",
+            "\"security\" OR \"cybersecurity\" AND \"interview\" OR \"process\" OR \"rounds\"",
+            "\"security\" interview process",
+            "\"cybersecurity\" interview process",
+            "\"careers.microsoft.com\" security OR cybersecurity interview",
+            "Microsoft security engineer interview rounds",
+            "Microsoft security analyst interview rounds"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEDbRfaH8NNlMpTnBUXTVh_ESc2DJnT2QwfrvICgWw9t19C5PFxzJO19DzkOr4kJnL2pSQV0IZlTMjZvBGH3Ii32TJt-XYkl39bK3dphHj4gaVt-4ATJr21UHe8GDaaBjoB8yRWBAXsc2o38pMwMl8HXKUSGGTp_bMvrw==",
+              "title": "dataford.io"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEWm-UdcYMog7SI9I4fYfR1yLJWehdu-o1y91J6l6Xz3FgzOObXDLSVlyDY4GPq4k4p0M1ssDyZ_l9159oMRnln6jgXZ0LTarrzuNWueNzEsk7Cbk_HudQQSR_Ezun8MGeatbsybTDwE6jJr7VzyqKiBsoQIABExOQ=",
+              "title": "igotanoffer.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFG6T_soiJ46QH4w03C3L7hY6UxpM5aci-x5EQJfuVboyUc8WJBXjdeYAWkBIEKSEwY_E0UvX6y4N9r3J_fXPsc5u4HcKDhIHRKNJavzEmt5-PzDqqIqFCadGNNi7boa1Td_aj6Nk3KJc4p6vGjjVPkW3yddcF7guzTpY2VjCpV71j8nqs7Mh0=",
+              "title": "itprofessor.cloud"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQET_VEpw04FnAw1l_vOv90ct5gsUPQfP3FOIrgkA59xPSNZ0ImTowVgCutaaDspjEm2-eQDcURfgV5aw8gOjggwPLOqm_T6zeF8ZTRNwEAO3E9jXvu0ZdsuREPREn_q_0WghAat-iIaTW1h6RptPiLJjWlkJLHdv2LC7Jcir4oeZnsVwJ_OTtTbpPnrZC2-ipD29tgqC3_s5hFdx4Djkb46IA==",
+              "title": "reddit.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGbQVDTpdaKQaIi8E9lxcnxupDLZMbSTq4mR1YvmJcnRDHKZMj6PqDM30W56LywluA4vo4M8gprIyCTZhlKVx6ms2h9O5s3Ihf-tCQUyleLgvz-IGEHlaKm75aTqJCT2VKfvlbShspRtxu4vVS1kuYj-jnzksqqrakM4CXBj7_Fwb4TI3YNqrFH",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFoqhNjSM-ut5MKzsWT9sR5CXKr1IdzLfRUiJGWg65DUS-okHi8ZiOV2_FCjGowO_2Fi6x5ZzbfPqC2nENTkbVNiBoWpJqL-_mNzRn1Nv-P-ZIP2-ZV-Vlds0z0aLF8B00WEkx1d9UTOP-J0TXSkiaZuaffQsni",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFk2a3-gl8pme_NRuE-5MY3HZrpIjlBDbmRj14miNvn1_tWRcd8ltWIbM9u_LxfBUPfyfhkrjF9kw8lWHT8tyYMaqPC3Wpo9KVMPsgbIzgI2ekhpx1Crqs3iNjrCxjy2gyZC94gjdFltAV9fW1MjHPoRsCx9z0eSW0Fe3RI29BY53hbGeeO2azKribRlGC7b1fauvO38DMj7E4bi6AHBg==",
+              "title": "faangapply.io"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM3LLiloRuTt5WJsi7aYZxw_pn9GhPsWbSngI9xYaZBEtYtsgEDje-YZNMCLekPpdqWHsEaLT0rKJ7La2n8q0ifrdmFjJ3ej5T7JzceMbIEqJADG8EwKVt8AF3705ayzmHV2NNeC0uNde3hD5b8bJe6VL4VjEoz_dC1g==",
+              "title": "dataford.io"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHdjwNk5MZrgCVi-NJ9NSmsySvBlNBlr7OaDIx_QfDXUfzbuU5w5UX0sFStXHeeLS6BQvG1507UY5zVFF0qLi9GrMbHnmF6YfsKEV6D7iInwkedYg5e_zMCD4zWPifK6R2ijWlHNfN5LvkmZgeCcjEMmjqo0RK2RIxZJMEnHmyAKzREWqB1QPLpI8BU13zqJGN572l50egJ",
+              "title": "testpreptraining.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyZVu9ZTQFS3st9Y3nP2QGn3oaW-hlsFFglWssVFmzPHewgvhEJ9MD8wXiZBiw942FnQKhvVmFc8aAoSmzhJ8fSjDRQ74m8eXYJnT7KmXb_COwMKBdw4zmCbrNK1Vyaemx7ckYjfa22JZE8urYswNkP5eadH0t-5ISLKM=",
+              "title": "crowdcruit.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlOzamXS7PifvkC3fQ2Dprp3bDlwGlFHBIgF2DmgjTx08RKzHRikoX2SOjZulLDqOb5gYDnwYWxVdrovEeHBkTyWHpifVxoY7D00D-WoL2SFRtCrj7rfsdWufIMBGSrhETnvx5gsORn1LJMWqBzJSPEIYT3xs8w2MoOR5_E9GcUr0Td08NaKE=",
+              "title": "microsoft.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmjbHgS8cbc_3F2fdQ_FKqgnErZSoSDy3PjeyXysFqrcLqerHFmQFzKNK1fI7TwIGNi_J45qGk82Cv-SZfjgG9AGNKh1XciOU7mJv1GLuyx5vbz0OBKgeRZfvtka81o_OfwGeFmbk1TB3twgT99LRPlaUc5ROUSD_QVmMBa7U1sSZ-kFIAPwrt6psJuTW3AbvoskhXceEL2E8auDMFIiaVoCQUyg==",
+              "title": "reddit.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3G7bIvKwlpRDzExSmNO4DPUSCOlLB4wzLJ6jTPvcTJ-Wzx_Mcu-41sxChE7UsY3oYdK-uaPu-TW8tu60loCzB3ZOSwF6gu4_MPvjLsu87S_cizxvbkcQS7PO1THmeb2oQNWEfq5UTnWlDwhLAfJgl3eaW8TLu1N5CMCGrdpJwqvg0cxQ4o-tMdgFjMK10lJGXP_32H_9tNHXweVtxw5ap9P4=",
+              "title": "phoenix.edu"
+            }
+          ],
+          "history_messages": 1,
+          "visible_history_characters": 98,
+          "instruction_characters": 229,
+          "tool_description_count": 0,
+          "response_received": 82.391,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 82.391,
+          "duration": 40.337
+        },
+        {
+          "agent": "interview_preparation_agent",
+          "start": 82.401,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 7,
+          "visible_history_characters": 1275,
+          "instruction_characters": 32590,
+          "tool_description_count": 3,
+          "response_received": 96.542,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 96.542,
+          "duration": 14.141
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 9.482,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "interview_preparation_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 9.489,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 15.973,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "tool": "Interview_Preparation_Agent_google_search_agent",
+              "args": {
+                "request": "site:careers.microsoft.com interview process university OR \"entry-level\" OR students"
+              }
+            }
+          ]
+        },
+        {
+          "t": 40.412,
+          "author": "Interview_Preparation_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "Based on the official **Microsoft Careers** documentation and resources for students, recent graduates, and \"early in profession\" candidates, here is a detailed breakdown of the entry-level hiring and interview process:\n\n---\n\n### 1. The Core Philosophy\nMicrosoft’s student and entry-level recruitment focuses not just on what you currently know, but on your **growth potential**. They structure their process to evaluate:\n*   **Base knowledge** in your area of focus.\n*   **Critical thinking and problem-solving** skills.\n*   **Ability and willingness to learn** (your learning agility).\n*   **Culture Alignment**: Microsoft heavily assesses a **Growth Mindset** (being a \"learn-it-all\" rather than a \"know-it-all\"), **Diversity & Inclusion** (valuing differences), and **One Microsoft** (collaboration and building on the success of others).\n\n---\n\n### 2. The Step-by-Step Interview Process\n\n#### **Step 1: Application & Resume Review**\n*   **Submission:** Candidates apply online through the Microsoft Careers Student portal. \n*   **Tracking:** Once submitted, you can track your status in real-time via the **Action Center** on the careers site. Microsoft advises that application reviews and final decisions can take up to 90 days.\n\n#### **Step 2: Initial Screen / Online Assessment (OA)**\n*   If your resume aligns with open opportunities, you will be invited to an initial screening phase. \n*   **For Technical Roles (e.g., Software Engineering):** This typically involves an **Online Assessment (OA)** hosted on a platform like Codility or HackerRank. It generally features 2–3 Data Structures and Algorithms (DSA) questions to be completed under a time limit (often around 90 minutes).\n*   **Focus of the First Screen:** At this stage, candidates are typically being assessed for a **functional role** (such as software engineer, product manager, or mechanical engineer) globally across Microsoft, rather than for a specific team. \n\n#### **Step 3: Virtual Interview Day (Final Round)**\nIf you pass the initial screen, you will be invited to a final virtual interview loop.\n*   **Format:** All interviews are held entirely **virtually** (typically via Microsoft Teams).\n*   **Structure:** It consists of **1:1 meetings with Microsoft employees** (usually 2 to 4 conversations, each up to an hour) with built-in breaks in between.\n*   **Content:** Expect a mix of **behavioral questions** and **functional/technical discussions**:\n    *   *Technical Rounds:* Technical candidates will write code using a runnable coding tool in a language they know, covering problem-solving, design, and testing. Interviewers are highly interested in *how* you solve problems, so you are encouraged to ask clarifying questions and vocalize your thought process.\n    *   *Behavioral Rounds:* These focus on your past experiences, teamwork, adaptability, and culture fit. \n*   **Focus of the Final Round:** Unlike the first screen, during the final round, you are usually being evaluated for a specific organization or division within Microsoft (e.g., Cloud + AI, Experiences + Devices).\n\n#### **Step 4: Decision and Next Steps**\n*   Following the interviews, your recruiter will reach out with the final decision and guide you through the next steps (such as the offer and pre-onboarding process).\n\n---\n\n### 3. Key Policies to Keep in Mind\n\n*   **Responsible Use of AI:** Microsoft permits and encourages the ethical use of AI tools for **interview preparation**. However, during the actual assessments and interviews, candidates are expected to demonstrate their own skills without any outside assistance.\n*   **Candidate Code of Conduct:** Honest representation of your skills, resume details, and achievements is strictly required to build a foundation of trust.\n*   **No \"Game\" Assessments:** Unlike some other tech companies, Microsoft’s hiring process is heavily **interview-led** and does not use company-wide game-based assessments.\n\n### 4. Tips to Ace the Interview (from Microsoft Recruiters)\n1.  **Use the STAR(R) Method:** For behavioral questions, structure your answers around **S**ituation, **T**ask, **A**ction, **R**esult, and what you **R**elearned/learned from the experience. \n2.  **Over-communicate Your Logic:** If you get stuck on a coding or system design problem, ask clarifying questions. Recruiters emphasize that demonstrating curiosity and logical reasoning matters more than just arriving at a perfect, pre-memorized solution.\n3.  **Do Industry Research:** Be prepared to explain what Microsoft is doing in the industry, how its products stand out, and why you are interested in their specific tech stack or business model."
+            }
+          ]
+        },
+        {
+          "t": 40.416,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "tool_result": "Interview_Preparation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 42.039,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "tool": "Interview_Preparation_Agent_google_search_agent",
+              "args": {
+                "request": "site:careers.microsoft.com \"security\" OR \"cybersecurity\" interview process OR rounds OR assessment"
+              }
+            }
+          ]
+        },
+        {
+          "t": 82.394,
+          "author": "Interview_Preparation_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "At Microsoft, the hiring and interview process for **security and cybersecurity** roles (such as Security Engineers, Security Analysts/SOC, Security Researchers, and Cybersecurity Architects) is a structured, comprehensive experience. The end-to-end process typically spans **three to eight weeks** and is designed to assess technical depth, scenario-based reasoning, and alignment with Microsoft's cultural values.\n\n---\n\n### **1. The Microsoft Security Interview Process & Rounds**\n\nCandidates can expect the hiring pipeline to follow these main stages:\n\n#### **Stage 1: Application Review & Resume Screen**\n* **The Goal:** Recruiters filter applications against the specific needs of the security team.\n* **Prep Tip:** Ensure your resume clearly lists experience with the relevant tech stack (e.g., Azure, Microsoft Sentinel, Microsoft Defender, Entra ID) and any relevant security frameworks (e.g., NIST, Zero Trust).\n\n#### **Stage 2: Recruiter Screen**\n* **The Goal:** A 30-minute phone call to evaluate high-level qualifications, career interests, salary expectations, and overall cultural fit. \n\n#### **Stage 3: Online Technical Assessment (OA)**\n* **The Goal:** Commonly required for early-to-mid-career security engineering or analyst roles.\n* **Format:** This is usually a timed online challenge consisting of 1–2 algorithm/data structure problems (frequently LeetCode Medium level). You are free to write code in the programming language you are most comfortable with. \n\n#### **Stage 4: First-Round Technical Screen**\n* **The Goal:** A live, 45-to-60-minute conversational technical screen conducted over Microsoft Teams. \n* **Focus:** This round tests foundational technical concepts relevant to the role, such as core networking protocol behaviors (TCP/IP, TLS, BGP), authentication flows, and general cloud security mechanisms. \n\n#### **Stage 5: The Final Interview Loop (The Virtual \"On-Site\")**\nIf you pass the initial screen, you will move to the final loop, which consists of **4 to 5 individual interviews** (each 45–60 minutes long) conducted over Microsoft Teams. These sessions typically cover:\n\n* **Coding & Scripting Round:** Focusing on clean, bug-free, and highly secure code. You will be expected to think through testing scenarios, edge cases, boundaries, and potential security implications of the features you code. \n* **Security System Design & Architecture:** Designing secure, scalable, and resilient systems. You may be asked to design network segmentation, hybrid cloud integrations, or web-scale authorization architectures.\n* **Incident Response (IR) Walkthrough / Threat Modeling:** A deep dive into practical scenarios, such as how you would detect lateral movement, triage a high-priority alert, or respond to and isolate a system during a ransomware attack.\n* **Domain Skills & Microsoft Security Ecosystem:** For SOC or Security Analyst roles, your familiarity with Microsoft’s proprietary stack is heavily evaluated. Expect questions relating to **KQL (Kusto Query Language)**, as it is the query language underlying Sentinel and Defender. \n* **Behavioral & Growth Mindset Interview:** Evaluation of your professional collaboration style, dealing with cross-functional friction (e.g., engineering teams who view security as a roadblock), and your capacity for continuous learning.\n\n---\n\n### **2. Core Areas Tested in Microsoft Security Interviews**\n\nAccording to real candidate reports and Microsoft's official guides, your interviewers will evaluate you on:\n\n* **How You Think (Not Just Definitions):** Microsoft prioritizes your investigative reasoning, thought process, and problem-solving method over memorized textbook answers.\n* **Responsible AI:** When discussing modern applications, expect to be assessed on your awareness of safety, fairness, privacy, and reliability principles, aligned with Microsoft's Responsible AI initiative.\n* **Applied Cryptography & Protocols:** Expect to explain public/private key cryptography, hashing, SSL/TLS handshakes, and identity management protocols.\n\n---\n\n### **3. Preparation Tips for Acining the Interview**\n\n1. **Master KQL:** If you are interviewing for any Microsoft-centric Security Analyst or Threat Hunter position, **KQL is non-negotiable**. You must be comfortable writing queries from scratch on the fly.\n2. **Be Comfortable with \"Growth Mindset\" Pivots:** If you get stuck on an Azure-specific feature or security control during a technical round, do not give a flat \"I don't know.\" Pivot to demonstrate your general security logic instead: *\"I haven't set up that specific policy in Azure AD, but I have experience configuring equivalent multi-factor rules in Okta by doing X, Y, and Z.\"*\n3. **Use the STAR Method:** For behavioral and situational rounds, construct your answers using the **Situation, Task, Action, and Result** framework. This keeps answers structured and results-oriented.\n4. **Think Like an Attacker & a Defender:** Be prepared to think outside the norm. When asked to design a system, don't just build it; proactively explain how a bad actor might exploit it and how you have engineered mitigations."
+            }
+          ]
+        },
+        {
+          "t": 82.397,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "tool_result": "Interview_Preparation_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 96.544,
+          "author": "interview_preparation_agent",
+          "parts": [
+            {
+              "text": "Based on current official recruiting pathways and career documentation from Microsoft, here is a detailed breakdown of the interview process for entry-level and university candidates. \n\nBecause \"cybersecurity\" can span multiple paths at Microsoft—such as **Security Software Engineering**, **Security Operations (SOC) Analyst**, or **Cybersecurity Consultant**—the technical details will vary by sub-role. The information below is organized by verified official processes, role-specific guidelines, and preparation strategies to help you navigate your upcoming interviews.\n\n---\n\n### 1. Verified Employer-Specific Information\n*Source: Official Microsoft Careers Student & Graduate Portal Documentation*\n\nFor entry-level and \"early-in-profession\" applicants, Microsoft utilizes a highly structured recruiting pipeline:\n\n*   **Application & Tracking:** You apply through the Microsoft Careers Student portal and track your application status in real-time via the online **Action Center**.\n*   **The Initial Screening (Online Assessment):**\n    *   For technical and engineering tracks (including Security Software Engineering), you will typically receive an online invitation to a timed **Online Assessment (OA)** (hosted on platforms like Codility or HackerRank). \n    *   This OA usually consists of 2–3 algorithmic or problem-solving tasks. \n    *   *Note:* At this initial screen, Microsoft evaluates you for a **functional discipline** (such as engineering or security generally) rather than a specific team.\n*   **Virtual Interview Day (The Final \"Loop\"):**\n    *   If you pass the initial assessment, you will be invited to a virtual interview day conducted entirely over **Microsoft Teams**.\n    *   The loop typically consists of **2 to 4 consecutive 1-on-1 interviews** (each up to 60 minutes) with built-in breaks.\n    *   At this stage, you are typically being evaluated for a specific division or organization (e.g., Cloud + AI, Security, or Windows Defender).\n*   **Core Evaluation Areas:** Microsoft explicitly evaluates candidates on their **Growth Mindset** (being a \"learn-it-all\" rather than a \"know-it-all\"), **Diversity & Inclusion** (how you value differences), and **One Microsoft** (how you collaborate and build on others' successes).\n*   **Policies:** Microsoft explicitly allows the ethical use of AI tools for *preparation*, but candidates must complete actual interviews and assessments independently. Unlike some peers, Microsoft does not utilize game-based company-wide cognitive assessments.\n\n---\n\n### 2. Official Employer Guidance & General Industry Patterns\n*Because Microsoft customizes the technical portion of the interview depending on the exact cybersecurity role, these details represent a blend of Microsoft's general technical guidelines and common security industry hiring patterns.*\n\n*   **Security Software Engineering (Coding-Heavy):**\n    *   **Secure System Design:** Expect to design a scalable system and discuss security-first architecture (e.g., identity separation, encryption-at-rest/in-transit, and input validation).\n    *   **Threat Modeling:** You may be asked to analyze a hypothetical feature or architecture, identify security boundaries, find potential exploits (using frameworks like STRIDE), and suggest mitigations.\n*   **Security Analyst / Incident Response (Operations-Heavy):**\n    *   **Security Ecosystem & Querying:** Familiarity with **KQL (Kusto Query Language)** is highly valued, as it is the underlying querying language for Microsoft Sentinel and Defender.\n    *   **Triage Scenarios:** You may be asked to walk through a hypothetical security alert (e.g., \"A user in the US logs in, and 5 minutes later, there is an active login from Europe. How do you investigate?\").\n    *   **Protocols & Infrastructure:** Strong knowledge of core networking (TCP/IP handshakes, SSL/TLS, DNS resolution) and cloud identity fundamentals (Active Directory, Microsoft Entra ID, OAuth/SAML).\n\n---\n\n### 3. How We Can Prepare Together\n\nTo give you the best possible chance of success, we should align your preparation with Microsoft's evaluation standards. We can practice in three ways:\n\n#### **Option A: Behavioral & Culture Fit Mock (Growth Mindset & STAR)**\nWe practice answering behavioral questions using the **STAR(R)** framework (Situation, Task, Action, Result, and *Re-learned*), tailoring your real projects and coursework at Morgan State to match Microsoft’s values. \n*   *Example Question:* \"Tell me about a time when you received constructive feedback that changed how you approached a project.\"\n\n#### **Option B: Cybersecurity Scenario & Threat Modeling Mock**\nWe run a technical simulation where I play the interviewer, and you walk me through your technical reasoning.\n*   *Example Scenario:* \"We are designing a new cloud-based file-sharing app for Microsoft Teams. Walk me through how you would threat model this application. Where are the trust boundaries, and what secure design principles will you enforce?\"\n\n#### **Option C: Core Technical Q&A (Networking, IAM, Cryptography)**\nWe do a rapid-fire review of core cybersecurity concepts you are likely to face.\n*   *Example topics:* Explaining public/private key infrastructure (PKI), the TLS handshake, or how multi-factor authentication (MFA) protects against session hijacking.\n\n---\n\n### Your Next Steps\n\n1.  **Which cybersecurity sub-path are you aiming for?** (e.g., Security Software Engineering, Security Consultant, or Security Analyst/Incident Response?)\n2.  **How is your timeline looking?** (Do you have an upcoming OA, or are you preparing for a final round loop?)\n3.  **Choose an option above (A, B, or C),** and we can start practicing immediately! If you'd like to work on your resume first before diving into mock interviews, let me know so I can hand you off to our **Resume & Portfolio Agent**."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 8.357,
+          "SPECIALIST_POST_TOOL_WAIT": 15.76,
+          "SPECIALIST_PRE_TOOL_WAIT": 6.477,
+          "STREAM_FINALIZATION": 0.002,
+          "TOOL_WAIT": 64.767,
+          "UNOBSERVED_RUNTIME_WAIT": 1.184
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 9.482,
+          "transfer_to_agent": {
+            "t": 9.482,
+            "target": "interview_preparation_agent"
+          },
+          "first_specialist_event": 15.973,
+          "first_helper_request": 15.974,
+          "helper_completions": [
+            40.413,
+            82.394
+          ],
+          "specialist_resumes": [
+            40.419,
+            82.401
+          ],
+          "first_public_text": 96.545,
+          "stream_completion": 96.547
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "verdict": "COMPLETED; CURRENT RELIABILITY FAIL",
+        "limits": "Final labels employer-specific claims verified without claim-level citations; helper outputs mix official and third-party sources. No deterministic verification, 2 helpers/21 queries."
+      }
+    }
+  ],
+  "planned_case_ids": [
+    "wave3_certification_stable_1",
+    "wave3_certification_stable_2",
+    "wave3_certification_stable_3",
+    "wave3_interview_stable",
+    "wave3_certification_current",
+    "wave3_networking_stable",
+    "wave3_networking_current",
+    "wave3_research_stable",
+    "wave3_research_current",
+    "wave3_interview_current"
+  ],
+  "remaining": [],
+  "prompt_sizes": {
+    "interview_preparation_agent": {
+      "instruction_characters": 18990,
+      "approximate_tokens": null,
+      "tokenizer": "No local model-compatible tokenizer used; no API or downloads",
+      "helper_tool_descriptions": 2
+    },
+    "networking__professional_communication_agent": {
+      "instruction_characters": 16371,
+      "approximate_tokens": null,
+      "tokenizer": "No local model-compatible tokenizer used; no API or downloads",
+      "helper_tool_descriptions": 2
+    },
+    "research__graduate_pathways_agent": {
+      "instruction_characters": 16599,
+      "approximate_tokens": null,
+      "tokenizer": "No local model-compatible tokenizer used; no API or downloads",
+      "helper_tool_descriptions": 2
+    },
+    "certification__technical_development_agent": {
+      "instruction_characters": 14574,
+      "approximate_tokens": null,
+      "tokenizer": "No local model-compatible tokenizer used; no API or downloads",
+      "helper_tool_descriptions": 2
+    },
+    "root_agent": {
+      "instruction_characters": 8037,
+      "approximate_tokens": null,
+      "tokenizer": "No local model-compatible tokenizer used; no API or downloads",
+      "helper_tool_descriptions": 2
+    }
+  },
+  "certification_distribution": {
+    "attempts": 3,
+    "completed_seconds": [
+      25.623,
+      22.897,
+      22.138
+    ],
+    "minimum": 22.138,
+    "maximum": 25.623,
+    "median": 22.897,
+    "mean": 23.552666666666667,
+    "population_stdev": 1.4963801507489853,
+    "classification": "103s NOT REPRODUCED: observed outlier versus three fresh runs; provider versus history cause unresolved"
+  },
+  "tokenizer_availability": {
+    "tiktoken": false,
+    "sentencepiece": false,
+    "tokenizers": false,
+    "policy": "No installation/download or token-count API used."
+  },
+  "diagnostic_source_hashes": {
+    "tests/diagnostics/career_baseline.py": "2a4568c7c045d958f77ba3573fae7025e69d918b437939efd9f2b6970c628abf",
+    "tests/diagnostics/career_wait_analysis.py": "edaa1740b19a5b20e8601d701e9a8d66dff1330100ff7e422c09f7d6adddc208",
+    "tests/diagnostics/career_wave3.py": "d3edc7f88b872c6addf3c8327349f922954364a4871dc40ef846b01bf9894382"
+  }
+}

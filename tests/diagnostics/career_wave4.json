@@ -1,0 +1,1037 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "d444defabb96b290c8b0741057d6aa5c134f73f8f2eca4dc41c9c05d3a7fd0d9",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+    "agents\\career\\workflow\\shared_evidence.py": "e78482a490da0ba52405ebefe40c2550fbe813cf4ca046fd50c10fead5e071e3"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "wave4_certification_current_1",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T08:35:24.100358+00:00",
+      "orchestrator_request_start": 0.984,
+      "total_seconds": 116.799,
+      "band": "RED",
+      "first_transfer": {
+        "t": 9.043,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 9.05,
+      "first_specialist_event": 9.051,
+      "handoff_seconds": 0.008,
+      "first_helper": 9.065,
+      "first_text": 116.798,
+      "final_answer": "### Requested certification facts\n\n### Exam version/code\n\n**VERIFIED CURRENT**\n\nSY0-701\n\nSource: [Inspected official candidate](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKyy-aZZVBeLG7nNT876NbwOyWOSEIcAMnEf2Kn7i0MEEVMsKeX7wgTibHNXl_6HR41IOBlYXdQG0BTf5TD7R9RDkhNZixWLo3_i8ycMP2ne3PA9FGT8rhTkNoAyKhivdD5fqTviYMNf7BxM1GPvLNOSIx-w==>)\n\n**VERIFIED CURRENT**\n\nV7\n\nSource: [Inspected official candidate](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKyy-aZZVBeLG7nNT876NbwOyWOSEIcAMnEf2Kn7i0MEEVMsKeX7wgTibHNXl_6HR41IOBlYXdQG0BTf5TD7R9RDkhNZixWLo3_i8ycMP2ne3PA9FGT8rhTkNoAyKhivdD5fqTviYMNf7BxM1GPvLNOSIx-w==>)\n\n### Price\n\n**CURRENT STATUS UNVERIFIED** — no inspected official page established this requested fact.\n\nValues apply only to the inspected page and stated scope; undated pages do not establish future prices or retirement cycles.",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 1,
+      "search_queries_reported": 8,
+      "url_context_invocations": 2,
+      "total_retrieval_seconds": 107.697,
+      "specialist_model_seconds": 0,
+      "orchestrator_model_seconds": 8.056,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.983,
+          "history_messages": 1,
+          "visible_history_characters": 61,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 9.053,
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "t": 9.068,
+          "history_messages": 1,
+          "visible_history_characters": 1579,
+          "instruction_characters": 2822,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 73.985,
+          "history_messages": 5,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_url_context_agent",
+          "t": 73.995,
+          "history_messages": 1,
+          "visible_history_characters": 3216,
+          "instruction_characters": 2989,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 97.492,
+          "history_messages": 7,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_url_context_agent",
+          "t": 97.505,
+          "history_messages": 1,
+          "visible_history_characters": 3173,
+          "instruction_characters": 2989,
+          "tool_description_count": 0
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 116.797,
+          "history_messages": 9,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 9.043,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 9.046,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 9.054,
+          "fingerprint": "5035e68b782bd831a09308b71b71ecb47793cf6a9fd8468a2ddc0e540e0d6af2",
+          "args": {
+            "request": "What is the current CompTIA Security+ exam version and price?"
+          },
+          "end": 73.982,
+          "duration": 64.928,
+          "quality_output": "{\"candidates\": [{\"candidate_id\": \"C1\", \"claim\": \"The current official CompTIA Security+ exam version is V7 (Exam Code SY0-701), with the V8 version (Exam Code SY0-801) launching in November 2026.\", \"source_type\": \"official owner\", \"discovery_status\": \"CANDIDATE CURRENT\"}, {\"candidate_id\": \"C2\", \"claim\": \"The standard retail price for a single CompTIA Security+ exam voucher in the United States is $439 USD.\", \"source_type\": \"other\", \"discovery_status\": \"CANDIDATE CURRENT\"}], \"next_action\": \"Verify candidate IDs only.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "verify_certification_candidate",
+          "kind": "verification",
+          "start": 73.986,
+          "fingerprint": "98842cb0b05ed285bf91a066c514bb8ef6cff17467d4a05de8ea527dbfecb17f",
+          "args": {
+            "candidate_id": "C1"
+          },
+          "end": 97.489,
+          "duration": 23.503,
+          "quality_output": "{\"candidate_id\": \"C1\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 4,
+          "name": "verify_certification_candidate",
+          "kind": "verification",
+          "start": 97.493,
+          "fingerprint": "05b2c8532887a411e45f1f651de8f29bf675a0ed5d1de063a35d6e3f25e7d85a",
+          "args": {
+            "candidate_id": "C2"
+          },
+          "end": 116.794,
+          "duration": 19.301,
+          "quality_output": "{\"candidate_id\": \"C2\", \"status\": \"CURRENT STATUS UNVERIFIED\", \"next_action\": \"Python renders final evidence.\"}",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 9.065,
+          "index": 1,
+          "end": 73.98,
+          "duration": 64.915
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_url_context_agent",
+          "kind": "url",
+          "start": 73.994,
+          "index": 1,
+          "end": 97.487,
+          "duration": 23.493
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_url_context_agent",
+          "kind": "url",
+          "start": 97.504,
+          "index": 2,
+          "end": 116.793,
+          "duration": 19.289
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.984,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 61,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 9.04,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 9.04,
+          "duration": 8.056
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 9.068,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "\"Security+\" \"exam code\" OR \"exam details\"",
+            "\"Security+\" exam voucher price",
+            "\"Security+\" \"SY0-701\" price OR cost OR voucher OR USD OR $",
+            "\"Security+\" voucher price USD OR $",
+            "\"Security+\" voucher OR exam",
+            "\"Security+\" \"SY0-801\" OR \"SY0-701\"",
+            "\"Security+\" OR \"SY0-701\"",
+            "\"Security+\" exam voucher"
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4xqOsnyC2Z-uFliujyhdGbva1aXvmGmgtdFpavmJhXIEeA5-jiy37MXg8Znqu6Z0MeC5r2pHotTkruvA_3nytbUO2CToi7rq2C9EUz1o5AcCU7I9_N_L3TC11Rcq4XrO9HxCjGmvVCATTNzmLl_DXCoXu_2IAeCC2Q83WqZF1DZ4p9R4XND12Yi6MrtilmuBFeNSpBXZkAhK7VdXCjQtD-Q==",
+              "title": "trainingcamp.com"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKyy-aZZVBeLG7nNT876NbwOyWOSEIcAMnEf2Kn7i0MEEVMsKeX7wgTibHNXl_6HR41IOBlYXdQG0BTf5TD7R9RDkhNZixWLo3_i8ycMP2ne3PA9FGT8rhTkNoAyKhivdD5fqTviYMNf7BxM1GPvLNOSIx-w==",
+              "title": "comptia.org"
+            },
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3F3I1M2H3sxfM9ACg64NG7GzpomoluyqKuVMdXDoUGCGcKIH5aSyh6kefmacuh3SIVQPmq4ZzkwKVsiLvuAijKLB_24olWNdbDxhbe6CBQAshtPrztM8iLYhVunddGffZHK2jgUWdbyebhH8y_AkP6zsX93R3",
+              "title": "hackerdna.com"
+            }
+          ],
+          "history_messages": 1,
+          "visible_history_characters": 1579,
+          "instruction_characters": 2822,
+          "tool_description_count": 0,
+          "response_received": 73.979,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 73.979,
+          "duration": 64.911
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_url_context_agent",
+          "start": 73.996,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 3216,
+          "instruction_characters": 2989,
+          "tool_description_count": 0,
+          "response_received": 97.485,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 97.485,
+          "duration": 23.489
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_url_context_agent",
+          "start": 97.505,
+          "search_enabled": false,
+          "url_enabled": true,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 3173,
+          "instruction_characters": 2989,
+          "tool_description_count": 0,
+          "response_received": 116.792,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 116.792,
+          "duration": 19.287
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 9.043,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 9.049,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 9.051,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 9.054,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "What is the current CompTIA Security+ exam version and price?"
+              }
+            }
+          ]
+        },
+        {
+          "t": 73.98,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "EVIDENCE CANDIDATE 1\nCLAIM: The current official CompTIA Security+ exam version is V7 (Exam Code SY0-701), with the V8 version (Exam Code SY0-801) launching in November 2026.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKyy-aZZVBeLG7nNT876NbwOyWOSEIcAMnEf2Kn7i0MEEVMsKeX7wgTibHNXl_6HR41IOBlYXdQG0BTf5TD7R9RDkhNZixWLo3_i8ycMP2ne3PA9FGT8rhTkNoAyKhivdD5fqTviYMNf7BxM1GPvLNOSIx-w==\nSOURCE TYPE: official owner\nSOURCE TITLE: Security+ Certification - CompTIA\nAPPARENT DATE OR CYCLE: UNKNOWN\nDISCOVERY SUPPORT: This official source confirms that the current exam version is V7 with series code SY0-701, and notes that a new version (Security+ V8) is coming in November 2026.\nDISCOVERY LIMITS: The specific list price for the exam voucher is not displayed on this general info page.\nDISCOVERY STATUS: CANDIDATE CURRENT\n\nEVIDENCE CANDIDATE 2\nCLAIM: The standard retail price for a single CompTIA Security+ exam voucher in the United States is $439 USD.\nSOURCE URL: https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3F3I1M2H3sxfM9ACg64NG7GzpomoluyqKuVMdXDoUGCGcKIH5aSyh6kefmacuh3SIVQPmq4ZzkwKVsiLvuAijKLB_24olWNdbDxhbe6CBQAshtPrztM8iLYhVunddGffZHK2jgUWdbyebhH8y_AkP6zsX93R3\nSOURCE TYPE: other\nSOURCE TITLE: CompTIA Security+ Exam Cost 2026: $439 + How to Pay Less\nAPPARENT DATE OR CYCLE: September 30, 2026\nDISCOVERY SUPPORT: This source outlines that the retail price for a standard Security+ voucher purchased directly from CompTIA in the US is $439 USD, updated from $425 following an official price increase on June 1, 2026.\nDISCOVERY LIMITS: This is a partner or secondary resource rather than a direct page from the official CompTIA Store.\nDISCOVERY STATUS: CANDIDATE CURRENT"
+            }
+          ]
+        },
+        {
+          "t": 73.983,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "Certification___Technical_Development_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 73.985,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "verify_certification_candidate",
+              "args": {
+                "candidate_id": "C1"
+              }
+            }
+          ]
+        },
+        {
+          "t": 97.486,
+          "author": "Certification___Technical_Development_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"CURRENT STATUS UNVERIFIED\",\n  \"source_title\": \"Security+ (Plus) Certification | CompTIA\",\n  \"source_date_or_cycle\": \"UNKNOWN\",\n  \"page_evidence\": \"The page states: 'Exam version: V7', 'Exam series code: SY0-701', and 'A new version, Security+ V8, is coming in November.'\",\n  \"supported_scope\": \"The current version of CompTIA Security+ is V7, with exam code SY0-701, and a new version V8 is coming in November.\",\n  \"not_established\": \"The exam code 'SY0-801', the launch year '2026' for V8, and the exam price/currency are not established on the page.\",\n  \"why\": \"The inspected page does not contain the exam price, does not mention the V8 exam code 'SY0-801', and does not specify the launch year '2026' for V8.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": false,\n  \"authority_host\": \"comptia.org\",\n  \"facts\": {\n    \"exam_version\": \"V7\",\n    \"exam_code\": \"SY0-701\",\n    \"retirement_date\": \"June 11, 2027\"\n  },\n  \"fact_statuses\": {\n    \"exam_version\": \"VERIFIED CURRENT\",\n    \"exam_code\": \"VERIFIED CURRENT\",\n    \"price\": \"CURRENT STATUS UNVERIFIED\",\n    \"retirement_date\": \"VERIFIED CURRENT\"\n  },\n  \"fact_evidence\": {\n    \"exam_version\": \"Exam version: V7\",\n    \"exam_code\": \"Exam series code: SY0-701\",\n    \"price\": \"Not mentioned on the page.\",\n    \"retirement_date\": \"Retirement: English – June 11, 2027; Japanese, Portuguese, Spanish, and Thai – August 13, 2027\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "t": 97.489,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "verify_certification_candidate"
+            }
+          ]
+        },
+        {
+          "t": 97.492,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "verify_certification_candidate",
+              "args": {
+                "candidate_id": "C2"
+              }
+            }
+          ]
+        },
+        {
+          "t": 116.793,
+          "author": "Certification___Technical_Development_Agent_url_context_agent",
+          "parts": [
+            {
+              "text": "{\n  \"status\": \"CURRENT STATUS UNVERIFIED\",\n  \"source_title\": \"CompTIA Security+ Exam Cost 2026: $439 + How to Pay Less | HackerDNA\",\n  \"source_date_or_cycle\": \"2026-09-30\",\n  \"page_evidence\": \"A single CompTIA Security+ exam voucher costs $439 when you buy it directly from CompTIA in the US. CompTIA raised prices across its lineup on June 1, 2026, and Security+ moved from $425 to $439.\",\n  \"supported_scope\": \"The claim that the standard retail price for a single CompTIA Security+ exam voucher in the United States is $439 USD is explicitly supported by the text of the article.\",\n  \"not_established\": \"Official vendor verification of the current price and version is not established because the source is a third-party website rather than the official CompTIA store.\",\n  \"why\": \"The inspected website (hackerdna.com) is an unofficial third-party platform. Official certification facts can only be verified from official-vendor sources.\",\n  \"page_read\": true,\n  \"current_claim_explicit\": true,\n  \"authority_host\": \"hackerdna.com\",\n  \"facts\": {},\n  \"fact_statuses\": {\n    \"price\": \"CURRENT STATUS UNVERIFIED\",\n    \"currency\": \"CURRENT STATUS UNVERIFIED\",\n    \"region\": \"CURRENT STATUS UNVERIFIED\",\n    \"exam_version\": \"CURRENT STATUS UNVERIFIED\",\n    \"exam_code\": \"CURRENT STATUS UNVERIFIED\",\n    \"retirement_date\": \"CURRENT STATUS UNVERIFIED\",\n    \"eligibility\": \"CURRENT STATUS UNVERIFIED\"\n  },\n  \"fact_evidence\": {\n    \"price\": \"A single CompTIA Security+ exam voucher costs $439 when you buy it directly from CompTIA in the US.\",\n    \"currency\": \"Option Price (USD) ... Security+ voucher $439\",\n    \"region\": \"when you buy it directly from CompTIA in the US\",\n    \"exam_version\": \"The Security+ (SY0-701) voucher is $439 from CompTIA\",\n    \"exam_code\": \"The exam switches to SY0-801 on November 17, 2026, and SY0-701 stays available until June 11, 2027.\",\n    \"retirement_date\": \"The English SY0-701 exam retires on June 11, 2027\",\n    \"eligibility\": \"CompTIA's Academic Store sells discounted vouchers to verified students. You will need a school email or proof of enrollment\"\n  }\n}"
+            }
+          ]
+        },
+        {
+          "t": 116.795,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "verify_certification_candidate"
+            }
+          ]
+        },
+        {
+          "t": 116.798,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Requested certification facts\n\n### Exam version/code\n\n**VERIFIED CURRENT**\n\nSY0-701\n\nSource: [Inspected official candidate](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKyy-aZZVBeLG7nNT876NbwOyWOSEIcAMnEf2Kn7i0MEEVMsKeX7wgTibHNXl_6HR41IOBlYXdQG0BTf5TD7R9RDkhNZixWLo3_i8ycMP2ne3PA9FGT8rhTkNoAyKhivdD5fqTviYMNf7BxM1GPvLNOSIx-w==>)\n\n**VERIFIED CURRENT**\n\nV7\n\nSource: [Inspected official candidate](<https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKyy-aZZVBeLG7nNT876NbwOyWOSEIcAMnEf2Kn7i0MEEVMsKeX7wgTibHNXl_6HR41IOBlYXdQG0BTf5TD7R9RDkhNZixWLo3_i8ycMP2ne3PA9FGT8rhTkNoAyKhivdD5fqTviYMNf7BxM1GPvLNOSIx-w==>)\n\n### Price\n\n**CURRENT STATUS UNVERIFIED** — no inspected official page established this requested fact.\n\nValues apply only to the inspected page and stated scope; undated pages do not establish future prices or retirement cycles."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 8.056,
+          "STREAM_FINALIZATION": 0.001,
+          "TOOL_WAIT": 107.697,
+          "UNOBSERVED_RUNTIME_WAIT": 1.045
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 9.043,
+          "transfer_to_agent": {
+            "t": 9.043,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 9.051,
+          "first_helper_request": 9.054,
+          "helper_completions": [
+            73.98,
+            97.487,
+            116.793
+          ],
+          "specialist_resumes": [
+            73.985,
+            97.492,
+            116.797
+          ],
+          "first_public_text": 116.798,
+          "stream_completion": 116.799
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "result": "PARTIAL GROUNDED ANSWER",
+        "candidates": 2,
+        "verification_calls": 2,
+        "per_fact_statuses": {
+          "exam_version": "VERIFIED CURRENT",
+          "exam_code": "VERIFIED CURRENT",
+          "price": "CURRENT STATUS UNVERIFIED"
+        },
+        "notes": "Official exam page inspected; third-party pricing candidate rejected for current official pricing. Future launch/retirement and discount details were omitted."
+      }
+    },
+    {
+      "id": "wave4_certification_stable_1",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "timeout_censored",
+      "completed_utc": "2026-10-23T08:39:53.429549+00:00",
+      "orchestrator_request_start": 0.951,
+      "total_seconds": 180.025,
+      "band": "RED",
+      "first_transfer": null,
+      "actual_specialist": null,
+      "route_match": false,
+      "first_specialist_start": null,
+      "first_specialist_event": null,
+      "handoff_seconds": null,
+      "first_helper": null,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 0,
+      "orchestrator_model_seconds": 179.073,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.951,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.951,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "end": 180.024,
+          "duration": 179.073,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "deadline",
+          "type": "TimeoutError",
+          "code": null,
+          "t": 180.025
+        }
+      ],
+      "events": [],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 179.073,
+          "UNOBSERVED_RUNTIME_WAIT": 0.952
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": null,
+          "transfer_to_agent": null,
+          "first_specialist_event": null,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": null,
+          "stream_completion": 180.025
+        },
+        "failure": {
+          "cause": "DIAGNOSTIC_CUTOFF",
+          "stage": "UNOBSERVED_RUNTIME_WAIT",
+          "censored": true
+        }
+      },
+      "manual_review": {
+        "result": "DIAGNOSTIC ROOT WAIT CUTOFF",
+        "notes": "No root response or transfer before 180s; not proof of 429/capacity and not a specialist or retrieval regression.",
+        "observed_phase": "ROOT_WAIT_CENSORED"
+      }
+    },
+    {
+      "id": "wave4_certification_stable_2",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?",
+      "status": "completed",
+      "completed_utc": "2026-10-23T08:40:37.531147+00:00",
+      "orchestrator_request_start": 0.988,
+      "total_seconds": 20.591,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 8.453,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 8.462,
+      "first_specialist_event": 8.462,
+      "handoff_seconds": 0.009,
+      "first_helper": null,
+      "first_text": 20.589,
+      "final_answer": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice.",
+      "search_helper_invocations": 0,
+      "search_enabled_model_requests": 0,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 0.0,
+      "specialist_model_seconds": 12.123,
+      "orchestrator_model_seconds": 7.463,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 0.988,
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 8.464,
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 8.454,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 8.458,
+          "duration": 0.004,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        }
+      ],
+      "helpers": [],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 0.988,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 76,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 8.451,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 8.451,
+          "duration": 7.463
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 8.465,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 3,
+          "visible_history_characters": 1277,
+          "instruction_characters": 28593,
+          "tool_description_count": 3,
+          "response_received": 20.588,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 20.588,
+          "duration": 12.123
+        }
+      ],
+      "errors": [],
+      "events": [
+        {
+          "t": 8.453,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 8.46,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 8.462,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 20.589,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "text": "### Deciding whether to pursue a certification\n\n- Compare the credential's subject matter with the role you want.\n- Consider total cost and preparation time alongside hands-on experience.\n- Review job postings you care about to see whether they request the credential.\n- Identify practical projects that demonstrate the same skills.\n- Choose a manageable study plan and reassess your progress before spending money.\n\nCheck official requirements and costs when you are ready to make a specific choice."
+            }
+          ]
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 7.463,
+          "SPECIALIST_PRE_TOOL_WAIT": 12.123,
+          "STREAM_FINALIZATION": 0.002,
+          "UNOBSERVED_RUNTIME_WAIT": 1.003
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 8.453,
+          "transfer_to_agent": {
+            "t": 8.453,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 8.462,
+          "first_helper_request": null,
+          "helper_completions": [],
+          "specialist_resumes": [],
+          "first_public_text": 20.589,
+          "stream_completion": 20.591
+        },
+        "failure": null
+      },
+      "manual_review": {
+        "result": "STABLE ZERO-RETRIEVAL PASS",
+        "notes": "Generic final framework, no discount/eligibility/vendor-offer leakage."
+      }
+    },
+    {
+      "id": "wave4_certification_current_2",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?",
+      "status": "failed",
+      "completed_utc": "2026-10-23T08:41:22.591691+00:00",
+      "orchestrator_request_start": 1.006,
+      "total_seconds": 21.491,
+      "band": "YELLOW",
+      "first_transfer": {
+        "t": 10.889,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 10.897,
+      "first_specialist_event": 10.897,
+      "handoff_seconds": 0.008,
+      "first_helper": 10.911,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 1,
+      "search_enabled_model_requests": 1,
+      "search_grounded_requests": 0,
+      "search_queries_reported": 0,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 10.58,
+      "specialist_model_seconds": 0,
+      "orchestrator_model_seconds": 9.881,
+      "model_callbacks": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "t": 1.005,
+          "history_messages": 1,
+          "visible_history_characters": 61,
+          "instruction_characters": 21486,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "t": 10.899,
+          "history_messages": 3,
+          "visible_history_characters": 1262,
+          "instruction_characters": 28593,
+          "tool_description_count": 3
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "t": 10.914,
+          "history_messages": 1,
+          "visible_history_characters": 1579,
+          "instruction_characters": 2822,
+          "tool_description_count": 0
+        }
+      ],
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 10.89,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 10.893,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 10.901,
+          "fingerprint": "5035e68b782bd831a09308b71b71ecb47793cf6a9fd8468a2ddc0e540e0d6af2",
+          "args": {
+            "request": "What is the current CompTIA Security+ exam version and price?"
+          },
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null,
+          "end": 21.491,
+          "duration": 10.59,
+          "censored": true
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 10.911,
+          "index": 1,
+          "end": 21.491,
+          "duration": 10.58,
+          "censored": true
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.006,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 61,
+          "instruction_characters": 21486,
+          "tool_description_count": 3,
+          "response_received": 10.887,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 10.887,
+          "duration": 9.881
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 10.914,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "history_messages": 1,
+          "visible_history_characters": 1579,
+          "instruction_characters": 2822,
+          "tool_description_count": 0,
+          "end": 21.486,
+          "duration": 10.572,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "model_transport",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 21.486
+        },
+        {
+          "stage": "model",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 21.486
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 21.487
+        },
+        {
+          "stage": "event",
+          "type": "RuntimeError",
+          "code": "429",
+          "t": 21.49
+        },
+        {
+          "stage": "runner",
+          "type": "_ResourceExhaustedError",
+          "code": "429",
+          "t": 21.491
+        }
+      ],
+      "events": [
+        {
+          "t": 10.889,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 10.895,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 10.897,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        },
+        {
+          "t": 10.9,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "What is the current CompTIA Security+ exam version and price?"
+              }
+            }
+          ]
+        },
+        {
+          "t": 21.487,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": []
+        },
+        {
+          "t": 21.49,
+          "author": "certification__technical_development_agent",
+          "parts": []
+        }
+      ],
+      "wait_diagnosis": {
+        "phase_seconds": {
+          "ROOT_WAIT": 9.881,
+          "TOOL_WAIT": 10.58,
+          "UNOBSERVED_RUNTIME_WAIT": 1.03
+        },
+        "timing_interpretation": "Observed SDK/provider/network waits and helper lifetimes; not pure model computation.",
+        "timeline": {
+          "request_start": 0,
+          "first_root_event": 10.889,
+          "transfer_to_agent": {
+            "t": 10.889,
+            "target": "certification__technical_development_agent"
+          },
+          "first_specialist_event": 10.897,
+          "first_helper_request": 10.901,
+          "helper_completions": [
+            21.491
+          ],
+          "specialist_resumes": [],
+          "first_public_text": null,
+          "stream_completion": 21.491
+        },
+        "failure": {
+          "cause": "PROVIDER_CAPACITY",
+          "stage": "TOOL_CAPACITY"
+        }
+      },
+      "manual_review": {
+        "result": "PROVIDER_CAPACITY / TOOL_CAPACITY",
+        "notes": "429 in first Search helper; no verification/final answer. All further live tests stopped."
+      }
+    }
+  ],
+  "planned_case_ids": [
+    "wave4_certification_stable_1",
+    "wave4_certification_stable_2",
+    "wave4_certification_current_1",
+    "wave4_certification_current_2",
+    "wave4_interview_stable",
+    "wave4_interview_current",
+    "wave4_trust_a",
+    "wave4_trust_b",
+    "wave4_trust_c",
+    "wave4_networking_regression",
+    "wave4_research_regression",
+    "wave4_career_regression"
+  ],
+  "remaining": [
+    "wave4_interview_stable",
+    "wave4_interview_current",
+    "wave4_trust_a",
+    "wave4_trust_b",
+    "wave4_trust_c",
+    "wave4_networking_regression",
+    "wave4_research_regression",
+    "wave4_career_regression"
+  ],
+  "deferred_cases": [
+    {
+      "id": "wave4_interview_stable",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    },
+    {
+      "id": "wave4_interview_current",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    },
+    {
+      "id": "wave4_trust_a",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    },
+    {
+      "id": "wave4_trust_b",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    },
+    {
+      "id": "wave4_trust_c",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    },
+    {
+      "id": "wave4_networking_regression",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    },
+    {
+      "id": "wave4_research_regression",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    },
+    {
+      "id": "wave4_career_regression",
+      "reason": "Live testing stopped after TOOL_CAPACITY 429; no retry or further live request."
+    }
+  ],
+  "source_note": "Live samples retain original source hashes. Final offline corrections cover Trust adjudication, the Interview-only anecdotal cap and domain-specific enum validation. Certification live responses use the same four-status protocol and their measured rendering is unaffected; method hashes and corrections are recorded in career_wave4_parity.json. No further live requests followed TOOL_CAPACITY 429."
+}

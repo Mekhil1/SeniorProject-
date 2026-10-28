@@ -1,0 +1,163 @@
+{
+  "decision": "RELEASE CANDIDATE — NO-GO",
+  "root_cause": "Networking accepted helper VERIFIED CURRENT flags and whole-claim scope without deterministic separation of goal/vision language from actual benefit delivery.",
+  "fix": "Networking-only page_evidence operational-clause acceptance and narrower membership/existence support; downgrade incomplete compound benefit claims.",
+  "only_product_source_changed": "agents/career/workflow/shared_evidence.py",
+  "fixture_provenance": "Exact public claim and assessment from Wave 7 rc_networking_current C1. Raw helper JSON was not retained. Below verifier transport fields are an explicit adversarial test construction, not claimed to be the original hidden payload. Evidence text paraphrases the captured source review/user-supplied defect description; no live web access.",
+  "before": {
+    "reproduced": true,
+    "status": "VERIFIED CURRENT",
+    "rendered": "### Networking: evidence and status\n\n**C1 — VERIFIED CURRENT**\n\nProposed claim (not an assertion): Morgan State Computer Science students can join SACS (Society for the Advancement of Computer Science), which provides mentoring from peers and industry professionals, technical workshops, and networking opportunities.\n\nSupported scope: The full proposed claim\n\nEvidence limits: \n\nAssessment: The official Morgan State University webpage explicitly outlines that SACS is the computer science student organization at the university and that its goals and activities include offering technical workshops, providing mentoring from peers and industry professionals, and creating networking and career opportunities.\n\nSource: [Exact inspected source](<https://www.morgan.edu/computer-science/current-students/sacs>)\n\nConfirm unresolved current details with the official owner before relying on them."
+  },
+  "after": {
+    "status": "CURRENT STATUS UNVERIFIED",
+    "reported_status": "VERIFIED CURRENT",
+    "narrower_supported_scope": "SACS is the computer science club at Morgan State University; Students are invited to join SACS",
+    "rendered": "### Networking: evidence and status\n\n**C1 — CURRENT STATUS UNVERIFIED**\n\nProposed claim (not an assertion): Morgan State Computer Science students can join SACS (Society for the Advancement of Computer Science), which provides mentoring from peers and industry professionals, technical workshops, and networking opportunities.\n\nSupported narrower source scope (not verification of the whole claim): SACS is the computer science club at Morgan State University; Students are invited to join SACS\n\nEvidence limits: Current delivery of every claimed benefit is not directly established; goals/vision are not delivery evidence.\n\nAssessment: Current claim not established by explicit dated official evidence.\n\nSource: [Exact inspected source](<https://www.morgan.edu/computer-science/current-students/sacs>)\n\nConfirm unresolved current details with the official owner before relying on them."
+  },
+  "offline": {
+    "passed": 159,
+    "pytest_passed": 74,
+    "adk_passed": 85,
+    "networking_new_tests": 17,
+    "known_stale_failed": 1
+  },
+  "hashes": {
+    "old_shared": "d1b71f8765056383ed82d2363cdb3c14720796ac931abed220bdfc151fce7123",
+    "new_shared": "d38f5604d2717ffc6d0a68d20bc0b428554759e5a38e77b5103796b323cc5b03",
+    "instructions_unchanged": 30,
+    "unrelated_sources_unchanged": true,
+    "models_tools_relationships_unchanged": true
+  },
+  "deployment": {
+    "started_utc": "2026-10-23T20:54:42.777904+00:00",
+    "operation": "CREATE_NEW_ONLY",
+    "production_target": false,
+    "status": "created",
+    "display_name": "Career & Professional Orchestration Agent - Final Dev RC2",
+    "staging_bucket": "gs://cosc-490-agent-staging-20261021-a41c7e9b",
+    "staging_prefix": "career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7",
+    "extra_packages": [
+      "agents/__init__.py",
+      "agents/career/__init__.py",
+      "agents/career/workflow/__init__.py",
+      "agents/career/workflow/agent.py",
+      "agents/career/workflow/evidence.py",
+      "agents/career/workflow/shared_evidence.py",
+      "agents/career/workflow/main.py",
+      "agents/career/workflow/requirements.txt"
+    ],
+    "resource_name": "projects/717132085388/locations/us-west1/reasoningEngines/6244403611070103552",
+    "engine_id": "6244403611070103552",
+    "create_seconds": 168.531,
+    "completed_utc": "2026-10-23T20:57:40.281821+00:00",
+    "create_time": null,
+    "update_time": null,
+    "resource_metadata": {
+      "display_name": "Career & Professional Orchestration Agent - Final Dev RC2",
+      "name": "projects/717132085388/locations/us-west1/reasoningEngines/6244403611070103552",
+      "spec": {
+        "agent_framework": "google-adk",
+        "deployment_spec": {
+          "env": [
+            {
+              "name": "GOOGLE_CLOUD_AGENT_ENGINE_ENABLE_TELEMETRY",
+              "value": "true"
+            }
+          ]
+        },
+        "package_spec": {
+          "dependency_files_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7/dependencies.tar.gz",
+          "pickle_object_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7/agent_engine.pkl",
+          "python_version": "3.13",
+          "requirements_gcs_uri": "gs://cosc-490-agent-staging-20261021-a41c7e9b/career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7/requirements.txt"
+        }
+      }
+    }
+  },
+  "remote_results": [
+    {
+      "id": "rc_career_stable",
+      "status": "completed",
+      "route_match": true,
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "query_seconds": 24.544,
+      "capacity_failure": false
+    },
+    {
+      "id": "rc_networking_stable",
+      "status": "completed",
+      "route_match": true,
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "query_seconds": 54.451,
+      "capacity_failure": false
+    },
+    {
+      "id": "rc_networking_current",
+      "status": "runtime_error",
+      "route_match": true,
+      "search_helpers": 1,
+      "url_helpers": 0,
+      "verifications": 0,
+      "query_seconds": 41.804,
+      "capacity_failure": true
+    }
+  ],
+  "flask": {
+    "results": [],
+    "status": "DEFERRED: stopped immediately on provider 429 before Flask inference"
+  },
+  "source_parity": {
+    "prefix": "career-source-dev-v4-0a95d83c21754f048f96ad2172a955e7",
+    "archive_members": [
+      "agents/__init__.py",
+      "agents/career/__init__.py",
+      "agents/career/workflow/__init__.py",
+      "agents/career/workflow/agent.py",
+      "agents/career/workflow/evidence.py",
+      "agents/career/workflow/shared_evidence.py",
+      "agents/career/workflow/main.py",
+      "agents/career/workflow/requirements.txt"
+    ],
+    "byte_parity": {
+      "agents/career/workflow/agent.py": {
+        "local_sha256": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+        "staged_sha256": "abf498103233bf3b52d132cc159602694d09ae6a0cecaed1e29123e21d05fee4",
+        "match": true
+      },
+      "agents/career/workflow/evidence.py": {
+        "local_sha256": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+        "staged_sha256": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c",
+        "match": true
+      },
+      "agents/career/workflow/shared_evidence.py": {
+        "local_sha256": "d38f5604d2717ffc6d0a68d20bc0b428554759e5a38e77b5103796b323cc5b03",
+        "staged_sha256": "d38f5604d2717ffc6d0a68d20bc0b428554759e5a38e77b5103796b323cc5b03",
+        "match": true
+      },
+      "agents/career/workflow/main.py": {
+        "local_sha256": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+        "staged_sha256": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+        "match": true
+      },
+      "agents/career/workflow/requirements.txt": {
+        "local_sha256": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720",
+        "staged_sha256": "02a5f474eaadd6d3277c5323c6353f9462f7118c18bdbdcf16642d5c064cb720",
+        "match": true
+      }
+    },
+    "runtime_requirements": "google-cloud-aiplatform[agent_engines,adk]==1.165.1\ngoogle-adk==2.12.0\npydantic==2.14.1\ncloudpickle==3.1.2",
+    "pickle_downloaded": false
+  },
+  "provider_incidents": [
+    "rc_networking_current"
+  ],
+  "sdk_warning": "Cloud Resource Manager disabled API 403 warning; SDK continued and creation succeeded. No API/IAM changes.",
+  "production_untouched": true,
+  "old_engines_untouched": true,
+  "nothing_staged_committed_pushed": true
+}

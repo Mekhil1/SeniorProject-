@@ -1,0 +1,374 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "google-cloud-aiplatform": "1.165.1",
+    "google-adk": "2.12.0"
+  },
+  "checkpoint": "beeb3a87ad2f8892dce9e30f376bd2768b65c239",
+  "source_hashes": {
+    "agents\\career\\workflow\\agent.py": "63d2d6d64a6f0d4cacf7df24f7059ddb1f602336e7bb7dc6e074641ba88d3af9",
+    "agents\\career\\workflow\\__init__.py": "93baccfc5b2a7e5b6fcce0bb79aa28d28e7f84ef84a7631b5d89ae9e712c0d58",
+    "agents\\career\\workflow\\main.py": "bf7ac92680c85ef587d03d246330428cc45863201b00a891285ca075ae3d05f6",
+    "agents\\career\\workflow\\deploy_dev.py": "aaf6d2a2db66e9b3d9697b183e75a7477116237671e600b9cb366a7d41f74498",
+    "agents\\career\\workflow\\evidence.py": "140dd5a5e758c7a5cbc051019cf16314f2959e8ffc6a4f451928c97b9192780c"
+  },
+  "execution": "local source workflow; Vertex model requests only; no Agent Engine endpoints",
+  "runs": [
+    {
+      "id": "wave2_certification_current",
+      "domain": "certification",
+      "label": "Certification & Technical Development",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?",
+      "status": "timeout_censored",
+      "completed_utc": "2026-10-22T21:32:07.499659+00:00",
+      "orchestrator_request_start": 1.119,
+      "total_seconds": 180.024,
+      "band": "RED",
+      "first_transfer": {
+        "t": 7.396,
+        "target": "certification__technical_development_agent"
+      },
+      "actual_specialist": "certification__technical_development_agent",
+      "route_match": true,
+      "first_specialist_start": 7.406,
+      "first_specialist_event": 13.848,
+      "handoff_seconds": 6.452,
+      "first_helper": 13.861,
+      "first_text": null,
+      "final_answer": "",
+      "search_helper_invocations": 3,
+      "search_enabled_model_requests": 3,
+      "search_grounded_requests": 2,
+      "search_queries_reported": 32,
+      "url_context_invocations": 0,
+      "total_retrieval_seconds": 102.331,
+      "specialist_model_seconds": 70.229,
+      "orchestrator_model_seconds": 6.275,
+      "tools": [
+        {
+          "index": 1,
+          "name": "transfer_to_agent",
+          "kind": "transfer",
+          "start": 7.397,
+          "fingerprint": "57f098eecdb1975e31f99b63920a76d090ddd91192b278c2ea875fab51d640a2",
+          "args": {
+            "agent_name": "certification__technical_development_agent"
+          },
+          "end": 7.4,
+          "duration": 0.003,
+          "necessity_initial": "NOT_RETRIEVAL",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 2,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 13.848,
+          "fingerprint": "5788b53fb3fcba0d402cbf9e6674f1132498a2a0959c61868704668d868687f9",
+          "args": {
+            "request": "CompTIA Security+ current exam code version price site:comptia.org"
+          },
+          "end": 64.285,
+          "duration": 50.437,
+          "quality_output": "Based on the official search results retrieved from `comptia.org`:\n\n*   **Current Exam Version:** V7\n    *   **Launch Date:** November 7, 2023\n    *   **Retirement Date (English):** June 11, 2027\n    *   **Official Source URL:** [comptia.org](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5rIW5VxgYlveWe1zRoS57Z0JkiEgx8YYMA9gCaMlOoT3FwBEuyDpUiFbECfkXfPIMSqBD-jkXRNeMRhWVlrR7PK8aTFM-nwErJO_wVFC4KfF_jvsqZICtb-J-fUD7Knwu_oc03Yh1m-PwB5G10cj8h3yf)\n*   **Current Exam Series Code:** SY0-701\n    *   **Official Source URL:** [comptia.org](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5rIW5VxgYlveWe1zRoS57Z0JkiEgx8YYMA9gCaMlOoT3FwBEuyDpUiFbECfkXfPIMSqBD-jkXRNeMRhWVlrR7PK8aTFM-nwErJO_wVFC4KfF_jvsqZICtb-J-fUD7Knwu_oc03Yh1m-PwB5G10cj8h3yf)\n*   **Standard Retail Price:** NO USABLE OFFICIAL EVIDENCE (No official pages from `comptia.org` containing standard exam pricing were returned in the search results, so the retail price cannot be officially verified from the requested domain.)",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 3,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 66.36,
+          "fingerprint": "9ba255edb4ea180c73b6eb821c1b1d13b46e32a23771456610a74673047bd501",
+          "args": {
+            "request": "CompTIA Security+ SY0-701 exam price site:comptia.org"
+          },
+          "end": 100.301,
+          "duration": 33.941,
+          "quality_output": "NO USABLE OFFICIAL EVIDENCE",
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null
+        },
+        {
+          "index": 4,
+          "name": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 162.029,
+          "fingerprint": "d491e26a6600e0da77f5fb196b78acd6afb8fcd6fa978eab23e252d525e3fb69",
+          "args": {
+            "request": "CompTIA Security+ SY0-701 exam retail price US"
+          },
+          "necessity_initial": "NECESSARY",
+          "duplicate_input_of": null,
+          "end": 180.024,
+          "duration": 17.995,
+          "censored": true
+        }
+      ],
+      "helpers": [
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 13.861,
+          "index": 1,
+          "end": 64.284,
+          "duration": 50.423
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 66.372,
+          "index": 2,
+          "end": 100.3,
+          "duration": 33.928
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "kind": "search",
+          "start": 162.042,
+          "index": 3,
+          "end": 180.022,
+          "duration": 17.98
+        }
+      ],
+      "models": [
+        {
+          "agent": "Career___Professional_Orchestration_Agent",
+          "start": 1.119,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 7.394,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 7.394,
+          "duration": 6.275
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 7.409,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 13.847,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 13.847,
+          "duration": 6.438
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 13.864,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Security+ exam code version",
+            "Security+ exam price buy voucher",
+            "\"Security+\" exam voucher price",
+            "\"Security+\" \"SY0-701\" exam details price",
+            "\"Security+\" \"SY0-701\" price",
+            "\"Security+\" \"SY0-701\" voucher",
+            "\"Security+\" exam price",
+            "\"Security+\" voucher",
+            "\"Security+\" \"439\"",
+            "\"Security+\" price OR cost OR voucher OR \"439\"",
+            "\"Security+\" price OR cost OR \"439\" OR \"425\"",
+            "\"SY0-701\"",
+            "\"Security+\" price",
+            "\"Security+\" \"price\" OR \"cost\"",
+            "\"exam prices\"",
+            "\"Security+\" price OR cost OR \"439\" OR \"425\" OR \"404\" OR \"392\"",
+            "\"Security+\" price OR \"439\" OR \"425\""
+          ],
+          "sources": [
+            {
+              "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5rIW5VxgYlveWe1zRoS57Z0JkiEgx8YYMA9gCaMlOoT3FwBEuyDpUiFbECfkXfPIMSqBD-jkXRNeMRhWVlrR7PK8aTFM-nwErJO_wVFC4KfF_jvsqZICtb-J-fUD7Knwu_oc03Yh1m-PwB5G10cj8h3yf",
+              "title": "comptia.org"
+            }
+          ],
+          "response_received": 64.282,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 64.282,
+          "duration": 50.418
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 64.29,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 66.358,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 66.358,
+          "duration": 2.068
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 66.374,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [
+            "Security+ SY0-701 exam price OR voucher OR \"Security+\"",
+            "\"Security+\" price OR voucher OR \"SY0-701\"",
+            "\"Security+\" OR \"SY0-701\" voucher price",
+            "\"Security+\" voucher cost OR price \"SY0-701\"",
+            "\"Security+\" voucher price OR cost OR buy",
+            "\"Security+\" \"table below\" OR \"voucher\" cost OR price OR \"439\" OR \"425\" OR \"404\" OR \"392\"",
+            "\"Security+\" voucher price OR cost \"United States\" OR \"US\" OR \"USD\" OR \"store\"",
+            "\"Security+\" OR \"SY0-701\"",
+            "exam price OR voucher OR cost OR store",
+            "\"Security+\" OR \"SY0-701\" AND (\"425\" OR \"439\")",
+            "\"Security+\" \"SY0-701\" cost OR price OR voucher OR \"439\" OR \"425\"",
+            "\"Security+\" \"SY0-701\" OR \"SEC-701\"",
+            "\"Security+\" AND (\"439\" OR \"425\" OR \"404\")",
+            "\"Security+\" exam cost OR price OR voucher OR \"439\" OR \"425\"",
+            "\"Security+\" \"$439\" OR \"439\" OR \"$425\" OR \"425\" OR \"404\" OR \"$404\""
+          ],
+          "sources": [],
+          "response_received": 100.299,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 100.299,
+          "duration": 33.925
+        },
+        {
+          "agent": "certification__technical_development_agent",
+          "start": 100.305,
+          "search_enabled": false,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "response_received": 162.028,
+          "timing_method": "SDK response arrival before downstream tools",
+          "end": 162.028,
+          "duration": 61.723
+        },
+        {
+          "agent": "Certification___Technical_Development_Agent_google_search_agent",
+          "start": 162.043,
+          "search_enabled": true,
+          "url_enabled": false,
+          "search_queries": [],
+          "sources": [],
+          "end": 180.021,
+          "duration": 17.978,
+          "censored": true,
+          "timing_method": "No response before deadline/error; elapsed waiting interval"
+        }
+      ],
+      "errors": [
+        {
+          "stage": "deadline",
+          "type": "TimeoutError",
+          "code": null,
+          "t": 180.024
+        }
+      ],
+      "events": [
+        {
+          "t": 7.396,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent",
+              "args": {
+                "agent_name": "certification__technical_development_agent"
+              }
+            }
+          ]
+        },
+        {
+          "t": 7.403,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool_result": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 13.848,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "CompTIA Security+ current exam code version price site:comptia.org"
+              }
+            }
+          ]
+        },
+        {
+          "t": 64.284,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "Based on the official search results retrieved from `comptia.org`:\n\n*   **Current Exam Version:** V7\n    *   **Launch Date:** November 7, 2023\n    *   **Retirement Date (English):** June 11, 2027\n    *   **Official Source URL:** [comptia.org](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5rIW5VxgYlveWe1zRoS57Z0JkiEgx8YYMA9gCaMlOoT3FwBEuyDpUiFbECfkXfPIMSqBD-jkXRNeMRhWVlrR7PK8aTFM-nwErJO_wVFC4KfF_jvsqZICtb-J-fUD7Knwu_oc03Yh1m-PwB5G10cj8h3yf)\n*   **Current Exam Series Code:** SY0-701\n    *   **Official Source URL:** [comptia.org](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5rIW5VxgYlveWe1zRoS57Z0JkiEgx8YYMA9gCaMlOoT3FwBEuyDpUiFbECfkXfPIMSqBD-jkXRNeMRhWVlrR7PK8aTFM-nwErJO_wVFC4KfF_jvsqZICtb-J-fUD7Knwu_oc03Yh1m-PwB5G10cj8h3yf)\n*   **Standard Retail Price:** NO USABLE OFFICIAL EVIDENCE (No official pages from `comptia.org` containing standard exam pricing were returned in the search results, so the retail price cannot be officially verified from the requested domain.)"
+            }
+          ]
+        },
+        {
+          "t": 64.286,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "Certification___Technical_Development_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 66.359,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "CompTIA Security+ SY0-701 exam price site:comptia.org"
+              }
+            }
+          ]
+        },
+        {
+          "t": 100.3,
+          "author": "Certification___Technical_Development_Agent_google_search_agent",
+          "parts": [
+            {
+              "text": "NO USABLE OFFICIAL EVIDENCE"
+            }
+          ]
+        },
+        {
+          "t": 100.302,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool_result": "Certification___Technical_Development_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 162.029,
+          "author": "certification__technical_development_agent",
+          "parts": [
+            {
+              "tool": "Certification___Technical_Development_Agent_google_search_agent",
+              "args": {
+                "request": "CompTIA Security+ SY0-701 exam retail price US"
+              }
+            }
+          ]
+        }
+      ],
+      "quality_review": {
+        "verdict": "FAIL BUDGET / CENSORED",
+        "notes": "Corrected helper returned official version support but no official price evidence; parent searched twice more, attempted a third helper, and hit 180 s. Thirty-two reported queries despite narrow helper instructions; no capacity error. This led to the runtime backstop."
+      }
+    }
+  ],
+  "planned_case_ids": [
+    "wave2_certification_current"
+  ],
+  "remaining": []
+}

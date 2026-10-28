@@ -1,0 +1,64 @@
+{
+  "decision": "RELEASE CANDIDATE — PASS",
+  "acceptance_status": "ACCEPTANCE INCOMPLETE DUE TO PROVIDER CAPACITY",
+  "decision_basis": "User revised rule permits PASS when all healthy completed release-critical checks pass and remaining gaps are provider-capacity only. Remote Networking blocker cleared; prior RC1 browser/session passes and unchanged source remain valid. This is not a claim that deferred RC2 checks were executed.",
+  "engine_id": "6244403611070103552",
+  "health": {
+    "status": "PASS",
+    "query_seconds": 28.932,
+    "search": 0,
+    "url": 0
+  },
+  "networking_current": {
+    "status": "PASS",
+    "query_seconds": 81.57,
+    "search": 1,
+    "verification_calls": 2,
+    "sacs_status": "CURRENT STATUS UNVERIFIED",
+    "membership_scope_preserved": true,
+    "no_verified_current_benefit_upgrade": true,
+    "observability": "Outer SSE; nested URL Context calls are not fully exposed."
+  },
+  "career_current": {
+    "status": "PROVIDER_CAPACITY",
+    "classification": "ROOT_CAPACITY",
+    "query_seconds": 1.603,
+    "root_routing_completed": false
+  },
+  "trust_current": "DEFERRED after 429",
+  "flask": {
+    "server_started": true,
+    "port": 5001,
+    "selected_engine_id": "6244403611070103552",
+    "fresh_session": "DEFERRED after 429",
+    "same_session": "DEFERRED after 429",
+    "different_user": "DEFERRED after 429"
+  },
+  "new_chat": "DEFERRED after 429; prior RC1 browser reset PASS inherited, not a new RC2 observation",
+  "browser": "No RC2 message submission after 429. Prior RC1 controls PASS inherited; no frontend source change.",
+  "provider_incidents": [
+    {
+      "case": "rc2_completion_career",
+      "classification": "ROOT_CAPACITY",
+      "code": 429
+    }
+  ],
+  "sacs_defect": "FIXED offline and completed RC2 current result",
+  "evidence_integrity": "PASS for completed Networking current and full deterministic regression suite; no new completed-run defect",
+  "offline": {
+    "passed": 159,
+    "pytest_passed": 74,
+    "adk_passed": 85,
+    "known_stale_failed": 1,
+    "stale_test": "tests/test_agents.py::test_agent_starter_endpoint[career]: expected 501, implemented auth-blocked endpoint returns 503"
+  },
+  "source_parity": true,
+  "instruction_model_hashes_unchanged": 30,
+  "tools_relationships_callbacks_unchanged": true,
+  "rc2_unchanged": true,
+  "production_untouched": true,
+  "no_new_engine": true,
+  "no_deployment": true,
+  "nothing_staged_committed_pushed": true,
+  "local_server_note": "Replaced confirmed prior repository stdin-Python dev server on requested port 5001; dedicated RC2 server remains running. No persistent environment/config changes."
+}

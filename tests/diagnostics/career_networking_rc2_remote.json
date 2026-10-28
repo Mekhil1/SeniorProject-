@@ -1,0 +1,320 @@
+{
+  "engine_id": "6244403611070103552",
+  "runs": [
+    {
+      "id": "rc_career_stable",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "stable",
+      "prompt": "I'm interested in cloud security and risk management. What career paths should I explore?",
+      "started_utc": "2026-10-23T20:58:10.087225+00:00",
+      "auth_init_seconds": 3.327,
+      "events": [
+        {
+          "t": 5.004,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 5.078,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 5.197,
+          "author": "career_exploration_agent",
+          "parts": []
+        },
+        {
+          "t": 24.541,
+          "author": "career_exploration_agent",
+          "parts": [
+            {
+              "text": "Both cloud security and risk management are critical, high-impact fields within modern technology. While they overlap significantly, they offer different career trajectories depending on whether you enjoy **hands-on building and coding** or **strategic planning, policy analysis, and business alignment**. \n\nHere is a breakdown of the primary career paths you should explore, their key tradeoffs, and how you can test your interest.\n\n---\n\n### 1. The Primary Career Paths\n\n#### A. Cloud Security Engineer\n*   **The Focus:** Building, configuring, and maintaining the technical controls that protect cloud infrastructure.\n*   **Typical Problems They Solve:** How do we configure identity access management (IAM) to follow the principle of least privilege? How do we automate security scans on our infrastructure code before it is deployed?\n*   **Key Responsibilities:**\n    *   Implementing encryption protocols for data at rest and in transit.\n    *   Configuring virtual firewalls, networks, and intrusion detection systems.\n    *   Setting up logging, monitoring, and automated alerting systems.\n*   **Core Work Style:** Highly technical, builder-focused, and collaborative with software development and operations teams.\n\n#### B. Cloud Security Risk & Compliance Analyst (GRC Analyst)\n*   **The Focus:** Evaluating security postures, analyzing business risks, and ensuring cloud deployments align with regulatory mandates and industry frameworks.\n*   **Typical Problems They Solve:** Does our current cloud setup comply with healthcare or financial privacy regulations? What is the business impact if a specific cloud service provider experiences an outage?\n*   **Key Responsibilities:**\n    *   Conducting risk assessments and managing the organizational \"risk register.\"\n    *   Reviewing third-party cloud vendors for security compliance.\n    *   Translating technical security vulnerabilities into business risks for executive leadership.\n*   **Core Work Style:** Analytical, governance-oriented, and highly cross-functional (working with legal, engineering, and executives).\n\n#### C. Cloud Security Architect (Long-Term Path)\n*   **The Focus:** Designing the overall secure blueprints that engineers build and compliance analysts verify.\n*   **Typical Problems They Solve:** How do we transition an entire legacy data center to a hybrid cloud environment securely and cost-effectively?\n*   **Key Responsibilities:**\n    *   Defining organizational security standards and reference architectures.\n    *   Selecting security tools and vendors for the enterprise.\n    *   Aligning technical designs with high-level risk management strategies.\n*   **Core Work Style:** Strategic, big-picture planning, requiring both deep technical knowledge and business acumen.\n\n---\n\n### 2. Comparing the Tradeoffs\n\n| Dimension | Cloud Security Engineer | Risk & Compliance Analyst |\n| :--- | :--- | :--- |\n| **Coding & Scripting Intensity** | **High** (Writing automation, Infrastructure as Code, security scripts) | **Low to None** (Reviewing code logs or configurations, but not writing them) |\n| **Primary Deliverable** | Configured security systems, patches, automated detections | Risk reports, policies, compliance audits, threat models |\n| **Work Environment** | Highly technical; focused on troubleshooting and building | Policy-driven; focused on meeting standards and advising teams |\n| **Communication Focus** | Translating security needs to developers | Translating technical risks to business leaders |\n\n---\n\n### 3. Low-Risk Ways to Test Your Interest\n\nBefore deciding which direction to pursue, you can run small, conceptual experiments to see which type of problem-solving feels most natural to you.\n\n#### Experiment 1: The \"Threat Modeling\" Exercise (Tests Risk & Architecture)\n1.  **The Scenario:** Sketch out a simple architecture for a web application (e.g., a web server, an application server, and a database) on a sheet of paper.\n2.  **The Task:** Act as a Risk Analyst. Identify five potential security weaknesses in this system (e.g., *What happens if the database is open to the public internet? What happens if backups are unencrypted?*). \n3.  **The Output:** Write a short, two-page risk report explaining what the threats are, what the business impact of a breach would be, and high-level recommendations to fix them.\n*   *If you enjoyed this:* You likely lean toward **Risk Management, GRC, or Architecture**.\n\n#### Experiment 2: The \"Configuration Review\" Exercise (Tests Engineering)\n1.  **The Scenario:** Find a generic, mock configuration file online (such as an Infrastructure as Code configuration or an access policy script).\n2.  **The Task:** Act as an Engineer. Manually review the file line-by-line to find security flaws, such as wildcard permissions (e.g., giving everyone administrator access) or unencrypted storage buckets.\n3.  **The Output:** Rewrite the policy or configuration block so that it is secure and only grants the bare minimum access required.\n*   *If you enjoyed this:* You likely lean toward **Cloud Security Engineering**.\n\n---\n\n### Reflective Questions for Next Steps\n\nTo help guide your path, consider these questions:\n1.  **Do you prefer hands-on coding and configuring tools, or do you prefer writing policies, analyzing systems, and advising teams on security standards?**\n2.  **Are you currently taking any coursework (like networking, systems administration, or databases) that you find particularly interesting?**\n\n*Note: If you already know which direction you prefer and want to create a specific skills roadmap, I can transfer you to the **Skill Gap & Career Roadmap Agent**. If you want to explore professional certifications for these fields, I can transfer you to the **Certification & Technical Development Agent**.*"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 24.541,
+      "transfer": {
+        "t": 5.004,
+        "target": "career_exploration_agent"
+      },
+      "final_answer": "Both cloud security and risk management are critical, high-impact fields within modern technology. While they overlap significantly, they offer different career trajectories depending on whether you enjoy **hands-on building and coding** or **strategic planning, policy analysis, and business alignment**. \n\nHere is a breakdown of the primary career paths you should explore, their key tradeoffs, and how you can test your interest.\n\n---\n\n### 1. The Primary Career Paths\n\n#### A. Cloud Security Engineer\n*   **The Focus:** Building, configuring, and maintaining the technical controls that protect cloud infrastructure.\n*   **Typical Problems They Solve:** How do we configure identity access management (IAM) to follow the principle of least privilege? How do we automate security scans on our infrastructure code before it is deployed?\n*   **Key Responsibilities:**\n    *   Implementing encryption protocols for data at rest and in transit.\n    *   Configuring virtual firewalls, networks, and intrusion detection systems.\n    *   Setting up logging, monitoring, and automated alerting systems.\n*   **Core Work Style:** Highly technical, builder-focused, and collaborative with software development and operations teams.\n\n#### B. Cloud Security Risk & Compliance Analyst (GRC Analyst)\n*   **The Focus:** Evaluating security postures, analyzing business risks, and ensuring cloud deployments align with regulatory mandates and industry frameworks.\n*   **Typical Problems They Solve:** Does our current cloud setup comply with healthcare or financial privacy regulations? What is the business impact if a specific cloud service provider experiences an outage?\n*   **Key Responsibilities:**\n    *   Conducting risk assessments and managing the organizational \"risk register.\"\n    *   Reviewing third-party cloud vendors for security compliance.\n    *   Translating technical security vulnerabilities into business risks for executive leadership.\n*   **Core Work Style:** Analytical, governance-oriented, and highly cross-functional (working with legal, engineering, and executives).\n\n#### C. Cloud Security Architect (Long-Term Path)\n*   **The Focus:** Designing the overall secure blueprints that engineers build and compliance analysts verify.\n*   **Typical Problems They Solve:** How do we transition an entire legacy data center to a hybrid cloud environment securely and cost-effectively?\n*   **Key Responsibilities:**\n    *   Defining organizational security standards and reference architectures.\n    *   Selecting security tools and vendors for the enterprise.\n    *   Aligning technical designs with high-level risk management strategies.\n*   **Core Work Style:** Strategic, big-picture planning, requiring both deep technical knowledge and business acumen.\n\n---\n\n### 2. Comparing the Tradeoffs\n\n| Dimension | Cloud Security Engineer | Risk & Compliance Analyst |\n| :--- | :--- | :--- |\n| **Coding & Scripting Intensity** | **High** (Writing automation, Infrastructure as Code, security scripts) | **Low to None** (Reviewing code logs or configurations, but not writing them) |\n| **Primary Deliverable** | Configured security systems, patches, automated detections | Risk reports, policies, compliance audits, threat models |\n| **Work Environment** | Highly technical; focused on troubleshooting and building | Policy-driven; focused on meeting standards and advising teams |\n| **Communication Focus** | Translating security needs to developers | Translating technical risks to business leaders |\n\n---\n\n### 3. Low-Risk Ways to Test Your Interest\n\nBefore deciding which direction to pursue, you can run small, conceptual experiments to see which type of problem-solving feels most natural to you.\n\n#### Experiment 1: The \"Threat Modeling\" Exercise (Tests Risk & Architecture)\n1.  **The Scenario:** Sketch out a simple architecture for a web application (e.g., a web server, an application server, and a database) on a sheet of paper.\n2.  **The Task:** Act as a Risk Analyst. Identify five potential security weaknesses in this system (e.g., *What happens if the database is open to the public internet? What happens if backups are unencrypted?*). \n3.  **The Output:** Write a short, two-page risk report explaining what the threats are, what the business impact of a breach would be, and high-level recommendations to fix them.\n*   *If you enjoyed this:* You likely lean toward **Risk Management, GRC, or Architecture**.\n\n#### Experiment 2: The \"Configuration Review\" Exercise (Tests Engineering)\n1.  **The Scenario:** Find a generic, mock configuration file online (such as an Infrastructure as Code configuration or an access policy script).\n2.  **The Task:** Act as an Engineer. Manually review the file line-by-line to find security flaws, such as wildcard permissions (e.g., giving everyone administrator access) or unencrypted storage buckets.\n3.  **The Output:** Rewrite the policy or configuration block so that it is secure and only grants the bare minimum access required.\n*   *If you enjoyed this:* You likely lean toward **Cloud Security Engineering**.\n\n---\n\n### Reflective Questions for Next Steps\n\nTo help guide your path, consider these questions:\n1.  **Do you prefer hands-on coding and configuring tools, or do you prefer writing policies, analyzing systems, and advising teams on security standards?**\n2.  **Are you currently taking any coursework (like networking, systems administration, or databases) that you find particularly interesting?**\n\n*Note: If you already know which direction you prefer and want to create a specific skills roadmap, I can transfer you to the **Skill Gap & Career Roadmap Agent**. If you want to explore professional certifications for these fields, I can transfer you to the **Certification & Technical Development Agent**.*",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 1.075,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 24.544,
+      "actual_specialist": "career_exploration_agent",
+      "route_match": true,
+      "total_seconds": 25.621
+    },
+    {
+      "id": "rc_networking_stable",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?",
+      "started_utc": "2026-10-23T20:58:58.122575+00:00",
+      "auth_init_seconds": 3.259,
+      "events": [
+        {
+          "t": 46.669,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 46.765,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 46.845,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 54.209,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "text": "An introduction to a cybersecurity recruiter should be clear, concise, and focused on your specific technical interests and academic background. Recruiters appreciate brevity and a direct explanation of what you are looking for.\n\nTo draft the most effective message or pitch, it helps to tailor it to **where** you are connecting (such as LinkedIn, a career fair, or email) and **what** your specific background is. \n\nBelow are two standard approaches depending on how you plan to reach out.\n\n---\n\n### Scenario A: In-Person or Career Fair (Elevator Pitch)\n*This is best for a quick, 30-to-45-second spoken introduction.*\n\n> \"Hi, my name is [Your Name], and I'm a [Classification, e.g., junior] Computer Science student at Morgan State University. I’m really interested in cybersecurity, specifically [specific area, e.g., security operations or threat analysis]. I’ve recently been working on [a brief mention of a lab, class project, or CTF competition]. I saw that your team is hiring for [specific role or internship, if known], and I’d love to learn more about what you look for in successful candidates.\"\n\n### Scenario B: LinkedIn Connection Request\n*This is a brief, professional note to send when requesting to connect.*\n\n> \"Hi [Recruiter's Name], \n> \n> I’m a Computer Science student at Morgan State University focusing on cybersecurity. I came across your profile and noticed you recruit for [Company Name]'s security teams. I'd love to connect to stay updated on future internship opportunities and learn more about your team's work. \n> \n> Best,\n> [Your Name]\"\n\n---\n\n### Let's Tailor This for You\nTo help you write a highly personalized and natural message, could you share a few details?\n\n1. **How are you reaching out?** (e.g., LinkedIn message, email, or talking in person at a career fair?)\n2. **What is your academic standing?** (e.g., sophomore, junior, senior, or graduate student at MSU?)\n3. **Do you have a specific area of cybersecurity you focus on?** (e.g., penetration testing, security operations, GRC, network security, or are you still exploring?)\n4. **Is there a specific company or open role you are targeting?** (If you have already applied or have a job ID, let me know, but please do not share any personal contact info). \n\nOnce you share those details, we can write a draft that sounds authentic to you!"
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "search_helpers": 0,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": 54.209,
+      "transfer": {
+        "t": 46.669,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "An introduction to a cybersecurity recruiter should be clear, concise, and focused on your specific technical interests and academic background. Recruiters appreciate brevity and a direct explanation of what you are looking for.\n\nTo draft the most effective message or pitch, it helps to tailor it to **where** you are connecting (such as LinkedIn, a career fair, or email) and **what** your specific background is. \n\nBelow are two standard approaches depending on how you plan to reach out.\n\n---\n\n### Scenario A: In-Person or Career Fair (Elevator Pitch)\n*This is best for a quick, 30-to-45-second spoken introduction.*\n\n> \"Hi, my name is [Your Name], and I'm a [Classification, e.g., junior] Computer Science student at Morgan State University. I’m really interested in cybersecurity, specifically [specific area, e.g., security operations or threat analysis]. I’ve recently been working on [a brief mention of a lab, class project, or CTF competition]. I saw that your team is hiring for [specific role or internship, if known], and I’d love to learn more about what you look for in successful candidates.\"\n\n### Scenario B: LinkedIn Connection Request\n*This is a brief, professional note to send when requesting to connect.*\n\n> \"Hi [Recruiter's Name], \n> \n> I’m a Computer Science student at Morgan State University focusing on cybersecurity. I came across your profile and noticed you recruit for [Company Name]'s security teams. I'd love to connect to stay updated on future internship opportunities and learn more about your team's work. \n> \n> Best,\n> [Your Name]\"\n\n---\n\n### Let's Tailor This for You\nTo help you write a highly personalized and natural message, could you share a few details?\n\n1. **How are you reaching out?** (e.g., LinkedIn message, email, or talking in person at a career fair?)\n2. **What is your academic standing?** (e.g., sophomore, junior, senior, or graduate student at MSU?)\n3. **Do you have a specific area of cybersecurity you focus on?** (e.g., penetration testing, security operations, GRC, network security, or are you still exploring?)\n4. **Is there a specific company or open role you are targeting?** (If you have already applied or have a job ID, let me know, but please do not share any personal contact info). \n\nOnce you share those details, we can write a draft that sounds authentic to you!",
+      "status": "completed",
+      "capacity_failure": false,
+      "session_create_seconds": 0.968,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 54.451,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 55.42
+    },
+    {
+      "id": "rc_networking_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?",
+      "started_utc": "2026-10-23T21:00:24.223929+00:00",
+      "auth_init_seconds": 3.327,
+      "events": [
+        {
+          "t": 5.908,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": [
+            {
+              "tool": "transfer_to_agent"
+            }
+          ]
+        },
+        {
+          "t": 5.989,
+          "author": "Career___Professional_Orchestration_Agent",
+          "parts": []
+        },
+        {
+          "t": 6.077,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 8.745,
+          "author": "networking__professional_communication_agent",
+          "parts": [
+            {
+              "tool": "Networking___Professional_Communication_Agent_google_search_agent"
+            }
+          ]
+        },
+        {
+          "t": 41.592,
+          "author": "networking__professional_communication_agent",
+          "parts": []
+        },
+        {
+          "t": 41.73,
+          "author": "",
+          "parts": []
+        }
+      ],
+      "errors": [
+        {
+          "stage": "runtime",
+          "t": 41.592
+        },
+        {
+          "stage": "runtime",
+          "t": 41.73
+        }
+      ],
+      "search_helpers": 1,
+      "url_helpers": 0,
+      "verifications": 0,
+      "grounding_query_count": 0,
+      "first_text": null,
+      "transfer": {
+        "t": 5.908,
+        "target": "networking__professional_communication_agent"
+      },
+      "final_answer": "",
+      "status": "runtime_error",
+      "capacity_failure": true,
+      "session_create_seconds": 0.821,
+      "session_http_status": 200,
+      "managed_session_created": true,
+      "query_http_status": 200,
+      "query_seconds": 41.804,
+      "actual_specialist": "networking__professional_communication_agent",
+      "route_match": true,
+      "total_seconds": 42.626,
+      "failure_class": "TOOL_CAPACITY"
+    }
+  ],
+  "plan": [
+    {
+      "id": "rc_career_stable",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "stable",
+      "prompt": "I'm interested in cloud security and risk management. What career paths should I explore?"
+    },
+    {
+      "id": "rc_internship_stable",
+      "domain": "internship",
+      "expected": "internship__job_preparation_agent",
+      "mode": "stable",
+      "prompt": "How should I prepare for cybersecurity internships as a computer science senior?"
+    },
+    {
+      "id": "rc_resume_stable",
+      "domain": "resume",
+      "expected": "resume__portfolio_agent",
+      "mode": "stable",
+      "prompt": "What should I emphasize on my resume for an entry-level cloud security role?"
+    },
+    {
+      "id": "rc_interview_stable",
+      "domain": "interview",
+      "expected": "interview_preparation_agent",
+      "mode": "stable",
+      "prompt": "Give me a technical interview preparation strategy for an entry-level cybersecurity role."
+    },
+    {
+      "id": "rc_networking_stable",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "stable",
+      "prompt": "How should I introduce myself to a cybersecurity recruiter?"
+    },
+    {
+      "id": "rc_roadmap_stable",
+      "domain": "roadmap",
+      "expected": "skill_gap__career_roadmap_agent",
+      "mode": "stable",
+      "prompt": "I want to become a cloud security engineer. What skills should I build over the next year?"
+    },
+    {
+      "id": "rc_research_stable",
+      "domain": "research",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "stable",
+      "prompt": "How should I decide between graduate school and going directly into cybersecurity industry work?"
+    },
+    {
+      "id": "rc_certification_stable",
+      "domain": "certification",
+      "expected": "certification__technical_development_agent",
+      "mode": "stable",
+      "prompt": "How should I decide whether a cybersecurity certification is worth pursuing?"
+    },
+    {
+      "id": "rc_trust_stable",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "human",
+      "prompt": "I need a human to review this because the available evidence is contradictory."
+    },
+    {
+      "id": "rc_career_current",
+      "domain": "career",
+      "expected": "career_exploration_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity career resources are available to Morgan State Computer Science students?"
+    },
+    {
+      "id": "rc_networking_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What current networking resources can Morgan State Computer Science students use?"
+    },
+    {
+      "id": "rc_certification_current",
+      "domain": "certification",
+      "expected": "certification__technical_development_agent",
+      "mode": "current",
+      "prompt": "What is the current CompTIA Security+ exam version and price?"
+    },
+    {
+      "id": "rc_interview_current",
+      "domain": "interview",
+      "expected": "interview_preparation_agent",
+      "mode": "current",
+      "prompt": "What is the current interview process for an entry-level cybersecurity role at Microsoft?"
+    },
+    {
+      "id": "rc_trust_current",
+      "domain": "trust",
+      "expected": "trust__human_escalation_agent",
+      "mode": "current",
+      "prompt": "I found conflicting information about whether a Morgan cybersecurity program is still active. Which source should I trust?"
+    },
+    {
+      "id": "rc_research_current",
+      "domain": "research",
+      "expected": "research__graduate_pathways_agent",
+      "mode": "current",
+      "prompt": "What current cybersecurity research opportunities are available at Morgan State?"
+    },
+    {
+      "id": "rc_networking_platform_current",
+      "domain": "networking",
+      "expected": "networking__professional_communication_agent",
+      "mode": "current",
+      "prompt": "What is LinkedIn's current connection-request note character limit?"
+    }
+  ],
+  "count_scope": "Observed outer SSE calls only; nested provider work may not be exposed."
+}

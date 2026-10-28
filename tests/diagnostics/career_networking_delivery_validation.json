@@ -1,0 +1,162 @@
+{
+  "components": {
+    "career_exploration_agent_google_search_agent": {
+      "instruction_sha256": "2306d4d6b89f24a4159915867093dce559936f0a2a80426956c5b93b86928ddd",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "career_exploration_agent_url_context_agent": {
+      "instruction_sha256": "af565228481fb2379757d680d324bfa00896fa689bf9cd11a9843cb08b4f888a",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "career_exploration_agent": {
+      "instruction_sha256": "8053b3cc0b7f018a260bf78345c635a787b08f99f079920c6aee6e677744df34",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "internship___job_preparation_agent_google_search_agent": {
+      "instruction_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "internship___job_preparation_agent_url_context_agent": {
+      "instruction_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "internship__job_preparation_agent": {
+      "instruction_sha256": "b30e1f02efed93c03f86a35c7ae9c188d5da0d27717f4e34945a692fddd2245e",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "resume___portfolio_agent_google_search_agent": {
+      "instruction_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "resume___portfolio_agent_url_context_agent": {
+      "instruction_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "resume__portfolio_agent": {
+      "instruction_sha256": "b5c618ce57217ae8e0e32445c3e10f0d86afad9d3f854b959d52ef681f7d3724",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "interview_preparation_agent_google_search_agent": {
+      "instruction_sha256": "cfd0d755a3e1accd18a87e2b3909706a161af0346c675d348ff2b9a79368b964",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "interview_preparation_agent_url_context_agent": {
+      "instruction_sha256": "e83f5d2adfde3e5ea05f7b5bd9d6c66414c904fe8dd904c7c80c9c4af4913c02",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "interview_preparation_agent": {
+      "instruction_sha256": "a7f7bdd99963a700bb844c81a76e6238a619a558a2a24c21d63ef49fdc539df2",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "networking___professional_communication_agent_google_search_agent": {
+      "instruction_sha256": "55dedf16b49f827c009d7d28df31ca7181d19a5b4bb107d333a7d31135a13d1b",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "networking___professional_communication_agent_url_context_agent": {
+      "instruction_sha256": "5084669825532cbdf8fc40346df251331217af89637cc5a066f9b232f04e2f64",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "networking__professional_communication_agent": {
+      "instruction_sha256": "b512838305e558ecfd6a39b067fff900fbd01f9417aa57ddef5dc318999d0226",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "skill_gap___career_roadmap_agent_google_search_agent": {
+      "instruction_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "skill_gap___career_roadmap_agent_url_context_agent": {
+      "instruction_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "skill_gap__career_roadmap_agent": {
+      "instruction_sha256": "13a3d974a310089e4d0bf3757c8452f943086124c7717147720ee61f04c911c0",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "research___graduate_pathways_agent_google_search_agent": {
+      "instruction_sha256": "55dedf16b49f827c009d7d28df31ca7181d19a5b4bb107d333a7d31135a13d1b",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "research___graduate_pathways_agent_url_context_agent": {
+      "instruction_sha256": "5084669825532cbdf8fc40346df251331217af89637cc5a066f9b232f04e2f64",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "research__graduate_pathways_agent": {
+      "instruction_sha256": "3c6937682cb6b5adb668c4571b756954d28d80d7b3c5503498a98625c0215e86",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "certification___technical_development_agent_google_search_agent": {
+      "instruction_sha256": "91f3779e3f1a2730f560e92c9f0b04787aac579635bf4062dd325ff62428c054",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "certification___technical_development_agent_url_context_agent": {
+      "instruction_sha256": "7d8de7e47e81ad95906a07bdc916cc0236841becef58dec450b35455090f20c5",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "certification__technical_development_agent": {
+      "instruction_sha256": "ba514fedf089e2d6cdba34370757c57d4d4246404b3abad2f2a0b189fc4c59ff",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "trust___human_escalation_agent_google_search_agent": {
+      "instruction_sha256": "c6aa29a11424fdac2559bcd3cf9687eb9378e73d10479fa3885dc373e3266309",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "trust___human_escalation_agent_url_context_agent": {
+      "instruction_sha256": "e83f5d2adfde3e5ea05f7b5bd9d6c66414c904fe8dd904c7c80c9c4af4913c02",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "trust__human_escalation_agent": {
+      "instruction_sha256": "2b2e9bcacfc56e1a1a8639a5e6f497ad3690a2f8093db26ec7c386e7e3b990a6",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "career___professional_orchestration_agent_google_search_agent": {
+      "instruction_sha256": "e5187af1a513f3a657ca629cb455bc181039b46c4f546da659c2f8a8502a9071",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "career___professional_orchestration_agent_url_context_agent": {
+      "instruction_sha256": "68bfcbd7e62bd04e34bf5b65b5080fb854f0d86874bc9e284cba6293a8f362c2",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    },
+    "root_agent": {
+      "instruction_sha256": "d36880c4374ba6d52a2807d81d95b28a98e805f6d8f7c6a4300a6a19b00b917d",
+      "model": "gemini-3.5-flash",
+      "unchanged": true
+    }
+  },
+  "instruction_hashes_unchanged": 30,
+  "models_unchanged": true,
+  "tools_callbacks_relationships_unchanged": true,
+  "root_specialists": 9,
+  "app_loaded": true,
+  "source_freeze": true,
+  "privacy_scan_passed": true,
+  "only_product_change": "shared_evidence.py: Networking-only delivery support adjudication/rendering"
+}
