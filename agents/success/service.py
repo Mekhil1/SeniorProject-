@@ -2,9 +2,13 @@
 import asyncio
 import logging
 import os
+import time
 
 log = logging.getLogger(__name__)
 _runner = None
+
+RETRIES = 3          # attempts per question
+RETRY_WAIT = 5       # seconds before the first retry; doubles each time
 
 
 def _get_runner():
@@ -28,11 +32,25 @@ async def _ask(question):
     return "".join(parts).strip() or None
 
 
+def _is_rate_limit(error):
+    text = f"{type(error).__name__} {error}"
+    return "429" in text or "RESOURCE_EXHAUSTED" in text or "ResourceExhausted" in text
+
+
 def answer(question: str) -> str | None:
     if not (os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_GENAI_USE_VERTEXAI") == "TRUE"):
+        log.warning("Success agent has no credentials: set GOOGLE_API_KEY or GOOGLE_GENAI_USE_VERTEXAI=TRUE")
         return None
-    try:
-        return asyncio.run(asyncio.wait_for(_ask(question), timeout=60))
-    except Exception:
-        log.exception("Success agent failed")
-        return None
+    wait = RETRY_WAIT
+    for attempt in range(1, RETRIES + 1):
+        try:
+            return asyncio.run(asyncio.wait_for(_ask(question), timeout=60))
+        except Exception as error:
+            if _is_rate_limit(error) and attempt < RETRIES:
+                log.warning("Success agent rate-limited (attempt %d); retrying in %ds", attempt, wait)
+                time.sleep(wait)
+                wait *= 2
+                continue
+            log.exception("Success agent failed")
+            return None
+    return None
