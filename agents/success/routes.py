@@ -1,8 +1,10 @@
+cat > agents/success/routes.py <<'EOF'
 """HTTP endpoint owned by the success agent team."""
 from flask import Blueprint, jsonify, request
 from .service import answer
 
 bp = Blueprint("success_agent", __name__)
+
 
 @bp.post("/api/success")
 def respond():
@@ -13,6 +15,9 @@ def respond():
     if len(question) > 8000:
         return jsonify(error="Question is too long."), 413
     reply = answer(question.strip())
-    if reply is None:
-        return jsonify(reply="This service is being developed by the success team. Please check back when the integration is complete.", implemented=False), 501
+    if not reply:
+        return jsonify(
+            error="The success assistant is temporarily unavailable. Please wait a minute and try again."
+        ), 503
     return jsonify(reply=reply, implemented=True)
+EOF
