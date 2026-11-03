@@ -54,4 +54,3 @@ def answer(question: str) -> str | None:
             log.exception("Success agent failed")
             return None
     return None
-EOF

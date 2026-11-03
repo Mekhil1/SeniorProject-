@@ -19,4 +19,3 @@ def respond():
             error="The success assistant is temporarily unavailable. Please wait a minute and try again."
         ), 503
     return jsonify(reply=reply, implemented=True)
-EOF
