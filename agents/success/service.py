@@ -1,4 +1,3 @@
-cat > agents/success/service.py <<'EOF'
 """Success agent: runs the Student Success ADK agent and returns its reply."""
 import asyncio
 import logging

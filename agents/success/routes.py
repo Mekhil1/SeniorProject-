@@ -1,4 +1,3 @@
-cat > agents/success/routes.py <<'EOF'
 """HTTP endpoint owned by the success agent team."""
 from flask import Blueprint, jsonify, request
 from .service import answer
