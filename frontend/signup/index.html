@@ -205,10 +205,12 @@
               </div>
 
               <div>
-                <label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-2">Profile Picture (Optional)</label>
-                <input id="profilePic" type="file" accept="image/*" class="block w-full text-sm" />
+                <label class="block text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-2">Degree Works PDF (Optional)</label>
+                <input id="degreeworks" type="file" accept=".pdf,application/pdf" class="block w-full text-sm" />
               </div>
 
+              <div><label class="block text-[10px] font-bold uppercase mb-1">Create Password (12+ characters)</label><input id="accountPassword" type="password" minlength="12" maxlength="128" autocomplete="new-password" required class="w-full border-b py-2" /></div>
+              <p class="text-xs">Use sample PDFs only until university approval and a security review. Course codes are candidates, not verified completions.</p>
               <div class="flex flex-col sm:flex-row items-center gap-6 pt-6">
                 <button class="w-full sm:w-auto px-10 py-4 bg-secondary-container text-on-secondary-container font-bold rounded-lg shadow-xl shadow-secondary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3" type="submit">
                   Complete Profile
@@ -270,71 +272,21 @@
   </footer>
 
   <script>
-    const signupForm = document.getElementById("signupForm");
-    const backToLoginBtn = document.getElementById("backToLoginBtn");
-    const classificationButtons = document.querySelectorAll(".classification-btn");
-    const profilePicInput = document.getElementById("profilePic");
-
-    let selectedClassification = "Sophomore";
-    let profilePicData = localStorage.getItem("msu_user_profile_pic") || "";
-
-    classificationButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        classificationButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        selectedClassification = btn.dataset.value;
-      });
-    });
-
-    profilePicInput.addEventListener("change", () => {
-      const file = profilePicInput.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        profilePicData = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-
-    backToLoginBtn.addEventListener("click", () => {
-      window.location.href = "/login";
-    });
-
-    signupForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const fullName = document.getElementById("fullName").value.trim();
-      const email = document.getElementById("morganEmail").value.trim();
-      const major = document.getElementById("major").value;
-      const minor = document.getElementById("minor").value.trim();
-      const advisor = document.getElementById("advisor").value.trim();
-
-      if (!fullName || !email) {
-        alert("Please complete the required fields.");
-        return;
-      }
-
-      if (!email.toLowerCase().endsWith("@morgan.edu")) {
-        alert("Please use your Morgan State email address.");
-        return;
-      }
-
-      const user = {
-        name: fullName,
-        email: email,major: major,
-        minor: minor,
-        classification: selectedClassification,
-        advisor: advisor,
-         profilePic: profilePicData || ""
-    };
-
-      localStorage.setItem(`msu_user_${email}`, JSON.stringify(user));
-      localStorage.setItem("msu_current_user_email", email);
-      localStorage.setItem("msu_logged_in", "true");
-
-      window.location.href = "/chat";
-    });
+  const signupForm=document.getElementById('signupForm');
+  let selectedClassification='Sophomore';
+  document.querySelectorAll('.classification-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.classification-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');selectedClassification=btn.dataset.value;}));
+  document.getElementById('backToLoginBtn').onclick=()=>location.href='/login';
+  signupForm.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const form=new FormData();
+    form.append('name',document.getElementById('fullName').value.trim());
+    form.append('email',document.getElementById('morganEmail').value.trim());
+    form.append('password',document.getElementById('accountPassword').value);
+    form.append('major',document.getElementById('major').value);
+    form.append('classification',selectedClassification);
+    const file=document.getElementById('degreeworks').files[0]; if(file)form.append('degreeworks',file);
+    try{const csrf=await (await fetch('/api/auth/csrf')).json();const r=await fetch('/api/auth/signup',{method:'POST',headers:{'X-CSRF-Token':csrf.csrf},body:form});const data=await r.json();if(!r.ok)throw Error(data.error||'Signup failed');location.href='/chat';}catch(err){alert(err.message);}
+  });
   </script>
 </body>
 </html>

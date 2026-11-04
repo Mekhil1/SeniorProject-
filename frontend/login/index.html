@@ -49,34 +49,7 @@
       togglePasswordBtn.textContent = isPassword ? "Hide" : "Show";
     });
 
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-
-      if (!email || !password) {
-        alert("Please enter your email and password.");
-        return;
-      }
-
-      if (!email.toLowerCase().endsWith("@morgan.edu")) {
-        alert("Please use your Morgan State email address.");
-        return;
-      }
-
-      const savedUser = localStorage.getItem(`msu_user_${email}`);
-
-      if (!savedUser) {
-      alert("No account found for this email. Please sign up first.");
-      return;
-      }
-
-      localStorage.setItem("msu_logged_in", "true");
-      localStorage.setItem("msu_current_user_email", email);
-
-      window.location.href = "/chat";
-    });
+    loginForm.addEventListener('submit',async e=>{e.preventDefault();try{const csrf=await (await fetch('/api/auth/csrf')).json();const r=await fetch('/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf.csrf},body:JSON.stringify({email:emailInput.value.trim(),password:passwordInput.value})});const data=await r.json();if(!r.ok)throw Error(data.error||'Login failed');location.href='/chat';}catch(err){alert(err.message);}});
   </script>
 </body>
 </html>

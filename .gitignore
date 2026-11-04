@@ -1,4 +1,16 @@
-.venv/
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+# Python
 __pycache__/
 *.py[cod]
-.env
+.venv/
+venv/
+# Local private records
+instance/
+*.db
+*.sqlite3
+uploads/
+# OS
+.DS_Store

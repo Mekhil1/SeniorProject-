@@ -3,6 +3,9 @@
 from pathlib import Path
 
 from flask import Flask
+import os
+from flask_login import LoginManager
+from .secure_auth import get_user, init_auth_db
 from flask_cors import CORS
 
 
@@ -12,13 +15,26 @@ def create_app(test_config=None):
     app.config.from_mapping(
         DATABASE=str(Path(__file__).resolve().parents[1] / "student_advisor.db"),
         FRONTEND_DIR=str(project_root / "frontend"),
-        MAX_CONTENT_LENGTH=2 * 1024 * 1024,
+        MAX_CONTENT_LENGTH=5 * 1024 * 1024,
+        SECRET_KEY=os.environ.get("CSGO_SECRET_KEY") or ("dev-only-change-me" if test_config else None),
+        SESSION_COOKIE_HTTPONLY=True,
+        SESSION_COOKIE_SAMESITE="Lax",
+        SESSION_COOKIE_SECURE=os.environ.get("CSGO_HTTPS", "0") == "1",
     )
 
     if test_config:
         app.config.update(test_config)
 
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    if not app.config["SECRET_KEY"]:
+        raise RuntimeError("Set CSGO_SECRET_KEY in your local .env (python3 -c 'import secrets; print(secrets.token_hex(32))')")
+    init_auth_db(app)
+    login_manager = LoginManager()
+    login_manager.init_app(app)
+    @login_manager.user_loader
+    def load_user(user_id):
+        return get_user(int(user_id))
+    from .secure_auth import auth_bp
+    app.register_blueprint(auth_bp)
 
     from .routes import bp
 
