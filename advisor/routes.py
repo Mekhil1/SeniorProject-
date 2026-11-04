@@ -5,6 +5,8 @@ import logging
 from pathlib import Path
 
 from flask import Blueprint, current_app, jsonify, request, send_from_directory
+from flask_login import login_required, current_user
+from .secure_auth import connection
 
 from .ai_service import answer_with_ai
 from .database import answer_from_database
@@ -30,6 +32,7 @@ def signup():
 
 
 @bp.get("/chat")
+@login_required
 def chat():
     return frontend_page("chat")
 
@@ -54,6 +57,7 @@ def health():
 
 
 @bp.post("/api/adviser")
+@login_required
 def adviser():
     """Handle Academic Advising questions."""
 
@@ -113,6 +117,8 @@ def adviser():
                 )
             ), 503
 
+        with connection() as db:
+            db.execute("INSERT INTO chats (user_id,question,reply,created_at) VALUES (?,?,?,strftime('%s','now'))", (current_user.id, question, reply))
         return jsonify(reply=reply), 200
 
     except Exception:

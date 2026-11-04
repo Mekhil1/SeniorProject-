@@ -1,23 +1,16 @@
-<<<<<<< HEAD
-# API keys and environment variables
+# Local secrets and environment files
 .env
 .env.*
 !.env.example
-
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
 venv/
-
-# Local databases
+# Local private records
+instance/
 *.db
-
-# macOS
+*.sqlite3
+uploads/
+# OS
 .DS_Store
-=======
-.venv/
-__pycache__/
-*.py[cod]
-.env
->>>>>>> origin/main

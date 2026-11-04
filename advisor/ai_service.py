@@ -10,8 +10,8 @@ from google.genai import types
 
 
 # Load .env from the SP 490 project root.
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-load_dotenv(PROJECT_ROOT / ".env", override=True)
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+load_dotenv(PROJECT_ROOT / ".env", override=False)
 
 logger = logging.getLogger(__name__)
 
