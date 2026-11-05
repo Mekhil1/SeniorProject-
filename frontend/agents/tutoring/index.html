@@ -48,41 +48,29 @@ button:focus-visible,textarea:focus-visible{outline:3px solid var(--navy);outlin
     textarea{padding:10px;font-size:16px}
     #send{padding:12px;flex-shrink:0}
 }
+.msg.bot .message-content.markdown{white-space:normal}
+.msg.bot pre{background:#17243a;color:#f8fafc;padding:14px;border-radius:8px;white-space:pre}
+.msg.bot code{font-family:Consolas,monospace}
 </style></head><body><header><strong>Morgan State <span style="color:#ffa66e">/</span> Computer Science</strong><a href="/chat">← Student Hub</a></header><main>
 <div class="eyebrow">Student Services / TUTORING</div><h1>CS Learning & Tutoring</h1><p>Explanations, visual learning, practice problems, and guided tutoring.</p>
 <div class="layout"><section class="panel">
 <div class="chat-heading" style="display:flex;justify-content:space-between;align-items:center;gap:12px">
     <h2>Ask a question</h2>
     <button id="newChat" type="button">New chat</button>
-</div><div class="service-badge">Tutoring</div><p id="startState" class="start-state">Ask for explanations, guided practice, study help, and concept review. Integration is still in development.</p><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div class="scroll-controls"><button id="scrollLatest" type="button" aria-label="Scroll to latest message" aria-controls="messages" hidden>↓ Latest message</button></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Explain a concept</button><button type="button">Quiz me</button><button type="button">Walk me through a problem</button><button type="button">Help me study</button></div><form id="form"><textarea id="question" rows="1" aria-describedby="characterCount" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div id="characterCount" class="character-count">0 / 8000</div><div class="note" id="notice">Starter integration: this service is not implemented yet. Your teammate can build its backend independently.</div></section><aside class="panel"><h2>Explore this service</h2><div class="topic">Topic explanations</div><div class="topic">Practice problems</div><div class="topic">Learning strategies</div><div class="topic">Tutoring</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
+</div><div class="service-badge">Tutoring</div><p id="startState" class="start-state">Ask for explanations, guided practice, study help, and concept review. Each question receives a specialist explanation and a QA review. Questions are independent; earlier messages are not sent to the tutor.</p><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div class="scroll-controls"><button id="scrollLatest" type="button" aria-label="Scroll to latest message" aria-controls="messages" hidden>↓ Latest message</button></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Explain a concept</button><button type="button">Quiz me</button><button type="button">Walk me through a problem</button><button type="button">Help me study</button></div><form id="form"><textarea id="question" rows="1" aria-describedby="characterCount" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div id="characterCount" class="character-count">0 / 8000</div><div class="note" id="notice">AI-generated explanations are reviewed for clarity and accuracy, but may contain mistakes. Verify university-specific details with official sources.</div></section><aside class="panel"><h2>Explore this service</h2><div class="topic">Topic explanations</div><div class="topic">Practice problems</div><div class="topic">Learning strategies</div><div class="topic">Tutoring</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
+<script src="https://cdn.jsdelivr.net/npm/marked@16.4.1/lib/marked.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
 <script>
 const API='/api/tutoring';
 const form=document.getElementById('form'),question=document.getElementById('question'),messages=document.getElementById('messages'),send=document.getElementById('send');
 const newChat = document.getElementById('newChat');
 
-// Reuse an existing Career identity without changing Career's storage or sessions.
-// randomUUID requires a secure context; HTTP network addresses still support
-// getRandomValues. This ID separates browser clients; it is not authentication.
-function createUserId() {
-    if (typeof crypto.randomUUID === 'function') {
-        return crypto.randomUUID();
-    }
-    const bytes = crypto.getRandomValues(new Uint8Array(16));
-    bytes[6] = (bytes[6] & 0x0f) | 0x40;
-    bytes[8] = (bytes[8] & 0x3f) | 0x80;
-    const hex = Array.from(bytes, byte => byte.toString(16).padStart(2, '0')).join('');
-    return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
-}
-
-let userId = localStorage.getItem('student_user_id');
-if (!userId) {
-    userId = localStorage.getItem('career_user_id') || createUserId();
-    localStorage.setItem('student_user_id', userId);
-}
-
-// TODO: This backend is stateless and does not accept or return session IDs.
-// True multi-turn continuity needs backend support before sending/storing session_id.
+// Tutoring accepts one question at a time; it does not use identity or session storage.
 let busy = false;
+let activeController = null;
+const cancelActiveRequest = () => activeController?.abort();
+window.addEventListener('pagehide', cancelActiveRequest);
+document.querySelector('header a').addEventListener('click', cancelActiveRequest);
 const suggestions = document.getElementById('suggestions');
 
 const characterCount = document.getElementById('characterCount');
@@ -164,8 +152,58 @@ function setBusy(value) {
     messages.querySelectorAll('.retry').forEach(button => { button.disabled = value; });
 }
 
-async function requestAnswer(q, output = add('')) {
+function renderReply(content, text) {
+    // Default to safe plain text if either CDN dependency is unavailable.
+    content.textContent = text;
+    content.classList?.remove('markdown');
+    if (window.marked && window.DOMPurify) {
+        try {
+            content.innerHTML = window.DOMPurify.sanitize(window.marked.parse(text), {
+                USE_PROFILES: {html: true}
+            });
+            content.classList?.add('markdown');
+        } catch (_) {
+            content.textContent = text;
+        }
+    }
+}
+
+function responseError(message) {
+    const error = new Error(message);
+    error.tutoringResponseError = true;
+    return error;
+}
+
+async function requestTutoring(q, signal) {
+    const response = await fetch(API, {
+        signal,
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({question: q})
+    });
+    let data;
+    try {
+        data = await response.json();
+    } catch (error) {
+        if (error.name === 'AbortError') throw error;
+        throw responseError('The server returned an unreadable response. Please retry.');
+    }
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+        throw responseError('The server returned an invalid response. Please retry.');
+    }
+    if (!response.ok || data.error) {
+        throw responseError(typeof data.error === 'string' && data.error
+            ? data.error : 'Tutoring is unavailable. Please retry.');
+    }
+    if (typeof data.reply !== 'string' || !data.reply.trim()) {
+        throw responseError('No response available. Please retry.');
+    }
+    return data.reply;
+}
+
+async function requestAnswer(q, output = null) {
     if (busy) return;
+    output = output || add('');
     setBusy(true);
     output.replaceChildren();
     output.className = 'msg';
@@ -176,26 +214,23 @@ async function requestAnswer(q, output = add('')) {
     output.appendChild(content);
     scrollMessages();
     let failed = false;
+    const controller = new AbortController();
+    activeController = controller;
+    const timeout = setTimeout(() => controller.abort(), 150000);
     try {
-        const payload = {question: q, user_id: userId};
-
-        const response = await fetch(API, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(payload)
-        });
-        const data = await response.json();
-
-        failed = !response.ok || Boolean(data.error) || !data.reply;
-        if (failed) {
-            content.textContent = data.error || data.reply || 'No response available.';
-        } else {
-            content.textContent = data.reply;
-        }
+        const reply = await requestTutoring(q, controller.signal);
+        output.classList.add('bot');
+        renderReply(content, reply);
     } catch (err) {
         failed = true;
-        content.textContent = 'Cannot reach the server. Check that Flask is running.';
+        content.textContent = err.name === 'AbortError'
+            ? 'Tutoring timed out. Please try again.'
+            : err.tutoringResponseError
+                ? err.message
+                : 'Cannot reach the server. Check that Flask is running.';
     } finally {
+        clearTimeout(timeout);
+        if (activeController === controller) activeController = null;
         content.classList.remove('thinking');
         output.removeAttribute('aria-busy');
         output.classList.toggle('error', failed);
@@ -254,9 +289,8 @@ form.addEventListener('submit', event => {
 newChat.addEventListener('click', () => {
     if (busy) return;
 
-    sessionStorage.removeItem('tutoring_session_id');
     messages.replaceChildren();
-    add('New conversation started. What would you like help with today?');
+    add('Chat display cleared. Each question is answered independently.');
     suggestions.hidden = false;
     startState.hidden = false;
     question.value = '';
