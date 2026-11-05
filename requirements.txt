@@ -1,9 +1,13 @@
 Flask>=3.1,<4
 Flask-Cors>=6,<7
 python-dotenv>=1.1,<2
-google-genai>=1.30,<2
+google-genai==2.34.0
 google-auth>=2.0,<3
 requests>=2.32,<3
-google-cloud-aiplatform[agent_engines,adk]
+google-cloud-aiplatform[agent_engines,adk]==1.165.1
 Flask-Login>=0.6.3,<1
 pypdf>=5,<7
+google-adk==2.12.0
+httpx==0.28.1
+# Direct import in latest main advisor/degreeworks_parser.py
+pdfplumber>=0.11,<0.12

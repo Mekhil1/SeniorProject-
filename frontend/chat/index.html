@@ -89,13 +89,13 @@ const API='/api/adviser';let activeAgent='Academic Advising';
 
 fetch('/api/auth/me').then(r=>r.json()).then(d=>{if(!d.user){location.href='/login';return;}document.getElementById('studentName').textContent=d.user.name;document.getElementById('studentEmail').textContent=d.user.email;const initials=(d.user.name||'MS').trim().split(/\s+/).slice(0,2).map(x=>x[0]).join('').toUpperCase();document.querySelectorAll('.avatar-trigger').forEach(el=>el.textContent=initials);});
 
-function openAgent(name){activeAgent=name;document.getElementById('agentTitle').textContent=name;document.getElementById('chat').classList.add('open');const m=document.getElementById('messages');if(!m.dataset.started){addMsg('bot','Welcome to CS Go AI. Choose an agent or ask a question to get started.');m.dataset.started='1'}document.getElementById('prompt').focus()}
+function openAgent(name){if(name==='CS Learning & Tutoring'){window.location.href='/agents/tutoring';return false}activeAgent=name;document.getElementById('agentTitle').textContent=name;document.getElementById('chat').classList.add('open');const m=document.getElementById('messages');if(!m.dataset.started){addMsg('bot','Welcome to CS Go AI. Choose an agent or ask a question to get started.');m.dataset.started='1'}document.getElementById('prompt').focus()}
 
 function closeChat(){document.getElementById('chat').classList.remove('open')}
 
 function addMsg(type,text){const d=document.createElement('div');d.className='msg '+type;d.textContent=text;document.getElementById('messages').appendChild(d);d.scrollIntoView({behavior:'smooth'})}
 
-function ask(q){openAgent(q.includes('resume')?'Career & Professional':q.includes('campus')?'Student Success & Support':q.includes('CS topic')?'CS Learning & Tutoring':'Academic Advising');document.getElementById('prompt').value=q;sendMessage()}
+function ask(q){if(openAgent(q.includes('resume')?'Career & Professional':q.includes('campus')?'Student Success & Support':q.includes('CS topic')?'CS Learning & Tutoring':'Academic Advising')===false)return;document.getElementById('prompt').value=q;sendMessage()}
 
 async function sendMessage(){const p=document.getElementById('prompt');const q=p.value.trim();if(!q)return;p.value='';addMsg('user',q);addMsg('bot','Thinking…');const msgs=document.getElementById('messages');const wait=msgs.lastElementChild;try{const token=await (await fetch('/api/auth/csrf')).json();const r=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json','X-CSRF-Token':token.csrf},body:JSON.stringify({question:`You are the ${activeAgent} agent. ${q}`})});const data=await r.json();wait.textContent=data.reply||'I could not generate a response.'}catch(e){wait.textContent='The backend is not responding. Make sure Flask is running, then try again.'}}
 
