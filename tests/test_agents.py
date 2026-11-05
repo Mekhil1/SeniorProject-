@@ -4,12 +4,23 @@ import pytest
 def test_agent_page(client, agent):
     assert client.get(f"/agents/{agent}").status_code == 200
 
-@pytest.mark.parametrize("agent", ["tutoring"])
-def test_agent_starter_endpoint(client, agent):
-    assert client.post(f"/api/{agent}", json={}).status_code == 400
-    response = client.post(f"/api/{agent}", json={"question": "hello"})
-    assert response.status_code == 501
-    assert response.get_json()["implemented"] is False
+def test_tutoring_endpoint(client, monkeypatch):
+    from agents.tutoring import routes
 
-def test_advising_remains_available(client):
-    assert client.post("/api/adviser", json={"question":"What math courses are required?"}).status_code == 200
+    monkeypatch.setattr(
+        routes,
+        "answer",
+        lambda question: "Binary search divides a sorted list in half."
+    )
+
+    response = client.post("/api/tutoring", json={})
+    assert response.status_code == 400
+
+    response = client.post(
+        "/api/tutoring",
+        json={"question": "Explain binary search"}
+    )
+
+    assert response.status_code == 200
+    assert response.get_json()["implemented"] is True
+    assert "Binary search" in response.get_json()["reply"]
