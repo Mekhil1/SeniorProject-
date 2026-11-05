@@ -2,6 +2,7 @@
 """Web pages and JSON API routes for CS Go AI."""
 
 import logging
+import json
 from pathlib import Path
 
 from flask import Blueprint, current_app, jsonify, request, send_from_directory
@@ -10,6 +11,7 @@ from .secure_auth import connection
 
 from .ai_service import answer_with_ai
 from .database import answer_from_database
+from .degreeworks_context import ai_context, normalized_record
 
 bp = Blueprint("advisor", __name__)
 logger = logging.getLogger(__name__)
@@ -101,12 +103,22 @@ def adviser():
         ), 400
 
     try:
-        # Use verified local advising answers when available.
-        reply = answer_from_database(question)
+        # Load only the signed-in student's local academic record.
+        with connection() as db:
+            row = db.execute("SELECT courses_json FROM records WHERE user_id=?", (current_user.id,)).fetchone()
+        audit = normalized_record(json.loads(row["courses_json"])) if row else None
+        context = ai_context(audit) if audit else None
 
-        # Ask Gemini if the database doesn't have an answer.
+        # Personal audit questions must not be answered with generic freshman plans.
+        # Give Gemini the minimal, non-identifying audit facts instead.
+        personal_terms = ("my ", "i need", "i take", "i graduate", "i completed", "i passed", "prerequisite", "remaining", "progress", "degree works")
+        is_personal = any(term in question.lower() for term in personal_terms)
+        reply = None if is_personal else answer_from_database(question)
         if not reply:
-            reply = answer_with_ai(question)
+            if is_personal and not audit:
+                reply = "I don't have a Degree Works audit for your account yet. Upload your report under My Progress, then ask again."
+            else:
+                reply = answer_with_ai(question, student_context=context)
 
         if not reply:
             logger.warning("No advising response was generated.")
