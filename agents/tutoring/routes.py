@@ -5,6 +5,9 @@ from google.genai import errors as genai_errors
 
 from .runtime import ConfigurationError, UpstreamResponseError, UpstreamTimeout
 from .service import answer
+from agents.config import provider_failure
+from agents import managed_runtime
+from advisor.chat_history import save_exchange
 
 bp = Blueprint("tutoring_agent", __name__)
 
@@ -24,6 +27,9 @@ def respond():
     if len(question) > 8000:
         return jsonify(error="Question is too long."), 413
 
+    if managed_runtime.configured("tutoring"):
+        return managed_runtime.respond("tutoring", data)
+
     try:
         reply = answer(question.strip())
 
@@ -32,6 +38,7 @@ def respond():
                 error="The tutoring service is not available yet."
             ), 503
 
+        save_exchange("tutoring", question.strip(), dict(reply=reply))
         return jsonify(
             reply=reply,
             implemented=True
@@ -52,15 +59,10 @@ def respond():
         ), 503
 
     except genai_errors.ClientError as error:
-        if error.code == 429:
-            return jsonify(error="Tutoring is temporarily rate limited. Please try again later."), 503, {"Retry-After": "30"}
-
-        return jsonify(
-            error=(
-                "The AI service could not process your request. "
-                "Please try again later."
-            )
-        ), 502
+        failure = provider_failure("tutoring", error)
+        current_app.logger.warning("Tutoring provider failure: HTTP %s reason=%s", failure.provider_status, failure.reason)
+        headers = {"Retry-After": "30"} if error.code == 429 else {}
+        return jsonify(error=failure.public_message, code=failure.code), failure.http_status, headers
 
     except Exception:  # noqa: BLE001 - HTTP boundary must redact unexpected provider failures.
         current_app.logger.error("Unexpected tutoring error; provider details omitted")

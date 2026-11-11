@@ -11,13 +11,9 @@ Responsibilities:
 5. Handle errors and close API connections.
 """
 
-import os
-from pathlib import Path
-
-from dotenv import load_dotenv
-from google import genai
 from google.genai import types
 
+from agents.config import AgentConfigurationError, create_gemini_client
 from .runtime import ConfigurationError, generate_text, http_options
 
 # ==================================================
@@ -182,24 +178,16 @@ def generate_specialist_response(
             "The student question cannot be empty."
         )
 
-    # Step 2: Load environment variables.
-    load_dotenv(Path(__file__).resolve().parents[2] / ".env")
-
-    # Step 3: Retrieve the Gemini API key.
-    api_key = os.getenv("GEMINI_API_KEY", "").strip()
-
-    if not api_key:
-        raise ConfigurationError(
-            "GEMINI_API_KEY is missing from the environment."
-        )
-
     # Step 4: Retrieve the specialist's instructions.
     specialist_prompt = get_specialist_prompt(
         agent_name
     )
 
     # Step 5: Create the Gemini client.
-    client = genai.Client(api_key=api_key, vertexai=False, http_options=http_options())
+    try:
+        client = create_gemini_client("tutoring", http_options=http_options())
+    except AgentConfigurationError as error:
+        raise ConfigurationError(str(error)) from None
 
     try:
         return generate_text(

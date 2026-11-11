@@ -6,10 +6,11 @@ from pathlib import Path
 
 from flask import Blueprint, current_app, jsonify, request, send_from_directory
 from flask_login import login_required, current_user
-from .secure_auth import connection
+from .chat_history import advising_context, save_exchange, ConversationChanged
 
 from .ai_service import answer_with_ai
 from .database import answer_from_database
+from agents.config import AgentProviderError
 
 bp = Blueprint("advisor", __name__)
 logger = logging.getLogger(__name__)
@@ -101,12 +102,16 @@ def adviser():
         ), 400
 
     try:
+        session_id = data.get("session_id")
+        if session_id is not None and (not isinstance(session_id, str) or not session_id or len(session_id) > 128):
+            return jsonify(error="Invalid session_id."), 400
+        session_id, revision, history = advising_context(session_id)
         # Use verified local advising answers when available.
         reply = answer_from_database(question)
 
         # Ask Gemini if the database doesn't have an answer.
         if not reply:
-            reply = answer_with_ai(question)
+            reply = answer_with_ai(question, history=history) if history else answer_with_ai(question)
 
         if not reply:
             logger.warning("No advising response was generated.")
@@ -117,10 +122,16 @@ def adviser():
                 )
             ), 503
 
-        with connection() as db:
-            db.execute("INSERT INTO chats (user_id,question,reply,created_at) VALUES (?,?,?,strftime('%s','now'))", (current_user.id, question, reply))
-        return jsonify(reply=reply), 200
+        result = dict(reply=reply, session_id=session_id)
+        save_exchange("academic", question, result, expected_revision=revision)
+        return jsonify(**result), 200
 
+    except LookupError:
+        return jsonify(error="This conversation is unavailable. Please start a new chat.", code="invalid_session"), 409
+    except ConversationChanged:
+        return jsonify(error="Another message completed in this conversation. Please retry.", code="conversation_changed"), 409
+    except AgentProviderError as error:
+        return jsonify(reply=error.public_message, code=error.code), error.http_status
     except Exception:
         logger.exception("Academic Advising request failed.")
         return jsonify(

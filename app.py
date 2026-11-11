@@ -2,9 +2,10 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-from advisor import create_app
 ROOT = Path(__file__).resolve().parent
 load_dotenv(ROOT / ".env")
+from advisor import create_app
+
 app = create_app()
 app.config["FRONTEND_DIR"] = str(ROOT / "frontend")
 if __name__ == "__main__":

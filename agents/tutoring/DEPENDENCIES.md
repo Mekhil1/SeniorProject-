@@ -37,7 +37,7 @@ Use Python **3.12.x** for the validated shared environment. Gen AI 2.34.0 and AD
 
 ## Configuration and deployment
 
-Tutoring uses the direct Gemini API. Runtime obtains `GEMINI_API_KEY` from the process environment or the explicitly located project-root dotenv file; no key belongs in requirements, source, reports or Git. Dependency installation and imports do not require a real key. Tests use mocks and synthetic values; live calls require separate authorization.
+Tutoring uses the direct Gemini API. Runtime obtains its dedicated `TUTORING_API_KEY` from the process environment or the project-root `.env` loaded at application startup. It does not reuse Advising's or Success's key; no key belongs in requirements, source, reports or Git. Dependency installation and imports do not require a real key. Tests use mocks and synthetic values; live calls require separate authorization.
 
 For the existing shared Flask deployment, incorporate this manifest in the environment-build step after compatibility approval, then run offline tests and `pip check`. Do not execute model smoke scripts while building/installing. No change to a teammate's deployed agent runtime is implied.
 
