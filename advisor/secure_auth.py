@@ -24,9 +24,18 @@ def init_auth_db(app):
     app.config.setdefault("AUTH_DATABASE", str(Path(app.instance_path) / "accounts.sqlite3"))
     Path(app.config["AUTH_DATABASE"]).parent.mkdir(parents=True, exist_ok=True)
     with sqlite3.connect(app.config["AUTH_DATABASE"]) as db:
+        db.execute("BEGIN IMMEDIATE")
         db.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT UNIQUE NOT NULL, password_hash TEXT NOT NULL, major TEXT, classification TEXT)")
         db.execute("CREATE TABLE IF NOT EXISTS records (user_id INTEGER PRIMARY KEY, courses_json TEXT NOT NULL, updated_at INTEGER NOT NULL, FOREIGN KEY(user_id) REFERENCES users(id))")
         db.execute("CREATE TABLE IF NOT EXISTS chats (id INTEGER PRIMARY KEY, user_id INTEGER NOT NULL, question TEXT NOT NULL, reply TEXT NOT NULL, created_at INTEGER NOT NULL)")
+        columns = {row[1] for row in db.execute("PRAGMA table_info(chats)")}
+        if "service" not in columns:
+            db.execute("ALTER TABLE chats ADD COLUMN service TEXT NOT NULL DEFAULT 'academic'")
+        if "session_id" not in columns:
+            db.execute("ALTER TABLE chats ADD COLUMN session_id TEXT")
+        db.execute("CREATE INDEX IF NOT EXISTS chats_by_session ON chats(user_id,service,session_id,id)")
+        db.execute("CREATE TABLE IF NOT EXISTS advising_sessions "
+                   "(id TEXT PRIMARY KEY, user_id INTEGER NOT NULL, revision INTEGER NOT NULL DEFAULT 0)")
 
 class User(UserMixin):
     def __init__(self, row):
@@ -47,7 +56,10 @@ def csrf():
 
 @auth_bp.before_app_request
 def protect_mutations():
-    if (request.path.startswith("/api/auth/") or request.path in ("/api/degreeworks", "/api/adviser")) and request.method in ("POST", "PUT", "PATCH", "DELETE"):
+    account_chat = current_user.is_authenticated and request.path in (
+        "/api/career", "/api/tutoring", "/api/success",
+    )
+    if (request.path.startswith("/api/auth/") or request.path in ("/api/degreeworks", "/api/adviser") or account_chat) and request.method in ("POST", "PUT", "PATCH", "DELETE"):
         if not secrets.compare_digest(request.headers.get("X-CSRF-Token", ""), session.get("csrf", "")) or not session.get("csrf"):
             return jsonify(error="Invalid CSRF token"), 403
 
@@ -160,6 +172,37 @@ def progress():
 @auth_bp.get("/api/history")
 @login_required
 def history():
+    from .chat_history import SERVICES
+    service = request.args.get("service", "academic")
+    if service not in SERVICES:
+        return jsonify(error="Unknown student service."), 400
     with connection() as db:
-        rows = db.execute("SELECT question,reply,created_at FROM chats WHERE user_id=? ORDER BY id DESC LIMIT 30", (current_user.id,)).fetchall()
-    return jsonify(history=[dict(r) for r in rows])
+        rows = db.execute("SELECT id,question,reply,created_at,session_id,service FROM chats "
+                          "WHERE user_id=? AND service=? ORDER BY id DESC LIMIT 30",
+                          (current_user.id, service)).fetchall()
+        requested_session = request.args.get("session_id")
+        active_session_valid = None
+        if requested_session:
+            active_session_valid = db.execute(
+                "SELECT 1 FROM chats WHERE user_id=? AND service=? AND session_id=? LIMIT 1",
+                (current_user.id, service, requested_session),
+            ).fetchone() is not None
+    return jsonify(history=[dict(r) for r in rows], active_session_valid=active_session_valid)
+
+
+@auth_bp.get("/api/history/session")
+@login_required
+def history_session():
+    from .chat_history import SERVICES
+    service = request.args.get("service", "academic")
+    session_id = request.args.get("session_id", "")
+    if service not in SERVICES or not session_id or len(session_id) > 128:
+        return jsonify(error="Invalid conversation."), 400
+    with connection() as db:
+        rows = db.execute(
+            "SELECT question,reply,created_at FROM chats WHERE user_id=? AND service=? "
+            "AND session_id=? ORDER BY id", (current_user.id, service, session_id),
+        ).fetchall()
+    if not rows:
+        return jsonify(error="Conversation is unavailable."), 404
+    return jsonify(history=[dict(row) for row in rows], session_id=session_id)

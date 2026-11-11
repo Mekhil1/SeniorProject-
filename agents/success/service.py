@@ -1,11 +1,17 @@
 """Success agent: runs the Student Success ADK agent and returns its reply."""
 import asyncio
+import atexit
+from contextvars import copy_context
 import logging
-import os
 import time
+from threading import Lock
+
+from agents.config import AgentConfigurationError, get_api_key, success_uses_vertex, provider_failure
 
 log = logging.getLogger(__name__)
 _runner = None
+_async_runner = None
+_loop_lock = Lock()
 
 RETRIES = 3          # attempts per question
 RETRY_WAIT = 5       # seconds before the first retry; doubles each time
@@ -37,20 +43,45 @@ def _is_rate_limit(error):
     return "429" in text or "RESOURCE_EXHAUSTED" in text or "ResourceExhausted" in text
 
 
+def _run_question(question):
+    # Keep cached ADK HTTP clients on one event loop across Flask requests.
+    global _async_runner
+    with _loop_lock:
+        if _async_runner is None:
+            _async_runner = asyncio.Runner()
+        return _async_runner.run(asyncio.wait_for(_ask(question), timeout=60), context=copy_context())
+
+
+@atexit.register
+def _close_runtime():
+    global _async_runner
+    with _loop_lock:
+        if _async_runner is not None:
+            try:
+                if _runner is not None:
+                    _async_runner.run(_runner.close())
+            finally:
+                _async_runner.close()
+                _async_runner = None
+
+
 def answer(question: str) -> str | None:
-    if not (os.getenv("GOOGLE_API_KEY") or os.getenv("GOOGLE_GENAI_USE_VERTEXAI") == "TRUE"):
-        log.warning("Success agent has no credentials: set GOOGLE_API_KEY or GOOGLE_GENAI_USE_VERTEXAI=TRUE")
-        return None
+    if not get_api_key("success") and not success_uses_vertex():
+        raise AgentConfigurationError("Set SUCCESS_API_KEY on the server.")
     wait = RETRY_WAIT
     for attempt in range(1, RETRIES + 1):
         try:
-            return asyncio.run(asyncio.wait_for(_ask(question), timeout=60))
+            return _run_question(question)
         except Exception as error:
             if _is_rate_limit(error) and attempt < RETRIES:
                 log.warning("Success agent rate-limited (attempt %d); retrying in %ds", attempt, wait)
                 time.sleep(wait)
                 wait *= 2
                 continue
-            log.exception("Success agent failed")
+            failure = provider_failure("success", error)
+            if failure:
+                log.warning("Success provider failure: HTTP %s reason=%s", failure.provider_status, failure.reason)
+                raise failure from None
+            log.error("Success request failed: %s", type(error).__name__)
             return None
     return None

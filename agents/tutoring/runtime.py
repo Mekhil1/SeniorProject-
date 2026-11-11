@@ -3,6 +3,7 @@ import time
 
 import httpx
 from google.genai import errors, types
+from agents.config import get_model
 
 
 class ConfigurationError(RuntimeError):
@@ -26,7 +27,7 @@ def generate_text(client, *, contents, config):
     for attempt in range(3):
         try:
             response = client.models.generate_content(
-                model="gemini-3.1-flash-lite",
+                model=get_model("tutoring", "gemini-3.1-flash-lite"),
                 contents=contents,
                 config=config,
             )
