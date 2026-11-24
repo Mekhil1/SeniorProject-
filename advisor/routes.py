@@ -3,15 +3,21 @@
 
 import logging
 import json
+import os
 from pathlib import Path
 
-from flask import Blueprint, current_app, jsonify, request, send_from_directory
+from flask import (
+    Blueprint,
+    current_app,
+    jsonify,
+    request,
+    send_from_directory,
+)
 from flask_login import login_required, current_user
-from .secure_auth import connection
 
+from .secure_auth import connection
 from .ai_service import answer_with_ai
-from .database import answer_from_database
-from .degreeworks_context import ai_context, normalized_record
+from .degreeworks_context import ai_context, normalized_record, adk_safe_context
 
 bp = Blueprint("advisor", __name__)
 logger = logging.getLogger(__name__)
@@ -41,12 +47,22 @@ def chat():
 
 @bp.get("/agents/<agent_name>")
 def agent_page(agent_name):
-    allowed_agents = {"academic", "tutoring", "career", "success"}
+    allowed_agents = {
+        "academic",
+        "tutoring",
+        "career",
+        "success",
+    }
 
     if agent_name not in allowed_agents:
         return jsonify(error="Unknown student service"), 404
 
-    directory = Path(current_app.config["FRONTEND_DIR"]) / "agents" / agent_name
+    directory = (
+        Path(current_app.config["FRONTEND_DIR"])
+        / "agents"
+        / agent_name
+    )
+
     return send_from_directory(directory, "index.html")
 
 
@@ -92,36 +108,121 @@ def adviser():
         ), 413
 
     # Protect student records.
-    # Do not send raw Degree Works content to Gemini.
+    # Never send raw Degree Works documents to an AI provider.
     if file_text or file_name:
         return jsonify(
             reply=(
-                "Degree Works document analysis is not available yet. "
-                "Please ask a general advising question without "
-                "uploading personal academic records."
+                "Please upload your Degree Works report "
+                "through My Progress instead of attaching "
+                "personal academic records in the chat."
             )
         ), 400
 
     try:
-        # Load only the signed-in student's local academic record.
-        with connection() as db:
-            row = db.execute("SELECT courses_json FROM records WHERE user_id=?", (current_user.id,)).fetchone()
-        audit = normalized_record(json.loads(row["courses_json"])) if row else None
-        context = ai_context(audit) if audit else None
+        # Identify questions requiring personal academic records.
+        personal_terms = (
+            "my degree",
+            "my courses",
+            "my remaining",
+            "my progress",
+            "my credits",
+            "my graduation",
+            "my semester",
+            "my final semester",
+            "my degree works",
+            "my audit",
+            "my prerequisites",
+            "my requirements",
+            "i completed",
+            "i passed",
+            "i graduate",
+            "i have left",
+            "i have remaining",
+            "what courses should i take",
+            "how close am i",
+            "am i eligible",
+            "can i graduate",
+            "can i take",
+        )
 
-        # Personal audit questions must not be answered with generic freshman plans.
-        # Give Gemini the minimal, non-identifying audit facts instead.
-        personal_terms = ("my ", "i need", "i take", "i graduate", "i completed", "i passed", "prerequisite", "remaining", "progress", "degree works")
-        is_personal = any(term in question.lower() for term in personal_terms)
-        reply = None if is_personal else answer_from_database(question)
-        if not reply:
-            if is_personal and not audit:
-                reply = "I don't have a Degree Works audit for your account yet. Upload your report under My Progress, then ask again."
+        is_personal = any(
+            term in question.lower()
+            for term in personal_terms
+        )
+
+        reply = None
+
+        # PERSONAL ACADEMIC ADVISING
+        if is_personal:
+
+            logger.warning(
+                "Academic routing: Personal Degree Works request"
+            )
+
+            # Retrieve only the authenticated student's record.
+            with connection() as db:
+                row = db.execute(
+                    "SELECT courses_json FROM records WHERE user_id=?",
+                    (current_user.id,)
+                ).fetchone()
+
+            audit = (
+                normalized_record(json.loads(row["courses_json"]))
+                if row else None
+            )
+
+            context = ai_context(audit) if audit else None
+
+            if not audit or not context:
+                reply = (
+                    "I don't have a usable Degree Works audit "
+                    "for your account yet. Upload your report "
+                    "under My Progress, then ask again."
+                )
+
             else:
-                reply = answer_with_ai(question, student_context=context)
+                logger.warning(
+                    "Academic routing: Restricted audit context"
+                )
 
+                if os.getenv("ENABLE_PERSONAL_ADK", "false").lower() == "true":
+                    from .adk_service import answer_with_adk
+
+                    logger.warning("Academic routing: Personal ADK agent")
+
+                    reply = answer_with_adk(
+                        question,
+                        student_context=adk_safe_context(audit)
+                    )
+                else:
+                    reply = adk_safe_context(audit)
+                    reply += (
+                        "\n\nConsult your academic advisor "
+                        "to confirm your remaining requirements."
+                    )
+
+        # GENERAL ACADEMIC ADVISING
+        else:
+
+            logger.warning(
+                "Academic routing: General request; configured provider=%s",
+                os.getenv("ACADEMIC_AGENT_PROVIDER", "legacy")
+            )
+
+            # General questions go directly to the AI service.
+            # Do not attach personal academic records.
+            # Bypass the existing database answer lookup.
+            reply = answer_with_ai(
+                question,
+                student_context=None
+            )
+
+        # Handle unavailable AI responses.
         if not reply:
-            logger.warning("No advising response was generated.")
+            logger.warning(
+                "No advising response was generated."
+            )
+
             return jsonify(
                 reply=(
                     "I'm having trouble answering right now. "
@@ -129,12 +230,28 @@ def adviser():
                 )
             ), 503
 
+        # Save the conversation to the authenticated student's history.
         with connection() as db:
-            db.execute("INSERT INTO chats (user_id,question,reply,created_at) VALUES (?,?,?,strftime('%s','now'))", (current_user.id, question, reply))
+            db.execute(
+                """
+                INSERT INTO chats
+                (user_id, question, reply, created_at)
+                VALUES (?, ?, ?, strftime('%s', 'now'))
+                """,
+                (current_user.id, question, reply)
+            )
+
+        logger.warning(
+            "Academic advising request completed successfully."
+        )
+
         return jsonify(reply=reply), 200
 
     except Exception:
-        logger.exception("Academic Advising request failed.")
+        logger.exception(
+            "Academic Advising request failed."
+        )
+
         return jsonify(
             reply=(
                 "The Academic Advising service is temporarily "
@@ -145,4 +262,4 @@ def adviser():
 
 @bp.app_errorhandler(404)
 def not_found(_error):
-    return jsonify(error="Route not found"), 404
+    return jsonify(error="Resource not found"), 404

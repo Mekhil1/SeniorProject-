@@ -1,10 +1,9 @@
 # Local secrets and environment files
 .env
 .env.*
-!.env.example
 # Python
 __pycache__/
-*.py[cod]
+*.py[co]d
 .venv/
 venv/
 # Local private records
@@ -14,3 +13,12 @@ instance/
 uploads/
 # OS
 .DS_Store
+
+# Local records and agent artifacts
+student_advisor.db
+*.db-journal
+*.db-wal
+*.db-shm
+.adk/
+*.backup
+*.before-bear-pilot

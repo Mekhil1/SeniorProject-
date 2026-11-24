@@ -96,7 +96,7 @@ def get_gemini_client():
         )
         return None
 
-    return genai.Client(api_key=api_key)
+    return genai.Client(api_key=api_key, vertexai=False)
 
 
 def answer_with_ai(question: str, student_context: str | None = None) -> str | None:
@@ -109,6 +109,18 @@ def answer_with_ai(question: str, student_context: str | None = None) -> str | N
 
     if not isinstance(question, str) or not question.strip():
         return "Please enter an academic advising question."
+
+    # Use the new ADK provider when explicitly enabled.
+    # Keep existing personal audit processing on the legacy path.
+    if os.getenv("ACADEMIC_AGENT_PROVIDER") == "adk" and not student_context:
+        from .adk_service import answer_with_adk
+
+        reply = answer_with_adk(question.strip())
+
+        if reply:
+            return reply
+
+        logger.warning("ADK unavailable; using legacy Gemini.")
 
     client = get_gemini_client()
 
@@ -125,7 +137,7 @@ def answer_with_ai(question: str, student_context: str | None = None) -> str | N
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_INSTRUCTIONS,
                 temperature=0.2,
-                max_output_tokens=350,
+                max_output_tokens=2048,
             ),
         )
 
