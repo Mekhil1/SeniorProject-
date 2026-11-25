@@ -22,3 +22,9 @@ student_advisor.db
 .adk/
 *.backup
 *.before-bear-pilot
+
+# Local databases and secrets
+*.db
+*.sqlite
+*.sqlite3
+.env
