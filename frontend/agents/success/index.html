@@ -91,6 +91,8 @@ aside .saved-history + h2 { margin-top: 28px; }
     .layout.chat-expanded .chat { height: 70vh; min-height: 360px; }
     #expandChat, #newChat { padding: 10px 12px; }
 }
+#micBtn { background:#fff0e1; color:#8a3d1a; border:1px solid #e4b995; min-height:48px; font-size:18px; padding:0 14px; }
+#micBtn.listening { background:#e53935; color:#fff; border-color:#e53935; }
 </style></head><body><header><strong>Morgan State <span style="color:#ffa66e">/</span> Computer Science</strong><a href="/chat">← Student Hub</a></header><main>
 <div class="eyebrow">BEAR PILOT / SUCCESS</div><h1>Bear Pilot · Student Success & Support</h1><p>Campus life, university services, and student resource navigation.</p>
 <div class="layout"><section class="panel">
@@ -98,7 +100,7 @@ aside .saved-history + h2 { margin-top: 28px; }
     <h2>Ask a question</h2>
     <button id="expandChat" type="button" aria-expanded="false" aria-controls="messages">Expand chat</button>
     <button id="newChat" type="button">New chat</button>
-</div><div class="service-badge">Student Success</div><p id="startState" class="start-state">Explore campus life, directions, and student resources.</p><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div class="scroll-controls"><button id="scrollLatest" type="button" aria-label="Scroll to latest message" aria-controls="messages" hidden>↓ Latest message</button></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Build a study plan</button><button type="button">Improve time management</button><button type="button">Help me stay on track</button><button type="button">Find student resources</button></div><form id="form"><textarea id="question" rows="1" aria-describedby="characterCount" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="send">Send</button></form><div id="characterCount" class="character-count">0 / 8000</div><div class="note" id="notice">Student Success is powered by a multi-agent assistant. Verify university-specific details with official sources.</div></section><aside class="panel"><section class="saved-history" aria-labelledby="historyHeading"><h2 id="historyHeading">Chat History</h2><p>Recent saved conversations</p><button id="refreshHistory" type="button">Refresh history</button><p id="historyStatus" role="status"></p><div id="historyList" class="history-list"></div><p class="history-note">Saved conversations are linked to your signed-in account.</p></section><h2>Explore this service</h2><div class="topic">Campus life</div><div class="topic">Financial aid</div><div class="topic">Housing</div><div class="topic">Student resources</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
+</div><div class="service-badge">Student Success</div><p id="startState" class="start-state">Explore campus life, directions, and student resources.</p><div id="messages" class="chat" role="log" aria-live="polite"><div class="msg">Welcome. What would you like help with today?</div></div><div class="scroll-controls"><button id="scrollLatest" type="button" aria-label="Scroll to latest message" aria-controls="messages" hidden>↓ Latest message</button></div><div id="suggestions" class="suggestions" role="group" aria-label="Suggested questions"><button type="button">Build a study plan</button><button type="button">Improve time management</button><button type="button">Help me stay on track</button><button type="button">Find student resources</button></div><form id="form"><textarea id="question" rows="1" aria-describedby="characterCount" aria-label="Your question" placeholder="Type your question…" maxlength="8000" required></textarea><button id="micBtn" type="button" title="Speak your question" aria-label="Speak your question">🎤</button><button id="send">Send</button></form><div id="characterCount" class="character-count">0 / 8000</div><div class="note" id="notice">Student Success is powered by a multi-agent assistant. Verify university-specific details with official sources.</div></section><aside class="panel"><section class="saved-history" aria-labelledby="historyHeading"><h2 id="historyHeading">Chat History</h2><p>Recent saved conversations</p><button id="refreshHistory" type="button">Refresh history</button><p id="historyStatus" role="status"></p><div id="historyList" class="history-list"></div><p class="history-note">Saved conversations are linked to your signed-in account.</p></section><h2>Explore this service</h2><div class="topic">Campus life</div><div class="topic">Financial aid</div><div class="topic">Housing</div><div class="topic">Student resources</div><p style="font-size:13px">University-specific details should be verified with official sources.</p></aside></div></main>
 <script src="https://cdn.jsdelivr.net/npm/marked@16.4.1/lib/marked.umd.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
 <script>
@@ -448,4 +450,53 @@ async function openHistory(id) {
 document.getElementById('refreshHistory').addEventListener('click', loadHistory);
 const historyReady = loadHistory();
 
-</script></body></html>
+</script>
+<script>
+(function () {
+  const micBtn = document.getElementById('micBtn');
+  const box = document.getElementById('question');
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SR) {
+    micBtn.addEventListener('click', () => alert('Speech recognition is not supported in this browser. Try Chrome or Safari.'));
+    return;
+  }
+
+  const recognition = new SR();
+  recognition.lang = 'en-US';
+  recognition.interimResults = true;   // words appear while you talk
+  recognition.continuous = false;      // stops when you pause
+  let listening = false;
+
+  micBtn.addEventListener('click', () => {
+    if (listening) { recognition.stop(); return; }   // click again to stop
+    try {
+      recognition.start();
+      listening = true;
+      micBtn.classList.add('listening');              // turns red while listening
+    } catch (e) {}
+  });
+
+  recognition.onresult = (event) => {
+    let text = '';
+    for (let i = 0; i < event.results.length; i++) text += event.results[i][0].transcript;
+    box.value = text;
+    box.dispatchEvent(new Event('input'));            // updates the 0 / 8000 counter
+  };
+
+  recognition.onend = () => {
+    listening = false;
+    micBtn.classList.remove('listening');
+    box.focus();
+  };
+
+  recognition.onerror = (event) => {
+    listening = false;
+    micBtn.classList.remove('listening');
+    if (event.error === 'not-allowed') {
+      alert('Microphone access is blocked. In Safari: Settings → Websites → Microphone → allow 127.0.0.1.');
+    }
+  };
+})();
+</script>
+</body></html>

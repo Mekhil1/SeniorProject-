@@ -125,4 +125,53 @@ document.getElementById('closeProfile').addEventListener('click',closeProfile);
 document.getElementById('saveAdvisor').addEventListener('click',()=>{localStorage.setItem('csgo_advisor_name',document.getElementById('profileAdvisor').value.trim());localStorage.setItem('csgo_advisor_email',document.getElementById('profileAdvisorEmail').value.trim());document.getElementById('profileStatus').textContent='Advisor details saved in this browser.'});
 document.getElementById('profileUpload').addEventListener('click',async()=>{const file=document.getElementById('profileDegreeworks').files[0];const status=document.getElementById('profileStatus');if(!file){status.textContent='Choose a PDF first.';return}status.textContent='Reading your report…';try{const token=await(await fetch('/api/auth/csrf')).json();const data=new FormData();data.append('degreeworks',file);const response=await fetch('/api/degreeworks',{method:'POST',headers:{'X-CSRF-Token':token.csrf},body:data});const result=await response.json();if(!response.ok)throw Error(result.error||'Upload failed');status.textContent=result.message||'Report analyzed and saved.';await loadDegreeSummary();await showProgress();}catch(e){status.textContent=e.message||'Upload failed. Please try again.'}});
 document.getElementById('profileLogout').addEventListener('click',async()=>{try{const token=await(await fetch('/api/auth/csrf')).json();const r=await fetch('/api/auth/logout',{method:'POST',headers:{'X-CSRF-Token':token.csrf}});if(!r.ok)throw Error('Could not log out');location.href='/login'}catch(e){document.getElementById('profileStatus').textContent=e.message}});
-</script></body></html>
+</script>
+<script>
+(function () {
+  const micBtn = document.getElementById('micBtn');
+  const box = document.getElementById('question');
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!SR) {
+    micBtn.addEventListener('click', () => alert('Speech recognition is not supported in this browser. Try Chrome or Safari.'));
+    return;
+  }
+
+  const recognition = new SR();
+  recognition.lang = 'en-US';
+  recognition.interimResults = true;
+  recognition.continuous = false;
+  let listening = false;
+
+  micBtn.addEventListener('click', () => {
+    if (listening) { recognition.stop(); return; }
+    try {
+      recognition.start();
+      listening = true;
+      micBtn.classList.add('listening');
+    } catch (e) {}
+  });
+
+  recognition.onresult = (event) => {
+    let text = '';
+    for (let i = 0; i < event.results.length; i++) text += event.results[i][0].transcript;
+    box.value = text;
+    box.dispatchEvent(new Event('input'));
+  };
+
+  recognition.onend = () => {
+    listening = false;
+    micBtn.classList.remove('listening');
+    box.focus();
+  };
+
+  recognition.onerror = (event) => {
+    listening = false;
+    micBtn.classList.remove('listening');
+    if (event.error === 'not-allowed') {
+      alert('Microphone access is blocked. In Safari: Settings → Websites → Microphone → allow 127.0.0.1.');
+    }
+  };
+})();
+</script>
+</body></html>
