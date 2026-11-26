@@ -6,18 +6,15 @@ import json
 import os
 from pathlib import Path
 
-from flask import (
-    Blueprint,
-    current_app,
-    jsonify,
-    request,
-    send_from_directory,
-)
+from flask import Blueprint, current_app, jsonify, request, send_from_directory
 from flask_login import login_required, current_user
+from .chat_history import advising_context, save_exchange, ConversationChanged
 
-from .secure_auth import connection
 from .ai_service import answer_with_ai
-from .degreeworks_context import ai_context, normalized_record, adk_safe_context
+from .database import answer_from_database
+from .secure_auth import connection
+from .degreeworks_context import normalized_record, ai_context, adk_safe_context
+from agents.config import AgentProviderError
 
 bp = Blueprint("advisor", __name__)
 logger = logging.getLogger(__name__)
@@ -47,22 +44,12 @@ def chat():
 
 @bp.get("/agents/<agent_name>")
 def agent_page(agent_name):
-    allowed_agents = {
-        "academic",
-        "tutoring",
-        "career",
-        "success",
-    }
+    allowed_agents = {"academic", "tutoring", "career", "success"}
 
     if agent_name not in allowed_agents:
         return jsonify(error="Unknown student service"), 404
 
-    directory = (
-        Path(current_app.config["FRONTEND_DIR"])
-        / "agents"
-        / agent_name
-    )
-
+    directory = Path(current_app.config["FRONTEND_DIR"]) / "agents" / agent_name
     return send_from_directory(directory, "index.html")
 
 
@@ -108,18 +95,21 @@ def adviser():
         ), 413
 
     # Protect student records.
-    # Never send raw Degree Works documents to an AI provider.
+    # Do not send raw Degree Works content to Gemini.
     if file_text or file_name:
         return jsonify(
             reply=(
-                "Please upload your Degree Works report "
-                "through My Progress instead of attaching "
-                "personal academic records in the chat."
+                "Please upload your Degree Works report through My Progress. "
+                "Please ask your question without "
+                "attaching personal academic records."
             )
         ), 400
 
     try:
-        # Identify questions requiring personal academic records.
+        session_id = data.get("session_id")
+        if session_id is not None and (not isinstance(session_id, str) or not session_id or len(session_id) > 128):
+            return jsonify(error="Invalid session_id."), 400
+        session_id, revision, history = advising_context(session_id)
         personal_terms = (
             "my degree",
             "my courses",
@@ -155,7 +145,7 @@ def adviser():
         # PERSONAL ACADEMIC ADVISING
         if is_personal:
 
-            logger.warning(
+            logger.debug(
                 "Academic routing: Personal Degree Works request"
             )
 
@@ -181,19 +171,22 @@ def adviser():
                 )
 
             else:
-                logger.warning(
+                logger.debug(
                     "Academic routing: Restricted audit context"
                 )
 
                 if os.getenv("ENABLE_PERSONAL_ADK", "false").lower() == "true":
                     from .adk_service import answer_with_adk
 
-                    logger.warning("Academic routing: Personal ADK agent")
+                    logger.debug("Academic routing: Personal ADK agent")
 
                     reply = answer_with_adk(
                         question,
-                        student_context=adk_safe_context(audit)
+                        student_context=adk_safe_context(audit),
+                        history=history
                     )
+                    if not reply:
+                        reply = adk_safe_context(audit) + "\n\nConfirm your requirements with your advisor."
                 else:
                     reply = adk_safe_context(audit)
                     reply += (
@@ -201,28 +194,18 @@ def adviser():
                         "to confirm your remaining requirements."
                     )
 
-        # GENERAL ACADEMIC ADVISING
         else:
+            # ADK mode uses the workflow first; legacy mode retains local lookup.
+            if os.getenv("ACADEMIC_AGENT_PROVIDER", "legacy").lower() != "adk":
+                reply = answer_from_database(question)
+            if not reply:
+                if history:
+                    reply = answer_with_ai(question, history=history)
+                else:
+                    reply = answer_with_ai(question)
 
-            logger.warning(
-                "Academic routing: General request; configured provider=%s",
-                os.getenv("ACADEMIC_AGENT_PROVIDER", "legacy")
-            )
-
-            # General questions go directly to the AI service.
-            # Do not attach personal academic records.
-            # Bypass the existing database answer lookup.
-            reply = answer_with_ai(
-                question,
-                student_context=None
-            )
-
-        # Handle unavailable AI responses.
         if not reply:
-            logger.warning(
-                "No advising response was generated."
-            )
-
+            logger.warning("No advising response was generated.")
             return jsonify(
                 reply=(
                     "I'm having trouble answering right now. "
@@ -230,28 +213,18 @@ def adviser():
                 )
             ), 503
 
-        # Save the conversation to the authenticated student's history.
-        with connection() as db:
-            db.execute(
-                """
-                INSERT INTO chats
-                (user_id, question, reply, created_at)
-                VALUES (?, ?, ?, strftime('%s', 'now'))
-                """,
-                (current_user.id, question, reply)
-            )
+        result = dict(reply=reply, session_id=session_id)
+        save_exchange("academic", question, result, expected_revision=revision)
+        return jsonify(**result), 200
 
-        logger.warning(
-            "Academic advising request completed successfully."
-        )
-
-        return jsonify(reply=reply), 200
-
+    except LookupError:
+        return jsonify(error="This conversation is unavailable. Please start a new chat.", code="invalid_session"), 409
+    except ConversationChanged:
+        return jsonify(error="Another message completed in this conversation. Please retry.", code="conversation_changed"), 409
+    except AgentProviderError as error:
+        return jsonify(reply=error.public_message, code=error.code), error.http_status
     except Exception:
-        logger.exception(
-            "Academic Advising request failed."
-        )
-
+        logger.exception("Academic Advising request failed.")
         return jsonify(
             reply=(
                 "The Academic Advising service is temporarily "
@@ -262,4 +235,4 @@ def adviser():
 
 @bp.app_errorhandler(404)
 def not_found(_error):
-    return jsonify(error="Resource not found"), 404
+    return jsonify(error="Route not found"), 404

@@ -6,10 +6,12 @@ from flask import Flask
 import os
 from flask_login import LoginManager
 from .secure_auth import get_user, init_auth_db
-from flask_cors import CORS
+from agents.config import load_environment
 
 
 def create_app(test_config=None):
+    if not (test_config or {}).get("TESTING"):
+        load_environment()
     project_root = Path(__file__).resolve().parents[1]
     app = Flask(__name__)
     app.config.from_mapping(

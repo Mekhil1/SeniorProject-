@@ -2,7 +2,7 @@ from functools import cached_property
 
 from google.adk.agents import LlmAgent
 from google.adk.models import Gemini
-from google.genai import Client
+from agents.config import create_gemini_client, get_model
 from google.adk.tools import agent_tool
 from google.adk.tools.google_search_tool import GoogleSearchTool
 from google.adk.tools import url_context
@@ -10,25 +10,16 @@ from google.adk.tools import url_context
 
 
 class GlobalGemini(Gemini):
-  """Pins the Vertex AI client to the `global` location.
-
-  gemini-3 series models are only served from `global`; the default ADK
-  `Gemini` integration constructs a `google.genai.Client` whose location
-  defaults to the AgentEngine instance's region (e.g. `us-central1`) and
-  fails with model-not-found for these models. Subclassing per the override
-  pattern documented on `google.adk.models.google_llm.Gemini` lets the agent
-  keep running in its regional AgentEngine instance while routing the model
-  request to the global endpoint.
-  """
+  """Use Success's dedicated API key, or explicitly selected global Vertex mode."""
 
   @cached_property
-  def api_client(self) -> Client:
-    return Client(vertexai=True, location="global")
+  def api_client(self):
+    return create_gemini_client("success", allow_vertex=True)
 
 
 subagent____campus_life_google_search_agent = LlmAgent(
   name='Subagent____Campus_life_google_search_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in performing Google searches.'
   ),
@@ -40,7 +31,7 @@ subagent____campus_life_google_search_agent = LlmAgent(
 )
 subagent____campus_life_url_context_agent = LlmAgent(
   name='Subagent____Campus_life_url_context_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in fetching content from URLs.'
   ),
@@ -52,7 +43,7 @@ subagent____campus_life_url_context_agent = LlmAgent(
 )
 subagent__campus_life = LlmAgent(
   name='subagent__campus_life',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Helping Morgan state students finding campus events on and off campus '
   ),
@@ -65,7 +56,7 @@ subagent__campus_life = LlmAgent(
 )
 subagent___campus_direction_google_search_agent = LlmAgent(
   name='Subagent___Campus_Direction_google_search_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in performing Google searches.'
   ),
@@ -77,7 +68,7 @@ subagent___campus_direction_google_search_agent = LlmAgent(
 )
 subagent___campus_direction_url_context_agent = LlmAgent(
   name='Subagent___Campus_Direction_url_context_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in fetching content from URLs.'
   ),
@@ -89,7 +80,7 @@ subagent___campus_direction_url_context_agent = LlmAgent(
 )
 subagent__campus_direction = LlmAgent(
   name='subagent__campus_direction',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Helping Morgan state students finding their way around campus'
   ),
@@ -102,7 +93,7 @@ subagent__campus_direction = LlmAgent(
 )
 subagent___campus_resources_google_search_agent = LlmAgent(
   name='Subagent___Campus_Resources_google_search_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in performing Google searches.'
   ),
@@ -114,7 +105,7 @@ subagent___campus_resources_google_search_agent = LlmAgent(
 )
 subagent___campus_resources_url_context_agent = LlmAgent(
   name='Subagent___Campus_Resources_url_context_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in fetching content from URLs.'
   ),
@@ -126,7 +117,7 @@ subagent___campus_resources_url_context_agent = LlmAgent(
 )
 subagent__campus_resources = LlmAgent(
   name='subagent__campus_resources',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Helping Morgan state students finding campus resources'
   ),
@@ -139,7 +130,7 @@ subagent__campus_resources = LlmAgent(
 )
 student_success___support_agent_google_search_agent = LlmAgent(
   name='Student_Success___Support_Agent_google_search_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in performing Google searches.'
   ),
@@ -151,7 +142,7 @@ student_success___support_agent_google_search_agent = LlmAgent(
 )
 student_success___support_agent_url_context_agent = LlmAgent(
   name='Student_Success___Support_Agent_url_context_agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'Agent specialized in fetching content from URLs.'
   ),
@@ -163,7 +154,7 @@ student_success___support_agent_url_context_agent = LlmAgent(
 )
 root_agent = LlmAgent(
   name='Student_Success___Support_Agent',
-  model='gemini-3.5-flash',
+  model=GlobalGemini(model=get_model('success', 'gemini-3.5-flash')),
   description=(
       'This agent will give students help on resources at their disposal at the school of their choosing and even events going on around campus or off campus. This agent makes sure the student has everything they need to be successful as a student but also has a successful and active campus life. \n'
   ),
