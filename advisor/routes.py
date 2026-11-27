@@ -2,6 +2,8 @@
 """Web pages and JSON API routes for CS Go AI."""
 
 import logging
+import json
+import os
 from pathlib import Path
 
 from flask import Blueprint, current_app, jsonify, request, send_from_directory
@@ -10,6 +12,8 @@ from .chat_history import advising_context, save_exchange, ConversationChanged
 
 from .ai_service import answer_with_ai
 from .database import answer_from_database
+from .secure_auth import connection
+from .degreeworks_context import normalized_record, ai_context, adk_safe_context
 from agents.config import AgentProviderError
 
 bp = Blueprint("advisor", __name__)
@@ -95,9 +99,9 @@ def adviser():
     if file_text or file_name:
         return jsonify(
             reply=(
-                "Degree Works document analysis is not available yet. "
-                "Please ask a general advising question without "
-                "uploading personal academic records."
+                "Please upload your Degree Works report through My Progress. "
+                "Please ask your question without "
+                "attaching personal academic records."
             )
         ), 400
 
@@ -106,12 +110,99 @@ def adviser():
         if session_id is not None and (not isinstance(session_id, str) or not session_id or len(session_id) > 128):
             return jsonify(error="Invalid session_id."), 400
         session_id, revision, history = advising_context(session_id)
-        # Use verified local advising answers when available.
-        reply = answer_from_database(question)
+        personal_terms = (
+            "my degree",
+            "my courses",
+            "my remaining",
+            "my progress",
+            "my credits",
+            "my graduation",
+            "my semester",
+            "my final semester",
+            "my degree works",
+            "my audit",
+            "my prerequisites",
+            "my requirements",
+            "i completed",
+            "i passed",
+            "i graduate",
+            "i have left",
+            "i have remaining",
+            "what courses should i take",
+            "how close am i",
+            "am i eligible",
+            "can i graduate",
+            "can i take",
+        )
 
-        # Ask Gemini if the database doesn't have an answer.
-        if not reply:
-            reply = answer_with_ai(question, history=history) if history else answer_with_ai(question)
+        is_personal = any(
+            term in question.lower()
+            for term in personal_terms
+        )
+
+        reply = None
+
+        # PERSONAL ACADEMIC ADVISING
+        if is_personal:
+
+            logger.debug(
+                "Academic routing: Personal Degree Works request"
+            )
+
+            # Retrieve only the authenticated student's record.
+            with connection() as db:
+                row = db.execute(
+                    "SELECT courses_json FROM records WHERE user_id=?",
+                    (current_user.id,)
+                ).fetchone()
+
+            audit = (
+                normalized_record(json.loads(row["courses_json"]))
+                if row else None
+            )
+
+            context = ai_context(audit) if audit else None
+
+            if not audit or not context:
+                reply = (
+                    "I don't have a usable Degree Works audit "
+                    "for your account yet. Upload your report "
+                    "under My Progress, then ask again."
+                )
+
+            else:
+                logger.debug(
+                    "Academic routing: Restricted audit context"
+                )
+
+                if os.getenv("ENABLE_PERSONAL_ADK", "false").lower() == "true":
+                    from .adk_service import answer_with_adk
+
+                    logger.debug("Academic routing: Personal ADK agent")
+
+                    reply = answer_with_adk(
+                        question,
+                        student_context=adk_safe_context(audit),
+                        history=history
+                    )
+                    if not reply:
+                        reply = adk_safe_context(audit) + "\n\nConfirm your requirements with your advisor."
+                else:
+                    reply = adk_safe_context(audit)
+                    reply += (
+                        "\n\nConsult your academic advisor "
+                        "to confirm your remaining requirements."
+                    )
+
+        else:
+            # ADK mode uses the workflow first; legacy mode retains local lookup.
+            if os.getenv("ACADEMIC_AGENT_PROVIDER", "legacy").lower() != "adk":
+                reply = answer_from_database(question)
+            if not reply:
+                if history:
+                    reply = answer_with_ai(question, history=history)
+                else:
+                    reply = answer_with_ai(question)
 
         if not reply:
             logger.warning("No advising response was generated.")

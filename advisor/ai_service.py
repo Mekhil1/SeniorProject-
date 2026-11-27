@@ -1,6 +1,7 @@
 """Gemini-powered Academic Advising Agent for CS Go AI."""
 
 import logging
+import os
 from google.genai import types
 from agents.config import AgentConfigurationError, create_gemini_client, get_model, provider_failure
 
@@ -97,6 +98,19 @@ def answer_with_ai(question: str, history=None) -> str | None:
     if not isinstance(question, str) or not question.strip():
         return "Please enter an academic advising question."
 
+    if os.getenv("ACADEMIC_AGENT_PROVIDER", "legacy").lower() == "adk":
+        try:
+            from .adk_service import answer_with_adk
+            reply = answer_with_adk(question.strip(), history=history)
+            if reply:
+                return reply
+        except Exception as error:
+            logger.warning("ADK unavailable: %s", type(error).__name__)
+        if history:
+            logger.warning("Contextual ADK unavailable; withholding private history from fallback.")
+            return None
+        logger.warning("ADK unavailable; using direct Gemini.")
+
     client = get_gemini_client()
 
     if client is None:
@@ -116,7 +130,7 @@ def answer_with_ai(question: str, history=None) -> str | None:
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_INSTRUCTIONS,
                 temperature=0.2,
-                max_output_tokens=350,
+                max_output_tokens=1024,
             ),
         )
 
@@ -166,6 +180,11 @@ def test_gemini_connection():
             "Check your API key, model, and terminal errors."
         )
 
+    finally:
+        client.close()
+
 
 if __name__ == "__main__":
+    from agents.config import load_environment
+    load_environment()
     print(test_gemini_connection())
